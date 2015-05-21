@@ -1,0 +1,219 @@
+{
+    "Game": {
+        "SrcPath": "egret",
+        "DistPath": "static/egret",
+        "SrcURL": "egret",
+        "DistURL": "static/egret",
+        "Groups": {
+            "videopoke": {
+                "DistFile": "videopoke.min.js",
+                "SourceFiles": [
+                    "/videopoke/egret_file_list.js",
+                    "/videopoke/egret_require.js",
+                    "/videopoke/egret_loader.js",
+                    "/videopoke/game_file_list.js" 
+                ]
+            },
+            "slot": {
+                "DistFile": "slot.min.js",
+                "SourceFiles": [
+                    "/slot/egret_file_list.js",
+                    "/slot/egret_require.js",
+                    "/slot/egret_loader.js",
+                    "/slot/game_file_list.js" 
+                ]
+            }           
+        }
+    },
+
+    "Js": {
+        "SrcPath": "static_source/js",
+        "DistPath": "static/js",
+        "SrcURL": "static_source/js",
+        "DistURL": "static/js",
+        "Groups": {
+            "lib": {
+                "DistFile": "lib.min.js",
+                "SourceFiles": [
+                    "jquery.min.js",
+                    "jquery.extend.js",
+                    "bootstrap.js",
+                    "lib.min.js",
+                    "prettify.js",                  
+                    "jStorage.js"
+         
+                   
+                ],
+                "SkipFiles": [
+                    "jquery.min.js",
+                    "lib.min.js",
+                    "prettify.js"
+                ]
+            },
+            "app": {
+                "DistFile": "app.min.js",
+                "SourceFiles": [
+                    "main.js",
+                    "editor.js"
+                ]
+            },
+            "ember": {
+                "DistFile": "ember.min.js",
+                "SourceFiles": [   
+                    "/ember/highstock.js",
+                    "/ember/handlebars.min.js",
+                    "/ember/ember.min.js",
+                    "/ember/ember-data.js",
+                    "/ember/pagination.js",
+                    "/ember/big.min.js"
+                ]
+            },
+            "videopoke": {
+                "DistFile": "videopoke.min.js",
+                "SourceFiles": [   
+                    "/egret/videopoke/bin-debug/lib/egret_file_list.js",
+                    "/egret/videopoke/release/launcher/egret_require.js",
+                    "/egret/videopoke/release/launcher/egret_loader.js",
+                    "/egret/videopoke/bin-debug/src/game_file_list.js"
+                ]
+            },        
+            "slot": {
+                "DistFile": "slot.min.js",
+                "SourceFiles": [   
+                    "/egret/slot/bin-debug/lib/egret_file_list.js",
+                    "/egret/slot/release/launcher/egret_require.js",
+                    "/egret/slot/release/launcher/egret_loader.js",
+                    "/egret/slot/bin-debug/src/game_file_list.js"
+                ]
+            },        
+            "crap": {
+                "DistFile": "crap.min.js",
+                "SourceFiles": [   
+                    "/egret/crap/bin-debug/lib/egret_file_list.js",
+                    "/egret/crap/release/launcher/egret_require.js",
+                    "/egret/crap/release/launcher/egret_loader.js",
+                    "/egret/crap/bin-debug/src/game_file_list.js"
+                ]
+            },        
+
+
+
+            "egame": {
+                "DistFile": "egame-ember.min.js",
+                "SourceFiles": [                    
+                    "/egame/app.main.js" ,
+                    "/egame/app.welcome.js",
+                     "/egame/app.proto.js",                    
+                    "/egame/app.data.js",                    
+                    "/egame/app.application.js",
+                    "/egame/app.index.js",                      
+                    "/egame/app.contract.js",
+                    "/egame/app.function.js" , 
+                    "/egame/app.home.js" 
+                ]
+            },
+
+            "effect": {
+                "DistFile": "effect.min.js",
+                "SourceFiles": [ 
+                    "/effect/jquery.SuperSlide.2.1.1.js"
+                ]
+            },            
+            "validate": {
+                "DistFile": "validate.min.js",
+                "SourceFiles": [                    
+                    "/validate/jquery.validate.min.js",
+                    "/validate/jquery.validation.messages_zh.js"
+                ]
+            },
+
+            "trade": {
+                "DistFile": "trade.min.js",
+                "SourceFiles": [                    
+                    "/trade/app.main.js" ,
+                    "/trade/app.welcome.js",
+                     "/trade/app.proto.js",                    
+                    "/trade/app.data.js",                    
+                    "/trade/app.application.js",
+                    "/trade/app.function.js" ,                                          
+                    "/trade/app.index.js",                     
+                    "/trade/app.cfd.js",
+                    "/trade/app.indice.js",  
+                    "/trade/app.analyst.js",  
+                    "/trade/app.marketmaker.js",  
+                    "/trade/app.customer.js",  
+                    "/trade/app.cfddetail.js",
+                    "/trade/app.hold.js", 
+                    "/trade/app.holditem.js", 
+                    "/trade/app.holddetail.js",      
+                    "/trade/app.chart.js", 
+                    "/trade/app.dailyreport.js",                           
+                    "/trade/app.price.js",                           
+                    "/trade/app.contract.js",                           
+                    "/trade/app.home.js" 
+                ]
+            },
+
+            "admin": {
+                "DistFile": "admin.min.js",
+                "SourceFiles": [
+                    "admin.js"
+                ]
+            }
+        }
+    },
+    "Css": {
+        "SrcPath": "static_source/css",
+        "DistPath": "static/css",
+        "SrcURL": "static_source/css",
+        "DistURL": "static/css",
+        "Groups": {
+            "lib": {
+                "DistFile": "lib.min.css",
+                "SourceFiles": [
+                    "bootstrap.css",
+                    "bootstrap-theme.css",
+                    "font-awesome.min.css",
+                    "prettify.css",
+                    "select2.css"
+                   
+                ],
+                "SkipFiles": [                    
+                    "select2.css"
+                ]
+            },
+
+            "trade": {
+                "DistFile": "trade.min.css",
+                "SourceFiles": [
+                    "/trade/main.css",
+                    "/trade/slide.css" 
+                ],
+                "SkipFiles": [
+                    "font-awesome.min.css",
+                    "select2.css"
+                ]
+            },            
+            "ie7": {
+                "Name": "ie7",
+                "DistFile": "ie7.min.css",
+                "SourceFiles": [
+                    "font-awesome-ie7.min.css"
+                ],
+                "SkipFiles": [
+                    "font-awesome-ie7.min.css"
+                ]
+            },
+            "app": {
+                "Name": "app",
+                "DistFile": "app.min.css",
+                "SourceFiles": [
+                    "base.css",
+                    "markdown.css",
+                    "main.css",
+                    "last.css"
+                ]
+            }
+        }
+    }
+}

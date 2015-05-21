@@ -26,7 +26,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
 
-	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/setting"
 )
 
 // get HTML i18n string

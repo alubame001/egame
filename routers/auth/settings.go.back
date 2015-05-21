@@ -18,8 +18,8 @@ import (
 	//"fmt"
 	"github.com/astaxie/beego"
 
-	"github.com/alubame001/egame2015/modules/auth"
-	"github.com/alubame001/egame2015/routers/base"
+	"github.com/alubame001/egame/modules/auth"
+	"github.com/alubame001/egame/routers/base"
 )
 
 // SettingsRouter serves user settings.

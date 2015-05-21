@@ -15,8 +15,8 @@
 package egame
 
 import (
-	"github.com/alubame001/egame2015/modules/models"
-	"github.com/alubame001/egame2015/modules/utils"
+	"github.com/alubame001/egame/modules/models"
+	"github.com/alubame001/egame/modules/utils"
 	"github.com/astaxie/beego"
 	//"math/big"
 	"strconv"

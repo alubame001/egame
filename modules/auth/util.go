@@ -17,7 +17,7 @@ package auth
 import (
 	"github.com/astaxie/beego/orm"
 
-	"github.com/alubame001/egame2015/modules/models"
+	"github.com/alubame001/egame/modules/models"
 )
 
 func UserFollow(user *models.User, theUser *models.User) {

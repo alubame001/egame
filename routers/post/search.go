@@ -19,9 +19,9 @@ import (
 
 	"github.com/astaxie/beego"
 
-	"github.com/alubame001/egame2015/modules/post"
-	"github.com/alubame001/egame2015/modules/utils"
-	"github.com/alubame001/egame2015/routers/base"
+	"github.com/alubame001/egame/modules/post"
+	"github.com/alubame001/egame/modules/utils"
+	"github.com/alubame001/egame/routers/base"
 )
 
 type SearchRouter struct {

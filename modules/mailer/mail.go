@@ -15,8 +15,8 @@
 package mailer
 
 import (
-	"github.com/alubame001/egame2015/modules/models"
-	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/modules/models"
+	"github.com/alubame001/egame/setting"
 )
 
 // Create New mail message use MailFrom and MailUser

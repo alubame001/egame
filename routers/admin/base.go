@@ -17,7 +17,7 @@ package admin
 import (
 	"github.com/astaxie/beego/orm"
 
-	"github.com/alubame001/egame2015/modules/models"
+	"github.com/alubame001/egame/modules/models"
 )
 
 type AdminRouter struct {

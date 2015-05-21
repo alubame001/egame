@@ -15,7 +15,7 @@
 package api
 
 import (
-	"github.com/alubame001/egame2015/modules/utils"
+	"github.com/alubame001/egame/modules/utils"
 )
 
 func (this *ApiRouter) Markdown() {

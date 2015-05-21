@@ -21,8 +21,8 @@ import (
 	"time"
 	//"github.com/beego/i18n"
 
-	"github.com/alubame001/egame2015/modules/utils"
-	//"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/modules/utils"
+	//"github.com/alubame001/egame/setting"
 )
 
 type Price struct {

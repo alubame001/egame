@@ -20,7 +20,7 @@ import (
 
 	"github.com/astaxie/beego/orm"
 
-	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/setting"
 )
 
 var ErrSphinxDBClosed = fmt.Errorf("SphinxDB already closed and give back to pools")

@@ -20,14 +20,14 @@ import (
 
 		"github.com/astaxie/beego"
 
-		"github.com/alubame001/egame2015/setting"
+		"github.com/alubame001/egame/setting"
 
 		"log"
-		"github.com/alubame001/egame2015/modules/auth"
-		"github.com/alubame001/egame2015/modules/models"
+		"github.com/alubame001/egame/modules/auth"
+		"github.com/alubame001/egame/modules/models"
 
 
-		"github.com/alubame001/egame2015/routers/base"
+		"github.com/alubame001/egame/routers/base"
 		"github.com/gorilla/websocket"
 		"net/http"
 		"time"
@@ -35,12 +35,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/alubame001/egame2015/modules/models"
-	"github.com/alubame001/egame2015/modules/utils"
+	"github.com/alubame001/egame/modules/models"
+	"github.com/alubame001/egame/modules/utils"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/bitly/go-simplejson"
-	//"github.com/alubame001/egame2015/modules/utils"
+	//"github.com/alubame001/egame/modules/utils"
 )
 
 type BetParams struct {

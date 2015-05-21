@@ -18,9 +18,9 @@ import (
 	"github.com/astaxie/beego/validation"
 	"github.com/beego/i18n"
 
-	"github.com/alubame001/egame2015/modules/models"
-	"github.com/alubame001/egame2015/modules/utils"
-	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/modules/models"
+	"github.com/alubame001/egame/modules/utils"
+	"github.com/alubame001/egame/setting"
 )
 
 type PostForm struct {

@@ -4,7 +4,7 @@ import (
 	//"github.com/alubame/go-sina-finance"
 	"github.com/astaxie/beego"
 	//"github.com/astaxie/beego/orm"
-	//"github.com/alubame001/egame2015/setting"
+	//"github.com/alubame001/egame/setting"
 	//_ "github.com/lib/pq"
 	//	"strconv"
 	//"strings"

@@ -15,7 +15,7 @@
 package base
 
 import (
-	"github.com/alubame001/egame2015/modules/mailer"
+	"github.com/alubame001/egame/modules/mailer"
 )
 
 type TestRouter struct {

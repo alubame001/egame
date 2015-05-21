@@ -19,9 +19,9 @@ import (
 	"github.com/beego/i18n"
 	//"time"
 
-	"github.com/alubame001/egame2015/modules/mailer"
-	"github.com/alubame001/egame2015/modules/models"
-	"github.com/alubame001/egame2015/modules/utils"
+	"github.com/alubame001/egame/modules/mailer"
+	"github.com/alubame001/egame/modules/models"
+	"github.com/alubame001/egame/modules/utils"
 )
 
 // Send user register mail with active code

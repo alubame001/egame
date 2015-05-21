@@ -18,7 +18,7 @@ package task
 import (
 	//"encoding/json"
 	//	"errors"
-	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/setting"
 	//"os"
 	//"path"
 	//"strconv"

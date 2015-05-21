@@ -21,9 +21,9 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 
-	"github.com/alubame001/egame2015/modules/models"
-	"github.com/alubame001/egame2015/modules/utils"
-	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/modules/models"
+	"github.com/alubame001/egame/modules/utils"
+	"github.com/alubame001/egame/setting"
 )
 
 func ListPostsOfCategory(cat *models.Category, posts *[]models.Post) (int64, error) {

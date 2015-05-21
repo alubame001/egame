@@ -5,8 +5,8 @@ An open source project for Gopher community.
 ### Usage
 
 ```
-go get -u github.com/alubame001/egame2015
-cd $GOPATH/src/github.com/alubame001/egame2015
+go get -u github.com/alubame001/egame
+cd $GOPATH/src/github.com/alubame001/egame
 ```
 
 I suggest you [update all Dependencies](#dependencies)

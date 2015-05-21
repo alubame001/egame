@@ -19,7 +19,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 
-	"github.com/alubame001/egame2015/modules/models"
+	"github.com/alubame001/egame/modules/models"
 )
 
 func ListCategories(cats *[]models.Category) (int64, error) {

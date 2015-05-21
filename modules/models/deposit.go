@@ -21,8 +21,8 @@ import (
 	"github.com/astaxie/beego/orm"
 	//	"github.com/beego/i18n"
 
-	"github.com/alubame001/egame2015/modules/utils"
-	//	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/modules/utils"
+	//	"github.com/alubame001/egame/setting"
 )
 
 //数据库表默认为 NOT NULL，设置 null 代表 ALLOW NULL

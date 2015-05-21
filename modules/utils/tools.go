@@ -35,7 +35,7 @@ import (
 
 	"github.com/astaxie/beego"
 
-	"github.com/alubame001/egame2015/setting"
+	"github.com/alubame001/egame/setting"
 	"strings"
 )
 

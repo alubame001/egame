@@ -17,7 +17,7 @@ package auth
 import (
 	"testing"
 
-	. "github.com/alubame001/egame2015/setting"
+	. "github.com/alubame001/egame/setting"
 	"github.com/astaxie/beego/orm"
 )
 

@@ -1,0 +1,329 @@
+// Copyright 2013 wetalk authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License"): you may
+// not use this file except in compliance with the License. You may obtain
+// a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations
+// under the License.
+
+package egame
+
+import (
+	/*
+
+
+		"github.com/astaxie/beego"
+
+		"github.com/alubame001/egame2015/setting"
+
+		"log"
+		"github.com/alubame001/egame2015/modules/auth"
+		"github.com/alubame001/egame2015/modules/models"
+
+
+		"github.com/alubame001/egame2015/routers/base"
+		"github.com/gorilla/websocket"
+		"net/http"
+		"time"
+	*/
+	"encoding/json"
+	"fmt"
+	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
+	"github.com/alubame001/egame2015/modules/models"
+	"github.com/alubame001/egame2015/modules/utils"
+	"github.com/bitly/go-simplejson"
+	//"github.com/alubame001/egame2015/modules/utils"
+)
+
+/*
+
+    for (j = sn + nb - 1; j >= sn; j--) {
+        gen = cs + ':' + j;
+        hash = CryptoJS.HmacSHA512(gen, ss).toString(CryptoJS.enc.Hex);
+        i = 0;
+        roll = -1;
+        while (roll == -1) { // Non-reference implementation derived from the 'Fair?' description.
+            if (i == 25) {
+                l3 = hash.substring(125, 128);
+                l3p = l3.parseInt(l3, 16);
+                println('last 3: ' + l3 + ' as int: ' + l3p); // kept on because it's cool to get this far
+                roll = l3p / 10000;
+            } else {
+                f5 = hash.substring(5 * i, 5 + 5 * i);
+                f5p = parseInt(f5, 16);
+                //println(f5 + ' as int: ' + f5p);
+                if (f5p < 1000000) {
+                    roll = f5p / 10000;
+                }
+                i++;
+            }
+        }
+        println(j + ': ' + roll);
+    }
+    check.lastssh = ssh;
+}
+*/
+type BetParams struct {
+	Name      string  `json:"name"`
+	Kind      string  `json:"kind"`
+	Balance   float64 `json:"balance"`   //回传时显示此次投注後玩家馀额
+	Allprofit float64 `json:"allprofit"` //回传时显示此次投注後玩家馀额
+	Total     float64 `json:"total"`     //玩家传来总投注金额，系统回传此次投注结果。
+	Pick      []Icon  `json:"pick"`
+	Pk        []Icon  `json:"pk"`
+	Lucky     string  `json:"lucky"`
+}
+type Icon struct {
+	Icon   string  `json:"icon"`
+	Stake  float64 `json:"stake"`
+	Profit float64 `json:"profit"` //玩家传来此项目投注金额，系统回传此项目投注结果。
+}
+
+/*
+type Pk struct {
+	Big   int `json:"big"`   //玩家传来此项目投注金额，系统回传此项目投注结果。
+	Small int `json:"small"` //玩家传来此项目投注金额，系统回传此项目投注结果。
+}
+*/
+
+func SlotRule(user *models.User, params BetParams, luckys string) (BetParams, error) {
+	beego.Info("SlotRule:", luckys, params)
+	//var result BetParams
+	//nums := [][]int{{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {6, 0}, {7, 0}, {8, 0}, {9, 0}}
+	//datas := make([][]string, 0, 0)
+	var human = 0
+	var mob = 0
+	for i := 0; i < len(luckys); i++ {
+		//	if string(luckys[i])  ==1
+		beego.Info(string(luckys[i]))
+		for j := 0; j < len(params.Pick); j++ {
+			//beego.Info(params.Pick[j])
+			if params.Pick[j].Icon == string(luckys[i]) {
+				params.Pick[j].Profit = params.Pick[j].Profit + params.Pick[j].Stake
+				params.Allprofit = params.Allprofit + params.Pick[j].Stake
+			}
+		}
+		switch string(luckys[i]) {
+		case "0", "1", "2", "3", "4":
+			human = human + 1
+		case "5", "6", "7", "8", "9":
+			mob = mob + 1
+		}
+		//datas = append(datas, []string{"0", utils.ToStr(luckys[i])})
+	}
+	for j := 0; j < len(params.Pk); j++ {
+		//beego.Info(params.Pick[j])
+		if human > mob {
+			if params.Pk[j].Icon == "human" {
+				params.Pk[j].Profit = params.Pk[j].Profit + params.Pk[j].Stake*0.99
+				params.Allprofit = params.Allprofit + params.Pk[j].Stake
+			}
+			/*
+				else if params.Pk[j].Icon == "mob" {
+					params.Pk[j].Profit = params.Pk[j].Profit - params.Pk[j].Stake
+					params.Allprofit = params.Allprofit - params.Pk[j].Stake
+				}
+			*/
+		}
+		if human < mob {
+			if params.Pk[j].Icon == "mob" {
+				params.Pk[j].Profit = params.Pk[j].Profit + params.Pk[j].Stake*0.99
+				params.Allprofit = params.Allprofit + params.Pk[j].Stake
+			}
+			/*
+				else if params.Pk[j].Icon == "human" {
+					params.Pk[j].Profit = params.Pk[j].Profit - params.Pk[j].Stake
+					params.Allprofit = params.Allprofit - params.Pk[j].Stake
+				}
+			*/
+		}
+
+	}
+	beego.Info(params)
+	//beego.Info("mob", mob)
+
+	//result = params
+	return params, nil
+}
+func GameRule(user *models.User, params BetParams, lucky string) (BetParams, error) {
+	beego.Info("params:", params)
+	beego.Info("user:", user)
+	/*待完成 params 检查 */
+	var result BetParams
+	switch params.Kind {
+	case "4":
+		return SlotRule(user, params, lucky)
+	case "5":
+
+	default:
+
+	}
+
+	return result, nil
+}
+func CheckBetParams(params BetParams) error {
+	return nil
+}
+
+//如果资料中没有name和kind的资料，就视为无效
+func CheckJson(json []byte) (bool, error) {
+	js, err := simplejson.NewJson(json)
+	if err != nil {
+		//panic(err.Error())
+		return false, err
+	}
+
+	//	beego.Info("js:", js)
+	s, err := js.Get("name").String()
+	if err != nil {
+		beego.Info("decode error: get int failed!")
+		return false, err
+	}
+	fmt.Println(s)
+	t, err := js.Get("kind").String()
+	if err != nil {
+		beego.Info("decode error: get int failed!")
+		return false, err
+	}
+	fmt.Println(t)
+	return true, nil
+
+}
+
+func GetHash(user *models.User, params BetParams) (string, error) {
+	beego.Info("params:", params)
+	var FinalLucky = ""
+	var resultParams BetParams
+	cond := orm.NewCondition()
+	cond = cond.And("User", user)
+	var anyError = false
+	o := orm.NewOrm()
+	var err = o.Begin()
+	var result = ""
+	// 事务处理过程开始
+
+	var key models.Key
+	err = o.QueryTable("key").SetCond(cond).Limit(1).OrderBy("-created").One(&key)
+	if err == orm.ErrMultiRows {
+		// 多条的时候报错
+		beego.Info("err:", err)
+		anyError = true
+	}
+	if err == orm.ErrNoRows {
+		// 没有找到记录
+		beego.Info("err:", err)
+		anyError = true
+	}
+
+	result = utils.EncodeSeed(key.Spwd, key.Ckey, utils.ToStr(key.Nonce))
+
+	//key.Nonce = key.Nonce + 1
+	if res, err := o.Raw("UPDATE key SET nonce = nonce+1 WHERE id = ?", key.Id).Exec(); err != nil {
+		anyError = true
+		beego.Info("err:", err)
+	} else {
+		num, err := res.RowsAffected()
+		fmt.Println("key table row affected nums: ", num)
+		if num == 0 {
+			beego.Info("err:", err)
+			anyError = true
+		}
+	}
+
+	if Lucky, err := utils.GetLuckyFromString(result, 0, 10); err == nil {
+		beego.Info("GetIntFromString:", Lucky)
+		FinalLucky = Lucky
+	} else {
+		beego.Info("err:", err)
+		anyError = true
+	}
+	//var bet models.Bet
+	if gameresult, err := GameRule(user, params, FinalLucky); err == nil {
+		resultParams = gameresult
+
+		gameresult.Lucky = FinalLucky
+		if b, err := json.Marshal(gameresult); err == nil {
+
+			fmt.Println(gameresult)
+			fmt.Println("================struct 到json str==")
+			fmt.Println(string(b))
+			FinalLucky = string(b)
+		} else {
+			anyError = true
+		}
+
+	} else {
+		anyError = true
+	}
+	if true { // if win
+		//	beego.Info(resultParams)
+		var bet models.Bet
+		bet.User = user
+		bet.NickName = user.NickName
+		bet.Win = true
+		bet.Nonce = key.Nonce
+		bet.Shash = result
+		bet.Ckey = key.Ckey
+		//bet.Shash = "漏了"
+		//bet.Lucky = resultParams.Lucky
+
+		//bet.Profit = resultParams.Allprofit - resultParams.Total
+
+		if id, beterr := o.Insert(&bet); beterr != nil {
+			anyError = true
+		} else {
+			fmt.Println("bet id: ", id)
+		}
+	}
+	/*
+	   "created": "2015-04-14T07:17:16.717127+08:00",
+	         "draw": 0.00000000,
+	         "id": 325854,
+	         "is_publish": false,
+	         "key_id": "",
+	         "lucky": 0.0000,
+	         "nick_name": "aaffgg",
+	         "nonce": 995,
+	         "odd": 0.0000,
+	         "profit": 0.00000000,
+	         "shash": "7ac06109fa27f7fac04e879bb961f25f43beb4f9e57d83b6f9a9c669e8d8fc5c058bf2957010f1ec6db102a833964ddb4bc936c443d2ab6fd9492b2f56b43681",
+	         "spwd": "",
+	         "stake": 0.00000000,
+	         "updated": "2015-04-14T07:17:16.717127+08:00",
+	         "user_id": 4,
+	         "which": "",
+	         "win": true
+	*/
+	//事务处理过程结束
+
+	if anyError {
+		err = o.Rollback()
+		beego.Info("err", err)
+		return "", err
+	} else {
+		err = o.Commit()
+		beego.Info("result", result)
+		return FinalLucky, nil
+	}
+
+}
+
+/*
+func IncreaseKeyNonce(o *orm, key *models.Key) error {
+	res, err := o.Raw("UPDATE key SET nonce = nonce+1 WHERE id = ?", key.Id).Exec()
+	if err == nil {
+		num, _ := res.RowsAffected()
+		fmt.Println("key table row affected nums: ", num)
+		return err
+	} else {
+		return nil
+	}
+}
+*/

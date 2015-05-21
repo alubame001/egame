@@ -1,0 +1,19 @@
+{
+"resources":
+	[
+		{"name":"load","type":"sheet","url":"assets/load.json"},
+        {"name":"assets","type":"sheet","url":"assets/assets.json"},
+        {"name":"reel","type":"sheet","url":"assets/reel.json"},
+        {"name":"sound","type":"sound","url":"sound/sound.mp3"},
+        {"name":"click","type":"sound","url":"sound/click.mp3"},
+        {"name":"ui_text","type":"prop","url":"assets/ui.properties"}
+	],
+
+"groups":
+	[
+		{"name":"loading","keys":"load"},
+        {"name":"preload","keys":"reel,assets,ui_text"},
+        {"name": "soundload","keys": "sound"},
+        {"name": "clickload","keys": "click"}
+	]
+}

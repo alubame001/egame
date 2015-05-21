@@ -1,0 +1,33 @@
+
+class Notice extends egret.Sprite{
+
+	private imgs:egret.SpriteSheet = RES.getRes("tree");
+	private img:egret.Bitmap = new egret.Bitmap();
+    public constructor(){
+        super();
+        this.createView();
+    }
+
+    private createView():void {
+        
+        this.img.texture = this.imgs.getTexture("role11");
+        this.addChild(this.img);
+    }
+
+    public play():void {
+        this.img.texture = this.imgs.getTexture("role12");
+        egret.setTimeout(function () {
+            this.img.texture = this.imgs.getTexture("role11");
+        }, this, 100);        
+    }
+
+    public dead():void {
+        egret.setTimeout(function () {
+            this.img.texture = this.imgs.getTexture("loseImg");
+        }, this, 110);   
+    }    
+
+    public reborn():void {
+        this.img.texture = this.imgs.getTexture("role11");
+    }    
+}

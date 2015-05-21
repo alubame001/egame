@@ -1,0 +1,97 @@
+ 
+<script type="text/x-handlebars" data-template-name="navbar" >        
+<div class="">
+    <div class="container" data-toggle="">
+        <div class="row">
+            <div class="">
+                <~if .IsDocs~>
+                <span class="visible-xs">
+                    <a id="docs-collapse-btn" class="navbar-btn" data-toggle="jpanel-menu" data-target="#docs-collapse">
+                        <span class="sr-only">Toggle docs menu</span>
+                        <i class="icon icon-angle-right"></i>
+                    </a>
+                </span>
+                <~end~>
+                <a type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+
+            </div>
+           
+            {{partial "navbar-item2"}}
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="navbar-item2" >     
+
+
+<div id="content" class="col-md-12">
+        
+        <div class="box">
+            <div class="cell breadcrumb nav-cats first">
+                                
+                <span class="cat">{{#link-to 'customer'}}<i class="fa fa-money fa-fw"></i> <l><~i18n .Lang "indice.title"~></l>{{/link-to}}</span>
+
+                <span class="cat"> {{#link-to 'contract'}}<i class="fa fa-money fa-fw"></i><l> <~i18n .Lang "contract.title"~></l>{{/link-to}}</span>
+                <span class="cat">{{#link-to 'analyst'}}<i class="fa fa-trophy fa-fw"></i><l> <~i18n .Lang "analyst.title"~></l>{{/link-to}}</span>
+
+            </div>
+            
+        <div class="cell nav-cats last">
+                                
+
+   
+</div>  
+   
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="navbar-item">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+
+
+            <div class="collapse navbar-collapse" role="navigation" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                     <li>                            
+                         {{#link-to 'customer'}}<i class="fa fa-money fa-fw"></i> <l><~i18n .Lang "indice.title"~></l>{{/link-to}}
+                    </li> 
+                     <li>                            
+                         {{#link-to 'contract'}}<i class="fa fa-money fa-fw"></i><l> <~i18n .Lang "contract.title"~></l>{{/link-to}}
+                    </li> 
+                    <li >                            
+                         {{#link-to 'analyst'}}<i class="fa fa-trophy fa-fw"></i><l> <~i18n .Lang "analyst.title"~></l>{{/link-to}}
+                    </li>  
+                </ul>
+
+
+            </div>
+        
+        
+        </div>
+
+
+
+    </div> 
+
+</script> 
+
+<script type="text/x-handlebars" data-template-name="profile" >    
+    <div class="row home-box"> 
+        <div class="col-md-9">
+            
+         </div>
+        <div class="col-md-3"> 
+        101 BTC
+            ggyy2014@gmail.com
+             
+        </div>
+    </div>
+</script>

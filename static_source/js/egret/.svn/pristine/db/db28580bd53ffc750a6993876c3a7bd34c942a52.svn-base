@@ -1,0 +1,104 @@
+
+class Grid extends egret.Sprite{
+
+	private imgs:egret.SpriteSheet = RES.getRes("asserts");
+	private lineImg:egret.Bitmap = new egret.Bitmap();
+    private num:number = 0;
+    public constructor(num){
+        super();
+    	this.num = num;
+        this.createView(num);
+    }
+    private spr:egret.Sprite = new egret.Sprite();
+    private grid:egret.Shape = new egret.Shape();
+    private createView(num):void {
+
+        // this.lineImg.texture = this.imgs.getTexture("sp_"+num);
+        // this.addChild(this.lineImg);
+        if(num == 1){
+            this.grid.graphics.beginFill(0x000000, 1);
+        }else{
+            this.grid.graphics.beginFill(0xFFFFFF, 1);
+        }
+        this.grid.graphics.drawRect(0, 0, 116, 107);
+        this.grid.graphics.endFill();
+        this.grid.width = 116;
+        this.grid.height = 107;
+        this.addChild( this.grid );
+        // this.lineImg.touchEnabled = true;
+
+        //绘制一个透明度为1的绿色矩形，宽高为100*80
+        var shp:egret.Shape = new egret.Shape();
+        shp.graphics.lineStyle( 1, 0x000000 );
+        shp.graphics.moveTo( 0,0 );
+        shp.graphics.lineTo( 116, 0 );
+        shp.graphics.lineTo( 116, 107 );
+        shp.graphics.lineTo( 0, 107 );
+        shp.graphics.lineTo( 0, 0 );
+        shp.graphics.endFill();
+        this.addChild( shp );
+
+        //绘制一个透明度为1的绿色矩形，宽高为100*80
+        this.spr.graphics.beginFill(0xff0000, 0.6);
+        this.spr.graphics.drawRect(0, 0, 116, 107);
+        this.spr.graphics.endFill();
+        this.spr.width = 116;
+        this.spr.height = 107;
+        this.addChild( this.spr );
+        this.spr.visible = false;
+    }
+
+    public getNum():number{
+        return this.num;   
+    }
+    private curNum:number = 0;
+    public setCurNum(num):void{
+        this.curNum = num;  
+    }
+
+    public getCurNum():number{
+        return this.curNum;
+    }
+
+    public updateDateNum(num):void{
+        // this.lineImg.texture = this.imgs.getTexture("sp_"+num);
+        this.grid.graphics.clear();
+        if(num == 1){
+            this.grid.graphics.beginFill(0x000000, 1);
+        }else{
+            this.grid.graphics.beginFill(0xFFFFFF, 1);
+        }
+        this.grid.graphics.drawRect(0, 0, 116, 107);
+        this.grid.graphics.endFill();
+        this.grid.width = 116;
+        this.grid.height = 107; 
+            
+        this.num = num;
+    }    
+
+    public warning():void{
+        this.spr.visible = true;
+        egret.setTimeout(function () {
+            this.spr.visible = false;
+        }, this, 100); 
+        egret.setTimeout(function () {
+            this.spr.visible = true;
+        }, this, 200); 
+        egret.setTimeout(function () {
+            this.spr.visible = false;
+        }, this, 300); 
+        egret.setTimeout(function () {
+            this.spr.visible = true;
+        }, this, 400); 
+        egret.setTimeout(function () {
+            this.spr.visible = false;
+        }, this, 500); 
+        // egret.setTimeout(function () {
+        //     this.spr.visible = true;
+        // }, this, 600); 
+    }
+
+    public reset():void{
+        this.spr.visible = false;
+    }
+}

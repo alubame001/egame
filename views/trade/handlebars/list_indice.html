@@ -1,0 +1,22 @@
+
+<script type="text/x-handlebars" data-template-name="list_indice">  
+    <div class="collapse navbar-collapse border">
+        <ul class="nav navbar-nav">    
+                    {{#each item in model.indice}}
+                        <li>
+                           {{#link-to 'cfddetail' item.symbol}} 
+                            <~if eq .Lang "zh-CN"~>
+                               {{item.cid}}   
+                            <~end~>
+                            <~if eq .Lang "en-US"~>
+                               {{item.eid}}   
+                            <~end~>
+                           <span class='buy'>{{item.buyPrice}}</span>
+                           <span class='sell'>{{item.sellPrice}}</span>
+                           {{/link-to}}                             
+                          
+                        </li>   
+                    {{/each}}            
+        </ul>            
+    </div>    
+</script>

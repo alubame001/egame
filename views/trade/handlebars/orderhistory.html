@@ -1,0 +1,51 @@
+
+<script type="text/x-handlebars" data-template-name="orderhistory">
+
+<div class="btn-toolbar" role="toolbar">
+    <div class="btn-group play-mode" data-toggle="buttons-radio">
+
+      <button  {{action  'setFilter' }}    class="btn btn-default active" type="button">All</button>
+      <button {{action 'setFilter' 'sell'}}  class="btn btn-default" type="button">Sell</button>
+      <button {{action 'setFilter'  'buy'}}  class="btn btn-default" type="button">Buy</button>
+               
+    </div>
+</div>
+{{#if controller.paginatedContent}}
+     <table border="1">
+        <tr>
+            <th>时间</th>
+            <th>合约</th>
+            <th>类型</th>
+            <th>委托价格</th> 
+            <th>委托金额</th>
+            <th>成交金额</th>
+            <th>成交均价</th>
+            <th>操作</th>
+        </tr>     
+        {{#each item in controller.paginatedContent}}
+        <tr>
+            <td>{{item.createDate}} </td>   
+            <td>{{item.name}} </td>  
+            <td>{{item.type}} </td>   
+            <td>{{item.price}} </td>  
+            <td>{{item.amount}} </td>   
+            <td>{{item.dealAmount}} </td>   
+            <td>{{item.avgPrice}} </td>    
+            <td> link to .. </td>
+        </tr>                                                                                                                                   
+         {{/each}}        
+    </table>
+<nav>
+  <ul class="pagination">
+    <li><button  {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button></li>
+      {{#each pages}}
+      {{view WebApp.PaginationView contentBinding="this"}}
+      {{/each}}
+
+    <li><button  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+      <li>{{controller.currentPage}}  / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+</nav>
+{{else}}
+   <strong> No Data </strong>
+{{/if}}
+</script>

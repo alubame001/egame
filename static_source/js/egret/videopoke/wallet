@@ -1,0 +1,84 @@
+ybc  : 3808.35470471
+doge 191369711.55248043       +100000000  +33B()，要4亿  差一亿
+litecoin 39408.64778772  +9000 +20000 +9700   +200B()       ，要8万，差            
+btc 151.34404764 +50 + 223+248+304 -44 = 976  -336  -233B
+
+
+<style type="text/css">
+
+.wrap {
+  width: 900px;
+  margin: 0 auto;
+}
+.address { 
+  height: 600px;
+  margin-bottom: 32px;
+}
+.address dl {
+  width: 180px;
+  float: left;
+}
+.address dt {
+  margin-bottom: 30px;
+  width: 180px;
+  font-size: 16px;
+  color: #f60;
+  text-align: center;
+
+}
+.address ul {
+  width: 720px;
+  float: left;
+}
+.address li {
+  display: list-item
+  height: 86px;
+  white-space: nowrap;
+}
+.address li h3 {
+  font-size: 20px;
+  line-height: 25px;
+  padding-top: 8px;
+}
+.address li p font {
+  font-size: 11px;
+}
+.public {
+   border-collapse: collapse;
+  border-spacing: 0;	
+} 
+
+ </style>
+
+<div class="wrap mb10">
+  <div class="address">
+     <dl>
+       <dt>
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="public">
+          <tbody><tr>
+            <td align="center" height="86" valign="middle">BTC 冷钱包地址</td>
+          </tr>
+        </tbody></table>
+	   </dt>
+       <dt>
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td align="center" height="86" valign="middle">LTC 冷钱包地址</td>
+          </tr>
+        </tbody></table>
+       </dt>
+     </dl>
+     <ul>
+         <li>
+         <h3><a href="https://blockchain.info/zh-cn/address/18q5rdpfMsVXkz9TiR4auGLuubvgs851Q9" target="_blank">18q5rdpfMsVXkz9TiR4auGLuubvgs851Q9</a></h3>
+         <p>签名信息：<font>btc-dice.com</font></p>
+         <p>签名：<font>G0d+kit4KsRdnjck/6bsCThUv6n+ZJHow6jD87WqNM8ou0ZcLMz86dQjSaPvsAUorfWBWZR/rgKz79Z3R1xiW10=</font></p>
+         </li>
+         <li>
+         <h3><a href="http://ltc.blockr.io/address/info/Lh613tQNmxcHP42rAT8cxiyMt23mjRtnRu" target="_blank">Lh613tQNmxcHP42rAT8cxiyMt23mjRtnRu</a></h3>
+         <p>签名信息：<font>btc-dice.com</font></p>
+         <p>签名：<font>Hw/pU9a73kMVMne7nMDRT6715IUL50aphNvwI3uLrlDc0f2rncS9XQPwhMCQllcvsumiBQ/+vTbPyr1ADhgxcUE=</font></p>
+         </li>
+     </ul>
+  </div>
+</div>

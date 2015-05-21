@@ -1,0 +1,85 @@
+
+class LineGrid extends egret.Sprite{
+
+    private imgs:egret.SpriteSheet = RES.getRes("asserts");
+    private w:number = 0;
+    private h:number = 0;
+    public constructor(stageW,stageH){
+        super();
+        this.w = stageW;
+        this.h = stageH;
+    }
+    private spr:egret.Sprite = new egret.Sprite();
+    private curNum:number = 1;
+    private gridArr:Array<any> = [];
+    public initData(curNum):void {
+		var num:number = Math.ceil(Math.random()*4);
+        // num = 1;
+		for(var j:number = 1;j <= 4;j++){
+			var grid:Grid;
+			if(j == num){
+				grid = new Grid(1);
+			}else{
+				grid = new Grid(4);
+			}
+			this.addChild(grid);
+			grid.x = grid.width*(j - 1);
+			grid.touchEnabled = true;
+			grid.setCurNum(curNum);
+			grid.addEventListener(egret.TouchEvent.TOUCH_TAP , this.onGridTouchTap ,this);
+			this.gridArr.push(grid);
+		}  	
+    }
+    //点击事件
+    private isPlay:boolean = false;
+    private isOver:boolean = false;
+    private onGridTouchTap(e:egret.TouchEvent):void{
+
+    	var grid:Grid = e.currentTarget;
+    	// console.log("curNum"+grid.getCurNum()+"--"+this.curNum);
+        if(this.isOver||(grid.getCurNum() != this.curNum)){
+          console.log("aaaaaaaaaa");  
+          return;
+        }
+
+        if((this.curNum == 1)&&(grid.getNum() == 1)){
+          this.dispatchEvent(new egret.Event("nextGrid")); 
+        }else if(this.curNum != 1){
+          if(grid.getNum() == 4){
+            this.dispatchEvent(new egret.Event("wrong")); 
+            grid.warning();
+            this.isOver = true;
+          }else{
+            this.dispatchEvent(new egret.Event("nextGrid")); 
+          }          
+        }
+    }
+
+    public updateGrid(maxNum):void{
+    	var num:number = Math.ceil(Math.random()*4);
+        // num = 1;
+		for(var i:number = 1;i <= 4;i++){
+			var grid:Grid = this.gridArr[i - 1];
+			if(i == num){
+				grid.updateDateNum(1);
+			}else{
+				grid.updateDateNum(4);
+			}
+			grid.reset();
+			grid.setCurNum(maxNum);
+		}
+    }
+
+    public updateCurNum(curNum):void{
+    	this.curNum = curNum;
+    }
+
+    public getWidth():number{
+      return this.spr.width;
+    }
+
+    public getHeight():number{
+      return this.spr.height;
+    }
+
+}

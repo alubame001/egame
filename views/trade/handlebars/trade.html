@@ -1,0 +1,80 @@
+
+<script type="text/x-handlebars" data-template-name="trade/index">
+<div class ='container'>
+    <div class="row home-box"> 
+        <div class="col-md-12">
+            <div class="table-responsive">  
+                <table class="table table-striped table-hover table-condensed table-bordered border">
+       
+                    <tr>
+                       <th> 创始日期</th>
+                       <th> 基金名称</th>           
+                       <th> 每份净值</th>
+                       <th> 总净值</th>
+                       <th> 发行数</th> 
+                       <th> 持仓金额</th> 
+                       <th> 持仓利润</th>
+                       <th> 已平仓数</th> 
+                       <th> 平仓利润</th>
+                       
+                    </tr> 
+                 {{#each item in model.currency}}   
+                    <tr>              
+                        <td width='10%'>{{item.kind}} </td>               
+                        <td width='20%'> {{item.cid}}      </td>  
+                        <td width='10%'>{{item.buyPrice}} </td>              
+                        <td width='10%'>{{item.sellPrice}} </td> 
+                        <td width='10%'>{{item.amount}} </td>                   
+                        <td width='10%'>{{item.holdTotalAmount}}</td>     
+                        <td width='10%'>{{item.holdTotalProfit}} </td>  
+                        <td width='10%'>{{item.closedAmount}} </td>  
+                        <td width='10%'>{{item.closedProfit}} </td>   
+
+                      
+                                    
+                    </tr> 
+                 {{/each}}  
+
+                 {{#each item in model.currency}}   
+                    <tr>              
+                        <td width='10%'>{{item.kind}} </td>               
+                        <td width='20%'> {{item.cid}}      </td>  
+                        <td width='10%'>{{item.buyPrice}} </td>              
+                        <td width='10%'>{{item.sellPrice}} </td> 
+                        <td width='10%'>{{item.amount}} </td>                   
+                        <td width='10%'>{{item.holdTotalAmount}}</td>     
+                        <td width='10%'>{{item.holdTotalProfit}} </td>  
+                        <td width='10%'>{{item.closedAmount}} </td>  
+                        <td width='10%'>{{item.closedProfit}} </td>   
+
+                      
+                                    
+                    </tr> 
+                 {{/each}}  
+                      
+                </table>  
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+</div>
+                
+</script>
+<script type="text/x-handlebars" data-template-name="trade">
+<div class='main-header'>
+<div class ='container'>
+    <div class="row home-box"> 
+        <div class="col-md-12">     
+                 {{outlet}}
+        </div>
+    </div>
+
+</div>
+</div>
+</script>

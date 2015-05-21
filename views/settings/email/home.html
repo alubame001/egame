@@ -1,0 +1,75 @@
+<~template "base/base.html" .~>
+<~template "base/base_common.html" .~>
+<~define "meta"~><title><~i18n .Lang "auth.user_profile"~> - <~i18n .Lang "app_name"~></title><~end~>
+<~define "body"~>
+<div class="row">
+    <div id="content">
+        <div class="col-md-3">
+            <div class="box">
+                <ul class="nav nav-side">
+                    <li class="cell first">
+                        <h4 class="head"><i class="icon icon-cogs"></i> <~i18n .Lang "auth.user_settings"~></h4>
+                    </li>
+                    <li class="active">
+                        <a href="<~.AppUrl~>settings/profile"><~i18n .Lang "auth.user_profile"~></a>
+                    </li>
+                    <li class="">
+                        <a href="<~.AppUrl~>settings/resetpassword"><~i18n .Lang "auth.reset_password"~></a>
+                    </li>
+
+
+
+                    <li class="cell last">
+                    </li>
+                </ul>
+            </div>
+    	</div>
+        <div class="col-md-9">
+            <div class="box">
+                <div class="cell first breadcrumb">
+                    <a href="<~.AppUrl~>"><i class="icon icon-home"></i></a><i class="divider icon-angle-right"></i><a href=""><~i18n .Lang "auth.user_profile"~></a>
+                </div>
+                <div class="cell last slim">
+                   <~template "settings/form_title.html" .~>    
+                    
+                    <h3 class="underline"><~i18n .Lang "auth.base_profile"~></h3> 
+                        <~timesince .Lang .User.LastActiveEmailUpdated~>
+                    <form method="POST" action="<~.AppUrl~>settings/profile/sendactivemail">
+                         <~.xsrf_html~><~.once_html~>
+
+                        <~template "settings/email/email.html" .~>    
+
+
+
+
+
+                        <~if .User.IsActiveEmail~>
+                        <~else~>
+                            <div class="form-group">
+                            <button id="verify-mail-send" type="button" data-loading-text="<~i18n .Lang "auth.verify_email_sended"~>" class="btn btn-warning btn-xs"><~i18n .Lang "auth.send_verify_email"~></button>
+                            </div>
+                        <~end~>
+                    </form>
+
+             
+                
+               
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<script type="text/javascript">
+    $('#EmailForm-Email').attr("disabled","disabled");
+    (function($){
+        $(document).on("click", "#verify-mail-send", function(){
+            var $btn = $(this);
+            $btn.button("loading");
+            $.post("<~.AppUrl~>settings/profile/email", {action:"send-verify-email"}, function(data){
+            });
+        });
+    })(jQuery);
+
+</script>
+<~end~>

@@ -1,0 +1,127 @@
+        
+<script type="text/x-handlebars" data-template-name="analystdata">
+<div class='well'>
+<div class="btn-group">
+         {{input value=searchString  placeholder="请输入搜索内容:"  action="updateSeachString" on="enter"}}
+  <button type="button" class="btn btn-default" {{action  "all" }}>全部</button>
+  <button type="button" class="btn btn-default" {{action  "choose"  "gold" }}>黄金/白银</button>
+  <button type="button" class="btn btn-default" {{action  "choose"  "index" }}>外汇</button>
+  <button type="button" class="btn btn-default" {{action  "choose"  "currency" }}>股指</button>
+
+
+</div>
+
+
+{{#if controller.paginatedContent}} 
+    <div class="row home-box"> 
+        <div class="col-md-12">
+
+
+                <div class="indesAnalyst">
+                    <ul class="AnalystToolbar">
+                        <li class="UserInfor">分析师</li>
+                        <li class="twoh">
+                            总收益率<br>月总收益率<br>
+                        </li>
+
+                        <li class="twoh">
+                            总收益<br>月总收益<br>
+                        </li>   
+                        <li class="twoh">
+                            开仓金额<br>实时盈亏<br>
+                        </li>    
+                        <li class="twoh">
+                           已平仓金额<br>已结算盈亏<br>
+                        </li>   
+                        <li class="twoh">
+                           胜率<br> 平均收益<br>
+                        </li>   
+
+
+   
+                        <li class="iTradeMap">
+                            跟单人数</li>
+                    </ul>
+                     {{#each item in paginatedContent}}   
+                        <ul class="AnalystPanel">
+                            <li class="UserInfor">
+                                <div>
+                                    <img src="static/img/avatar/jemeshsu-04_normal.png" class="Analystpicture">
+                                </div>
+                                <div style="float: left;">  
+                                    <p class="Analystname" style="line-height: 25px;">
+                                       
+                                            
+                                      {{#link-to 'analyst.person' item.aid}} {{item.nick}} {{/link-to}} 
+                                    </p>
+                                    <p style="line-height: 25px; padding-top: 0px;">
+                                       <i class="fa fa-trophy fa-fw"></i>
+                                       <i class="fa fa-trophy fa-fw"></i>
+                                       <i class="fa fa-trophy fa-fw"></i>
+                                       
+                                    </p>
+
+
+                                </div>
+                                <div style="clear: both;">
+                                </div>
+                            </li>
+                            <li>
+                                {{item.total_profit_percent}}%<br>
+                                {{item.monthly_profit_percent}}%
+                            </li>
+                            <li>
+                                {{item.total_profit}}<br>
+                                {{item.monthly_profit}}
+                            </li>     
+                            <li>
+                                {{item.hold_total_amount}}<br>
+                                {{item.hold_total_profit}}
+                            </li>  
+                            <li>
+                               0<br>
+                               0
+                            </li> 
+
+                            <li>
+                                 {{item.winning_percent}}%<br>
+                                {{item.avg_profit}} <span>点</span>
+                            </li>                                                                                    
+                            <li class="iTradeMap">
+                     
+                                   
+                                        <span class="Number">
+                                           {{item.follow_person}}</span>&nbsp;人跟单
+                    
+      
+                            </li>
+                        </ul>
+                    {{/each}}       
+
+                </div>  
+        </div>
+    </div>
+
+
+  <nav>
+    <ul class="pagination">
+      <li><button  {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button></li>
+        {{#each pages}}
+        {{view WebApp.PaginationView contentBinding="this"}}
+        {{/each}}
+
+      <li><button  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+        <li>{{controller.currentPage}}  / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+
+  </nav>
+{{else}}
+
+      <strong> No Data </strong>
+{{/if}}
+
+
+</div>
+
+</script>
+
+

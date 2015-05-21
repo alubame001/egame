@@ -1,0 +1,9 @@
+{
+    "name": "socket",
+    "dependence": ["core"],
+    "output":"core/extension/jquery",
+    "source":"src/extension/jquery",
+    "file_list": [        
+        "jquery.ts"
+    ]
+}

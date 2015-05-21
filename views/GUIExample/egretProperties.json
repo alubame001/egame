@@ -1,0 +1,18 @@
+{
+	"document_class": "GUIExplorer",
+	"native": {
+		"path_ignore": []
+	},
+	"modules": [
+		{
+			"name": "core"
+		},
+		{
+			"name": "res"
+		},
+		{
+			"name": "gui"
+		}
+	],
+	"egret_version": "1.6.0"
+}

@@ -1,0 +1,337 @@
+.row {
+   margin-right: 0px; 
+   margin-left: 0px; 
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0px; 
+   padding-left: 0px; 
+}
+.panel-body {
+  padding: 2px;
+}
+.match-background{
+  --background-color: wheat;
+  border: 2px;
+}
+
+.panel-heading {
+  padding: 0px 5px; 
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.panel-footer {
+   padding: 1px 5px; */
+  background-color: #f5f5f5;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.main-header{
+  margin-bottom: 30px;
+
+}
+.input-prepend {
+  /* width: 32px; */
+  /* background-color: #fff; */
+  position: absolute;
+  /* height: 26px; */
+  --padding-left: 12px;
+  padding-top: 2px;
+}
+/*
+input, textarea, keygen, select, button {
+  margin: 0em;
+  font: normal normal normal 13.3333330154419px/normal Arial;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+}
+*/
+.ml30{
+margin-left: 30px;
+
+}
+.ml20{
+margin-left: 20px;
+
+}
+#main {
+  margin-top: 10px;
+}
+ul.nav.navbar-nav li .active {
+  color: #D34000;
+  background-color: transparent;
+}
+
+.panel {
+  margin-bottom: 2px;
+
+}
+.form-group {
+  margin-bottom: 15px;
+  margin-top: 15px;
+ 
+}
+.mt10{
+margin-top: 10px;s
+
+}
+/*---trade
+
+#market_trades {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  width: 280px;
+  height: 373px;
+  min-height: 373px;
+  z-index: 999;
+}
+#market_list {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 280px;
+  height: 210px;
+  z-index: 999;
+}
+#market_list .panel {
+  width: 280px;
+  height: 210px;
+}
+.panel {
+  margin-bottom: 20px;
+  background-color: #151515;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+*/
+
+.table-sf{
+  font-size:  10px;
+}
+
+.container {
+   padding-right: 1px; 
+   padding-left: 1px; 
+   margin-right: auto; 
+   margin-left: auto; 
+}
+
+.navbar {
+  position: relative;
+  z-index: 1000;
+  min-height: 50px;
+  margin-bottom: 1px; /*was 18 px*/
+  border: 1px solid transparent;
+}
+
+#main {
+   margin-top: 1px;  /*was 30 px*/
+}
+/*---- login panel */
+
+
+
+
+.banner_bg .banner .dzing_box {
+  width: 230px;
+  height: 253px;
+  right: 0;
+  top: -383px;
+  padding: 10px 20px;
+  margin-top: 42px;
+  position: absolute;
+  background: none repeat scroll 0 0 rgba(17, 17, 17, 0.45);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66111111, endColorstr=#66111111);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.dzing_box_account {
+  height: 53px;
+  border-bottom: 1px solid #fff;
+  padding: 1px 0;
+  color: #fff;
+}
+.dzing_box_account p {
+  margin: 0px;
+  padding: 0px;
+  width: 189px;
+}
+.dzing_box_account p a {
+  color: #fff;
+  font-size: 13px;
+}
+
+.dzing_box_xq {
+  height: auto;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 25px;
+}
+.dzing_box_xq p em {
+  margin-right: 5px;
+}
+em {
+  font-style: normal;
+}
+.dzing_box_xq p span.a1 {
+  width: 112px;
+  height: 19px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+.dzing_box_account img {
+  width: 50px;
+  height: 50px;
+  float: left;
+  -webkit-border-radius: 50em;
+  -moz-border-radius: 50em;
+  border-radius: 50em;
+  vertical-align: top;
+}
+
+.dzing_box_account p.a1 {
+  margin-top: 27px;
+  margin-left: 40px;
+}
+.dzing_box_account p {
+  margin: 0px;
+  padding: 0px;
+  width: 189px;
+}
+
+.dzing_box_account p.a1 a {
+  float: right;
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 10px;
+}
+.dzing_box_account p a {
+  color: #fff;
+  font-size: 13px;
+}
+.lightorange {
+  color: #ff9900;
+}
+
+.lightred {
+  color: #e33d3d;
+}
+
+.lightgreen {
+  color: #5cc07b;
+}
+
+.dzing_box_xq p i {
+  width: 12px;
+  height: 12px;
+  background: #b9b9b9;
+  -webkit-border-radius: 50em;
+  -moz-border-radius: 50em;
+  border-radius: 50em;
+  display: inline-block;
+  line-height: 12px;
+  text-align: center;
+  color: #fff;
+  margin-right: 2px;
+  font-style: normal;
+  font-size: 10px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.dzing_box_xq p i a {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+ -- color: #fff;
+}
+
+.home_register .hd {
+  padding: 0 20px;
+  color: #FFF;
+  height: 32px;
+}
+#alert{
+ margin-top: 2px;
+}
+/*
+#egretCanvas {
+    transform: scale(0.9, 0.9);
+    -ms-transform: scale(0.9, 0.9);
+    -webkit-transform: scale(0.9, 0.9);
+    -o-transform: scale(0.9, 0.9);
+    -moz-transform: scale(0.9, 0.9);     
+}
+#gameDiv{
+width :384px;
+height :640px;
+
+}
+*/
+
+.result.win, .result.lose {
+  padding: 2px 0px;
+  --border-top: 1px solid #CCC;
+  border-bottom: 1px solid #AAA;
+  font-size: 14px;
+}
+.result div {
+  display: inline-block;
+}
+.who, .when, .compare, .profit, .payout {
+  width: 100px;
+}
+.commontime{
+    width: 160px;
+}
+.left-window{
+  height :480px ;
+}
+
+.btn:hover, .btn:focus {
+color: #f04c5c;
+  background-color: transparent;
+}
+
+
+
+#front .container {
+  max-width: 1000px;
+}
+
+/*
+@media only screen and (min-width: 321px) and (max-width: 1024px) {
+  .game{  
+    -moz-transform:scale(0.9,0.9);  
+    -webkit-transform:scale(0.9,0.9);  
+    -o-transform:scale(0.9,0.9);  
+  }  
+
+  .cell {
+  padding: 1px 1px;
+  border-top: 2px solid #fff;
+  border-bottom: 1px solid #e2e2e2;
+  }
+}
+*/

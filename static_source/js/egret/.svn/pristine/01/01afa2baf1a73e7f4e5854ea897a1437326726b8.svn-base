@@ -1,0 +1,122 @@
+
+
+// module game {
+
+// 	export class ConnectionUtils{
+
+// 		public constructor(){
+			
+// 		}
+// 	    /**
+// 	     * 加载进度界面
+// 	     */
+// 	    private static loadingView:LoadingUI;		
+// 	    public static con:egret.Sprite;
+// 	    private static callBack:Function;
+// 	    //品牌动画
+// 	    private static logo:LogoUI;
+// 	    private static w:number = 0;
+// 	    private static h:number = 0;
+// 		//设置加载进度界面
+// 		public static setLoading(stageW,stageH,con:egret.Sprite,callBack:Function):void
+// 		{ 
+// 			this.w = stageW;
+//     		this.h = stageH;
+// 			this.con = con;
+// 			this.callBack = callBack;
+// 	        //设置加载进度界面
+// 	        this.loadingView  = new LoadingUI();
+// 	        this.con.addChild(this.loadingView);
+
+// 	        //初始化Resource资源加载库
+// 	        RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);
+// 	        RES.loadConfig("resource/resource.json","resource/");
+// 		} 
+
+// 	    /**
+// 	     * 配置文件加载完成,开始预加载preload资源组。
+// 	     */
+// 	    public static onConfigComplete(event:RES.ResourceEvent):void{
+// 	        RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);
+// 	        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
+// 	        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
+// 	        RES.loadGroup("preload");
+// 	    }
+// 	    /**
+// 	     * preload资源组加载完成
+// 	     */
+// 	    public static onResourceLoadComplete(event:RES.ResourceEvent):void {
+// 	        if(event.groupName=="preload"){
+// 	            this.con.removeChild(this.loadingView);
+// 	            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
+// 	            RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
+// 	            // this.onConfigComplete2();
+// 	            // this.createGameScene();
+// 	            this.showLogo2();
+// 	        }
+// 	    }		
+// 	    /**
+// 	     * preload资源组加载进度
+// 	     */
+// 	    public static onResourceProgress(event:RES.ResourceEvent):void {
+// 	        if(event.groupName=="preload"){
+// 	            this.loadingView.setProgress(event.itemsLoaded,event.itemsTotal);
+// 	        }
+// 	    }
+
+// 	    /**
+// 	     * 配置文件加载完成,开始预加载sound资源组。
+// 	     */
+// 	    public static onConfigComplete2():void{
+// 	        RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);
+// 	        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete2,this);
+// 	        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress2,this);
+// 	        RES.loadGroup("soundload");
+// 	    }
+// 	    /**
+// 	     * sound资源组加载完成
+// 	     */
+// 	    public static onResourceLoadComplete2(event:RES.ResourceEvent):void {
+// 	        if(event.groupName=="soundload"){
+// 	            this.con.removeChild(this.loadingView);
+// 	            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete2,this);
+// 	            RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress2,this);
+// 	            if(this.callBack != null){
+// 	            	this.callBack();
+// 	            }
+// 	            // this.con.dispatchEvent(new egret.Event("hideMenue"));
+// 	        }
+// 	    }
+// 	    /**
+// 	     * sound资源组加载进度
+// 	     */
+// 	    public static onResourceProgress2(event:RES.ResourceEvent):void {
+// 	        if(event.groupName=="soundload"){
+// 	            this.loadingView.setProgress(event.itemsLoaded,event.itemsTotal);
+// 	        }
+// 	    }
+
+// 	    public static showLogo2():void{
+// 	        var stageW:number = this.w;
+// 	        var stageH:number = this.h;
+
+// 	        this.logo = new LogoUI(stageW,stageH);
+// 	        this.con.addChild(this.logo);
+// 	        this.logo.x =  this.w/2 - this.logo.width/2 - 30;
+// 	        this.logo.y =  0;
+// 	        var onComplete1:Function = function(){
+// 	            this.con.removeChild(this.logo);
+// 				// this.con.dispatchEvent(new egret.Event("hideMenue"));
+// 				if(this.callBack != null){
+// 		            	this.callBack();
+// 		            	console.log("gagagagagag");
+// 		        }
+// 	        };  
+// 	        var showLogoOver:Function = function(){
+// 	            egret.Tween.get(this.logo, { loop: false }).to({ alpha: 0 }, 1000).call(onComplete1,this);
+// 	        };  
+// 	        this.logo.addEventListener("showLogoOver" , showLogoOver ,this);
+// 	    }
+
+// 	}
+// }

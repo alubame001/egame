@@ -1,0 +1,14 @@
+var game_file_list = [
+    "CrossAppUtils/EffectUtils.js",
+    "component/Grid.js",
+    "component/LineGrid.js",
+    "component/GridCon.js",
+    "component/LineUI.js",
+    "CrossAppUtils/AboutUS.js",
+    "CrossAppUtils/LoadingUI.js",
+    "CrossAppUtils/LogoUI.js",
+    "Ground.js",
+    "component/Board.js",
+    "component/LogoTitle.js",
+    "GameApp.js"
+];

@@ -1,0 +1,29 @@
+
+
+    <div class="row">
+        <div class="col-md-6">
+        	<div class ="disabled">
+	        <~template "base/form/field_group.html" .EmailFormSets.Fields.Email~>
+	        </div>
+        </div>    
+        <div class="col-md-6">
+            <~with .ProfileFormSets.Fields.Email~>
+            <div class="form-group<~if .Error~> has-error<~end~><~if not $.User.IsActiveEmail~> has-warning<~end~>">
+                <~.Label~>
+                <~call .Field~>
+                <p class="error-block">
+                    <~if .Error~><~.Error~><~else~>
+                        <~if not $.User.IsActiveEmail~><~i18n $.Lang "auth.please_verify_email"~><~end~>
+                    <~end~>
+                </p>
+                <~if .Help~><p class="help-block"><~.Help~></p><~end~>
+            </div>
+            <~end~>
+
+           
+
+
+        </div>
+
+
+    </div>

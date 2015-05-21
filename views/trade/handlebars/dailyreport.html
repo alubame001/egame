@@ -1,0 +1,64 @@
+<script type="text/x-handlebars" data-template-name="dailyreport">
+{{#if controller.paginatedContent}} 
+    <div class="row home-box"> 
+        <div class="col-md-12">
+
+            <div class="table-responsive">  
+                <table class="table table-striped table-hover table-condensed table-bordered border">
+                    <tr>
+                        <th>日期</th>           
+                        <th>客户人数</th>
+
+                        <th>持仓金额</th>                    
+                       
+                        <th>平仓金额</th> 
+                        <th>持仓利润</th>                       
+                        <th>平仓利润</th>                            
+                        <th>总利润</th>  
+                    </tr>     
+
+
+                    {{#each item in controller.paginatedContent}}
+                        <tr class='master'>
+                            <td>{{item.time}} </td>       
+                            <td>{{item.customerCount}} </td>  
+                            <td>{{item.holditemAmount}} </td>
+                            <td>{{item.closeditemAmount}} </td>   
+                            <td>{{item.holdProfit}} </td>                                                      
+                            <td>{{item.closedProfit}} </td>  
+                            <td>{{item.totalProfit}} </td>  
+                        </tr>  
+                     
+                     {{/each}}        
+                </table>
+           </div>
+        </div>
+    </div>
+
+  <nav>
+    <ul class="pagination">
+      <li><button  {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button></li>
+        {{#each pages}}
+        {{view WebApp.PaginationView contentBinding="this"}}
+        {{/each}}
+
+      <li><button  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+        <li>{{controller.currentPage}}  / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+
+    <h2>     </h2> 
+
+  </nav>
+
+
+
+
+{{else}}
+
+      <strong> No Data </strong>
+{{/if}}
+ 
+</script>
+
+
+
+

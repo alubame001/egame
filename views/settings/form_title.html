@@ -1,0 +1,27 @@
+ <~if .flash.NeedActive~>
+<div class="alert alert-info">
+    <h4><~i18n .Lang "auth.need_active"~></h4>
+    <~i18n .Lang "auth.need_active_message"~>
+</div>
+<~else if .flash.RegSuccess~>
+<div class="alert alert-success">
+    <h4><~i18n .Lang "auth.register_success"~></h4>
+    <~i18n .Lang "auth.register_success_message"~>
+</div>
+<~else if .flash.ProfileSave~>
+<div class="alert alert-success">
+    <~i18n .Lang "auth.profile_saved"~>
+</div>
+<~else if .flash.PasswordSave~>
+<div class="alert alert-success">
+    <~i18n .Lang "auth.password_changed"~>
+</div>
+<~else if .flash.ConnectSuccess~>
+<div class="alert alert-success">
+    <~i18n .Lang "auth.sign_connect_success_to" .flash.ConnectSuccess~>
+</div>
+<~else if .flash.ConnectFailed~>
+<div class="alert alert-success">
+    <~i18n .Lang "auth.sign_connect_error_to" .flash.ConnectFailed~>
+</div>
+<~end~>

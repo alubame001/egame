@@ -1,0 +1,89 @@
+<script type="text/x-handlebars" data-template-name="hold">
+{{#if controller.paginatedContent}} 
+    <div class="row home-box"> 
+        <div class="col-md-12">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group play-mode" data-toggle="buttons-radio" >
+                  <button  {{action  'setFilter' }}    class="btn btn-default" type="button">All</button>
+                  <button {{action 'setFilter' 'sell'}}  class="btn btn-default" type="button">Sell</button>
+                  <button {{action 'setFilter'  'buy'}}  class="btn btn-default" type="button">Buy</button>               
+                </div>
+            </div>
+            <div class="table-responsive">  
+                <table class="table table-striped table-hover table-condensed table-bordered border">
+                    <tr>
+                        <th>持有人</th>           
+                        <th>合约</th>
+                        <th>类型</th>
+                         <th>时间</th>
+                        <th>平均成本</th> 
+                        <th>持仓金额</th> 
+                        <th>盈亏</th>          
+
+                    </tr>     
+
+
+                    {{#each item in controller.paginatedContent}}
+                        <tr class='master'>
+                            <td>{{item.nick}} </td>       
+                            <td>{{item.name}} </td>  
+                            <td>{{item.type}} </td>  
+                            <td>{{item.createDate}} </td>    
+                            <td>{{item.price}} </td>  
+                            <td>{{item.holdTotalAmount}} </td>   
+                            <td>{{item.holdTotalProfit}} </td>   
+                                    
+                            
+                        </tr>  
+                        
+                        {{#if item.holditems}}
+                       
+                        {{#each detail in item.holditems}}
+                        
+                        <tr class='detail'>    
+                            <td></td>   
+                            <td></td>   
+                            <td>{{detail.type}}</td>   
+                            <td>{{detail.createDate}}</td>
+                            <td>{{detail.price}}</td>
+                            <td>{{detail.amount}}</td>                                                
+                            <td></td>    
+                        </tr>
+                        
+                        {{/each}}
+                        
+                        {{/if}}  
+
+                     {{/each}}        
+                </table>
+           </div>
+        </div>
+    </div>
+
+  <nav>
+    <ul class="pagination">
+      <li><button  {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button></li>
+        {{#each pages}}
+        {{view WebApp.PaginationView contentBinding="this"}}
+        {{/each}}
+
+      <li><button  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+        <li>{{controller.currentPage}}  / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+
+    <h2>     </h2> 
+
+  </nav>
+
+
+
+
+{{else}}
+
+      <strong> No Data </strong>
+{{/if}}
+ 
+</script>
+
+
+
+

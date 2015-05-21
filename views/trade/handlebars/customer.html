@@ -1,0 +1,140 @@
+
+
+
+
+<script type="text/x-handlebars" data-template-name="customer/index">
+<div class ='container'>
+
+    <div class="row home-box"> 
+        <div class="col-md-12">
+            {{#if model.currency}}
+                <div class='col-md-4'>
+                    <h2><l> <~i18n .Lang "indice.currency"~></l></h2>            
+                     {{render "indice" model.currency}}
+                 </div>
+            {{/if}}   
+            {{#if model.index}}                     
+                <div class='col-md-4'>
+                    <h2><l><~i18n .Lang "indice.index"~></l></h2>            
+                     {{render "indice" model.index}}
+                 </div>
+            {{/if}}    
+            {{#if model.energy}}                                
+                <div class='col-md-4'>
+                    <h2><l><~i18n .Lang "indice.energy"~></l></h2>            
+                     {{render "indice" model.energy}}
+                 </div>             
+            {{/if}}               
+               
+
+        </div>
+
+        <div class="col-md-12">
+                {{#if model.stock}}         
+                 <div class='col-md-4'>
+                    <h2><l><~i18n .Lang "indice.stock"~></l></h2>            
+                     {{render 'indice' model.stock}}
+                 </div> 
+            {{/if}}  
+        </div>        
+
+
+    </div>
+</div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="customer">
+
+<div class ='container'>
+    <div class="row home-box"> 
+        <div class="col-md-12">
+
+
+               {{outlet}}        
+
+              
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+</script>
+
+        
+
+<script type="text/x-handlebars" data-template-name="customerkind">   
+
+    {{render 'customer.index' model}}    
+    <div class ='container'>
+        <div class="row home-box"> 
+            <div class="col-md-12">
+
+               
+
+
+
+                <ul class="nav nav-tabs" id="myTab"> 
+                    <li class="active"><a href="#holdReport">客户持仓明细</a></li> 
+                    <li><a href="#closedReport">客户已平仓明细</a></li>                    
+                    <li><a href="#dailyReport">客每日盈亏统计</a></li> 
+                    <li><a href="#investReport">投资者列表</a></li> 
+                    <li><a href="#myInvest">我的投资</a></li> 
+                </ul> 
+
+                <div class="tab-content"> 
+                    <div class="tab-pane active" id="holdReport"> {{render 'hold' model.hold}}   </div>
+                    <div class="tab-pane" id="closedReport">...</div>                      
+                    <div class="tab-pane" id="dailyReport"> {{render 'dailyreport' model.dailyreport}}   </div> 
+                    <div class="tab-pane" id="investReport">...</div> 
+                    <div class="tab-pane" id="myInvest">...</div> 
+                </div> 
+
+            </div>
+        </div>
+    </div>    
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="indiceBox2"> 
+{{#if model.customer}}  
+        <ul class="nav nav-tabs" id="customerTab"> 
+
+
+
+
+        <li class=""><a href='#currency'><i></i><~ i18n .Lang "currency" ~></a></li>
+        <li class=""><a href='#index'><~ i18n .Lang "index" ~></a></li>    
+
+        </ul> 
+
+        <div class="tab-content"> 
+             {{#each item in model.customer}}  
+                <div class="tab-pane" {{bind-attr id=item.eid}}>
+                    {{#if item.indices}}  
+                                <table class="table  table-hover table-condensed table-bordered border"> 
+                                    <tr>
+                                        <th>商品名称 </th>
+                                        <th>买入价 </th>
+                                        <th>卖出价 </th>                                        
+                                    </tr>
+                                     {{#each item in item.indices}}  
+                                        <tr> 
+                                        <td>  {{#link-to 'cfd' item.symbol}}{{item.eid}}{{/link-to}}</td>
+                                        <td> {{item.buyPrice}} </td>
+                                        <td>  {{item.sellPrice}} </td> 
+                                        </tr>
+                                    {{/each}}      
+                                </table> 
+                    {{/if}}
+                </div>           
+            {{/each}}  
+        </div> 
+{{/if}}
+</script>
+
+

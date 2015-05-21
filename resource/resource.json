@@ -1,0 +1,34 @@
+{
+"resources":
+        [
+        {"name":"lottery28bg","type":"image","url":"bg/lottery28bg.jpg"},
+        {"name":"bg","type":"image","url":"bg/bg.jpg"},
+        {"name":"logo","type":"image","url":"bg/logo.png"},
+        {"name":"lottery28_door_bg","type":"image","url":"bg/lottery28_door_bg.jpg"},
+        {"name":"load","type":"sheet","url":"assets/load.json"},
+        {"name":"assets","type":"sheet","url":"assets/assets.json"},
+        {"name":"assets2","type":"sheet","url":"assets/assets2.json"},
+        {"name":"reel","type":"sheet","url":"assets/reel.json"},
+        {"name":"gem6_blur","type":"sheet","url":"assets/gem6_blur.json"},
+        {"name":"gem6","type":"sheet","url":"assets/gem6.json"},
+        {"name":"gem7","type":"sheet","url":"assets/gem7.json"},
+        {"name":"rpg","type":"sheet","url":"rpg/rpg.json"},
+        {"name":"fish","type":"sheet","url":"fish/fish.json"},
+        {"name":"coin","type":"sheet","url":"coin/coin.json"},
+        {"name":"12","type":"sheet","url":"12/12.json"},
+        {"name":"lottery28","type":"sheet","url":"lottery28/lottery28.json"},
+        {"name":"menu","type":"sheet","url":"menu/menu.json"},
+        {"name":"number","type":"sheet","url":"number/numbersheet_2c3aae06.json"},
+        {"name":"wheel","type":"sheet","url":"wheel/wheel.json"},
+        {"name":"sound","type":"sound","url":"sound/sound.mp3"},
+        {"name":"click","type":"sound","url":"sound/click.mp3"},
+        {"name":"ui_text","type":"prop","url":"assets/ui.properties"}
+        ],
+
+"groups":
+        [ {"name":"loading","keys":"load,bg,logo,number"},
+        {"name":"preload","keys":"assets,assets2,ui_text,rpg,gem7,wheel,12,coin,fish,lottery28bg,lottery28,lottery28_door_bg,bg,menu"},
+        {"name": "soundload","keys": "sound"},
+        {"name": "clickload","keys": "click"}
+        ]
+}

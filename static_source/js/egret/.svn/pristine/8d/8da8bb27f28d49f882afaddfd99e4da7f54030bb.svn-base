@@ -1,0 +1,31 @@
+
+
+module game {
+
+	export class EffectUtils{
+
+		public constructor(){
+			
+		}
+		
+		//存储cookies
+		public static setCookie(name,value):void
+		{ 
+			document.cookie = name + "="+ value; 
+		} 
+
+		//读取cookies
+		public static getCookie(name):string
+		{ 
+		    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+		 
+		    if(arr=document.cookie.match(reg))
+		 
+		        return arr[2]; 
+		    else 
+		        return null; 
+		} 		
+
+
+	}
+}

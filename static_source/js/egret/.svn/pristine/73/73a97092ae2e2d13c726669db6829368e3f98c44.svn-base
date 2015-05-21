@@ -1,0 +1,116 @@
+
+class Ground extends egret.Sprite{
+
+    private imgs:egret.SpriteSheet = RES.getRes("asserts");
+    private w:number = 0;
+    private h:number = 0;
+    public constructor(stageW,stageH){
+        super();
+        this.w = stageW;
+        this.h = stageH;
+        this.createView();
+    }
+    private spr:egret.Sprite = new egret.Sprite();
+    private gridCon:GridCon;
+    private stopBtn:egret.Bitmap = new egret.Bitmap();
+    private stopOffBtn:egret.Bitmap = new egret.Bitmap();
+    private scoreDescTF = new egret.TextField();
+    private scoreTF = new egret.TextField();
+    public createView():void {
+        // this.removeChildren();
+        //绘制一个透明度为1的绿色矩形，宽高为100*80
+        this.spr.graphics.beginFill(0x000000, 1);
+        this.spr.graphics.drawRect(0, 0, this.w, this.h);
+        this.spr.graphics.endFill();
+        this.spr.width = this.w;
+        this.spr.height = this.h;
+        this.addChild( this.spr );
+        // this.spr.visible = false;
+
+        this.gridCon = new GridCon(this.w,this.h);
+        this.gridCon.initData();
+        this.addChild(this.gridCon);
+        this.gridCon.x = this.w/2 - this.gridCon.width/2;
+        this.gridCon.y = this.gridCon.getHeight();
+
+        this.scoreTF.size = 50;
+        this.scoreTF.width = 400;
+        this.scoreTF.textColor = 0xff0000;
+        this.scoreTF.x = this.w/2 - this.scoreTF.width/2;
+        this.scoreTF.y = 50;
+        this.scoreTF.text = "20'00''";
+        this.scoreTF.textAlign = egret.HorizontalAlign.CENTER;
+        this.addChild( this.scoreTF );
+
+        this.gridCon.addEventListener("nextGrid" , this.onStarGame ,this);
+        this.gridCon.addEventListener("wrong" , this.onWrongNotice ,this);
+        // this.gridCon.addEventListener("resumNotice" , this.onResumNotice ,this);
+        // this.gridCon.addEventListener("resumNotice" , this.onResumNotice ,this);
+        // this.gridCon.addEventListener("resumNotice" , this.onResumNotice ,this);
+    }
+    //点击事件
+    private onStarGame():void{
+        this.playTimer();
+        egret.Tween.get(this.gridCon).to({ y: this.gridCon.y + 200}, 100);
+    }
+    private onWrongNotice():void{
+        this.stopTimer();
+        this.dispatchEvent(new egret.Event("wrong")); 
+    }
+    private isRetry:boolean = true;
+    public onRetry():void{
+        this.scoreTF.text = "20'00''";
+        this.gridCon.y = this.gridCon.getHeight();
+        this.gridCon.initData();
+        this.isRetry = true;
+
+    }
+
+    //计时开始
+    private timer:egret.Timer
+    private timeNum:number = 0;
+    private isPlay:boolean = false;
+    public playTimer():void{
+        if(this.isPlay||(!this.isRetry)){
+            return;
+        }
+        this.isPlay = true;
+        this.timeNum = 0;
+        this.scoreTF.text = "20'00''";
+        // this.scoreTF.text = "0";
+        // this.timeTF.text = "0秒";
+        //创建一个计时器对象
+        this.timer = new egret.Timer(50,0);
+        //注册事件侦听器
+        this.timer.addEventListener(egret.TimerEvent.TIMER,this.timerFunc,this);
+        //开始计时
+        this.timer.start();
+    }    
+    private timerFunc():void
+    {   
+        this.timeNum ++;
+        // this.scoreTF.text = this.timeNum+"秒";
+        
+        var sec:number = Math.ceil((this.timeNum*50)/1000);
+        var mSec:number = (this.timeNum*50 - sec*1000)/10;
+        // console.log("------"+this.timeNum*50);
+        this.scoreTF.text = (20 - sec)+"'"+Math.abs(mSec - 1)+"''";
+        if((sec >= 20)&&(mSec <= 0)){
+            this.scoreTF.text = "0'00'";
+            this.stopTimer();
+            this.dispatchEvent(new egret.Event("wrong")); 
+        }
+    }
+    public stopTimer():void{
+        this.timer.stop();
+        this.isPlay = false;
+        this.isRetry = false;
+    }
+
+
+    public getScore():number{
+        return this.gridCon.getScore();
+    }
+
+
+}

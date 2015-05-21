@@ -1,0 +1,139 @@
+<script type="text/x-handlebars" data-template-name="contract">
+ 
+<div class ='container'>
+    <div class="row home-box"> 
+        <div class="col-md-10">
+            {{outlet}}
+         </div>
+        <div class="col-md-2"> 
+            
+             
+        </div>
+    </div>    
+</div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="contract/index">   
+ 
+    {{render 'contractpage' model.detail}}   
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="contract/uid">
+
+
+<div class ='container'>
+        <div class="row home-box"> 
+            <div class="col-md-12">
+
+               
+
+
+
+                
+
+            </div>
+        </div>
+    </div>  
+
+
+
+
+
+
+
+
+    <div class="row home-box"> 
+        <div class="col-md-9">
+
+                <ul class="nav nav-tabs" id="myTab"> 
+                    <li class="active"><a href="#holdReport">1</a></li> 
+                    <li><a href="#closedReport">2</a></li>                    
+ 
+                </ul> 
+
+                <div class="tab-content"> 
+                    <div class="tab-pane active" id="holdReport"> 
+                        {{render 'contractuid' model.detail}}   
+                        {{partial 'match_panel'}}
+
+                    </div>
+                    <div class="tab-pane" id="closedReport"><div id="container"></div></div>                      
+
+                </div> 
+
+
+
+           
+        </div>
+        <div class="col-md-3"> 
+            
+                {{render 'matchpage' model.sell}} 
+                  
+            
+                {{render 'matchpage' model.buy}} 
+            
+        </div>
+
+    </div>    
+
+</script>
+<script type="text/x-handlebars" data-template-name="contractpage">
+
+
+<div class=''>
+
+
+  {{#if controller.paginatedContent}} 
+    <div class="row home-box"> 
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   {{#if controller.searchEnabled}}{{partial "seach"}}{{/if}}
+                </div>
+                <div class="panel-body">                       
+                    <div class="tab-content">   
+                        <table class="table  table-hover table-condensed table-bordered border"> 
+                            <tr>
+                                <th>合约名称 </th>
+                                <th>最新价 </th>
+                                <th>买入价 </th>
+                                <th>卖出价 </th>                                        
+                            </tr>
+                             {{#each item in paginatedContent}}  
+                                <tr> 
+                                    <td>{{#link-to 'contract.uid' item.uid}}{{item.cid}}{{/link-to}}</td>
+                                    <td>{{item.last_price}}</td>
+                                    <td>{{item.buy_price}}</td>
+                                    <td>{{item.sell_price}}</td> 
+                                </tr>
+                            {{/each}}      
+                        </table> 
+                    </div>
+                </div>
+
+                
+                {{#if controller.paginationEnabled}} 
+                      <div class="panel-footer">  {{partial "seach_pagination"}}</div>        
+               
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+
+{{else}}
+    
+     {{partial "no_data"}}
+{{/if}}
+
+
+</div>
+
+</script>
+
+
+
+
+

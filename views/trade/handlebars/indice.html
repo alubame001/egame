@@ -1,0 +1,70 @@
+
+<script type="text/x-handlebars" data-template-name="indice">   
+
+
+
+{{#if controller.paginatedContent}} 
+    <div class="row home-box"> 
+        <div class="col-md-12">
+
+            <div class="table-responsive">  
+                
+            
+                {{#if model}}  
+                    <table class="table  table-hover table-condensed table-bordered border"> 
+                        <tr >
+                            <th>商品名称 </th>
+                                            
+                            <th>现价 </th>
+                            <th>涨跌 </th> 
+                            <th>涨跌幅 </th>                                                                    
+                        </tr>
+                         {{#each item in paginatedContent}}  
+                            <tr {{bind-attr id=item.eid}}> 
+                            <td>  {{#link-to 'cfd' item.symbol}}
+                            <~if eq .Lang "en-US"~>
+                                {{item.eid}}
+                            <~else~>
+                                {{item.cid}}
+                            <~end~>                                     
+
+                            {{/link-to}}</td>
+    
+                            <td> {{item.price}} </td>
+                            <td>  {{item.change}} </td> 
+                            <td>  {{item.change_rate}} </td> 
+                            </tr>
+                        {{/each}}      
+                    </table> 
+                {{/if}}                           
+           </div>
+        </div>
+    </div>
+
+  <nav>
+    <ul class="pagination">
+      <li><button  {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button></li>
+        {{#each pages}}
+        {{view WebApp.PaginationView contentBinding="this"}}
+        {{/each}}
+
+      <li><button  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+        <li>{{controller.currentPage}}  / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+
+    <h2>     </h2> 
+
+  </nav>
+
+
+
+
+{{else}}
+
+      <strong> No Data </strong>
+{{/if}}
+
+
+
+
+ 
+</script>

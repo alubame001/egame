@@ -1,0 +1,119 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var Ground = (function (_super) {
+    __extends(Ground, _super);
+    function Ground(stageW, stageH) {
+        _super.call(this);
+        this.imgs = RES.getRes("asserts");
+        this.w = 0;
+        this.h = 0;
+        this.spr = new egret.Sprite();
+        this.stopBtn = new egret.Bitmap();
+        this.stopOffBtn = new egret.Bitmap();
+        this.scoreDescTF = new egret.TextField();
+        this.scoreTF = new egret.TextField();
+        this.isRetry = true;
+        this.timeNum = 0;
+        this.isPlay = false;
+        this.w = stageW;
+        this.h = stageH;
+        this.createView();
+    }
+    Ground.prototype.createView = function () {
+        // this.removeChildren();
+        //绘制一个透明度为1的绿色矩形，宽高为100*80
+        this.spr.graphics.beginFill(0x000000, 1);
+        this.spr.graphics.drawRect(0, 0, this.w, this.h);
+        this.spr.graphics.endFill();
+        this.spr.width = this.w;
+        this.spr.height = this.h;
+        this.addChild(this.spr);
+
+        // this.spr.visible = false;
+        this.gridCon = new GridCon(this.w, this.h);
+        this.gridCon.initData();
+        this.addChild(this.gridCon);
+        this.gridCon.x = this.w / 2 - this.gridCon.width / 2;
+        this.gridCon.y = this.gridCon.getHeight();
+
+        this.scoreTF.size = 50;
+        this.scoreTF.width = 400;
+        this.scoreTF.textColor = 0xff0000;
+        this.scoreTF.x = this.w / 2 - this.scoreTF.width / 2;
+        this.scoreTF.y = 50;
+        this.scoreTF.text = "20'00''";
+        this.scoreTF.textAlign = egret.HorizontalAlign.CENTER;
+        this.addChild(this.scoreTF);
+
+        this.gridCon.addEventListener("nextGrid", this.onStarGame, this);
+        this.gridCon.addEventListener("wrong", this.onWrongNotice, this);
+        // this.gridCon.addEventListener("resumNotice" , this.onResumNotice ,this);
+        // this.gridCon.addEventListener("resumNotice" , this.onResumNotice ,this);
+        // this.gridCon.addEventListener("resumNotice" , this.onResumNotice ,this);
+    };
+
+    //点击事件
+    Ground.prototype.onStarGame = function () {
+        this.playTimer();
+        egret.Tween.get(this.gridCon).to({ y: this.gridCon.y + 107 }, 100);
+    };
+    Ground.prototype.onWrongNotice = function () {
+        this.stopTimer();
+        this.dispatchEvent(new egret.Event("wrong"));
+    };
+
+    Ground.prototype.onRetry = function () {
+        this.scoreTF.text = "20'00''";
+        this.gridCon.y = this.gridCon.getHeight();
+        this.gridCon.initData();
+        this.isRetry = true;
+    };
+
+    Ground.prototype.playTimer = function () {
+        if (this.isPlay || (!this.isRetry)) {
+            return;
+        }
+        this.isPlay = true;
+        this.timeNum = 0;
+        this.scoreTF.text = "20'00''";
+
+        // this.scoreTF.text = "0";
+        // this.timeTF.text = "0秒";
+        //创建一个计时器对象
+        this.timer = new egret.Timer(50, 0);
+
+        //注册事件侦听器
+        this.timer.addEventListener(egret.TimerEvent.TIMER, this.timerFunc, this);
+
+        //开始计时
+        this.timer.start();
+    };
+    Ground.prototype.timerFunc = function () {
+        this.timeNum++;
+
+        // this.scoreTF.text = this.timeNum+"秒";
+        var sec = Math.ceil((this.timeNum * 50) / 1000);
+        var mSec = (this.timeNum * 50 - sec * 1000) / 10;
+        console.log("------" + this.timeNum * 50);
+        this.scoreTF.text = (20 - sec) + "'" + Math.abs(mSec - 1) + "''";
+        if ((sec >= 20) && (mSec <= 0)) {
+            this.scoreTF.text = "0'00'";
+            this.stopTimer();
+            this.dispatchEvent(new egret.Event("wrong"));
+        }
+    };
+    Ground.prototype.stopTimer = function () {
+        this.timer.stop();
+        this.isPlay = false;
+        this.isRetry = false;
+    };
+
+    Ground.prototype.getScore = function () {
+        return this.gridCon.getScore();
+    };
+    return Ground;
+})(egret.Sprite);

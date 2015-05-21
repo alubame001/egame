@@ -1,0 +1,77 @@
+
+class GridCon extends egret.Sprite{
+
+    private imgs:egret.SpriteSheet = RES.getRes("asserts");
+    private w:number = 0;
+    private h:number = 0;
+    public constructor(stageW,stageH){
+        super();
+        this.w = stageW;
+        this.h = stageH;
+        // this.createView();
+    }
+    private spr:egret.Sprite = new egret.Sprite();
+    private maxNum:number = 0;
+    private curNum:number = 1;
+    private gridLineArr:Array<any> = [];
+    public initData():void {
+      this.removeChildren();
+      this.gridLineArr = [];
+      this.maxNum = 8;
+      this.curNum = 1;
+      //绘制一个透明度为1的绿色矩形，宽高为100*80
+      this.spr.graphics.beginFill(0xffffff, 0);
+      this.spr.graphics.drawRect(0, 0, this.w, this.h);
+      this.spr.graphics.endFill();
+      this.spr.width = this.w;
+      this.spr.height = this.h;
+      this.addChild( this.spr );
+      this.spr.visible = false;
+
+      for(var i:number = 1;i <= 8;i++){
+        var lineGrid:LineGrid = new LineGrid(this.w,this.h);
+        lineGrid.initData(i);
+        this.addChild(lineGrid);
+        lineGrid.y = -lineGrid.height*i;
+        lineGrid.touchEnabled = true;
+        lineGrid.touchChildren = true;
+        lineGrid.addEventListener("nextGrid" , this.onStarGame ,this);
+        lineGrid.addEventListener("wrong" , this.onWrongNotice ,this);
+        this.gridLineArr.push(lineGrid);
+      }  
+    }
+
+    private onStarGame(e:egret.TouchEvent):void{
+      var lineGrid:LineGrid = e.currentTarget;
+      this.dispatchEvent(new egret.Event("nextGrid")); 
+      // egret.setTimeout(function () {
+          this.updateGrid(lineGrid);
+      // }, this, 100);         
+    }
+    private onWrongNotice():void{
+        this.dispatchEvent(new egret.Event("wrong")); 
+    }
+    private updateGrid(lineGrid):void{
+      this.maxNum ++;
+      this.curNum ++;
+      lineGrid.y = -lineGrid.height*this.maxNum;
+      lineGrid.updateGrid(this.maxNum);
+
+      for(var i:number = 1;i <= 8;i++){
+        var gridLine:LineGrid = this.gridLineArr[i - 1];
+        gridLine.updateCurNum(this.curNum);
+      }      
+    }
+
+    public getWidth():number{
+      return this.spr.width;
+    }
+
+    public getHeight():number{
+      return this.spr.height;
+    }
+
+    public getScore():number{
+      return this.curNum - 1;
+    }
+}

@@ -1,0 +1,276 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var GameApp = (function (_super) {
+    __extends(GameApp, _super);
+    function GameApp() {
+        _super.call(this);
+        //arrorImg
+        this.arrorImg = new egret.Bitmap();
+        this.scoreNum = 0;
+        this.spr1 = new egret.Sprite();
+        this.spr2 = new egret.Sprite();
+        this.logoTF = new egret.TextField();
+        this.noticeTF = new egret.TextField();
+        this.goodArr = ["手疾眼快", "身手不凡", "心手相应", "眼明手快", "心灵手巧", "手到擒来", "妙手回春", "手脚麻利", "一手遮天"];
+        this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
+    }
+    GameApp.prototype.onAddToStage = function (event) {
+        //设置加载进度界面
+        this.loadingView = new LoadingUI();
+        this.stage.addChild(this.loadingView);
+
+        //初始化Resource资源加载库
+        RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
+        RES.loadConfig("resource/resource.json", "resource/");
+    };
+
+    /**
+    * 配置文件加载完成,开始预加载preload资源组。
+    */
+    GameApp.prototype.onConfigComplete = function (event) {
+        RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
+        RES.loadGroup("preload");
+    };
+
+    /**
+    * preload资源组加载完成
+    */
+    GameApp.prototype.onResourceLoadComplete = function (event) {
+        if (event.groupName == "preload") {
+            this.stage.removeChild(this.loadingView);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
+
+            // this.onConfigComplete2();
+            // this.createGameScene();
+            this.showLogo2();
+        }
+    };
+
+    /**
+    * preload资源组加载进度
+    */
+    GameApp.prototype.onResourceProgress = function (event) {
+        if (event.groupName == "preload") {
+            this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
+        }
+    };
+
+    /**
+    * 配置文件加载完成,开始预加载sound资源组。
+    */
+    GameApp.prototype.onConfigComplete2 = function () {
+        RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete2, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress2, this);
+        RES.loadGroup("soundload");
+    };
+
+    /**
+    * sound资源组加载完成
+    */
+    GameApp.prototype.onResourceLoadComplete2 = function (event) {
+        if (event.groupName == "soundload") {
+            this.stage.removeChild(this.loadingView);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete2, this);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress2, this);
+            this.createGameScene();
+        }
+    };
+
+    /**
+    * sound资源组加载进度
+    */
+    GameApp.prototype.onResourceProgress2 = function (event) {
+        if (event.groupName == "soundload") {
+            this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
+        }
+    };
+
+    GameApp.prototype.showLogo2 = function () {
+        egret.Profiler.getInstance().run();
+
+        var stageW = this.stage.stageWidth;
+        var stageH = this.stage.stageHeight;
+
+        this.logo = new LogoUI(stageW, stageH);
+        this.addChild(this.logo);
+        this.logo.x = this.stage.stageWidth / 2 - this.logo.width / 2 - 30;
+        this.logo.y = 0;
+        var onComplete1 = function () {
+            this.removeChild(this.logo);
+            this.createGameScene();
+        };
+        var showLogoOver = function () {
+            egret.Tween.get(this.logo, { loop: false }).to({ alpha: 0 }, 1000).call(onComplete1, this);
+        };
+        this.logo.addEventListener("showLogoOver", showLogoOver, this);
+    };
+
+    // private aboutUS:AboutUS;
+    /**
+    * 创建游戏场景
+    */
+    GameApp.prototype.createGameScene = function () {
+        var stageW = this.stage.stageWidth;
+        var stageH = this.stage.stageHeight;
+        // this.Ground = new Ground(stageW,stageH);
+        // this.addChild(this.Ground);
+        // //绘制一个透明度为1的绿色矩形，宽高为100*80
+        // this.spr1.graphics.beginFill(0x000000, 0.3);
+        // this.spr1.graphics.drawRect(0, 0, this.stage.stageWidth, this.stage.stageHeight);
+        // this.spr1.graphics.endFill();
+        // this.spr1.width = this.stage.stageWidth;
+        // this.spr1.height = this.stage.stageHeight;
+        // this.addChild( this.spr1 );
+        // this.LogoTitle = new LogoTitle(stageW,stageH);
+        // this.addChild(this.LogoTitle);
+        // this.LogoTitle.x = this.stage.stageWidth/2 - this.LogoTitle.width/2;
+        // this.LogoTitle.y = 40;
+        // this.startBtn = this.createBitmapByName("start");
+        // this.startBtn.x = this.stage.stageWidth/2 - this.startBtn.width/2;
+        // this.startBtn.y = this.stage.stageHeight/2 + this.startBtn.height/2;
+        // this.addChild(this.startBtn);
+        // this.startBtn.touchEnabled = true;
+        // this.board = new Board(stageW,stageH);
+        // this.addChild(this.board);
+        // this.board.visible = false;
+        // this.board.hideCratoon();
+        // // this.board.x = this.stage.stageWidth/2 - this.board.width/2;
+        // // this.board.y = 40;
+        // //绘制一个透明度为1的绿色矩形，宽高为100*80
+        // this.spr2.graphics.beginFill(0x000000, 0.8);
+        // this.spr2.graphics.drawRect(0, 0, this.stage.stageWidth, this.stage.stageHeight);
+        // this.spr2.graphics.endFill();
+        // this.spr2.width = this.stage.stageWidth;
+        // this.spr2.height = this.stage.stageHeight;
+        // this.addChild( this.spr2 );
+        // this.spr2.visible = false;
+        // this.spr2.touchEnabled = true;
+        // this.arrorImg = this.createBitmapByName("arron");//tapRight
+        // this.arrorImg.x = this.stage.stageWidth - this.arrorImg.width;
+        // this.arrorImg.y = 0;
+        // this.addChild(this.arrorImg);
+        // this.arrorImg.visible = false;
+        // this.noticeTF.size = 30;
+        // this.noticeTF.width = 350;
+        // this.noticeTF.height = 150;
+        // this.noticeTF.text = "点击右上角\n【分享到朋友圈】\n和好基友一较高下吧！";
+        // this.noticeTF.x = this.stage.stageWidth/2 - this.noticeTF.width/2;
+        // this.noticeTF.y = this.stage.stageHeight/2  - 100;
+        // this.noticeTF.strokeColor = 0x000000;
+        // this.noticeTF.stroke  = 1;
+        // this.noticeTF.bold = true;
+        // this.noticeTF.textAlign = egret.HorizontalAlign.CENTER;
+        // this.addChild( this.noticeTF );
+        // this.noticeTF.visible = false;
+        // this.logoTF.size = 18;
+        // this.logoTF.width = 400;
+        // this.logoTF.textColor = 0x000000;
+        // this.logoTF.x = this.stage.stageWidth/2 - this.logoTF.width/2;
+        // this.logoTF.y = this.stage.stageHeight - 20;
+        // this.logoTF.text = "Powered by egret framework";
+        // this.logoTF.textAlign = egret.HorizontalAlign.CENTER;
+        // this.addChild( this.logoTF );
+        // this.startBtn.addEventListener(egret.TouchEvent.TOUCH_TAP , this.onStartBtn ,this);
+        // this.Ground.addEventListener("wrong" , this.onWrongNotice ,this);
+        // this.board.addEventListener("onShare" , this.onShare ,this);
+        // this.board.addEventListener("onRetry" , this.onRetry ,this);
+        // this.spr2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.showOver, this);
+    };
+    GameApp.prototype.onStartBtn = function () {
+        if (this.contains(this.LogoTitle)) {
+            this.removeChild(this.LogoTitle);
+        }
+        if (this.contains(this.logoTF)) {
+            this.removeChild(this.logoTF);
+        }
+        if (this.contains(this.startBtn)) {
+            this.removeChild(this.startBtn);
+        }
+        if (this.contains(this.spr1)) {
+            this.removeChild(this.spr1);
+        }
+    };
+
+    GameApp.prototype.onWrongNotice = function () {
+        egret.setTimeout(function () {
+            this.board.visible = true;
+            this.board.showCratoon();
+        }, this, 600);
+
+        this.scoreNum = this.Ground.getScore();
+
+        var rateNum = 95 + Math.floor(Math.random() * 10) - this.scoreNum;
+        if (rateNum > 100) {
+            rateNum = 99;
+        } else if (rateNum < 0) {
+            rateNum = 1;
+        }
+        var rankNum = 2574506 - this.scoreNum;
+        var str = "全宇宙排名" + rankNum + "位\n击败了全宇宙" + rateNum + "%的网友\n获得称号：" + this.goodArr[Math.floor(Math.random() * 8)];
+        this.board.setNotice(str);
+        var maxScore = game.EffectUtils.getCookie("HeiBaiMaxScore");
+
+        // console.log(maxScore);
+        // var maxScore:number = <any>maxScoreStr;
+        if (maxScore == null) {
+            this.board.setMaxScore(this.scoreNum);
+            game.EffectUtils.setCookie("HeiBaiMaxScore", "" + this.scoreNum);
+        } else if (maxScore < this.scoreNum) {
+            this.board.setMaxScore(this.scoreNum);
+            game.EffectUtils.setCookie("HeiBaiMaxScore", "" + this.scoreNum);
+        } else {
+            this.board.setMaxScore(maxScore);
+        }
+
+        this.board.setScore(this.scoreNum);
+        this.dp_share();
+    };
+
+    GameApp.prototype.dp_share = function () {
+        document.title = "我得了" + this.scoreNum + "分！完全停不下来，求虐！";
+    };
+    GameApp.prototype.onRetry = function () {
+        this.board.hideCratoon();
+        this.board.visible = false;
+
+        this.Ground.onRetry();
+    };
+
+    //---------------------公共模块---------------------------------------------------------------------------------------
+    GameApp.prototype.showOver = function () {
+        this.spr2.visible = false;
+        this.arrorImg.visible = false;
+        this.noticeTF.visible = false;
+    };
+
+    GameApp.prototype.onShare = function () {
+        console.log("share");
+        this.spr2.visible = true;
+        this.arrorImg.visible = true;
+        this.noticeTF.visible = true;
+        egret.setTimeout(function () {
+            if (this.spr2.visible) {
+                this.showOver();
+            }
+        }, this, 8000);
+    };
+
+    /**
+    * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
+    */
+    GameApp.prototype.createBitmapByName = function (name) {
+        var imgs = RES.getRes("asserts");
+        var img = new egret.Bitmap();
+        img.texture = imgs.getTexture(name);
+        return img;
+    };
+    return GameApp;
+})(egret.DisplayObjectContainer);

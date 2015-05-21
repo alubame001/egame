@@ -1,0 +1,11 @@
+{
+"resources":
+	[
+        {"name":"asserts","type":"sheet","url":"assets/asserts.json"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"asserts"}
+	]
+}

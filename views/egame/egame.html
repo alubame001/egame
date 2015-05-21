@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<~template "egame/base/head.html" .~>
+<~if .Id~>
+	<~compress_js .Id~>
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	  	  var  libs = <~ .Id~>+"_libs/"
+	  	  var  src = <~ .Id~>+"_src/"
+	        egret_h5.preloadScript(egret_file_list, libs);
+	        egret_h5.preloadScript(game_file_list, src);
+	        egret_h5.startLoading();
+
+	        
+	  })       
+	</script>
+<~end~>
+
+
+<~template "egame/base/body.html" .~>
+<~template "egame/base/footer.html" .~>
+
+</html>

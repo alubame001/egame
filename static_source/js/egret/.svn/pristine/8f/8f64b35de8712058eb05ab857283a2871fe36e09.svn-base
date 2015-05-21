@@ -1,0 +1,23 @@
+var game;
+(function (game) {
+    var EffectUtils = (function () {
+        function EffectUtils() {
+        }
+        //存储cookies
+        EffectUtils.setCookie = function (name, value) {
+            document.cookie = name + "=" + value;
+        };
+
+        //读取cookies
+        EffectUtils.getCookie = function (name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+            if (arr = document.cookie.match(reg))
+                return arr[2];
+            else
+                return null;
+        };
+        return EffectUtils;
+    })();
+    game.EffectUtils = EffectUtils;
+})(game || (game = {}));

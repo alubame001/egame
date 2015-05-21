@@ -1,0 +1,39 @@
+type JsonData struct{
+UserId string `json:"userid"`
+Time string `json:"time"`
+}
+j := JsonData{UserId:"123",Time:"12345"}
+result,_ = json.Marshal(j);
+println(result);
+
+/~~~
+
+/*
+
+    for (j = sn + nb - 1; j >= sn; j--) {
+        gen = cs + ':' + j;
+        hash = CryptoJS.HmacSHA512(gen, ss).toString(CryptoJS.enc.Hex);
+        i = 0;
+        roll = -1;
+        while (roll == -1) { // Non-reference implementation derived from the 'Fair?' description.
+            if (i == 25) {
+                l3 = hash.substring(125, 128);
+                l3p = l3.parseInt(l3, 16);
+                println('last 3: ' + l3 + ' as int: ' + l3p); // kept on because it's cool to get this far
+                roll = l3p / 10000;
+            } else {
+                f5 = hash.substring(5 * i, 5 + 5 * i);
+                f5p = parseInt(f5, 16);
+                //println(f5 + ' as int: ' + f5p);
+                if (f5p < 1000000) {
+                    roll = f5p / 10000;
+                }
+                i++;
+            }
+        }
+        println(j + ': ' + roll);
+    }
+    check.lastssh = ssh;
+}
+*/
+/````

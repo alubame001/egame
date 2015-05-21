@@ -1,0 +1,124 @@
+
+<script type="text/x-handlebars" data-template-name="singlepage">
+
+{{controller.contentName}}
+
+{{#if controller.searchEnabled}} 
+   {{partial "seach"}}
+  
+{{/if}}
+<div class='well'>
+  {{#if controller.paginatedContent}} 
+  <div class="row home-box"> 
+      <div class="col-md-12">
+
+      {{partial controller.contentName}}
+        </div>
+    </div>
+  {{#if controller.paginationEnabled}} 
+         {{partial "seach_pagination"}}
+  
+  {{/if}}
+  {{else}}
+
+        <strong> No Data </strong>
+  {{/if}}
+</div>
+</script>
+
+
+
+<script type="text/x-handlebars" data-template-name="seach">  
+<div class="col-md-12">
+  <div class="col-md-6">
+      <div class="mt10">
+       {{input value=searchString  placeholder= <~ i18n .Lang "search.contract" ~>  action="updateSeachString" on="enter"}}    
+       </div>
+  </div>
+  <div class="col-md-6">  
+    <ul class="nav nav-pills">
+        <li class="dropdown all-camera-dropdown">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                合约种类
+                   <b class="caret"></b>
+               </a>
+          <ul class="dropdown-menu">
+            <li data-filter-camera-type="all"><a data-toggle="tab" href="#"  {{action "choose"}}><l><~ i18n .Lang "indice.all" ~></l></a></li>
+
+            <li data-filter-camera-type="all"><a data-toggle="tab" href="#"  {{action "choose" "currency"}}><l><~ i18n .Lang "indice.currency" ~></l></a></li>
+            <li data-filter-camera-type="all"><a data-toggle="tab" href="#"  {{action "choose" "gold"}}><l><~ i18n .Lang "indice.metal" ~></l></a></li>          <li data-filter-camera-type="all"><a data-toggle="tab" href="#"  {{action "choose" "index"}}><l><~ i18n .Lang "indice.index" ~></l></a></li>
+
+
+           </ul>
+        </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!--  
+  <div class="btn-group">
+  <P>       
+
+     {{input value=searchString  placeholder= <~ i18n .Lang "search.contract" ~>  action="updateSeachString" on="enter"}}
+
+    <button type="button" class="btn btn-xs btn-primary" {{action  "choose"    }}><l><~ i18n .Lang "indice.all" ~></l></button>
+    <button type="button" class="btn btn-xs btn-primary" {{action  "choose"  "gold" }}><l><~ i18n .Lang "indice.metal" ~></l></button>
+    <button type="button" class="btn btn-xs btn-primary" {{action  "choose"  "index" }}><l><~ i18n .Lang "indice.index" ~></l></button>
+    <button type="button" class="btn btn-xs btn-primary" {{action "choose" "currency"}}><l><~ i18n .Lang "indice.currency" ~></l></button>
+  </P>
+  </div>
+-->
+</script>
+
+<script type="text/x-handlebars" data-template-name="seach_pagination">    
+
+
+
+    <nav>
+      <ul class="pagination">
+          {{#if controller.pageNumberEnabled}}  
+              <li>
+               <button type="button" class="btn btn-primary btn-xs" {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button>
+              
+              </li>
+          {{/if}}
+          {{#each pages}}
+          
+
+           
+
+            {{view WebApp.PaginationView contentBinding="this"}}
+
+         
+
+          {{/each}}
+
+
+          {{#if controller.pageNumberEnabled}}  
+
+                  <li><button type="button" class="btn btn-primary btn-xs"  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+                    <li>{{controller.currentPage}}   / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+          {{/if}}
+    </nav>
+</script>
+
+<script type="text/x-handlebars" data-template-name="no_data">
+    <div class="row home-box"> 
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   {{#if controller.searchEnabled}} 
+                 {{partial "seach"}}
+                {{/if}}
+               </div>
+              <div class="panel-body">
+               <strong><l><~ i18n .Lang "search.nodata" ~></l> </strong>
+              </div>
+
+          
+        </div>
+    </div>
+   
+</script>  

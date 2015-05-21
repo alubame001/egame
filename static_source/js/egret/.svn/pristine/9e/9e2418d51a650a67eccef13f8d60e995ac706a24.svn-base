@@ -1,0 +1,52 @@
+
+class LineUI extends egret.Sprite{
+
+	private imgs:egret.SpriteSheet = RES.getRes("asserts");
+	private lineImg:egret.Bitmap = new egret.Bitmap();
+	private descTF:egret.TextField = new egret.TextField();
+    private descStr:string;
+    private skinStr:string;
+    private w:number = 0;
+    private h:number = 0;
+    public constructor(w,h,descStr,skinStr){
+        super();
+    	this.w = w;
+    	this.h = h;
+    	this.descStr = descStr;
+    	this.skinStr = skinStr;
+        this.createView();
+    }
+
+    private createView():void {
+        
+        this.lineImg.texture = this.imgs.getTexture(this.skinStr);
+        this.addChild(this.lineImg);
+
+        var scale9Grid = new egret.Rectangle(25, 25, 20, 20);
+        this.lineImg.scale9Grid = scale9Grid;
+        this.lineImg.width = this.w;
+        this.lineImg.height = this.h;
+
+        if(this.descStr != ""){
+	        this.descTF.size = 24;
+	        this.descTF.width = 300;
+	        // this.descTF.height = 200;
+	        this.descTF.x = this.lineImg.width/2 - this.descTF.width/2;
+	        this.descTF.y = 20;
+	        this.descTF.text = this.descStr;
+	        this.descTF.strokeColor = 0x000000;
+	        this.descTF.stroke  = 2;
+	        this.descTF.bold = true;
+	        this.descTF.textAlign = egret.HorizontalAlign.CENTER;
+	        this.addChild( this.descTF ); 
+        }
+    }
+
+    public getW():number{
+        return this.w;
+    }
+
+    public getH():number{
+        return this.h;   
+    }
+}

@@ -5,6 +5,8 @@ class StartPanel extends BasePanel{
         super();
     }
     //private betXML:JsonpReq;
+    private loadingView:LoadingUI;
+     private loadingPanel:LoadingPanel;
     private bg:egret.Bitmap;
     private betJson :BetJson;
     private logoImg:egret.Bitmap;
@@ -179,11 +181,49 @@ class StartPanel extends BasePanel{
         }, this, 150*11);           
         */
     }
+    private onSubResourceLoadComplete(event:RES.ResourceEvent):void {
+
+        console.log("onSubResourceLoadComplete:",event.groupName)
+         if(event.groupName=="lottery28_load"){     
+              PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+            Global.dispatchEvent(MainNotify.openLottery28PanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        }
+
+        else if(event.groupName=="crap9_load"){     
+              PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+            Global.dispatchEvent(MainNotify.openCrapPanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        }
+
+        else if(event.groupName=="wheel_load"){     
+              PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+            Global.dispatchEvent(MainNotify.openWheelPanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        }
 
 
+        
+
+
+    }
     public onLottery28BtnTouchTap(e:egret.TouchEvent):void{
-        Global.dispatchEvent(MainNotify.openLottery28PanelNotify,null,false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+         this.loadingView  = new LoadingUI();
+        PopUpManager.addPopUp(this.loadingView);
+
+        //初始化Resource资源加载库
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+        RES.loadGroup("lottery28_load");
+
     }
 
     public onBlackjackBtnTouchTap(e:egret.TouchEvent):void{
@@ -195,8 +235,11 @@ class StartPanel extends BasePanel{
        // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     }    
     public onCrap9BtnTouchTap(e:egret.TouchEvent):void{
-        Global.dispatchEvent(MainNotify.openCrapPanelNotify,null,false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+        RES.loadGroup("crap9_load");
+
+       // Global.dispatchEvent(MainNotify.openCrapPanelNotify,null,false);
+       // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     }
 
     public onFishBtnTouchTap(e:egret.TouchEvent):void{
@@ -204,8 +247,11 @@ class StartPanel extends BasePanel{
         Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     }
     public onWheelBtnTouchTap(e:egret.TouchEvent):void{
-        Global.dispatchEvent(MainNotify.openWheelPanelNotify,null,false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+        RES.loadGroup("wheel_load");
+
+        //Global.dispatchEvent(MainNotify.openWheelPanelNotify,null,false);
+       // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     }
 
     public onSlotBtnTouchTap(e:egret.TouchEvent):void{

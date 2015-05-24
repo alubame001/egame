@@ -197,7 +197,7 @@ class WheelPanel extends     CrapPanel{
 
 
 
-        this.slot_result = new EButton(this,"item",null,"bet",20,4,"gem7");
+        this.slot_result = new EButton(this,"item",null,"bet",20,4,"12");
         this.slot_result.x = 170+30;
         this.slot_result.y = 165+30;
         this.addChild(this.slot_result);   
@@ -257,7 +257,27 @@ class WheelPanel extends     CrapPanel{
         this.logoImg.x = this.w/2;
         this.logoImg.y = - 550;;
         this.addChild(this.logoImg);
-        this.logoImg.visible = false;   
+        this.logoImg.visible = false;  
+
+        /**********   ENumber*****************/
+        this.e_stake = new ENumber(0,20,"投注","number",12);
+        this.e_stake.x = 10;
+        this.e_stake.y = 20;
+        this.addChild(this.e_stake);
+        this.e_stake.visible = false;
+        
+        this.e_balance = new ENumber(this.balance,20,"馀额","number",12);
+        this.e_balance.x = 220;
+        this.e_balance.y = 20;
+        this.addChild(this.e_balance);
+        this.e_balance.visible = false;
+
+        this.e_profit = new ENumber(0,20,"中奖","number",12);
+        this.e_profit.x = 430;
+        this.e_profit.y = 20;
+        this.addChild(this.e_profit);
+        this.e_profit.visible = false;
+        /**********   ENumber*****************/
 
         this.stageBtn = new EButton(this,"title2",this.onChooseStage,"返回",10,5,"rpg");
         this.stageBtn.x = 700;
@@ -335,10 +355,10 @@ class WheelPanel extends     CrapPanel{
 
         this.sendBet();        
         
-        this.imgBtn2.rouletteBegin(false)
-        this.imgBtn3.rouletteBegin(false)
-        this.showTipsBtn.rollBegin(100,460,300,200,600,100,500,1)
-        
+       // this.imgBtn2.rouletteBegin(false)
+      //  this.imgBtn3.rouletteBegin(false)
+       // this.showTipsBtn.rollBegin(100,460,300,200,600,100,500,1)
+            
      
     }
 

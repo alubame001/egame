@@ -11,6 +11,7 @@ var GameApp = (function (_super) {
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     GameApp.prototype.onAddToStage = function (event) {
+        console.log("onAddToStage:");
         egret.Injector.mapClass(RES.AnalyzerBase, RES.PropertiesAnalyzer, RES.PropertiesAnalyzer.TYPE);
         this.stage.addChild(GameConfig.gameScene());
         //设置加载进度界面
@@ -26,6 +27,7 @@ var GameApp = (function (_super) {
      * 配置文件加载完成,开始预加载preload资源组。
      */
     GameApp.prototype.onConfigComplete = function (event) {
+        console.log("onConfigComplete:");
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
@@ -36,6 +38,7 @@ var GameApp = (function (_super) {
      * preload资源组加载完成
      */
     GameApp.prototype.onResourceLoadComplete = function (event) {
+        console.log("onResourceLoadComplete:", event.groupName);
         if (event.groupName == "preload") {
             PopUpManager.removePopUp(this.loadingPanel);
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
@@ -51,6 +54,10 @@ var GameApp = (function (_super) {
         else if (event.groupName == "soundload") {
             this.sound = RES.getRes("sound");
             this.sound.play(true);
+        }
+        else if (event.groupName == "lottery28load") {
+            Global.dispatchEvent(MainNotify.openLottery28PanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
         }
     };
     /**

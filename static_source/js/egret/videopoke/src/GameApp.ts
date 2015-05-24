@@ -11,6 +11,7 @@ class GameApp extends egret.DisplayObjectContainer{
     }
 
     private onAddToStage(event:egret.Event){
+           console.log("onAddToStage:")
         egret.Injector.mapClass(RES.AnalyzerBase,RES.PropertiesAnalyzer,RES.PropertiesAnalyzer.TYPE);
         
         this.stage.addChild(GameConfig.gameScene());
@@ -20,7 +21,7 @@ class GameApp extends egret.DisplayObjectContainer{
 
         //初始化Resource资源加载库
          RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);
-         RES.loadConfig("resource/resource.json","resource/");
+         RES.loadConfig("resource/resource.json","resource/");   
          RES.loadGroup("soundload");
          RES.loadGroup("clickload");
 
@@ -30,6 +31,7 @@ class GameApp extends egret.DisplayObjectContainer{
      * 配置文件加载完成,开始预加载preload资源组。
      */
     private onConfigComplete(event:RES.ResourceEvent):void{
+         console.log("onConfigComplete:")
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);
@@ -41,6 +43,8 @@ class GameApp extends egret.DisplayObjectContainer{
      * preload资源组加载完成
      */
     private onResourceLoadComplete(event:RES.ResourceEvent):void {
+
+        console.log("onResourceLoadComplete:",event.groupName)
         if(event.groupName=="preload"){
             PopUpManager.removePopUp(this.loadingPanel);
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);
@@ -55,8 +59,12 @@ class GameApp extends egret.DisplayObjectContainer{
         } else if(event.groupName=="soundload"){     
                 this.sound =  RES.getRes("sound");
                 this.sound.play(true);
+        }else if(event.groupName=="lottery28load"){     
+            Global.dispatchEvent(MainNotify.openLottery28PanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
         }
 
+        
 
 
     }

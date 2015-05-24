@@ -361,6 +361,9 @@ class GamePanel extends     BasePanel{
 
 
 
+
+
+
         this.stageBtn = new EButton(this,"title2",this.onChooseStage,"返回",10,5,"rpg");
         this.stageBtn.x = 700;
         this.stageBtn.y = 50;

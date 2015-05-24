@@ -125,9 +125,39 @@ var StartPanel = (function (_super) {
         }, this, 150*11);
         */
     };
+    StartPanel.prototype.onSubResourceLoadComplete = function (event) {
+        console.log("onSubResourceLoadComplete:", event.groupName);
+        if (event.groupName == "lottery28_load") {
+            PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+            Global.dispatchEvent(MainNotify.openLottery28PanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        }
+        else if (event.groupName == "crap9_load") {
+            PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+            Global.dispatchEvent(MainNotify.openCrapPanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        }
+        else if (event.groupName == "wheel_load") {
+            PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+            Global.dispatchEvent(MainNotify.openWheelPanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        }
+    };
     StartPanel.prototype.onLottery28BtnTouchTap = function (e) {
-        Global.dispatchEvent(MainNotify.openLottery28PanelNotify, null, false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        this.loadingView = new LoadingUI();
+        PopUpManager.addPopUp(this.loadingView);
+        //初始化Resource资源加载库
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+        RES.loadGroup("lottery28_load");
     };
     StartPanel.prototype.onBlackjackBtnTouchTap = function (e) {
         // Global.dispatchEvent(MainNotify.openLottery28PanelNotify,null,false);
@@ -138,16 +168,20 @@ var StartPanel = (function (_super) {
         // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     };
     StartPanel.prototype.onCrap9BtnTouchTap = function (e) {
-        Global.dispatchEvent(MainNotify.openCrapPanelNotify, null, false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+        RES.loadGroup("crap9_load");
+        // Global.dispatchEvent(MainNotify.openCrapPanelNotify,null,false);
+        // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     };
     StartPanel.prototype.onFishBtnTouchTap = function (e) {
         Global.dispatchEvent(MainNotify.openFishPanelNotify, null, false);
         Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
     };
     StartPanel.prototype.onWheelBtnTouchTap = function (e) {
-        Global.dispatchEvent(MainNotify.openWheelPanelNotify, null, false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+        RES.loadGroup("wheel_load");
+        //Global.dispatchEvent(MainNotify.openWheelPanelNotify,null,false);
+        // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     };
     StartPanel.prototype.onSlotBtnTouchTap = function (e) {
         // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);

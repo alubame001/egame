@@ -9,7 +9,7 @@ class Lottery28Panel extends     CrapPanel{
     //public initPanel():void{}
     //public initEffect():void{}
     //public showResult(str:string):void{}   
-    public slot_assets_name : string = "gem7"
+    public slot_assets_name : string = "lottery28"
     public min_bet : number = 0;
     public base_bet : number = 100;
     public websocket_delay : number = 500;
@@ -75,7 +75,8 @@ class Lottery28Panel extends     CrapPanel{
         this.addChild(this.menu_select.selects[2]);   
         */
 
-        this.slot_0 =  new EButton(this,"glass_blue_button",this.addBetPanel,"0",20,4,"lottery28");
+        this.slot_0 =  new EButton(this,"glass_blue_button",this.onPickIcon0,"0",20,4,"lottery28");
+     //   this.slot_0 =  new EButton(this,"glass_blue_button",this.addBetPanel,"0",20,4,"lottery28");
         this.slot_0.x =  45;// 82+5;
         this.slot_0.y = 50;//78+5;
         this.slot_0.alpha = 1;
@@ -127,7 +128,7 @@ class Lottery28Panel extends     CrapPanel{
         this.slot_5.odd = 48;
         this.addChild(this.slot_5);
 
-        this.slot_6 = new EButton(this,"glass_blue_button",this.addBetPanel,"6",20,4,"lottery28");
+        this.slot_6 = new EButton(this,"glass_blue_button",this.onPickIcon6,"6",20,4,"lottery28");
         this.slot_6.x =   this.slot_0.x+(80*6);
         this.slot_6.y =  this.slot_0.y ;   
         this.slot_6.alpha = 1;
@@ -322,7 +323,7 @@ class Lottery28Panel extends     CrapPanel{
         this.slot_27.odd = 1000;
         this.addChild(this.slot_27); 
 
-        this.slot_result = new EButton(this,"item",null,"bet",20,4,"gem7");
+        this.slot_result = new EButton(this,"item",null,"bet",20,4,"lottery28");
         this.slot_result.x = 170+30;
         this.slot_result.y = 165+30;
         this.addChild(this.slot_result);   
@@ -357,7 +358,7 @@ class Lottery28Panel extends     CrapPanel{
 
 
 
-        this.shot =  new EButton(this,"shot_2",null,"",30,1,"rpg");
+        this.shot =  new EButton(this,"shot_2",null,"",30,1,"lottery28");
         this.shot.x =  187+5;// 82+5;
         this.shot.y = 38+5;//78+5;
         this.shot.alpha = 0;
@@ -366,7 +367,7 @@ class Lottery28Panel extends     CrapPanel{
         this.addChild(this.shot);   
         this.shot.isPlayCartoon = false;
 
-       this.showTitle = new EButton(this,"title",null,this.game_cname,20,4,"rpg");
+       this.showTitle = new EButton(this,"title",null,this.game_cname,20,4,"lottery28");
         this.showTitle.x = 300;
         this.showTitle.y = 2;   
         this.addChild(this.showTitle);       
@@ -412,7 +413,7 @@ class Lottery28Panel extends     CrapPanel{
 
 
 
-        this.showTipsBtn = new EButton(this,"b1",this.onShowFishTouchTap,"test",30,1,"rpg");
+        this.showTipsBtn = new EButton(this,"b1",this.onShowFishTouchTap,"test",30,1,"lottery28");
         this.showTipsBtn.x =0;
         this.showTipsBtn.y =430; 
         this.addChild(this.showTipsBtn);
@@ -435,17 +436,17 @@ class Lottery28Panel extends     CrapPanel{
         //this.stageBtn = new EButton(this,"return",null,"返回",10,4,"lottery28");
         this.e_stake = new ENumber(0,20,"投注","number",12);
         this.e_stake.x = 10;
-        this.e_stake.y = 20;
+        this.e_stake.y = 2;
         this.addChild(this.e_stake);
 
         this.e_balance = new ENumber(this.balance,20,"馀额","number",12);
         this.e_balance.x = 220;
-        this.e_balance.y = 20;
+        this.e_balance.y = 2;
         this.addChild(this.e_balance);
 
         this.e_profit = new ENumber(0,20,"中奖","number",12);
         this.e_profit.x = 430;
-        this.e_profit.y = 20;
+        this.e_profit.y = 2;
         this.addChild(this.e_profit);
 
 

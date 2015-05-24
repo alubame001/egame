@@ -22,12 +22,16 @@ var WaitPanel = (function (_super) {
         this.w = 0;
         this.h = 0;
         switch (type) {
-            case 1: {
+            case 0: {
                 this.cartoonType = "loading_1";
                 break;
             }
+            case 1: {
+                this.cartoonType = "loading_cir1";
+                break;
+            }
             case 2: {
-                this.cartoonType = "loading_1";
+                this.cartoonType = "loading_cir2";
                 break;
             }
             default: {
@@ -35,7 +39,7 @@ var WaitPanel = (function (_super) {
                 break;
             }
         }
-        this.mySheet = RES.getRes("rpg");
+        this.mySheet = RES.getRes("menu");
         this.createView();
     }
     WaitPanel.prototype.createView = function () {

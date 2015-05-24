@@ -738,7 +738,8 @@ class GamePanel extends     BasePanel{
        console.log(this.slots)
         console.log("connetToServer...")
                 var m = $("meta[name=_xsrf]").attr('content');
-        SocketManager.connectServer("192.168.1.104:8092/egame/ws/join?uname="+m+"?kind="+this.game_kind+"?stage="+stage);
+                var host = $("meta[name=_host]").attr('content');
+        SocketManager.connectServer(host+"/egame/ws/join?uname="+m+"?kind="+this.game_kind+"?stage="+stage);
         if (this.first_login) {
 
             this.first_login = false;

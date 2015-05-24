@@ -1,6 +1,6 @@
 # EGame
 
-An open source project for Gopher community.
+An project for Bitcoin Game.
 
 ### Usage
 

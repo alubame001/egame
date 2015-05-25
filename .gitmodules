@@ -1,0 +1,30 @@
+[submodule "thirdparty/src/github.com/astaxie/beego"]
+	path = thirdparty/src/github.com/astaxie/beego
+	url = https://github.com/astaxie/beego
+[submodule "thirdparty/src/github.com/slene/blackfriday"]
+	path = thirdparty/src/github.com/slene/blackfriday
+	url = https://github.com/slene/blackfriday
+[submodule "thirdparty/src/github.com/nfnt/resize"]
+	path = thirdparty/src/github.com/nfnt/resize
+	url = https://github.com/nfnt/resize
+[submodule "thirdparty/src/github.com/lib/pq"]
+	path = thirdparty/src/github.com/lib/pq
+	url = https://github.com/lib/pq
+[submodule "thirdparty/src/github.com/howeyc/fsnotify"]
+	path = thirdparty/src/github.com/howeyc/fsnotify
+	url = https://github.com/howeyc/fsnotify
+[submodule "thirdparty/src/github.com/gorilla/websocket"]
+	path = thirdparty/src/github.com/gorilla/websocket
+	url = https://github.com/gorilla/websocket
+[submodule "thirdparty/src/github.com/bitly/go-simplejson"]
+	path = thirdparty/src/github.com/bitly/go-simplejson
+	url = https://github.com/bitly/go-simplejson
+[submodule "thirdparty/src/github.com/beego/compress"]
+	path = thirdparty/src/github.com/beego/compress
+	url = https://github.com/beego/compress
+[submodule "thirdparty/src/github.com/beego/i18n"]
+	path = thirdparty/src/github.com/beego/i18n
+	url = https://github.com/beego/i18n
+[submodule "thirdparty/src/github.com/beego/social-auth"]
+	path = thirdparty/src/github.com/beego/social-auth
+	url = https://github.com/beego/social-auth

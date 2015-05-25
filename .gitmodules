@@ -28,3 +28,6 @@
 [submodule "thirdparty/src/github.com/beego/social-auth"]
 	path = thirdparty/src/github.com/beego/social-auth
 	url = https://github.com/beego/social-auth
+[submodule "thirdparty/src/github.com/Unknwon/goconfig"]
+	path = thirdparty/src/github.com/Unknwon/goconfig
+	url = https://github.com/Unknwon/goconfig

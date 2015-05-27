@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 
- var wsUri ='ws://192.168.1.104:8092/egame/ws/join?uname=c12314k';
+ var wsUri ='ws://www.justcfd.com/egame/ws/join?uname=c12314k';
     var output;  
     
     function init() { 

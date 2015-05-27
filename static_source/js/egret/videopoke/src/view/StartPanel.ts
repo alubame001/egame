@@ -212,7 +212,15 @@ class StartPanel extends BasePanel{
         }
 
 
-        
+          else if(event.groupName=="fish_load"){     
+            PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+            Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        }
+      
 
 
     }
@@ -243,8 +251,11 @@ class StartPanel extends BasePanel{
     }
 
     public onFishBtnTouchTap(e:egret.TouchEvent):void{
-        Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+        RES.loadGroup("fish_load");
+
+       // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
+        //Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     }
     public onWheelBtnTouchTap(e:egret.TouchEvent):void{
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);

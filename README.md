@@ -74,3 +74,6 @@ Maintain by [slene](https://github.com/slene)
 ## License
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+
+
+部署到新环境，执行下git submodule init, 和 git submodule update

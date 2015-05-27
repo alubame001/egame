@@ -151,6 +151,14 @@ var StartPanel = (function (_super) {
             Global.dispatchEvent(MainNotify.openWheelPanelNotify, null, false);
             Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
         }
+        else if (event.groupName == "fish_load") {
+            PopUpManager.removePopUp(this.loadingView);
+            this.loadingPanel = new LoadingPanel();
+            PopUpManager.addPopUp(this.loadingPanel);
+            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+            Global.dispatchEvent(MainNotify.openFishPanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        }
     };
     StartPanel.prototype.onLottery28BtnTouchTap = function (e) {
         this.loadingView = new LoadingUI();
@@ -174,8 +182,10 @@ var StartPanel = (function (_super) {
         // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     };
     StartPanel.prototype.onFishBtnTouchTap = function (e) {
-        Global.dispatchEvent(MainNotify.openFishPanelNotify, null, false);
-        Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+        RES.loadGroup("fish_load");
+        // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
+        //Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     };
     StartPanel.prototype.onWheelBtnTouchTap = function (e) {
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);

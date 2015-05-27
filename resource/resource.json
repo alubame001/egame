@@ -33,6 +33,7 @@
         {"name":"lottery28_load","keys":"assets,coin,lottery28bg,lottery28,lottery28_door_bg,bg"},
         {"name":"crap9_load","keys":"assets,coin,gem7,rpg,bg"},
         {"name":"wheel_load","keys":"assets,coin,wheel,12,rpg,bg"},        
+        {"name":"fish_load","keys":"assets,coin,fish,gem7,rpg,bg"},        
         {"name":"all","keys":"assets,assets2,ui_text,rpg,gem7,wheel,12,coin,fish,lottery28bg,lottery28,lottery28_door_bg,bg"},
         {"name": "soundload","keys": "sound"},
         {"name": "clickload","keys": "click"}

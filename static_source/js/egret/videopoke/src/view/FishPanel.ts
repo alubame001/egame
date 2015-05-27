@@ -1,4 +1,3 @@
-
 class FishPanel extends     BasePanel{
 
     public constructor(){
@@ -92,7 +91,6 @@ class FishPanel extends     BasePanel{
         storage.setItem(key,value);//用localStorage保存转化好的的字符串
         console.log(storage[key])
     }
-
  
     public  getLocalStoreage(key:string):string{
         var storage = window.localStorage;
@@ -138,20 +136,8 @@ class FishPanel extends     BasePanel{
 
 
 
-  //          this.scorePanel = new fighter.ScorePanel();
 
-        //var myBet = { name: "",kind:"4",total:0,pick:[],pk:[]};
-        /*
-              $(document).on('click', '#sendbtn', function(){
-                 console.log('sendChat')
-              });
-*/      
-        
-
-
-
-
-        this.connetToServer(true);
+      //  this.connetToServer(true);
 
  
 
@@ -159,7 +145,7 @@ class FishPanel extends     BasePanel{
         this.bg.texture = this.assets.getTexture("bg");
         this.addChild(this.bg);   
         this.bg.touchEnabled = true;   
-
+/*
         this.imgBtn = new EButton(this,"rpg_panel",this.onImgBtnTouchTap,"",30,1,"rpg");
         this.imgBtn.x = 0;
         this.imgBtn.y = 0;
@@ -330,13 +316,7 @@ class FishPanel extends     BasePanel{
         this.rpgslot_result.setScale(1,1);
 
         this.rpgslot_9 = new EButton(this,"icon9",null,"",30,4,"gem7");
-/*
-        this.rpgslot_9.x = 296+5;
-        this.rpgslot_9.y =296+5;
-        this.addChild(this.rpgslot_9);   
-        this.rpgslot_9.alpha = 0;
-        this.rpgslot_9.setScale(1,1);   
-*/
+
         this.shot =  new EButton(this,"shot_2",null,"",30,1,"rpg");
         this.shot.x =  187+5;// 82+5;
         this.shot.y = 38+5;//78+5;
@@ -375,65 +355,7 @@ class FishPanel extends     BasePanel{
         this.logoImg.x = this.w/2;
         this.logoImg.y = - 550;;
         this.addChild(this.logoImg);   
-/*
-        this.buttonBtn = new ImgButton("bigYellowBtn",this.onButtonBtnTouchTap,"按钮特效!!",30);
-        this.buttonBtn.x = 700;
-        this.buttonBtn.y = 20;        
-        this.addChild(this.buttonBtn);
-
-        this.setBtn = new ImgButton("bigYellowBtn",this.onSetBtnTouchTap,"setup",30,2);
-       // this.setBtn =    new EButton(this,"bigYellowBtn",this.onSetBtnTouchTap,30,2,"rpg");
-        this.setBtn.x = 100
-        this.setBtn.y =100
-        this.addChild(this.setBtn);
-        this.setBtn.alpha = 0;
-
-        this.imgBtn = new ImgButton("bigYellowBtn",this.onSetBtnTouchTap,"图片特效",30,2);
-       // this.imgBtn = new ImgButton("bigYellowBtn",this.onImgBtnTouchTap,"图片特效",30);
-        this.imgBtn.x = -300;
-        this.imgBtn.y = this.buttonBtn.y + 90;        
-        this.addChild(this.imgBtn);
-
-
-        this.panelBtn = new ImgButton("bigYellowBtn",this.onPanelBtnTouchTap,"面板特效",30,2);
- 
-       // this.panelBtn = new ImgButton("bigYellowBtn",this.onPanelBtnTouchTap,"面板特效",30);
-        this.panelBtn.x = -300;
-        this.panelBtn.y = this.imgBtn.y + 90;         
-        this.addChild(this.panelBtn);
-
-        this.sceneBtn = new ImgButton("bigYellowBtn",this.onSceneBtnTouchTap,"场景特效",30);
-        this.sceneBtn.x = -300;
-        this.sceneBtn.y = this.panelBtn.y + 90;           
-        this.addChild(this.sceneBtn);
-
-        this.tipsBtn = new ImgButton("bigYellowBtn",this.onTipsBtnTouchTap,"提示特效",30);
-        this.tipsBtn.x = -300;
-        this.tipsBtn.y = this.sceneBtn.y + 90;          
-        this.addChild(this.tipsBtn);
-
- 
-
-        this.addFriendBtn = new ImgButton("addFriend",this.onAddFriendBtnTouchTap);
-        this.addFriendBtn.x = 20;
-        this.addFriendBtn.y = this.h - this.addFriendBtn.height - 60;   
-        this.addChild(this.addFriendBtn);
-        this.addFriendBtn.alpha = 0;
-
-
-
-        this.bottomCopyRight = new egret.Bitmap();
-        this.bottomCopyRight.texture = this.assets.getTexture("bottomCopyRight");
-        this.bottomCopyRight.x = this.w/2 - this.bottomCopyRight.width/2;
-        this.bottomCopyRight.y = this.h - this.bottomCopyRight.height;
-        this.addChild(this.bottomCopyRight);  
-        this.bottomCopyRight.alpha = 0;
 */
-        //this.showTipsBtn = new ImgButton("bigYellowBtn",this.onShowTipsBtnTouchTap,"飘字特效",30);
-        /*
-
-*/
-
 
         this.door_left = new EButton(this,"door_left",this.onBackToChooseStage,"",2,5,"rpg");
         this.door_left.x = 30;
@@ -490,20 +412,6 @@ class FishPanel extends     BasePanel{
 
     private initEffect():void{
 
-        egret.setTimeout(function () {     
-            egret.Tween.get(this.rpgslot_1).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_1).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_2).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_3).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_4).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_5).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_6).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_7).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_8).to({alpha:1},300);
-           // egret.Tween.get(this.rpgslot_9).to({alpha:1},300);
-            egret.Tween.get(this.rpgslot_result).to({alpha:1},300);
-            
-    }, this, 500*2);   
 
        //   EffectUtils.rotationEffect(this.rpgslot_1,1000);
 /*
@@ -514,20 +422,14 @@ class FishPanel extends     BasePanel{
         egret.setTimeout(function () {              
             egret.Tween.get(this.buttonBet).to({alpha:1},600,egret.Ease.backOut); 
         }, this, 150*1);    
-
         egret.Tween.get(this.logoImg).to({y:60 + this.logoImg.height},600,egret.Ease.backOut); 
-
         egret.setTimeout(function () {              
             egret.Tween.get(this.buttonBtn).to({x:this.w/2 - this.buttonBtn.width/2},600,egret.Ease.backOut); 
         }, this, 150*1); 
-
                
         egret.setTimeout(function () {              
             egret.Tween.get(this.rpgslot_1).to({alpha:1},300,egret.Ease.backOut); 
         }, this, 150*1);    
-
-
-
         egret.setTimeout(function () {              
             egret.Tween.get(this.imgBtn).to({x:this.w/2 - this.imgBtn.width/2},600,egret.Ease.backOut); 
         }, this, 150*2);   
@@ -610,14 +512,12 @@ class FishPanel extends     BasePanel{
     }   
 /*
  private makeJson(category,icon:string ):BetJson {   
-
         var myObj = { name: "",allprofit:0,balance:0,kind:this.game_kind,total:0,pick:[],pk:[],lucky:""};
         
         
         var bet = {icon:"1",stake:2,profit:0}
         myObj.pick.push(bet);
         myObj.total = myObj.total+ 2;
-
         var bet = {icon:"2",stake:10,profit:0}
         myObj.pick.push(bet);
         myObj.total = myObj.total+ 10;
@@ -628,8 +528,6 @@ class FishPanel extends     BasePanel{
        var bet = {icon:"9",stake:20,profit:0}
         myObj.pick.push(bet);
         myObj.total = myObj.total+ 20;
-
-
         var bet = {icon:"big",stake:30,profit:0}
         myObj.pk.push(bet);
         myObj.total = myObj.total+ 30;       
@@ -1081,27 +979,19 @@ class FishPanel extends     BasePanel{
             var i:number = 0;
             
              var delArr:any[] = [];
-
-
             var onComplete1: Function = function () {
-
-
                 egret.Tween.get(theFighter, { loop: false }).to({ rotation: theFighter.rate }, 1000).wait(1000)
                 //.call(onComplete3, this);;
                 
               
-
             };
-
         
            
             var theFighter:fighter.Airplane;
             var enemyFighterCount:number = this.enemyFighters.length;
               console.log(enemyFighterCount)
             for(i=0;i<enemyFighterCount;i++) {
-
                   theFighter = this.enemyFighters[i]
-
                    // theFighter.changeAngle2();
                     var angle = this.getAngle(theFighter.x,theFighter.y,theFighter.x2,theFighter.y2);
                     console.log(angle)
@@ -1112,10 +1002,8 @@ class FishPanel extends     BasePanel{
               //}
   
             }
-
            
         }
-
         public getAngle(x1, y1, x2, y2: number):number {
             // 直角的边长
             var x = Math.abs(x1 - x2);
@@ -1159,4 +1047,3 @@ private moveOver():void {
 }
 
 }
-

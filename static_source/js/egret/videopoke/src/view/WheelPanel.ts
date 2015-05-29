@@ -9,7 +9,7 @@ class WheelPanel extends     CrapPanel{
     //public initPanel():void{}
     //public initEffect():void{}
     //public showResult(str:string):void{}   
-    public slot_assets_name : string = "gem7"
+    public slot_assets_name : string = "12"
     public min_bet : number = 0;
     public base_bet : number = 100;
     public websocket_delay : number = 500;
@@ -30,7 +30,7 @@ class WheelPanel extends     CrapPanel{
     public imgBtn2: EButton; //中间转针
     public imgBtn3: EButton; //中间小转盘
     public initPanel():void{
-
+        this.setServerLisenter();
         this.bg = new egret.Bitmap();
         this.bg.texture = this.assets.getTexture("bg");
         this.addChild(this.bg);   
@@ -229,13 +229,13 @@ class WheelPanel extends     CrapPanel{
 
        this.buttonBet = new EButton(this,"b1",this.startBet,"Bet",30,4,"rpg");
         //this.buttonBet = new ImgButton("bigYellowBtn",this.onButtonBetTouchTap,"Bet!!",30);
-        this.buttonBet.x = this.slot_3.x+150 ;
-        this.buttonBet.y =  this.slot_3.y+50;        
+        this.buttonBet.x = 550 ;
+        this.buttonBet.y = 350;        
         this.addChild(this.buttonBet);   
        this.buttonReset = new EButton(this,"b2",this.resetBet,"Reset",30,4,"rpg");
         //this.buttonBet = new ImgButton("bigYellowBtn",this.onButtonBetTouchTap,"Bet!!",30);
-        this.buttonReset.x = this.slot_3.x+250 ;
-        this.buttonReset.y =  this.slot_3.y+50;        
+        this.buttonReset.x = this.buttonBet.x+100 ;
+        this.buttonReset.y =  this.buttonBet.y;        
         this.addChild(this.buttonReset);               
 
         this.showTipsBtn = new EButton(this,"b1",this.onShowFishTouchTap,"test",30,1,"rpg");
@@ -244,8 +244,8 @@ class WheelPanel extends     CrapPanel{
         this.addChild(this.showTipsBtn);
 
         this.coinBtn = new EButton(this,"btc",null,"Loading",30,1,"coin");
-        this.coinBtn.x =600;
-        this.coinBtn.y =0; 
+        this.coinBtn.x =550;
+        this.coinBtn.y =400; 
         this.addChild(this.coinBtn);
         this.coinBtn.touchEnabled = false; 
 
@@ -365,7 +365,7 @@ class WheelPanel extends     CrapPanel{
 
 
     public showResult(str:string):void{
-
+  
         this.isPlay = false;
         var obj =JSON.parse(str)
         var contentStr =    JSON.stringify(obj.Content) 
@@ -373,20 +373,24 @@ class WheelPanel extends     CrapPanel{
         var lucky = obj.Lucky      
          this.imgBtn2.roulette(parseInt(contentObj.icon),500,true);   
          this.imgBtn3.roulette(parseInt(contentObj.icon),500,true);   
-
+         console.log(parseInt(contentObj.icon))
         var gold = 0;
             // this.flyGold(this.slot_1,this.coinBtn,golds,interval);
-
-        this.blinkRpgslot(contentObj.icon,0,1000);
+     //   var slotObj =this.slots[contentObj.icon-1]
+       
+        //this.blinkRpgslot(contentObj.icon,0,1000);
         for (var i = 0; i < contentObj.pick.length; i++) {
-             var obj = this.getSlot(contentObj.pick[i].icon-1);
-             if (obj != "undefined") {
-                 if (contentObj.pick[i].profit > 0) {
-
-                     gold = Math.ceil(parseInt(contentObj.pick[i].profit) / this.min_bet);
-                     this.flyGold(obj, this.coinBtn, gold, 500);
-                 }
-             }
+            if (contentObj.icon == contentObj.pick[i].icon ){
+                var obj = this.getSlot(contentObj.pick[i].icon);
+                EffectUtils.blinkEffect(obj,1000);
+                console.log(obj);
+                if (obj != "undefined") {
+                    if (contentObj.pick[i].profit > 0) {                       
+                        gold = Math.ceil(parseInt(contentObj.pick[i].profit) / this.min_bet);
+                        this.flyGold(obj, this.coinBtn, gold, 500);
+                    }
+                }
+            }
            
 
         }
@@ -397,10 +401,12 @@ class WheelPanel extends     CrapPanel{
                gold = Math.ceil(parseInt(contentObj.allprofit)*-1 /this.min_bet);
                  this.flyGold(this.coinBtn,this.imgBtn3,gold,500);
             }
-                     
+              /*       
         egret.setTimeout(function () { 
+            
             this.slot_result.setBitmap("icon"+lucky.substr(0,1))          
           }, this, 300); 
+       */
           egret.setTimeout(function () {                   
               var isLose = false
             if (contentObj.allprofit < 0) {
@@ -414,6 +420,7 @@ class WheelPanel extends     CrapPanel{
                 // EffectUtils.showTips(contentObj.allprofit, 4,isLose);
                   EffectUtils.showTips(contentObj.allprofit,1,isLose,this.coinBtn.x,this.coinBtn.y);
             }
+            
                    this.coinBtn.setText(contentObj.balance)
          }, this, 1250); 
 
@@ -423,6 +430,12 @@ class WheelPanel extends     CrapPanel{
 
 
 
+     public onChooseStage(e:egret.TouchEvent):void{
+        this.disconnenct();
+        Global.dispatchEvent(MainNotify.openStartPanelNotify,null,false);
+        Global.dispatchEvent(MainNotify.closeWheelPanelNotify,null,false);        
+            
+    }
 
 
 

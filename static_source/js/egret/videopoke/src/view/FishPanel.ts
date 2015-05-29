@@ -133,11 +133,11 @@ class FishPanel extends     BasePanel{
 
 
     public initPanel():void{
+     //   this.setServerLisenter();
 
 
 
 
-      //  this.connetToServer(true);
 
  
 
@@ -145,217 +145,6 @@ class FishPanel extends     BasePanel{
         this.bg.texture = this.assets.getTexture("bg");
         this.addChild(this.bg);   
         this.bg.touchEnabled = true;   
-/*
-        this.imgBtn = new EButton(this,"rpg_panel",this.onImgBtnTouchTap,"",30,1,"rpg");
-        this.imgBtn.x = 0;
-        this.imgBtn.y = 0;
-        this.addChild(this.imgBtn);
-         this.imgBtn.touchEnabled = false; 
-
-        this.put_bet_0 = new EButton(this,"icon0",null,"",20,4,"gem7");
-        this.put_bet_0.x = 480;
-        this.put_bet_0.y = 120;
-        this.put_bet_0.setScale(0.5,0.5);
-        this.addChild(this.put_bet_0);
-           this.put_bet_0.alpha = 0;
-
-
-        this.put_bet_1 = new EButton(this,"icon1",this.onPickIcon1,"",20,4,"gem7");
-        this.put_bet_1.x = this.put_bet_0.x+60;
-        this.put_bet_1.y = this.put_bet_0.y;
-        this.put_bet_1.setScale(0.5,0.5);
-        this.addChild(this.put_bet_1);
-           this.put_bet_1.alpha = 0;
-
-        this.put_bet_2 = new EButton(this,"icon2",this.onPickIcon2,"",20,4,"gem7");
-        this.put_bet_2.x = this.put_bet_0.x+120;
-        this.put_bet_2.y =this.put_bet_0.y;
-        this.put_bet_2.setScale(0.5,0.5);
-        this.addChild(this.put_bet_2);
-           this.put_bet_2.alpha = 0;
-
-
-        this.put_bet_3 = new EButton(this,"icon3",this.onPickIcon3,"",20,4,"gem7");
-        this.put_bet_3.x = this.put_bet_0.x+180;
-        this.put_bet_3.y =this.put_bet_0.y;
-        this.put_bet_3.setScale(0.5,0.5);
-        this.addChild(this.put_bet_3);
-           this.put_bet_3.alpha = 0;
-
-
-
-        this.put_bet_4 = new EButton(this,"icon4",this.onPickIcon4,"",20,4,"gem7");
-        this.put_bet_4.x = this.put_bet_0.x+240;
-        this.put_bet_4.y =this.put_bet_0.y;
-        this.put_bet_4.setScale(0.5,0.5);
-        this.addChild(this.put_bet_4);
-           this.put_bet_4.alpha = 0;
-        
-
-
-
-
-          this.put_bet_5 = new EButton(this,"icon5",this.onPickIcon5,"",20,4,"gem7");
-        this.put_bet_5.x = this.put_bet_0.x+0;
-        this.put_bet_5.y = this.put_bet_0.y+60;
-        this.put_bet_5.setScale(0.5,0.5);
-        this.addChild(this.put_bet_5);
-           this.put_bet_5.alpha = 0;
-
-
-          this.put_bet_6 = new EButton(this,"icon6",this.onPickIcon6,"",20,4,"gem7");
-        this.put_bet_6.x = this.put_bet_0.x+60;
-        this.put_bet_6.y = this.put_bet_0.y+60;
-        this.put_bet_6.setScale(0.5,0.5);
-        this.addChild(this.put_bet_6);
-           this.put_bet_6.alpha = 0;
-
-          this.put_bet_7 = new EButton(this,"icon7",this.onPickIcon7,"",20,4,"gem7");
-        this.put_bet_7.x = this.put_bet_0.x+120;
-        this.put_bet_7.y = this.put_bet_0.y+60;
-        this.put_bet_7.setScale(0.5,0.5);
-        this.addChild(this.put_bet_7);
-           this.put_bet_7.alpha = 0;
-
-
-
-
-   
-          this.put_bet_8 = new EButton(this,"icon8",this.onPickIcon8,"",20,4,"gem7");
-        this.put_bet_8.x = this.put_bet_0.x+180;
-        this.put_bet_8.y = this.put_bet_0.y+60;
-        this.put_bet_8.setScale(0.5,0.5);
-        this.addChild(this.put_bet_8);
-           this.put_bet_8.alpha = 0;
-
-
-
-           this.put_bet_9 = new EButton(this,"icon9",null,"",20,4,"gem7");
-        this.put_bet_9.x = this.put_bet_0.x+240;
-        this.put_bet_9.y = this.put_bet_0.y+60;
-        this.put_bet_9.setScale(0.5,0.5);
-        this.addChild(this.put_bet_9);      
-           this.put_bet_9.alpha = 0;
-
-
-
-
-        //this.rpgslot_1 = new ERpgslot(this,"icon1",null,"X1",30,1);
-        this.rpgslot_1 =  new EButton(this,"icon1",this.onPickIcon1,"1",30,4,"gem7");
-        this.rpgslot_1.x =  187+5;// 82+5;
-        this.rpgslot_1.y = 38+5;//78+5;
-        this.rpgslot_1.alpha = 0;
-        this.rpgslot_1.setScale(1,1);
-        this.rpgslot_1.isBetButton = true;
-      //  this.rpgslot_1.touchEnabled = false;   
-        this.addChild(this.rpgslot_1);   
-
-
-        this.rpgslot_2 = new EButton(this,"icon2",this.onPickIcon2,"2",30,4,"gem7");
-        this.rpgslot_2.x =  294+5;//187+5;
-        this.rpgslot_2.y =  78+5;//38+5;
-        this.addChild(this.rpgslot_2);   
-        this.rpgslot_2.alpha = 0;
-         this.rpgslot_2.isBetButton = true;
-         this.rpgslot_2.setScale(1,1);
-
-        this.rpgslot_3 = new EButton(this,"icon3",this.onPickIcon3,"3",30,4,"gem7");
-        this.rpgslot_3.x = 336+5;//294+5;
-        this.rpgslot_3.y = 186+5;//78+5;
-        this.addChild(this.rpgslot_3);   
-        this.rpgslot_3.alpha = 0;
-         this.rpgslot_3.isBetButton = true;
-        this.rpgslot_3.setScale(1,1);
-
-
-        this.rpgslot_4 =new EButton(this,"icon4",this.onPickIcon4,"4",30,4,"gem7");
-        this.rpgslot_4.x = 296+5;//336+5;//38+5;
-        this.rpgslot_4.y = 296+5;//186+5; //186+5;
-        this.addChild(this.rpgslot_4);   
-        this.rpgslot_4.alpha = 0;
-         this.rpgslot_4.isBetButton = true;
-        this.rpgslot_4.setScale(1,1);
-
-        this.rpgslot_5 =new EButton(this,"icon5",this.onPickIcon5,"5",30,4,"gem7");
-        this.rpgslot_5.x =190+5;//296+5;// 170+30;
-        this.rpgslot_5.y =333+5;//296+5;// 165+30;
-        this.addChild(this.rpgslot_5);   
-        this.rpgslot_5.alpha = 0;
-         this.rpgslot_5.isBetButton = true;
-        this.rpgslot_5.setScale(1,1);
-
-        this.rpgslot_6 = new EButton(this,"icon6",this.onPickIcon6,"6",30,4,"gem7");
-        this.rpgslot_6.x = 82+5//190+5;// 336+5;
-        this.rpgslot_6.y = 290+5;//333+5;// 186+5;
-        this.addChild(this.rpgslot_6);   
-        this.rpgslot_6.alpha = 0;
-         this.rpgslot_6.isBetButton = true;
-        this.rpgslot_6.setScale(1,1);    
-
-        this.rpgslot_7 = new EButton(this,"icon7",this.onPickIcon7,"7",30,4,"gem7");
-        this.rpgslot_7.x = 38+5;//82+5;
-        this.rpgslot_7.y = 186+5;//290+5;
-        this.addChild(this.rpgslot_7);   
-        this.rpgslot_7.alpha = 0;
-         this.rpgslot_7.isBetButton = true;
-        this.rpgslot_7.setScale(1,1);
-
-        this.rpgslot_8 = new EButton(this,"icon8",this.onPickIcon8,"8",30,4,"gem7");
-        this.rpgslot_8.x =82+5;//38+5;
-        this.rpgslot_8.y =78+5;// 186+5;
-        this.addChild(this.rpgslot_8);   
-        this.rpgslot_8.alpha = 0;
-         this.rpgslot_8.isBetButton = true;
-        this.rpgslot_8.setScale(1,1);
-
-        this.rpgslot_result = new EButton(this,"item",null,"bet",30,4,"gem7");
-        this.rpgslot_result.x = 170+30;
-        this.rpgslot_result.y = 165+30;
-        this.addChild(this.rpgslot_result);   
-        this.rpgslot_result.alpha = 0;
-        this.rpgslot_result.setScale(1,1);
-
-        this.rpgslot_9 = new EButton(this,"icon9",null,"",30,4,"gem7");
-
-        this.shot =  new EButton(this,"shot_2",null,"",30,1,"rpg");
-        this.shot.x =  187+5;// 82+5;
-        this.shot.y = 38+5;//78+5;
-        this.shot.alpha = 0;
-        this.shot.setScale(1,1);
-        this.shot.touchEnabled = false;   
-        this.addChild(this.shot);   
-        this.shot.isPlayCartoon = false;
-
-       this.showTitle = new EButton(this,"title",null,this.game_cname,20,4,"rpg");
-        this.showTitle.x = 342 ;
-        this.showTitle.y = 2;   
-        this.addChild(this.showTitle);       
-
-       this.buttonBet = new EButton(this,"b1",this.startBet,"Bet",30,4,"rpg");
-        //this.buttonBet = new ImgButton("bigYellowBtn",this.onButtonBetTouchTap,"Bet!!",30);
-        this.buttonBet.x = this.rpgslot_3.x+150 ;
-        this.buttonBet.y =  this.rpgslot_3.y+50;        
-        this.addChild(this.buttonBet);   
-       this.buttonReset = new EButton(this,"b2",this.resetBet,"Reset",30,4,"rpg");
-        //this.buttonBet = new ImgButton("bigYellowBtn",this.onButtonBetTouchTap,"Bet!!",30);
-        this.buttonReset.x = this.rpgslot_3.x+250 ;
-        this.buttonReset.y =  this.rpgslot_3.y+50;        
-        this.addChild(this.buttonReset);               
-
-        this.showTipsBtn = new EButton(this,"b1",this.onShowTipsBtnTouchTap,"test",30,1,"rpg");
-        this.showTipsBtn.x =800;
-        this.showTipsBtn.y =0; 
-        this.addChild(this.showTipsBtn);
-
-
-        this.logoImg = new egret.Bitmap();
-        this.logoImg.texture = this.assets.getTexture("logoImg");
-        this.logoImg.anchorX = 0.5;
-        this.logoImg.anchorY = 1;
-        this.logoImg.x = this.w/2;
-        this.logoImg.y = - 550;;
-        this.addChild(this.logoImg);   
-*/
 
         this.door_left = new EButton(this,"door_left",this.onBackToChooseStage,"",2,5,"rpg");
         this.door_left.x = 30;
@@ -372,17 +161,6 @@ class FishPanel extends     BasePanel{
 
 
 
-/*
-            //开始按钮
-            this.btnStart = fighter.createBitmapByName("btnStart");//开始按钮
-            this.btnStart.x = (this.stageW-this.btnStart.width)/2;//居中定位
-            this.btnStart.y = (this.stageH-this.btnStart.height)/2;//居中定位
-            this.btnStart.touchEnabled = true;//开启触碰
-            this.btnStart.addEventListener(egret.TouchEvent.TOUCH_TAP,this.gameStart,this);//点击按钮开始游戏
-            this.addChild(this.btnStart);
-            //我的飞机
-*/
-              //this.buttonBet = new EButton(this,"b1",this.startBet,"Bet",30,4,"rpg");
             this.btnStart =new EButton(this,"b1",this.gameStart,"start",30,4,"rpg");//开始按钮
             this.btnStart.x = 0;//居中定位
             this.btnStart.y = 0;//居中定位
@@ -394,6 +172,7 @@ class FishPanel extends     BasePanel{
             this.btnTest.y = 300;//居中定位
             this.btnTest.touchEnabled = true;//开启触碰           
             this.addChild(this.btnTest);
+             this.btnTest.visible =false;
 
 
 

@@ -12,7 +12,7 @@ var WheelPanel = (function (_super) {
         //public initPanel():void{}
         //public initEffect():void{}
         //public showResult(str:string):void{}   
-        this.slot_assets_name = "gem7";
+        this.slot_assets_name = "12";
         this.min_bet = 0;
         this.base_bet = 100;
         this.websocket_delay = 500;
@@ -29,6 +29,7 @@ var WheelPanel = (function (_super) {
         // this.imgBtn2.roulette(250,250,1,10000,1,false);  
     };
     WheelPanel.prototype.initPanel = function () {
+        this.setServerLisenter();
         this.bg = new egret.Bitmap();
         this.bg.texture = this.assets.getTexture("bg");
         this.addChild(this.bg);
@@ -189,21 +190,21 @@ var WheelPanel = (function (_super) {
         this.addChild(this.showTitle);
         this.buttonBet = new EButton(this, "b1", this.startBet, "Bet", 30, 4, "rpg");
         //this.buttonBet = new ImgButton("bigYellowBtn",this.onButtonBetTouchTap,"Bet!!",30);
-        this.buttonBet.x = this.slot_3.x + 150;
-        this.buttonBet.y = this.slot_3.y + 50;
+        this.buttonBet.x = 550;
+        this.buttonBet.y = 350;
         this.addChild(this.buttonBet);
         this.buttonReset = new EButton(this, "b2", this.resetBet, "Reset", 30, 4, "rpg");
         //this.buttonBet = new ImgButton("bigYellowBtn",this.onButtonBetTouchTap,"Bet!!",30);
-        this.buttonReset.x = this.slot_3.x + 250;
-        this.buttonReset.y = this.slot_3.y + 50;
+        this.buttonReset.x = this.buttonBet.x + 100;
+        this.buttonReset.y = this.buttonBet.y;
         this.addChild(this.buttonReset);
         this.showTipsBtn = new EButton(this, "b1", this.onShowFishTouchTap, "test", 30, 1, "rpg");
         this.showTipsBtn.x = 800;
         this.showTipsBtn.y = 0;
         this.addChild(this.showTipsBtn);
         this.coinBtn = new EButton(this, "btc", null, "Loading", 30, 1, "coin");
-        this.coinBtn.x = 600;
-        this.coinBtn.y = 0;
+        this.coinBtn.x = 550;
+        this.coinBtn.y = 400;
         this.addChild(this.coinBtn);
         this.coinBtn.touchEnabled = false;
         this.logoImg = new egret.Bitmap();
@@ -296,15 +297,18 @@ var WheelPanel = (function (_super) {
         var lucky = obj.Lucky;
         this.imgBtn2.roulette(parseInt(contentObj.icon), 500, true);
         this.imgBtn3.roulette(parseInt(contentObj.icon), 500, true);
+        console.log(parseInt(contentObj.icon));
         var gold = 0;
-        // this.flyGold(this.slot_1,this.coinBtn,golds,interval);
-        this.blinkRpgslot(contentObj.icon, 0, 1000);
         for (var i = 0; i < contentObj.pick.length; i++) {
-            var obj = this.getSlot(contentObj.pick[i].icon - 1);
-            if (obj != "undefined") {
-                if (contentObj.pick[i].profit > 0) {
-                    gold = Math.ceil(parseInt(contentObj.pick[i].profit) / this.min_bet);
-                    this.flyGold(obj, this.coinBtn, gold, 500);
+            if (contentObj.icon == contentObj.pick[i].icon) {
+                var obj = this.getSlot(contentObj.pick[i].icon);
+                EffectUtils.blinkEffect(obj, 1000);
+                console.log(obj);
+                if (obj != "undefined") {
+                    if (contentObj.pick[i].profit > 0) {
+                        gold = Math.ceil(parseInt(contentObj.pick[i].profit) / this.min_bet);
+                        this.flyGold(obj, this.coinBtn, gold, 500);
+                    }
                 }
             }
         }
@@ -312,9 +316,12 @@ var WheelPanel = (function (_super) {
             gold = Math.ceil(parseInt(contentObj.allprofit) * -1 / this.min_bet);
             this.flyGold(this.coinBtn, this.imgBtn3, gold, 500);
         }
-        egret.setTimeout(function () {
-            this.slot_result.setBitmap("icon" + lucky.substr(0, 1));
-        }, this, 300);
+        /*
+  egret.setTimeout(function () {
+      
+      this.slot_result.setBitmap("icon"+lucky.substr(0,1))
+    }, this, 300);
+ */
         egret.setTimeout(function () {
             var isLose = false;
             if (contentObj.allprofit < 0) {
@@ -330,6 +337,11 @@ var WheelPanel = (function (_super) {
             }
             this.coinBtn.setText(contentObj.balance);
         }, this, 1250);
+    };
+    WheelPanel.prototype.onChooseStage = function (e) {
+        this.disconnenct();
+        Global.dispatchEvent(MainNotify.openStartPanelNotify, null, false);
+        Global.dispatchEvent(MainNotify.closeWheelPanelNotify, null, false);
     };
     return WheelPanel;
 })(CrapPanel);

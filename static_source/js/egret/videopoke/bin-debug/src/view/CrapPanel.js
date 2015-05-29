@@ -28,6 +28,7 @@ var CrapPanel = (function (_super) {
     }
     /* ↑↑↑↑↑↑↑↑↑↑↑↑是引用此class需修改的*/
     CrapPanel.prototype.initPanel = function () {
+        this.setServerLisenter();
         this.bg = new egret.Bitmap();
         this.bg.texture = this.assets.getTexture("bg");
         this.addChild(this.bg);
@@ -138,6 +139,7 @@ var CrapPanel = (function (_super) {
         this.showTipsBtn.x = 800;
         this.showTipsBtn.y = 0;
         this.addChild(this.showTipsBtn);
+        this.showTipsBtn.visible = false;
         this.coinBtn = new EButton(this, "btc", null, "Loading", 30, 1, "coin");
         this.showTipsBtn.x = 0;
         this.showTipsBtn.y = 430;
@@ -286,6 +288,11 @@ var CrapPanel = (function (_super) {
         }, this, 1250);
         // 
         //this.slot_result.textField.text=lucky.substr(0,1)
+    };
+    CrapPanel.prototype.onChooseStage = function (e) {
+        this.disconnenct();
+        Global.dispatchEvent(MainNotify.openStartPanelNotify, null, false);
+        Global.dispatchEvent(MainNotify.closeCrapPanelNotify, null, false);
     };
     return CrapPanel;
 })(GamePanel);

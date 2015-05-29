@@ -24,6 +24,13 @@ var Lottery28Panel = (function (_super) {
         this.myBet = { name: "slot", kind: this.game_kind, total: 0, lucky: "", shash: "", nonce: "", ckey: "", pick: [], pk: [] };
     }
     Lottery28Panel.prototype.initPanel = function () {
+        /*
+        if (Global.first_login==false){
+             console.log("lottery28 initPanel passed")
+            return
+        }
+       */
+        this.setServerLisenter();
         this.bg = new egret.Bitmap();
         //  this.bg.texture = this.assets.getTexture("lottery28bg");
         // this.bg.texture =  RES.getRes("lottery28bg");
@@ -831,6 +838,11 @@ var Lottery28Panel = (function (_super) {
                 this.e_profit.addAnimatedNumber(contentObj.allprofit * -1);
             }
         }, this, 1550);
+    };
+    Lottery28Panel.prototype.onChooseStage = function (e) {
+        this.disconnenct();
+        Global.dispatchEvent(MainNotify.openStartPanelNotify, null, false);
+        Global.dispatchEvent(MainNotify.closeLottery28PanelNotify, null, false);
     };
     return Lottery28Panel;
 })(CrapPanel);

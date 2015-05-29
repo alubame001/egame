@@ -18,6 +18,7 @@
         {"name":"12","type":"sheet","url":"12/12.json"},
         {"name":"lottery28","type":"sheet","url":"lottery28/lottery28.json"},
         {"name":"menu","type":"sheet","url":"menu/menusheet_7e344a55.json"},
+        {"name":"circle","type":"sheet","url":"circle/circlesheet_12808467.json"},
         {"name":"number","type":"sheet","url":"number/numbersheet_2c3aae06.json"},
         {"name":"wheel","type":"sheet","url":"wheel/wheel.json"},
         {"name":"sound","type":"sound","url":"sound/sound.mp3"},
@@ -29,7 +30,7 @@
 
 "groups":
         [ {"name":"loading","keys":"load,bg,logo,number"},      
-        {"name": "preload","keys": "menu"},       
+        {"name": "preload","keys": "menu,circle"},       
         {"name":"lottery28_load","keys":"assets,coin,lottery28bg,lottery28,lottery28_door_bg,bg"},
         {"name":"crap9_load","keys":"assets,coin,gem7,rpg,bg"},
         {"name":"wheel_load","keys":"assets,coin,wheel,12,rpg,bg"},        

@@ -30,6 +30,16 @@ class StartPanel extends BasePanel{
     private slotBtn:EMenu;   
     private niuniuBtn:EMenu;   
 
+    private progress1:ECircle;   
+    private progress2:ECircle;   
+    private progress3:ECircle;   
+    private progress4:ECircle;   
+    private progress5:ECircle;   
+    private progress6:ECircle;   
+    private progress7:ECircle;   
+    private progress8:ECircle;   
+
+
 
 
     public initPanel(): void {
@@ -39,6 +49,94 @@ class StartPanel extends BasePanel{
         this.addChild(this.bg);
         this.bg.touchEnabled =     false;
 
+
+        this.progress1 = new ECircle(this,"icon_lucky28",this.onLottery28BtnTouchTap,"",20,4,"circle");
+        this.progress1.x = 600;//294+5;
+        this.progress1.y = 0;//78+5;
+        this.progress1.alpha = 0;//78+5;
+         this.progress1.textField2.text ="幸运28";
+        this.addChild(this.progress1);   
+        
+        this.progress2 = new ECircle(this,"icon_ghost",this.onCrap9BtnTouchTap,"",20,4,"circle");
+        this.progress2.x = 600;//294+5;
+        this.progress2.y = 0;//78+5;
+        this.progress2.alpha = 0;//78+5;
+         this.progress2.textField2.text ="魔九";
+        this.addChild(this.progress2);  
+
+        
+        this.progress3 = new ECircle(this,"icon_12",this.onWheelBtnTouchTap,"",20,4,"circle");
+        this.progress3.x = 600;//294+5;
+        this.progress3.y = 0;//78+5;
+        this.progress3.alpha = 0;//78+5;
+         this.progress3.textField2.text ="十二生肖";
+        this.addChild(this.progress3);  
+
+        this.progress4 = new ECircle(this,"icon_fish",this.onWheelBtnTouchTap,"",20,4,"circle");
+        this.progress4.x = 600;//294+5;
+        this.progress4.y = 0;//78+5;
+        this.progress4.alpha = 0;//78+5;
+         this.progress4.textField2.text ="捕鱼达人";
+        this.addChild(this.progress4);  
+
+
+
+
+        this.progress5 = new ECircle(this,"icon_coming",null,"",20,4,"circle");
+        this.progress5.x = 600;//294+5;
+        this.progress5.y = 245;//78+5;
+        this.progress5.alpha = 0;//78+5;
+        this.progress5.textField2.text ="水果老虎机";
+        this.addChild(this.progress5); 
+
+
+        this.progress6 = new ECircle(this,"icon_coming",null,"",20,4,"circle");
+        this.progress6.x = 600;//294+5;
+        this.progress6.y = 245;//78+5;
+        this.progress6.alpha = 0;//78+5;
+         this.progress6.textField2.text ="百家乐";
+        this.addChild(this.progress6);   
+
+        this.progress7  = new ECircle(this,"icon_coming",null,"",20,4,"circle");
+        this.progress7.x = 600;//294+5;
+        this.progress7.y = 245;//78+5;
+        this.progress7.alpha = 0;//78+5;
+        this.progress7.textField2.text ="21点";
+        this.addChild(this.progress7);   
+        
+        this.progress8 = new ECircle(this,"icon_coming",null,"",20,4,"circle");
+        this.progress8.x = 600;//294+5;
+        this.progress8.y = 245;//78+5;
+        this.progress8.alpha = 0;//78+5;
+         this.progress8.textField2.text ="牛牛";
+        this.addChild(this.progress8);   
+
+
+        /*
+        this.progress2 = new ECircle(this,"icon_ghost",this.onCrap9BtnTouchTap,"",20,4,"circle");
+        this.progress2.x = 600;//294+5;
+        this.progress2.y = 0;//78+5;
+        this.progress2.alpha = 0;//78+5;
+         this.progress2.textField2.text ="魔九";
+        this.addChild(this.progress2);  
+
+        
+        this.progress3 = new ECircle(this,"icon_12",this.onWheelBtnTouchTap,"",20,4,"circle");
+        this.progress3.x = 600;//294+5;
+        this.progress3.y = 0;//78+5;
+        this.progress3.alpha = 0;//78+5;
+         this.progress3.textField2.text ="十二生肖";
+        this.addChild(this.progress3);  
+
+        this.progress4 = new ECircle(this,"icon_fish",this.onWheelBtnTouchTap,"",20,4,"circle");
+        this.progress4.x = 600;//294+5;
+        this.progress4.y = 0;//78+5;
+        this.progress4.alpha = 0;//78+5;
+         this.progress4.textField2.text ="捕鱼达人";
+        this.addChild(this.progress4);  
+        */  
+       
+/*
         this.lottery28Btn = new EMenu(this,"lottery28",this.onLottery28BtnTouchTap,"",20,4,"menu");
         this.lottery28Btn.x = 0;//294+5;
         this.lottery28Btn.y = 0;//78+5;
@@ -97,7 +195,10 @@ class StartPanel extends BasePanel{
         this.niuniuBtn.y = 220;//78+5;
         this.niuniuBtn.alpha = 0;//78+5;
          this.niuniuBtn.textField2.text ="牛牛";
-        this.addChild(this.niuniuBtn);          
+        this.addChild(this.niuniuBtn);   
+*/
+
+
 
         this.initEffect();
 
@@ -105,9 +206,62 @@ class StartPanel extends BasePanel{
 
     private initEffect():void{
         egret.setTimeout(function () {              
+            egret.Tween.get(this.progress1)
+            .to({ x: 0, y:5,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1); 
+
+        egret.setTimeout(function () {              
+            egret.Tween.get(this.progress2)
+            .to({ x: 200, y:5,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1+200);  
+        egret.setTimeout(function () {              
+            egret.Tween.get(this.progress3)
+            .to({ x: 400, y:5,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1+400);  
+
+        egret.setTimeout(function () {              
+            egret.Tween.get(this.progress4)
+            .to({ x: 600, y:5,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1+600);  
+
+
+        egret.setTimeout(function () {              
+            egret.Tween.get(this.progress5)
+            .to({ x: 0, y:245,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1+800); 
+
+
+        egret.setTimeout(function () {              
+            egret.Tween.get(this.progress6)
+            .to({ x: 200, y:245,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1+1000);  
+
+        egret.setTimeout(function () {              
+            egret.Tween.get(this.progress7)
+            .to({ x: 400, y:245,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1+1200);  
+
+
+        egret.setTimeout(function () {              
+            egret.Tween.get(this.progress8)
+            .to({ x: 600, y:245,alpha:1},600,egret.Ease.backOut); 
+        }, this, 550*1+1400);  
+
+
+
+
+
+        /*
+
+
+
+
+
+        egret.setTimeout(function () {              
             egret.Tween.get(this.lottery28Btn)
             .to({ x: 0, y:5,alpha:1},600,egret.Ease.backOut); 
         }, this, 550*1);  
+
         egret.setTimeout(function () {              
             egret.Tween.get(this.crap9Btn)
             .to({ x: 20+200, y:5,alpha:1},600,egret.Ease.backOut); 
@@ -146,77 +300,42 @@ class StartPanel extends BasePanel{
             egret.Tween.get(this.niuniuBtn)
             .to({ x: 20+600, y:245,alpha:1},600,egret.Ease.backOut); 
         }, this, 550*1+1400);  
-        /*      
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn2).to({x:this.w/2 - this.btn2.width/2},600,egret.Ease.backOut); 
-        }, this, 150*2);   
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn3).to({x:this.w/2 - this.btn3.width/2},600,egret.Ease.backOut); 
-        }, this, 150*3);   
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn4).to({x:this.w/2 - this.btn4.width/2},600,egret.Ease.backOut); 
-        }, this, 150*4);   
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn5).to({x:this.w/2 - this.btn5.width/2},600,egret.Ease.backOut); 
-        }, this, 150*5);   
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn6).to({x:this.w/2 - this.btn6.width/2},600,egret.Ease.backOut); 
-        }, this, 150*6);     
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn7).to({x:this.w/2 - this.btn7.width/2},600,egret.Ease.backOut); 
-        }, this, 150*7);     
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn8).to({x:this.w/2 - this.btn8.width/2},600,egret.Ease.backOut); 
-        }, this, 150*8);     
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn9).to({x:this.w/2 - this.btn9.width/2},600,egret.Ease.backOut); 
-        }, this, 150*9);     
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.btn10).to({x:this.w/2 - this.btn10.width/2},600,egret.Ease.backOut); 
-        }, this, 150*10);   
-        egret.setTimeout(function () {              
-            egret.Tween.get(this.bottomCopyRight).to({alpha:1},600); 
-            egret.Tween.get(this.menuBtn).to({alpha:1},600); 
-            egret.Tween.get(this.setBtn).to({alpha:1},600);
-        }, this, 150*11);           
-        */
+*/
+
+
+               
+        
     }
     private onSubResourceLoadComplete(event:RES.ResourceEvent):void {
 
-        console.log("onSubResourceLoadComplete:",event.groupName)
+       // console.log("onSubResourceLoadComplete:",event.groupName)
+    //   PopUpManager.removePopUp(this.loadingView);
+        RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
          if(event.groupName=="lottery28_load"){     
-              PopUpManager.removePopUp(this.loadingView);
-            this.loadingPanel = new LoadingPanel();
-            PopUpManager.addPopUp(this.loadingPanel);
-            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+
+           
             Global.dispatchEvent(MainNotify.openLottery28PanelNotify,null,false);
             Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
         }
 
         else if(event.groupName=="crap9_load"){     
-              PopUpManager.removePopUp(this.loadingView);
-            this.loadingPanel = new LoadingPanel();
-            PopUpManager.addPopUp(this.loadingPanel);
-            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+
+          
             Global.dispatchEvent(MainNotify.openCrapPanelNotify,null,false);
             Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
         }
 
         else if(event.groupName=="wheel_load"){     
-              PopUpManager.removePopUp(this.loadingView);
-            this.loadingPanel = new LoadingPanel();
-            PopUpManager.addPopUp(this.loadingPanel);
-            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+
+         
             Global.dispatchEvent(MainNotify.openWheelPanelNotify,null,false);
             Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
         }
 
 
           else if(event.groupName=="fish_load"){     
-            PopUpManager.removePopUp(this.loadingView);
-            this.loadingPanel = new LoadingPanel();
-            PopUpManager.addPopUp(this.loadingPanel);
-            RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+
+          
             Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
             Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
         }
@@ -225,9 +344,9 @@ class StartPanel extends BasePanel{
 
     }
     public onLottery28BtnTouchTap(e:egret.TouchEvent):void{
-         this.loadingView  = new LoadingUI();
-        PopUpManager.addPopUp(this.loadingView);
-
+          //  PopUpManager.removePopUp(this.loadingView);
+       //     this.loadingPanel = new LoadingPanel();
+         //   PopUpManager.addPopUp(this.loadingPanel);
         //初始化Resource资源加载库
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
         RES.loadGroup("lottery28_load");
@@ -251,11 +370,10 @@ class StartPanel extends BasePanel{
     }
 
     public onFishBtnTouchTap(e:egret.TouchEvent):void{
+      /*
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
         RES.loadGroup("fish_load");
-
-       // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
-        //Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        */
     }
     public onWheelBtnTouchTap(e:egret.TouchEvent):void{
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);

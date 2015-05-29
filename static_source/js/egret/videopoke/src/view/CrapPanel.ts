@@ -36,7 +36,7 @@ class CrapPanel extends     GamePanel{
     public initPanel():void{
 
  
-
+        this.setServerLisenter();
         this.bg = new egret.Bitmap();
         this.bg.texture = this.assets.getTexture("bg");
         this.addChild(this.bg);   
@@ -175,6 +175,7 @@ class CrapPanel extends     GamePanel{
         this.showTipsBtn.x =800;
         this.showTipsBtn.y =0; 
         this.addChild(this.showTipsBtn);
+        this.showTipsBtn.visible= false;
 
         this.coinBtn = new EButton(this,"btc",null,"Loading",30,1,"coin");
         this.showTipsBtn.x =0;
@@ -380,6 +381,13 @@ class CrapPanel extends     GamePanel{
 
     }
 
+
+     public onChooseStage(e:egret.TouchEvent):void{
+        this.disconnenct();
+        Global.dispatchEvent(MainNotify.openStartPanelNotify,null,false);
+        Global.dispatchEvent(MainNotify.closeCrapPanelNotify,null,false);        
+            
+    }
 
 
 

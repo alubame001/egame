@@ -23,7 +23,6 @@ var GamePanel = (function (_super) {
         /* ↑↑↑↑↑↑↑↑↑↑↑↑是引用此class需修改的*/
         this.balance = 0;
         this.uid = "0";
-        this.first_login = true;
         this.isPlay = false;
     }
     /* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓是引用此class需修改的*/
@@ -106,6 +105,7 @@ var GamePanel = (function (_super) {
     
     */
     GamePanel.prototype.initPanel = function () {
+        this.setServerLisenter();
         this.bg = new egret.Bitmap();
         this.bg.texture = this.assets.getTexture("bg");
         this.addChild(this.bg);
@@ -322,9 +322,9 @@ var GamePanel = (function (_super) {
         this.resetBet();
         var msg = { name: "slot", kind: this.game_kind, total: 0, lucky: "", shash: "", nonce: "", ckey: "disconnect", pick: [], pk: [] };
         var str = JSON.stringify(msg);
-        egret.setTimeout(function () {
-            SocketManager.sendMessage(str);
-        }, this, this.websocket_delay);
+        // egret.setTimeout(function () {     
+        SocketManager.sendMessage(str);
+        //  }, this, this.websocket_delay);  
     };
     GamePanel.prototype.sendBet = function () {
         this.addWaitPanel();
@@ -544,73 +544,76 @@ var GamePanel = (function (_super) {
         var slot = this.slots[icon];
         return slot;
     };
+    GamePanel.prototype.setServerLisenter = function () {
+        //  console.log("setServerLisenter")
+        //  console.log("Global.first_login ",Global.first_login)
+        var socketResultFun = function (e) {
+            //this.buttonBet.visible = true;
+            //this.buttonBet.touchEnabled = true;
+            //  console.log("socketResultFun")
+            var str = JSON.stringify(e.param);
+            var s = this.parseWebsocketResult(str);
+            var obj = JSON.parse(str);
+            $(".all").prepend(s);
+            var len = $(".all .result").length;
+            for (var i = 0; i < len - 20; i++) {
+                $(".all .result:last").remove();
+            }
+            if (obj.Uid == this.uid) {
+                this.removeWaitPanel();
+                $(".my").prepend(s);
+                this.showResult(str);
+                egret.setTimeout(function () {
+                }, this, 100 * 2);
+                var len = $(".my .result").length;
+                for (var i = 0; i < len - 20; i++) {
+                    $(".my .result:last").remove();
+                }
+                if (e.param.Type == "2" && e.param.Cmd == "result") {
+                    //GameConfig.gameScene().maskLayer.removeChild(Global.waitPanel);
+                    //  Global.waitPanel = null;
+                    LocalStoreage.setLocalStoreage(this.game_kind, str);
+                }
+            }
+        };
+        var socketAlreadyOnlineFun = function (e) {
+            console.log("socketAlreadyOnlineFun");
+        };
+        var onSocketCloseFun = function (e) {
+            console.log("onSocketCloseFun");
+            Global.removeEventListener("join", onJoinFun, this);
+            Global.removeEventListener("disconnect", onDisconnectFun, this);
+            Global.removeEventListener("onSocketClose", onSocketCloseFun, this);
+            Global.removeEventListener("already_online", socketAlreadyOnlineFun, this);
+            Global.removeEventListener("result", socketResultFun, this);
+        };
+        var onDisconnectFun = function (e) {
+            console.log("onDisconnectFun");
+        };
+        var onJoinFun = function (e) {
+            var str = JSON.stringify(e.param);
+            var obj = JSON.parse(str);
+            this.balance = obj.Content;
+            this.coinBtn.textField.text = obj.Content;
+            this.e_balance.initNumber = Number(obj.Content);
+            this.e_balance.setNumber(this.e_balance.initNumber);
+            //   lcp.LListener.getInstance().dispatchEvent(new lcp.LEvent(String(this.e_balance.hashCode) ,obj.Content, false)); 
+        };
+        // if (Global.first_login) {
+        //    console.log("Global.first_login ",Global.first_login)
+        //    Global.first_login = false;
+        Global.addEventListener("join", onJoinFun, this);
+        Global.addEventListener("disconnect", onDisconnectFun, this);
+        Global.addEventListener("onSocketClose", onSocketCloseFun, this);
+        Global.addEventListener("already_online", socketAlreadyOnlineFun, this);
+        Global.addEventListener("result", socketResultFun, this);
+        // }        
+    };
     GamePanel.prototype.connetToServer = function (close, stage) {
         this.setSlot();
-        console.log(this.slots);
-        console.log("connetToServer...");
         var m = $("meta[name=_xsrf]").attr('content');
         var host = $("meta[name=_host]").attr('content');
         SocketManager.connectServer(host + "/egame/ws/join?uname=" + m + "?kind=" + this.game_kind + "?stage=" + stage);
-        if (this.first_login) {
-            this.first_login = false;
-            var socketResultFun = function (e) {
-                this.buttonBet.visible = true;
-                this.buttonBet.touchEnabled = true;
-                var str = JSON.stringify(e.param);
-                var s = this.parseWebsocketResult(str);
-                var obj = JSON.parse(str);
-                $(".all").prepend(s);
-                var len = $(".all .result").length;
-                for (var i = 0; i < len - 20; i++) {
-                    $(".all .result:last").remove();
-                }
-                if (obj.Uid == this.uid) {
-                    this.removeWaitPanel();
-                    $(".my").prepend(s);
-                    this.showResult(str);
-                    egret.setTimeout(function () {
-                    }, this, 100 * 2);
-                    var len = $(".my .result").length;
-                    for (var i = 0; i < len - 20; i++) {
-                        $(".my .result:last").remove();
-                    }
-                    if (e.param.Type == "2" && e.param.Cmd == "result") {
-                        //GameConfig.gameScene().maskLayer.removeChild(Global.waitPanel);
-                        //  Global.waitPanel = null;
-                        LocalStoreage.setLocalStoreage(this.game_kind, str);
-                    }
-                }
-            };
-            Global.addEventListener("result", socketResultFun, this);
-            var socketAlreadyOnlineFun = function (e) {
-                this.buttonBet.visible = true;
-                this.buttonBet.touchEnabled = true;
-                //this.closeDoor(true);    
-                // this.reconnect(false);
-            };
-            Global.addEventListener("already_online", socketAlreadyOnlineFun, this);
-            var onSocketCloseFun = function (e) {
-                this.buttonBet.visible = true;
-                this.buttonBet.touchEnabled = true;
-                console.log("SocketClose");
-            };
-            Global.addEventListener("onSocketClose", onSocketCloseFun, this);
-            var onDisconnectFun = function (e) {
-                console.log("onDisconnectFun");
-            };
-            Global.addEventListener("disconnect", onDisconnectFun, this);
-            var onJoinFun = function (e) {
-                var str = JSON.stringify(e.param);
-                var obj = JSON.parse(str);
-                this.balance = obj.Content;
-                this.coinBtn.textField.text = obj.Content;
-                this.e_balance.initNumber = Number(obj.Content);
-                this.e_balance.setNumber(this.e_balance.initNumber);
-                //console.log("join",obj)
-                console.log("this.e_balance.initNumber", this.e_balance.initNumber);
-            };
-            Global.addEventListener("join", onJoinFun, this);
-        }
         //
     };
     GamePanel.prototype.onChooseStage = function (e) {
@@ -799,7 +802,6 @@ var GamePanel = (function (_super) {
     };
     GamePanel.prototype.flyGold = function (obj, target, gold, interval) {
         // gold=  Maths.RndNum(99)+1   
-        console.log(gold);
         var targetNewX = target.x + target.width / 2;
         var targetNewY = target.y + target.height / 2;
         var tips = 0;

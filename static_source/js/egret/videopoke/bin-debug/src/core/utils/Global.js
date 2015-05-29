@@ -19,6 +19,7 @@ var Global;
     //幸运28用的进阶投注方式 
     Global.advPanel;
     Global.selectMode = 0;
+    Global.first_login = true;
     // 储存数据需要key和value，都必须是字符串
     // var key:string = "bestscore";
     // var value:string = "95";
@@ -56,6 +57,11 @@ var Global;
         lcp.LListener.getInstance().addEventListener(type, listener, thisObject, useCapture, priority);
     }
     Global.addEventListener = addEventListener;
+    function removeEventListener(type, listener, thisObject, useCapture) {
+        if (useCapture === void 0) { useCapture = false; }
+        lcp.LListener.getInstance().removeEventListener(type, listener, thisObject, useCapture);
+    }
+    Global.removeEventListener = removeEventListener;
     //存储cookies 存储临时数据如最高分最低分之类的
     function setCookie(name, value) {
         document.cookie = name + "=" + value;

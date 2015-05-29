@@ -102,7 +102,7 @@ class GamePanel extends     BasePanel{
     public balance : number = 0;
     public uid : string="0";
 
-    public first_login: boolean= true;
+
 
     public shot:EButton;
 
@@ -195,7 +195,7 @@ class GamePanel extends     BasePanel{
 
    public initPanel():void{
 
- 
+        this.setServerLisenter();
 
         this.bg = new egret.Bitmap();
         this.bg.texture = this.assets.getTexture("bg");
@@ -475,9 +475,9 @@ class GamePanel extends     BasePanel{
         this.resetBet();
         var msg : BetJson  = { name: "slot",kind:this.game_kind,total:0,lucky:"",shash:"",nonce:"",ckey:"disconnect",pick:[],pk:[]};
         var str =JSON.stringify(msg);
-        egret.setTimeout(function () {     
+       // egret.setTimeout(function () {     
             SocketManager.sendMessage(str)
-        }, this, this.websocket_delay);  
+      //  }, this, this.websocket_delay);  
     }
 
     public sendBet():void{
@@ -732,22 +732,15 @@ class GamePanel extends     BasePanel{
        // var i = parseInt(icon);
         var slot = this.slots[icon]
         return slot;       
-    }    
-    public connetToServer(close: boolean,stage:string):void{
-        this.setSlot();
-       console.log(this.slots)
-        console.log("connetToServer...")
-                var m = $("meta[name=_xsrf]").attr('content');
-                var host = $("meta[name=_host]").attr('content');
-        SocketManager.connectServer(host+"/egame/ws/join?uname="+m+"?kind="+this.game_kind+"?stage="+stage);
-        if (this.first_login) {
-
-            this.first_login = false;
+    }   
+    public setServerLisenter():void{
+      //  console.log("setServerLisenter")
+        //  console.log("Global.first_login ",Global.first_login)
             var socketResultFun: Function = function(e) {
-                this.buttonBet.visible = true;
-                this.buttonBet.touchEnabled = true;
+                //this.buttonBet.visible = true;
+                //this.buttonBet.touchEnabled = true;
 
-
+ //  console.log("socketResultFun")
                 var str = JSON.stringify(e.param)
                 var s = this.parseWebsocketResult(str)
                 var obj = JSON.parse(str)
@@ -781,38 +774,30 @@ class GamePanel extends     BasePanel{
                 }
 
             }
-            Global.addEventListener("result", socketResultFun, this)
+
 
 
 
             var socketAlreadyOnlineFun: Function = function(e) {
-                this.buttonBet.visible = true;
-                this.buttonBet.touchEnabled = true;   
-                //this.closeDoor(true);    
-                // this.reconnect(false);
-
-
+                console.log("socketAlreadyOnlineFun")     
             }
-            Global.addEventListener("already_online", socketAlreadyOnlineFun, this)
+           
 
-            var onSocketCloseFun: Function = function(e) {
-                this.buttonBet.visible = true;
-                this.buttonBet.touchEnabled = true;   
-
-                console.log("SocketClose");      
-               
-
+            var onSocketCloseFun: Function = function(e) {    
+             console.log("onSocketCloseFun")     
+                Global.removeEventListener("join", onJoinFun, this)
+                Global.removeEventListener("disconnect", onDisconnectFun, this)
+                Global.removeEventListener("onSocketClose", onSocketCloseFun, this)
+                Global.removeEventListener("already_online", socketAlreadyOnlineFun, this)      
+                Global.removeEventListener("result", socketResultFun, this) 
             }
-            Global.addEventListener("onSocketClose", onSocketCloseFun, this)
+        
 
             var onDisconnectFun: Function = function(e) {
-
-
-                console.log("onDisconnectFun");
-
+                 console.log("onDisconnectFun")
 
             }
-            Global.addEventListener("disconnect", onDisconnectFun, this)
+          
             var onJoinFun: Function = function(e) {
                 var str = JSON.stringify(e.param)
                 var obj = JSON.parse(str)
@@ -820,16 +805,29 @@ class GamePanel extends     BasePanel{
                 this.coinBtn.textField.text = obj.Content
                
                 this.e_balance.initNumber =Number(obj.Content);
-                this.e_balance.setNumber(this.e_balance.initNumber)
-                //console.log("join",obj)
-                console.log("this.e_balance.initNumber",this.e_balance.initNumber)
-
+                 this.e_balance.setNumber(this.e_balance.initNumber)
+           //   lcp.LListener.getInstance().dispatchEvent(new lcp.LEvent(String(this.e_balance.hashCode) ,obj.Content, false)); 
+             
             }
+            
+
+       // if (Global.first_login) {
+        //    console.log("Global.first_login ",Global.first_login)
+        //    Global.first_login = false;
             Global.addEventListener("join", onJoinFun, this)
+            Global.addEventListener("disconnect", onDisconnectFun, this)
+            Global.addEventListener("onSocketClose", onSocketCloseFun, this)
+            Global.addEventListener("already_online", socketAlreadyOnlineFun, this)      
+            Global.addEventListener("result", socketResultFun, this) 
 
-
-
-        }
+       // }        
+    } 
+    public connetToServer(close: boolean,stage:string):void{
+        this.setSlot();
+        var m = $("meta[name=_xsrf]").attr('content');
+        var host = $("meta[name=_host]").attr('content');
+        SocketManager.connectServer(host+"/egame/ws/join?uname="+m+"?kind="+this.game_kind+"?stage="+stage);
+        
         //
 
     }
@@ -1072,7 +1070,7 @@ class GamePanel extends     BasePanel{
     }
     public flyGold(obj,target: EButton, gold,interval: number):void{
        // gold=  Maths.RndNum(99)+1   
-              console.log(gold)
+            
           
             var targetNewX=target.x+target.width/2
             var targetNewY=target.y+target.height/2

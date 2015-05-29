@@ -48,7 +48,13 @@ class Lottery28Panel extends     CrapPanel{
 
 
     public initPanel():void{
-
+        /*
+        if (Global.first_login==false){
+             console.log("lottery28 initPanel passed")
+            return
+        }
+       */
+        this.setServerLisenter();
         this.bg = new egret.Bitmap();
       //  this.bg.texture = this.assets.getTexture("lottery28bg");
        // this.bg.texture =  RES.getRes("lottery28bg");
@@ -1064,7 +1070,12 @@ class Lottery28Panel extends     CrapPanel{
     }
 
 
-
+     public onChooseStage(e:egret.TouchEvent):void{
+        this.disconnenct();
+        Global.dispatchEvent(MainNotify.openStartPanelNotify,null,false);
+        Global.dispatchEvent(MainNotify.closeLottery28PanelNotify,null,false);        
+            
+    }
 
 
 

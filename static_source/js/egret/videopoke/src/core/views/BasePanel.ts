@@ -33,6 +33,7 @@ class BasePanel extends egret.DisplayObjectContainer{
     // 进入面板
     public onEnter():void{
         
+        
     }
 
     // 退出面板

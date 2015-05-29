@@ -48,6 +48,24 @@ class ENumber extends egret.DisplayObjectContainer {
        
       }           
     }
+
+    public setNumberWithString(descStr: string =""):void{
+      //var descStr = descNum.toString();
+      var l = descStr.length;
+      for (var i = 0; i < this.position-l; i++) {
+          descStr = "z" + descStr;           
+      }   
+// console.log("descStr:",descStr);
+      for (var i = 0; i < this.numbers.length; i++) {
+
+        var obj = this.numbers[i];
+        var imgName = descStr.substring(i,i+1)
+        obj.texture = this.assets.getTexture(imgName);
+       
+       
+      }           
+    }
+
     public init(descNum: number =0, fontSize:number=20,titleStr:string="", assetsName: string = "number",position:number = 10): void {
        // console.log(minBet);
        // this.min_bet = minBet;
@@ -55,7 +73,7 @@ class ENumber extends egret.DisplayObjectContainer {
         this.position = position;
         var descStr = descNum.toString();
 
-     
+          this.sound =  RES.getRes("click");   
 
         
         this.numberBg = new egret.Bitmap();
@@ -67,9 +85,9 @@ class ENumber extends egret.DisplayObjectContainer {
         for (var i = 0; i < position-l; i++) {
             this.initString = "z" + descStr;           
         }       
-        console.log(this.initString)
-       this.initNumber = Number(descStr); //这段很重
-       console.log(this.initNumber)
+// console.log(this.initString)
+       this.initNumber = Number(descStr); //这段很重要
+// console.log(this.initNumber)
        this.numbers = [];
      
         for (var i = 0; i < position-descStr.length; i++) {
@@ -120,14 +138,21 @@ class ENumber extends egret.DisplayObjectContainer {
         this.addChild(this.numberFg);
 
 
-      
 
       //  this.sound =  RES.getRes("click");
+     var onNumberChange: Function = function(e) {
+      console.log(this.initString)
+      console.log(e.param)
+      this.setNumberWithString(e.param)
+     }
+     var s = String(this.hashCode)     
+     Global.addEventListener(s, onNumberChange, this)
 
 
-    
-       
 
+
+      // Global.addEventListener("onSocketClose", onSocketCloseFun, this)   
+     // lcp.LListener.getInstance().dispatchEvent(new lcp.LEvent("onSocketClose", "", false)); 
         this.touchEnabled = true;
         
        if (this.touchEnabled){
@@ -137,20 +162,16 @@ class ENumber extends egret.DisplayObjectContainer {
     }
 
     public onbuttonTouchTap(e): void {
-      this.addAnimatedNumber(-1000.1)
-     // for (var i = 0; i < 10000; i+10) {
-
-
-
-
-      //  }     
+      this.addAnimatedNumber(-1000)
+     // lcp.LListener.getInstance().dispatchEvent(new lcp.LEvent(String(this.hashCode) , "123", false)); 
     
     }
   public addAnimatedNumber(n: number): void {
+      this.sound.play();   
         var range = Math.floor(n / 5)
         var m = n - (range * 5);
-        console.log(range)
-        console.log(m)
+       // console.log(range)
+       // console.log(m)
         var delay =50
 
          egret.setTimeout(function() {
@@ -177,12 +198,13 @@ class ENumber extends egret.DisplayObjectContainer {
             }, this,  delay*6);                 
   }
    public addNumber(n:number):void{
-       console.log(" this.initNumber", this.initNumber)
+
+      // console.log(" this.initNumber", this.initNumber)
       var descStr = n.toString();
       this.initNumber += Number(descStr);
       descStr = this.initNumber.toString();
 
-      console.log("descStr:",descStr)
+     // console.log("descStr:",descStr)
 
       var l = descStr.length;
         for (var i = 0; i < this.position-l; i++) {

@@ -41,6 +41,19 @@ var ENumber = (function (_super) {
             obj.texture = this.assets.getTexture(imgName);
         }
     };
+    ENumber.prototype.setNumberWithString = function (descStr) {
+        if (descStr === void 0) { descStr = ""; }
+        //var descStr = descNum.toString();
+        var l = descStr.length;
+        for (var i = 0; i < this.position - l; i++) {
+            descStr = "z" + descStr;
+        }
+        for (var i = 0; i < this.numbers.length; i++) {
+            var obj = this.numbers[i];
+            var imgName = descStr.substring(i, i + 1);
+            obj.texture = this.assets.getTexture(imgName);
+        }
+    };
     ENumber.prototype.init = function (descNum, fontSize, titleStr, assetsName, position) {
         if (descNum === void 0) { descNum = 0; }
         if (fontSize === void 0) { fontSize = 20; }
@@ -52,6 +65,7 @@ var ENumber = (function (_super) {
         this.assetsName = assetsName;
         this.position = position;
         var descStr = descNum.toString();
+        this.sound = RES.getRes("click");
         this.numberBg = new egret.Bitmap();
         this.numberBg.texture = this.assets.getTexture("glass210X28_bg");
         this.numberBg.x = this.x;
@@ -61,9 +75,9 @@ var ENumber = (function (_super) {
         for (var i = 0; i < position - l; i++) {
             this.initString = "z" + descStr;
         }
-        console.log(this.initString);
-        this.initNumber = Number(descStr); //这段很重
-        console.log(this.initNumber);
+        // console.log(this.initString)
+        this.initNumber = Number(descStr); //这段很重要
+        // console.log(this.initNumber)
         this.numbers = [];
         for (var i = 0; i < position - descStr.length; i++) {
             var obj = new egret.Bitmap();
@@ -103,21 +117,30 @@ var ENumber = (function (_super) {
         this.numberFg.y = this.y + 1;
         this.addChild(this.numberFg);
         //  this.sound =  RES.getRes("click");
+        var onNumberChange = function (e) {
+            console.log(this.initString);
+            console.log(e.param);
+            this.setNumberWithString(e.param);
+        };
+        var s = String(this.hashCode);
+        Global.addEventListener(s, onNumberChange, this);
+        // Global.addEventListener("onSocketClose", onSocketCloseFun, this)   
+        // lcp.LListener.getInstance().dispatchEvent(new lcp.LEvent("onSocketClose", "", false)); 
         this.touchEnabled = true;
         if (this.touchEnabled) {
             this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onbuttonTouchTap, this);
         }
     };
     ENumber.prototype.onbuttonTouchTap = function (e) {
-        this.addAnimatedNumber(-1000.1);
-        // for (var i = 0; i < 10000; i+10) {
-        //  }     
+        this.addAnimatedNumber(-1000);
+        // lcp.LListener.getInstance().dispatchEvent(new lcp.LEvent(String(this.hashCode) , "123", false)); 
     };
     ENumber.prototype.addAnimatedNumber = function (n) {
+        this.sound.play();
         var range = Math.floor(n / 5);
         var m = n - (range * 5);
-        console.log(range);
-        console.log(m);
+        // console.log(range)
+        // console.log(m)
         var delay = 50;
         egret.setTimeout(function () {
             this.addNumber(range);
@@ -139,11 +162,11 @@ var ENumber = (function (_super) {
         }, this, delay * 6);
     };
     ENumber.prototype.addNumber = function (n) {
-        console.log(" this.initNumber", this.initNumber);
+        // console.log(" this.initNumber", this.initNumber)
         var descStr = n.toString();
         this.initNumber += Number(descStr);
         descStr = this.initNumber.toString();
-        console.log("descStr:", descStr);
+        // console.log("descStr:",descStr)
         var l = descStr.length;
         for (var i = 0; i < this.position - l; i++) {
             descStr = "z" + descStr;

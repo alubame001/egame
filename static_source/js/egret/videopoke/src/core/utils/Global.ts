@@ -22,6 +22,9 @@ module Global {
     export var advPanel:AdvPanel;
     export var selectMode: number=0;
 
+    export var  first_login: boolean= true;
+
+
 	// 储存数据需要key和value，都必须是字符串
 	// var key:string = "bestscore";
 	// var value:string = "95";
@@ -58,6 +61,14 @@ module Global {
 	{ 
 		lcp.LListener.getInstance().addEventListener(type,listener,thisObject,useCapture,priority);
 	}
+
+	export function removeEventListener(type:string,listener:Function,thisObject:any,useCapture:boolean=false):void
+	{ 
+		lcp.LListener.getInstance().removeEventListener(type,listener,thisObject,useCapture);
+	}
+
+
+
 
 	//存储cookies 存储临时数据如最高分最低分之类的
 	export function setCookie(name,value):void

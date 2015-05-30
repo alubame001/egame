@@ -31,3 +31,9 @@
 [submodule "thirdparty/src/github.com/Unknwon/goconfig"]
 	path = thirdparty/src/github.com/Unknwon/goconfig
 	url = https://github.com/Unknwon/goconfig
+[submodule "thirdparty/src/github.com/onsi/ginkgo"]
+	path = thirdparty/src/github.com/onsi/ginkgo
+	url = http://github.com/onsi/ginkgo
+[submodule "thirdparty/src/github.com/onsi/gomega"]
+	path = thirdparty/src/github.com/onsi/gomega
+	url = http://github.com/onsi/gomega

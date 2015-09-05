@@ -1,0 +1,830 @@
+<script type="text/x-handlebars" data-template-name="index">
+    
+{{partial "videoBox2"}}
+    <!--
+ <button class='btn btn-es ' {{action  'reload' 'lol'   bubbles=true target="controller"}}>reload</button>
+ <button class='btn btn-es ' {{action  'setFilter' 'lol'   bubbles=true target="controller"}}>LOL</button>
+ -->
+      <div class="web_frame container">
+      {{partial 'analypage' }}     
+      {{render 'lol' model.video}}   
+    </div>      
+<!--
+    {{partial "intro"}}
+    {{partial "feature"}}
+    {{partial "friendlink"}}    
+    -->
+</script>
+
+<script type="text/x-handlebars" data-template-name="index2">
+    
+    <div class="main-header">
+    
+
+
+        <~if .IsLogin~>    
+                   <div class="web_frame container">
+        <~else~>
+               <div class="container">
+        <~end~>
+     
+            
+
+            <div class="row">
+                <div class="col-md-12">
+                  
+                    <div style='float:right'>
+
+                         {{render 'welcome.login'}}
+                        <~if .IsLogin~>    
+                          {{partial "betInfo"}}   
+                        <~end~>
+
+                    </div>  
+
+                    <~if .IsLogin~>    
+                       {{partial "videoBox"}}
+                    <~else~>
+                       {{partial "focusBox"}} 
+                    <~end~>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+ <button class='btn btn-es ' {{action  'reload' 'lol'   bubbles=true target="controller"}}>reload</button>
+ <button class='btn btn-es ' {{action  'setFilter' 'lol'   bubbles=true target="controller"}}>LOL</button>
+ -->
+    
+      {{partial 'analypage' }}     
+      {{render 'lol' model.video}}   
+
+<!--
+    {{partial "intro"}}
+    {{partial "feature"}}
+    {{partial "friendlink"}}    
+    -->
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="iframeVideo">
+
+</script>
+<script type="text/x-handlebars" data-template-name="timeLeft">
+
+     <div class="">
+        
+        <p>
+            <button data-toggle="progressbar" data-target="#myProgressbar" data-value="reset" data-level="info" class="btn btn-default">Reset</button>
+            <button data-toggle="progressbar" data-target="#myProgressbar" data-value="0" class="btn btn-default">0%</button>
+            <button data-toggle="progressbar" data-target="#myProgressbar" data-value="10" class="btn btn-default">10%</button>
+            <button data-toggle="progressbar" data-target="#myProgressbar" data-value="30" class="btn btn-default">30%</button>
+            <button data-toggle="progressbar" data-target="#myProgressbar" data-value="75" class="btn btn-default">75%</button>
+            <button data-toggle="progressbar" data-target="#myProgressbar" data-value="100" class="btn btn-default">100%</button>
+            <button data-toggle="progressbar" data-target="#myProgressbar" data-value="finish" data-level="success" class="btn btn-default">Finish</button>
+        </p>
+
+        <div id="myProgressbar" class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            <span class="sr-only">0% Complete</span>
+          </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="heroList">
+           <div class="white">  馀额:<span class="lightorange">{{leftBalance}} </span>，
+           已投注:<span class="lightorange">{{betBalance}} </span>
+            <a href="#" {{action  'resetBet'}}>重置</a>
+            </div>
+                      <table class="table  border table-sf" style="background-color: transparent;">
+                                    <tr class="">
+                                         
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol0 c35' {{action  'setBet'  'icon0'   bubbles=true target="controller"}}>0</betbtn>
+                                        </td>    
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol1 c35' {{action  'setBet'  'icon1'   bubbles=true target="controller"}}>1</betbtn>
+                                        </td>   
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol2 c35' {{action 'setBet'  'icon2'    bubbles=true target="controller"}}>2</betbtn>
+                                        </td>   
+
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol3 c35' {{action  'setBet'  'icon3'    bubbles=true target="controller"}}>3</betbtn>
+                                        </td> 
+
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol4 c35' {{action  'setBet'  'icon3'   bubbles=true target="controller"}}>4</betbtn>
+                                        </td>                                                                                     
+                                    </tr>
+                                    <tr class="tr_top_red">
+                                         
+                                        <td class="align_c white " width="4%">{{betParams.icon0}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon1}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon2}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon3}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon4}}</td>  
+                                         
+                                    </tr>
+                                    <tr class="">
+                                         
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol5 c35' {{action  'setBet'  'icon5'   bubbles=true target="controller"}}>5</betbtn>
+                                        </td>    
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol6 c35' {{action  'setBet'  'icon6'   bubbles=true target="controller"}}>6</betbtn>
+                                        </td>   
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol7 c35' {{action 'setBet'  'icon7'    bubbles=true target="controller"}}>7</betbtn>
+                                        </td>   
+
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol8 c35' {{action  'setBet'  'icon8'    bubbles=true target="controller"}}>8</betbtn>
+                                        </td> 
+
+                                        <td class=" " width="20%">
+                                          <betbtn class='symbol9 c35' {{action  'setBet'  'icon9'   bubbles=true target="controller"}}>9</betbtn>
+                                        </td>                                                                                     
+                                    </tr>
+                                    <tr class="">
+                                         
+                                        <td class="align_c white" width="4%">{{betParams.icon5}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon6}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon7}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon8}}</td>    
+                                        <td class="align_c white" width="4%">{{betParams.icon9}}</td>  
+                                         
+                                    </tr>
+        
+
+
+                    </table>
+                                    <button {{action "sendBet"}}>投注</button>
+                                    <button {{action "actionResetBet"}}>取消</button>
+                                             
+                                    
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="betInfo">
+
+<div class="bet_box">
+
+
+
+                <div class="stb">
+                    <div class="hd">     
+                        <!--
+                        <span class="arrow"><a class="next"></a><a class="prev"></a></span>
+                        -->
+                        <div class="h50" id="clock-container" ></div>
+                        <ul>
+                           
+                            <li>英雄</li>
+                            <li>大小</li>
+                            <li>单双</li>
+                            <li>中边</li>
+                            <li>有無</li>
+                            <li>近远</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="bd">
+                        <ul style="display: none;">
+                                {{partial "heroList"}}      
+                        </ul>
+                        <ul style="display: none;">
+                            <li class="h50">                                
+
+                            </li>      
+                            <li>
+                             <button type="button" class="btn btn-default">默认按钮</button>
+                            </li>
+                            <li>
+
+
+                                <div class="progress">
+                                   <div class="progress-bar progress-bar-success" role="progressbar" 
+                                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+                                      style="width: 40%;">
+                                      <span class="sr-only">40% 完成</span>
+                                   </div>                                 
+                                   <div class="progress-bar progress-bar-warning" role="progressbar" 
+                                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"  
+                                      style="width: 20%;">
+                                      <span class="sr-only">20% 完成（警告）</span>
+                                   </div>
+                                </div>
+
+                            </li>
+                        </ul>
+
+      
+                        <ul style="display: none;">
+                                      <div class="symbol3">3</div>
+                        </ul>
+                        <ul style="display: none;">
+                                      <div class="symbol4">4</div>
+                        </ul>
+                        <ul style="display: none;">
+                            <div class="symbol4">5</div>
+                        </ul>
+                        <ul style="display: none;">
+                            <div class="symbol4">6</div>
+                        </ul>
+                    </div>
+                </div>
+                
+                   
+
+</div>
+</script>
+<script type="text/x-handlebars" data-template-name="videoBox2">
+  <div id="pxs_container" class="pxs_container">
+      <div class="pxs_bg">
+        <div id="bg1" class="pxs_bg1"></div>
+        <div id="bg2" class="pxs_bg2"></div>
+        <div id="bg3" class="pxs_bg3"></div>
+      </div>
+      <div class="pxs_loading">Loading images...</div>
+      <div class="pxs_slider_wrapper">
+        <ul class="pxs_slider">
+          <li><img src="static/img/video/0.jpg" alt="First Image" / class="images image0"><span class="channel0"></span></li>
+          <li><img src="static/img/video/1.jpg" alt="Second Image"/ class="images image1"><span class="channel1"></span></li>
+          <li><img src="static/img/video/2.jpg" alt="Third Image" / class="images image2"><span class="channel2"></span></li>
+          <li><img src="static/img/video/3.jpg" alt="Forth Image" / class="images image3"><span class="channel3"></span></li>
+          <li><img src="static/img/video/4.jpg" alt="Fifth Image" / class="images image4"><span class="channel4"></span></li>
+          <li><img src="static/img/video/5.jpg" alt="Sixth Image" / class="images image5"><span class="channel5"></span></li>
+        </ul>
+        <div class="pxs_navigation">
+          <span class="pxs_next"></span>
+          <span class="pxs_prev"></span>
+        </div>
+        <ul class="pxs_thumbnails">
+          <li><img src="static/img/video/thumbs/0.jpg" alt="First Image" /></li>
+          <li><img src="static/img/video/thumbs/1.jpg" alt="Second Image" /></li>
+          <li><img src="static/img/video/thumbs/2.jpg" alt="Third Image" /></li>
+          <li><img src="static/img/video/thumbs/3.jpg" alt="Forth Image" /></li>
+          <li><img src="static/img/video/thumbs/4.jpg" alt="Fifth Image" /></li>
+          <li><img src="static/img/video/thumbs/5.jpg" alt="Sixth Image" /></li>
+        </ul>
+      </div>
+    </div>
+
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="videoBox">
+                      
+
+                    <div class='h450 videoBox mt30 ml50 '>                
+                        <ul class="pic h450" >                        
+                            <li class="channel">
+                               
+                            </li>                          
+
+
+                        </ul>
+                        <div class="txt-bg"></div>
+                        <div class="txt">
+
+                        </div>
+
+                        <ul class="num">
+                           
+          
+                          
+                        </ul>
+
+
+
+
+                    </div>
+
+    
+</script>
+
+
+
+<script type="text/x-handlebars" data-template-name="analypage">
+
+   <div class="row home-box info"> 
+    <span><div  id="clock-container" ></div> </span>  
+            <div class="col-md-12">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading" align="left">  统计次数 {{totalAmount}}次
+                                   
+
+                            <div class="btn-group">
+                              <button id="sf1" type="button" class='btn btn-default btn-es ' {{action  'setFilter' '1'   bubbles=true target="controller"}}>100</button>
+                              <button id="sf2" type="button" class='btn btn-default btn-es ' {{action  'setFilter' '2'   bubbles=true target="controller"}}>500</button>
+                              <button id="sf3" type="button" class='btn btn-default btn-es ' {{action  'setFilter' '3'   bubbles=true target="controller"}}>1000</button>
+                              <button id="sf4" type="button" class='btn btn-default btn-es ' {{action  'setFilter' '4'   bubbles=true target="controller"}}>5000</button>                              
+
+                            </div>
+<!--
+                            <div class="btn-group">
+                              <button id="sc2" type="button" class='btn btn-default btn-es ' {{action  'setChannel' '1'   bubbles=true target="controller"}}>1</button>
+                              <button id="sc2" type="button" class='btn btn-default btn-es ' {{action  'setChannel' '2'   bubbles=true target="controller"}}>2</button>  
+                            </div>
+-->
+                            <div class="btn-group">
+                              <button  type="button" class='btn btn-default btn-es ' {{action  'setCoin' 'btc'   bubbles=true target="controller"}}>BTC</button>                            
+                              <button  type="button" class='btn btn-default btn-es ' {{action  'setCoin' 'ltc'   bubbles=true target="controller"}}>LTC</button>
+                              <button  type="button" class='btn btn-default btn-es ' {{action  'setCoin' 'doge'   bubbles=true target="controller"}}>DOGE</button>  
+                            </div>
+
+
+                        <div class="panel-body">
+                            <div class="tab-content">   
+                                <table class="table  table-hover table-condensed table-bordered border table-sf">
+
+
+                                    <tr>
+                                        <th class="align_l" width="20%">标准次数</th> 
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{nr_s}}</th>    
+                                        <th class="align_c" width="4%">{{dx_s}}</th>    
+                                        <th class="align_c" width="4%">{{dx_s}}</th>     
+                                        <th class="align_c" width="4%">{{ds_s}}</th>    
+                                        <th class="align_c" width="4%">{{ds_s}}</th>    
+                                        <th class="align_c" width="4%">{{zb_s}}</th>    
+                                        <th class="align_c" width="4%">{{zb_s}}</th>    
+                                        <th class="align_c" width="4%">{{yw_y}}</th>    
+                                        <th class="align_c" width="4%">{{yw_w}}</th>     
+                                        <th class="align_c" width="4%">{{jy_j}}</th>    
+                                        <th class="align_c" width="4%">{{jy_y}}</th> 
+
+
+                                    </tr>   
+                                    <tr>
+                                        <th class="align_l" width="20%">实际次数</th> 
+                                        <th class="align_c" width="4%">{{nr0}} </div></th>    
+                                        <th class="align_c" width="4%">{{nr1}}</th>    
+                                        <th class="align_c" width="4%">{{nr2}}</th>    
+                                        <th class="align_c" width="4%">{{nr3}}</th>    
+                                        <th class="align_c" width="4%">{{nr4}}</th>    
+                                        <th class="align_c" width="4%">{{nr5}}</th>    
+                                        <th class="align_c" width="4%">{{nr6}}</th>    
+                                        <th class="align_c" width="4%">{{nr7}}</th>    
+                                        <th class="align_c" width="4%">{{nr8}}</th>    
+                                        <th class="align_c" width="4%">{{nr9}}</th>    
+                                        <th class="align_c" width="4%">{{dxd}}</th>    
+                                        <th class="align_c" width="4%">{{dxx}}</th>     
+                                        <th class="align_c" width="4%">{{dsd}}</th>    
+                                        <th class="align_c" width="4%">{{dss}}</th>    
+                                        <th class="align_c" width="4%">{{zbz}}</th>    
+                                        <th class="align_c" width="4%">{{zbb}}</th>    
+                                        <th class="align_c" width="4%">{{ywy}}</th>    
+                                        <th class="align_c" width="4%">{{yww}}</th>     
+                                        <th class="align_c" width="4%">{{jyj}}</th>    
+                                        <th class="align_c" width="4%">{{jyy}}</th>                                         
+                                    </tr> 
+                                    <tr class="tr_top_red">
+                                        <th class="align_l" width="20%">序号</th>    
+                                        <th class="symbol0 c25" width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap pl5' {{action  'setBet'  'icon0'   bubbles=true target="controller"}}>0</betbtn>
+                                         </th>    
+                                        <th class="symbol1 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon1'   bubbles=true target="controller"}}>1</betbtn>
+                                         </th>                                          
+                                         <th class="symbol2 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon2'   bubbles=true target="controller"}}>2</betbtn>
+                                         </th>                                          
+                                         <th class="symbol3 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon3'   bubbles=true target="controller"}}>3</betbtn>
+                                         </th>                                          
+                                         <th class="symbol4 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap '{{action  'setBet'  'icon4'   bubbles=true target="controller"}}>4</betbtn>
+                                         </th>                                          
+                                         <th class="symbol5 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon5'   bubbles=true target="controller"}}>5</betbtn>
+                                         </th>                                          
+                                         <th class="symbol6 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon6'   bubbles=true target="controller"}}>6</betbtn>
+                                         </th>                                          
+                                         <th class="symbol7 c25" width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon7'   bubbles=true target="controller"}}>7</betbtn>
+                                         </th>     
+                                         <th class="symbol8 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon8'   bubbles=true target="controller"}}>8</betbtn>
+                                         </th>     
+                                         <th class="symbol9 c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'icon9'   bubbles=true target="controller"}}>9</betbtn>
+                                         </th>  
+                                         <th class="dxd c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'dxd'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+
+                                         <th class="dxx c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'dxx'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+                                         
+
+                                         <th class="dsd c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'dsd'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+                                         <th class="dss c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'dss'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+                                         <th class="zbz c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'zbz'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+                                         <th class="zbb c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'zbb'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+                                         <th class="ywy c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'ywy'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+                                         <th class="yww c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'yww'   bubbles=true target="controller"}}></betbtn>
+                                         </th>                                                  
+                                         <th class="jyj c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'jyj'   bubbles=true target="controller"}}></betbtn>
+                                         </th>
+                                         <th class="jyy c25 " width="4%">
+                                         <betbtn style="padding-left:5px" class='fs20  white c25 noGap ' {{action  'setBet'  'jyy'   bubbles=true target="controller"}}></betbtn>
+                                         </th>   
+ 
+                                    </tr> 
+                                     
+                                    
+                                     <tr class="tr_top_red">
+                                        <th class="aligh_l" width="20%">{{sn}} <span class="lightorange"> {{betBalance}}</span>  </th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon0}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon1}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon2}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon3}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon4}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon5}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon6}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon7}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon8}}</th>    
+                                        <th class="aligh_l " width="4%">{{betParams.icon9}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.dxd}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.dxx}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.dsd}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.dss}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.zbz}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.zbb}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.ywy}}</th>    
+                                        <th class="aligh_l" width="4%"> {{betParams.yww}}</th>    
+                                        <th class="aligh_l" width="4%">{{betParams.jyj}}</th>    
+                                        <th class="align_l" width="4%">{{betParams.jyy}}</th>  
+                                    </tr>                                   
+
+</script>
+<script type="text/x-handlebars" data-template-name="lol_old">
+
+</script>
+<script type="text/x-handlebars" data-template-name="lol">     
+ <!--     
+ <span class="tooltip-test" data-toggle="tooltip"  title="Default Tooltip"> 
+-->
+                                 
+            
+                                     {{#each  paginatedContent}}  
+            
+                                        <tr  class="align_l"> 
+                                            <td>{{sn}}
+                                            <!--
+                                             <span class="cid"> {{cid}} </span> 
+                                            -->
+                                             <span class="badge"> {{nr}}</span></td>                                          
+                                            {{#if nr0}}
+                                               <td><span class="badge">{{nr}} </span></td>
+                                            {{else}}
+                                            <td></td>    
+                                            {{/if}}
+                                            {{#if nr1}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}}                                                                     
+                                            {{#if nr2}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}}  
+                                            {{#if nr3}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}}  
+
+
+                                            {{#if nr4}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}}  
+
+                                            {{#if nr5}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+                                            {{#if nr6}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+
+                                            {{#if nr7}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+                                            {{#if nr8}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+
+                                            {{#if nr9}}
+                                            <td><span class="badge">{{nr}} </span> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+                                            {{#if dxd}}
+                                            <td class="dxd"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+                                            {{#if dxx}}
+                                            <td class="dxx"> </td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+                                            {{#if dsd}}
+                                            <td class="dsd"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+                                            {{#if dss}}
+                                            <td class="dss"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}}
+
+                                            {{#if zbz}}
+                                            <td class="zbz"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+                                            {{#if zbb}}
+                                            <td class="zbb"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}}                                            
+
+
+                                            {{#if ywy}}
+                                            <td class="ywy"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+                                            {{#if yww}}
+                                            <td class="yww"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+
+                                            {{#if jyj}}
+                                            <td class="jyj"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+                                            {{#if jyy}}
+                                            <td class="jyy"></td>
+                                            {{else}}
+                                            <td> </td>    
+                                            {{/if}} 
+
+
+
+
+                                        </tr>
+                                    {{/each}}      
+                                </table> 
+                            </div>
+
+                            {{#if controller.paginationEnabled}} 
+                            {{partial "seach_pagination"}}
+                           
+                            {{/if}}
+
+
+
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="focusBox">
+    
+        <div class='focusBox'>
+
+            <ul class="pic" >
+                
+                <li style='background: #39A4DC url(/static/img/home/idea.jpg) center repeat;'>
+                    <a href="#" target="_blank" ></a>
+                </li>
+                <li style='background: #39A4DC url(/static/img/home/idea_2.jpg) center repeat;'>
+                    <a href="#" target="_blank" ></a>
+                </li>
+                <li style='background: #39A4DC url(/static/img/home/idea_3.jpg) center repeat;'>
+                    <a href="#" target="_blank" ></a>
+                </li>
+                        <li><a href="#" target="_blank">
+                            <img src="http://chart.finance.yahoo.com/z?t=1y&s=%5EDJI&c=399001.SZ,000001.SS"></a></li>
+
+
+                <li>
+
+                </li>
+
+            </ul>
+            <div class="txt-bg"></div>
+            <div class="txt">
+                <ul>
+                    <li style="bottom: 0px;"><a href="#">介绍1</a></li>
+                    <li style="bottom: -36px;"><a href="#">介绍2</a></li>
+                    <li style="bottom: -36px;"><a href="#">介绍3</a></li>
+                    <li style="bottom: -36px;"><a href="#">介绍4</a></li>                     
+
+                </ul>
+            </div>
+
+            <ul class="num">
+                <li class="on"><a>1</a><span></span></li>
+                <li class=""><a>2</a><span></span></li>
+                <li class=""><a>3</a><span></span></li>
+                <li class=""><a>4</a><span></span></li>
+              
+            </ul>
+
+
+
+
+        </div>
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="container_head">
+    <div class="container mt20">
+        <div class="row home-box">
+            <div class="col-md-12">
+</script>
+<script type="text/x-handlebars" data-template-name="container_footer">
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-handlebars" data-template-name="friendlink">
+  {{partial "container_head"}}
+            <h2><l><~i18n .Lang "home.friendlink"~></l></h2>
+            <div class="whouse">
+                <img class="img-thumbnail" src="/static/img/friendlink/btc123.png">
+                <img class="img-thumbnail" src="/static/img/friendlink/btcchina.png">
+                <img class="img-thumbnail" src="/static/img/friendlink/huobi.png">
+
+            </div>
+  {{partial "container_footer"}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="feature">
+  {{partial "container_head"}}
+            <h2><l><~i18n .Lang "home.features"~></l></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature">
+                        <h3 class="title">
+                            <~if eq .Lang "zh-CN"~>
+                                简单化
+                            <~else~>
+                                EASY TO USE
+                            <~end~>
+                        </h3>
+                        <p class="content">
+                            <div class='well markdown'>
+                            <div class="chart-container">
+              
+                            </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature">
+                        <h3 class="title">
+                            <~if eq .Lang "zh-CN"~>
+                                智能化
+                            <~else~>
+                                INTELLIGENT
+                            <~end~>
+                        </h3>
+                        <p class="content">
+                        <div class='well markdown'>
+                            <div class="chart-container">
+          
+                            </div>
+                        </div>
+                            
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+  {{partial "container_footer"}}
+</script>
+<script type="text/x-handlebars" data-template-name="intro">
+  {{partial "container_head"}}
+        <div class="col-md-8">
+            <h2><l><~i18n .Lang "home.quick_start"~></l></h2>
+            <div class="row">
+                <div class="col-md-6">
+
+
+
+                    <div class="markdown">
+                        <~if eq .Lang "zh-CN"~>
+                            <p>下载安装</p><i class="fa fa-spinner fa-spin"></i>spin
+                            <pre lang="bash"><code>go get github.com/astaxie/beego</code></pre>
+                            <p>创建文件 <code>hello.go</code></p>
+                            <pre lang="go"><code>package main<br><br>import "github.com/astaxie/beego"<br><br>func main() {<br>    beego.Run()<br>}</code></pre>
+                        <~else~>
+                            <p>Download and install</p>
+                            <pre lang="bash"><code>go get github.com/astaxie/beego</code></pre>
+                            <p>Create file <code>hello.go</code></p>
+                            <pre lang="go"><code>package main<br><br>import "github.com/astaxie/beego"<br><br>func main() {<br>    beego.Run()<br>}</code></pre>
+                        <~end~>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="markdown">
+                        <~if eq .Lang "zh-CN"~>
+                            <p>编译运行</p>
+                            <pre lang="bash"><code>go build -o hello hello.go<br>./hello</code></pre>
+                            <p>浏览效果</p>
+                            <p>打开浏览器并访问 <code>http://localhost:9999</code></p>
+                            <p>恭喜！您已经成功构建了第一个 beego 项目。</p>
+                            <p>请查阅 <a href="/docs">开发文档</a> 以进行深入学习。</p>
+                        <~else~>
+                            <p>Build and run</p>
+                            <pre lang="bash"><code>go build hello.go<br>./hello</code></pre>
+                            <p>View effects</p>
+                            <p>Open your browser and visit <code>http://localhost:9999</code></p>
+                            <p>Congratulations! You just built your first beego app.</p>
+                            <p>Please see <a href="/docs">Documentation</a> for going further.</p>
+                        <~end~>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="home-box">
+                <h2><l><~i18n .Lang "home.further_reading"~></l></h2>
+                <div class="well markdown">
+                    <div class="container">
+
+                        <form class="form-inline">
+                            <div class="col-md-3 form-group">
+                                <input id="sendbox" type="text" class="form-control" onkeydown="if(event.keyCode==13)return false;" required>
+                            </div>
+                            <button id="sendbtn" type="button" class="btn btn-default"><~i18n .Lang "Send"~></button>
+                        </form>
+                    </div>
+
+                    <div class="container">
+                        <h3><l><~i18n .Lang "chat_history"~></l>:</h3>
+                        <ul id="chatbox">
+                            <li><~i18n .Lang "welcome"~></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+  {{partial "container_footer"}}
+</script>

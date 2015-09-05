@@ -1,0 +1,9 @@
+<script type="text/x-handlebars" data-template-name="pagination">
+  {{#with view}}
+
+
+
+	  	<button type="button" class="btn btn-primary btn-xs"  {{action  "goToPage"  content.page_id target="controller" bubbles=false}}> {{content.page_id}} </button>
+
+  {{/with}}
+</script>

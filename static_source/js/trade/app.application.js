@@ -9,28 +9,11 @@ WebApp.ApplicationRoute = Ember.Route.extend({
   
     actions: {
       error: function (params) {
-        console.log(params)
+        console.log(params)   
         
-        //this.transitionTo('catchall', "application-error");
       }
     },
-    /*
-    model: function(params) {
-      return Ember.RSVP.hash({ // 这里 model 对象包含多种子对象 
-         chart: this.store.find('chart'),  
-           
-      });
-    },  
 
-   setupController: function (controller, model) {   
-       // console.log(model.chart.content.length);
-        var m =[];
-        for(var i=0;i<model.chart.content.length;i++){
-           m.push(model.chart.content[i]._data);
-        }
-        controller.set('chartdata', m);     
-    },
-    */
     afterModel: function(model, transition) {
 
 
@@ -54,44 +37,8 @@ WebApp.ApplicationRoute = Ember.Route.extend({
                 return ajax(url, options);
             }
         });
+     }     
 
-
-      /*
-          $.post("/join", {uname: '',tech :'Long Polling'});
-          var myStore = this.store;       
-          var lastReceived = 0;
-          var isWait = false;
-          var updatePrice = function (data){
-            console.log(data)
-             myStore.update('price',{id:data.Id,price:data.P,change:data.C,change_rate:data.R});
-          }
-          var updateAnalyst = function (data){
-            //console.log(data)
-            myStore.update('analyst',{id:data.Id,total_profit:data.P});
-          }
-          var fetch = function () {
-              if (isWait) return;
-              isWait = true;
-              $.getJSON("/lp/fetch?lastReceived=" + lastReceived, function (data) {
-                  if (data == null) return;
-                    //console.log(data);
-                  $.each(data, function (i, event) {
-                      switch (event.Type) { 
-
-                      case 3: // Price                          
-                           updateAnalyst(event);                      
-                      case 4: // Analyst                          
-                           updateAnalyst(event);
-                          break;
-                      }
-                      lastReceived = event.Timestamp;
-                  });
-                  isWait = false;
-              });
-          }
-          setInterval(fetch, 1000);  
-        },
-        */
 
 });
 

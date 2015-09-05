@@ -466,7 +466,27 @@ class EButton extends egret.DisplayObjectContainer {
                 .call(onComplete1, this)        
         
    } 
-  
+
+    public changeSlot(interval: number): void {
+
+        var onComplete1: Function = function() {
+            var result = this.assetName + this.picIndex + "-" + this.skinIndex
+            console.log(result)
+            this.setBitmap(result);
+            this.skinIndex += 1;
+
+            if (this.skinIndex > this.skinMaxNumber) {
+                this.skinIndex = 1
+            }
+              egret.Tween.get(this)
+                .wait(1000)                
+                .call(onComplete1, this)        
+        }
+
+         egret.Tween.get(this)                
+                .call(onComplete1, this)        
+        
+   }   
 }
    
 

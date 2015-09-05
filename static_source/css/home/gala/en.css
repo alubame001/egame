@@ -1,0 +1,54 @@
+#containerScreenshots {background: url(/images/en/img_medien/title_screenshots_typo.png?__cv=13631adeda498ae74fbba7289b101e00) no-repeat scroll 0 -4px transparent;}
+.mainnavi li.home a strong{ background: url(/images/en/img_buttons/btn_home_a_typo.png?__cv=f5397d0c030df7b04c044afc492fe100) no-repeat scroll transparent;}
+.mainnavi li.characters a strong{background: url(/images/en/img_buttons/btn_characters_a_typo.png?__cv=edb8979690983b144fb79fd095eb7600) no-repeat scroll transparent;}
+.mainnavi li.world a strong{background: url(/images/en/img_buttons/btn_world_a_typo.png?__cv=9d74a9ece1faf99cedd646755fdbd300) no-repeat scroll transparent;}
+.mainnavi li.items a strong{background: url(/images/en/img_buttons/btn_items_a_typo.png?__cv=8044729bb91be63716be36a461111100) no-repeat scroll transparent;}
+.mainnavi li.medien a strong{background: url(/images/en/img_buttons/btn_media_a_typo.png?__cv=14b845c751e4a7f4087b5dc8909ed400) no-repeat scroll transparent;}
+.mainnavi li.community a strong{background: url(/images/en/img_buttons/btn_forum_a_typo.png?__cv=9ae6b65a5b549d8a256e2f30dc49c600) no-repeat scroll transparent;}
+.mainnavi li.characters a strong{background: url(/images/en/img_buttons/btn_characters_a_typo.png?__cv=edb8979690983b144fb79fd095eb7600) no-repeat scroll transparent;}
+.mainnavi li.items a strong{background: url(/images/en/img_buttons/btn_items_a_typo.png?__cv=8044729bb91be63716be36a461111100) no-repeat scroll transparent;}
+div.newslettersubmittext{ background: url(/images/en/img_buttons/btn_send_a_typo.png?__cv=e019c0cd6eaf137cb42b1233ee170700) no-repeat scroll 0 0 transparent;}
+#gameplay_trailer_text{ background: url(/images/en/img_buttons/btn_trailer2_a_typo.png?__cv=b1f8f07daccde1acef8a810fe407d900) no-repeat scroll 0 0 transparent;}
+#tease_video_text{ background: url(/images/en/img_buttons/btn_trailer1_a_typo.png?__cv=f0337477ac686edf973d49dc6fa8ca00) no-repeat scroll 0 0 transparent;}
+ul#worldselect_list li a { background: url(/images/en/img_welt/regions_000_typo.png) no-repeat scroll -40px 0 transparent;}
+.passrecovery .align_buttonRegister .input_button { background: transparent url(/images/en/img_buttons/btn_request_typo.png?__cv=bdc63785689f8a0d7bd9a841e3d20d00) no-repeat; }
+.forgotPassword .signup_errorHeader { background: transparent url(/images/en/img_global/headline_error_message_typo.png) no-repeat scroll center 0 ; }
+.forgotPassword .signup_successHeader { background: transparent url(/images/en/img_global/headline_affirmation_typo.png) no-repeat scroll center 0 ; }
+.passrecovery .align_buttonRegister input.signup_back { background: transparent url(/images/en/img_buttons/btn_back_password_recovery_typo.png?__cv=9e26a3331a26ed9f95d6621c868a9a00) no-repeat scroll center top; }
+.signup_faked_button_layout.lang_en {
+    background: url(/images/en/img_buttons/btn_anmelden_a_typo.png?__cv=386c32a6aa7cd28bcb8768a1f0c3fd00) no-repeat scroll center 10px transparent;
+} 
+.signup_submit{
+  background: url(/images/en/img_buttons/btn_anmelden_a_typo.png?__cv=386c32a6aa7cd28bcb8768a1f0c3fd00) no-repeat scroll 22px 12px transparent;
+  color: transparent;
+}
+.signup_errorTitle.lang_en {
+    background: url(/images/en/img_global/headline_reg_error_typo.png?__cv=f3acf7485dfd84f4396ace655050c500) no-repeat scroll 40px 0;
+    margin-top: -30px;
+    height: 58px;
+}
+.support_headline {
+    background: url(/images/en/img_global/headline_support_typo.png) no-repeat 0 0;
+    width: 250px;
+    height: 36px;
+    margin: -150px 0 150px -60px;
+}
+.support_header {
+    background: url(/images/en/img_global/headline_form001_typo.png) no-repeat 0 0;
+    width: 439px;
+    height: 28px;
+    margin: -68px 0 30px -10px;
+}
+.support_submit {
+    background: url(/images/en/img_buttons/btn_absenden_a_typo.png?__cv=3db527db6b3d82897377b2e78e09a300) no-repeat -45px -7px;;
+}
+h1#instanceListTitle { background: transparent url("/images/en/img_global/headline_serverlist_typo.png") no-repeat scroll 0 0; }
+div#instanceList ol li a { background-image: url(/images/en/img_buttons/btn_server_play_typo.png); }
+
+.buttonGameLink {
+    background: url(/images/en/img_buttons/btn_backtogame_typo.png?__cv=998e2cb48c525c38d1447059cb3b3800) no-repeat;
+}
+
+.buttonPortalLink {
+    background: url(/images/en/img_buttons/btn_backtoportal_typo.png?__cv=f0e44b1e310dd97759eff922dc79df00) no-repeat;
+}

@@ -17,7 +17,7 @@ package api
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	"github.com/bitly/go-simplejson"
+//	"github.com/bitly/go-simplejson"
 	_ "github.com/lib/pq"
 	"strings"
 )
@@ -42,6 +42,8 @@ func (this *ApiRouter) Category() error {
 		待完成:需增加一个资料表格权限设定
 	*/
 	uid := this.GetString("uid")
+	symbol := this.GetString("symbol")
+	amount := this.GetString("amount")
 	//if aid != nil {
 	beego.Trace("param:", uid)
 	//}
@@ -50,19 +52,45 @@ func (this *ApiRouter) Category() error {
 	this.EnableRender = false
 	var category = this.Ctx.Input.Param(":category")
 	var i = strings.Count(category, "") - 2
-	//beego.Trace("count:", i)
+	
 	var table = category[:i] // arefun := x[i+1:]
+	//var limit = "100"
+	switch amount {
+		case "1":
+			this.Redirect("/json/"+symbol+"_"+amount+".json", 302)
+
+		case "2":
+			this.Redirect("/json/"+symbol+"_"+amount+".json", 302)
+
+		case "3":
+			this.Redirect("/json/"+symbol+"_"+amount+".json", 302)
+
+		case "4":
+			this.Redirect("/json/"+symbol+"_"+amount+".json", 302)
+		default:
+			this.Redirect("/json/"+symbol+"_1.json", 302)
+
+	}
+/*
+	js, err := simplejson.NewJson([]byte(str3))
+	if err != nil {
+		panic("json format error")
+	}
+	this.Data["json"] = js
+	this.ServeJson(true)		
+*/
+		return nil
 	beego.Trace("table:", table)
+	/*
 	if true {
 		var list orm.ParamsList
 		var err error
-		//var query = ""
-		if len(uid) > 0 {
 
-			_, err = o.Raw("SELECT row_to_json(q)  as result FROM (select * from "+table+" where uid = '"+uid+"' order by id ) q").ValuesFlat(&list, "result")
-			//_, err = o.Raw("SELECT row_to_json(q)  as result FROM (select * from ? where uid = ? order by id ) q", table, uid).ValuesFlat(&list, "result")
+		if table == "video" {
+			_, err = o.Raw("SELECT row_to_json(q)  as result FROM (select id,sn,nr from video where symbol= '"+symbol+"' order by sn desc limit "+limit+") q").ValuesFlat(&list, "result")
+
 		} else {
-			_, err = o.Raw("SELECT row_to_json(q)  as result FROM (select * from "+table+" order by id ) q").ValuesFlat(&list, "result")
+			return nil
 		}
 
 		if err == nil {
@@ -78,6 +106,10 @@ func (this *ApiRouter) Category() error {
 			str2 := `]}`
 			str3 := str1 + str + str2
 
+
+
+
+
 			js, err := simplejson.NewJson([]byte(str3))
 			if err != nil {
 				panic("json format error")
@@ -89,6 +121,6 @@ func (this *ApiRouter) Category() error {
 			panic(err)
 		}
 	}
-
+	*/
 	return nil
 }

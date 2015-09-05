@@ -206,7 +206,8 @@ func (this *EgameRouter) JoinWebSocket() {
 
 	// Message receive loop.
 	for {
-		_, p, err := ws.ReadMessage() //beego.Info("ReadMessage:", json(p))
+		_, p, err := ws.ReadMessage() 
+		//beego.Info("ReadMessage:", json(p))
 		if err != nil {
 			beego.Info("ReadMessage Error:", err)
 			return
@@ -247,7 +248,7 @@ func (this *EgameRouter) JoinWebSocket() {
 			if seconds > 1*setting.WebsocketDelay {
 				this.User.Updated = time.Now()
 				if Lucky, ResultJsonStr, err := GetResult(&this.User, bet); err == nil {
-					beego.Info("GetResult:", ResultJsonStr)
+				//	beego.Info("GetResult:", ResultJsonStr)
 					publish <- newEvent(EVENT_MESSAGE, "result", uname, Lucky, ResultJsonStr)
 				} else {
 					beego.Info("GetResult error:", err)
@@ -281,7 +282,7 @@ func (router *EgameRouter) SetHash(user *models.User, key *models.Key) error {
 // broadcastWebSocket broadcasts messages to WebSocket users.
 func broadcastWebSocket(event Event) {
 
-	//beego.Info("broadcastWebSocket event:", event)
+  	beego.Info("broadcastWebSocket event:", event)
 
 	if event.Type == EVENT_LEAVE { //退出讯息不发送
 		return
@@ -291,6 +292,7 @@ func broadcastWebSocket(event Event) {
 		beego.Error("Fail to marshal event:", err)
 		return
 	}
+
 	// Immediately send event to WebSocket users.
 	for sub := subscribers.Front(); sub != nil; sub = sub.Next() {
 		//beego.Info("Subscriber:", sub.Value.(Subscriber).Name)

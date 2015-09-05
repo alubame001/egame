@@ -75,7 +75,7 @@ WebApp.ApplicationView = Ember.View.extend({
 
 
        fixLang();
-   /*    
+    
       var xsrftoken = $('meta[name=_xsrf]').attr('content');;
  
       var s ='ws://' + window.location.host + '/egame/ws/join?uname='+xsrftoken;
@@ -129,17 +129,9 @@ WebApp.ApplicationView = Ember.View.extend({
           postConecnt();
       });
 
-      */
+      
 
     }
 });
 
-/*
-WebApp.ApplicationView = Ember.View.extend({
-  didInsertElement: function() {
-    //AjaxNotice.initializeGlobalEvents();
-    fixLang();
-  }
-});
-*/
 

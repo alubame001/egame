@@ -27,6 +27,10 @@ var MainNotify;
     MainNotify.closeWheelPanelNotify = "closeWheelPanelNotify";
     MainNotify.openLottery28PanelNotify = "openLottery28PanelNotify";
     MainNotify.closeLottery28PanelNotify = "closeLottery28PanelNotify";
+    MainNotify.openDarkSlotPanelNotify = "openDarkSlotPanelNotify";
+    MainNotify.closeDarkSlotPanelNotify = "closeDarkSlotPanelNotify";
+    MainNotify.openTitanSlotPanelNotify = "openTitanSlotPanelNotify";
+    MainNotify.closeTitanSlotPanelNotify = "closeTitanSlotPanelNotify";
     MainNotify.openFishPanelNotify = "openFishPanelNotify";
     MainNotify.closeFishPanelNotify = "closeFishPanelNotify";
     //打开游戏界面

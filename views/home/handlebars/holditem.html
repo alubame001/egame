@@ -1,0 +1,44 @@
+
+<script type="text/x-handlebars" data-template-name="holditem">
+{{#if controller.paginatedContent}}
+      
+     <table border="1" style= "width:680px;margin-top:3px">
+        <tr>
+
+        </tr>   
+
+
+        {{#each item in controller.paginatedContent}}
+        <tr>
+            <td width='16%'></td>           
+            <td width='28%'>{{item.createDate}} </td>   
+            <td width='16%'>{{item.name}} </td>  
+            <td width='10%'>{{item.type}} </td>   
+            <td width='10%'>{{item.price}} </td>  
+            <td width='10%'>{{item.amount}} </td>              
+            <td width='10%'> </td>  
+        </tr>                                                                                                                                   
+         {{/each}}        
+    </table>
+
+  <nav>
+    <ul class="pagination">
+      <li><button  {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button></li>
+        {{#each pages}}
+        {{view WebApp.PaginationView contentBinding="this"}}
+        {{/each}}
+
+      <li><button  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+        <li>{{controller.currentPage}}  / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+
+    <h2>     </h2> 
+
+  </nav>
+
+{{else}}
+
+   <h2> No Data </h2>
+{{/if}}
+
+ 
+</script>

@@ -1,0 +1,47 @@
+select.input_selectInstance optgroup.instance_eu{
+	background:transparent url(/images/lang/eu.png?__cv=f706b9809d8f367d5c009daa924ad900) no-repeat top left;
+	vertical-align:top;
+	padding-left:25px;
+	margin-bottom:5px;
+	margin: 5px 0 5px 5px;
+	font-style: normal;
+	font-family: arial;
+}
+select.input_selectInstance optgroup.instance_us{
+	background:transparent url(/images/lang/us.png?__cv=13ed35f3b8ecfeba89e0614fec1bb800) no-repeat top left;
+	vertical-align:top;
+	padding-left:25px;
+	margin: 10px 0 5px 5px;
+	font-style: normal;
+	font-family: arial;
+}
+select.input_selectInstance optgroup.instance_us-west{
+	background:transparent url(/images/lang/us.png?__cv=13ed35f3b8ecfeba89e0614fec1bb800) no-repeat top left;
+	vertical-align:top;
+	padding-left:25px;
+	margin: 10px 0 5px 5px;
+	font-style: normal;
+	font-family: arial;
+}
+select.input_selectInstance optgroup option.instance_eu
+	background:transparent url(/images/lang/eu.png?__cv=f706b9809d8f367d5c009daa924ad900) no-repeat center left;
+	vertical-align:middle;
+	padding-left:25px;
+	margin: 5px 0 5px 5px;
+}
+select.input_selectInstance optgroup option.instance_us{
+	background:transparent url(/images/lang/us.png?__cv=13ed35f3b8ecfeba89e0614fec1bb800) no-repeat center left;
+	vertical-align:middle;
+	padding-left:25px;
+	margin: 10px 0 5px 5px;
+}
+select.input_selectInstance optgroup option.instance_us-west{
+	background:transparent url(/images/lang/us.png?__cv=13ed35f3b8ecfeba89e0614fec1bb800) no-repeat center left;
+	vertical-align:middle;
+	padding-left:25px;
+	margin: 10px 0 5px 5px;
+}
+select.input_selectInstance optgroup option{
+	padding-left:0px;
+	margin: 5px 0 5px 5px;
+}

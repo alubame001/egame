@@ -30,7 +30,8 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/cache"
 	"github.com/astaxie/beego/orm"
-	"github.com/astaxie/beego/utils/captcha"
+	//"github.com/astaxie/beego/utils/captcha"
+	"github.com/alubame001/egame/modules/captcha"
 	"github.com/beego/compress"
 	"github.com/beego/i18n"
 	"github.com/beego/social-auth"
@@ -43,6 +44,7 @@ const (
 )
 
 var (
+	LolRemoteAddress            string
 	WebsocketDelay             int //ms
 	UpdateFrequencyLimitMinute int
 	CheckTime                  string
@@ -262,6 +264,7 @@ func LoadConfig() *goconfig.ConfigFile {
 }
 
 func reloadConfig() {
+	LolRemoteAddress = Cfg.MustValue("lol", "remote_address", "localhost:8080") // websocket每500毫秒一次
 	WebsocketDelay = Cfg.MustInt("app", "websocket_delay", 1) // websocket每500毫秒一次
 	UpdateFrequencyLimitMinute = Cfg.MustInt("app", "update_frequency_limit_minute", 1)
 	CheckTime = Cfg.MustValue("app", "check_time", "10")
@@ -418,7 +421,7 @@ func configWatcher() {
 					}
 
 					reloadConfig()
-					beego.Info("Config Reloaded")
+					beego.Info("Config Reloaded",event.Name)
 
 				case ".json":
 					if checkEventTime(event.Name) {

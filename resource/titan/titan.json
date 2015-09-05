@@ -1,0 +1,19 @@
+{
+"file": "titan.png"
+,
+"frames": {
+	"i1": {"x":123, "y":123, "w":122, "h":122, "offX":0,"offY":0,"sourceW":122,"sourceH":122},
+	"i10": {"x":0, "y":367, "w":114, "h":93, "offX":5,"offY":14,"sourceW":122,"sourceH":122},
+	"i11": {"x":366, "y":241, "w":102, "h":122, "offX":9,"offY":0,"sourceW":122,"sourceH":122},
+	"i12": {"x":0, "y":121, "w":122, "h":122, "offX":0,"offY":0,"sourceW":122,"sourceH":122},
+	"i13": {"x":123, "y":0, "w":122, "h":122, "offX":0,"offY":0,"sourceW":122,"sourceH":122},
+	"i2": {"x":245, "y":246, "w":120, "h":122, "offX":1,"offY":0,"sourceW":122,"sourceH":122},
+	"i3": {"x":246, "y":0, "w":120, "h":119, "offX":1,"offY":0,"sourceW":122,"sourceH":122},
+	"i4": {"x":0, "y":0, "w":122, "h":120, "offX":0,"offY":1,"sourceW":122,"sourceH":122},
+	"i5": {"x":361, "y":120, "w":103, "h":120, "offX":11,"offY":1,"sourceW":122,"sourceH":122},
+	"i6": {"x":246, "y":120, "w":114, "h":122, "offX":5,"offY":0,"sourceW":122,"sourceH":122},
+	"i7": {"x":123, "y":246, "w":121, "h":119, "offX":0,"offY":3,"sourceW":122,"sourceH":122},
+	"i8": {"x":0, "y":244, "w":122, "h":122, "offX":0,"offY":0,"sourceW":122,"sourceH":122},
+	"i9": {"x":366, "y":364, "w":101, "h":120, "offX":7,"offY":1,"sourceW":122,"sourceH":122}
+
+}}

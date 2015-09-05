@@ -1,2 +1,16 @@
 {
+	"db": {
+		"default": {
+			"url": "postgres://root:h5654321@192.168.1.116:5432/cfd?sslmode=disable"
+		},
+		"btc": {
+			"url": "postgres://root:h5654321@192.168.1.116:5432/btc?sslmode=disable"
+		},
+		"ltc":{
+			"url": "postgres://root:h5654321@192.168.1.116:5432/ltc?sslmode=disable"
+		},
+		"ybc":{
+			"url": "postgres://root:h5654321@192.168.1.116:5432/ybc?sslmode=disable"
+		}
+	}
 }

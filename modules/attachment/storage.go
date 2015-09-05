@@ -151,10 +151,12 @@ func ImageResize(img *models.Image, im image.Image, width int) error {
 }
 
 func GenImagePath(img *models.Image) string {
+	beego.Info("GenImagePath")
 	return "upload/img/" + beego.Date(img.Created, "y/m/d/s/") + utils.ToStr(img.Id) + "/"
 }
 
 func GenImageFilePath(img *models.Image, width int) string {
+	beego.Info("GenImageFilePath")
 	var size string
 	if width == 0 {
 		size = "full"

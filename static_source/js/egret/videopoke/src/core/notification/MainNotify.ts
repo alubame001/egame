@@ -33,6 +33,16 @@ module MainNotify {
      export var openLottery28PanelNotify:string = "openLottery28PanelNotify";
     export var closeLottery28PanelNotify:string = "closeLottery28PanelNotify";
 
+
+     export var openDarkSlotPanelNotify:string = "openDarkSlotPanelNotify";
+    export var closeDarkSlotPanelNotify:string = "closeDarkSlotPanelNotify";
+
+
+     export var openTitanSlotPanelNotify:string = "openTitanSlotPanelNotify";
+    export var closeTitanSlotPanelNotify:string = "closeTitanSlotPanelNotify";
+
+
+
     export var openFishPanelNotify:string = "openFishPanelNotify";
     export var closeFishPanelNotify:string = "closeFishPanelNotify";
     

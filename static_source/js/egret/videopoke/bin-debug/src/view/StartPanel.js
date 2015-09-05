@@ -10,6 +10,8 @@ var StartPanel = (function (_super) {
         _super.call(this);
     }
     StartPanel.prototype.initPanel = function () {
+        this.w = 998;
+        this.h = 480;
         this.bg = new egret.Bitmap();
         this.bg.texture = RES.getRes("");
         this.addChild(this.bg);
@@ -38,17 +40,17 @@ var StartPanel = (function (_super) {
         this.progress4.alpha = 0; //78+5;
         this.progress4.textField2.text = "捕鱼达人";
         this.addChild(this.progress4);
-        this.progress5 = new ECircle(this, "icon_coming", null, "", 20, 4, "circle");
+        this.progress5 = new ECircle(this, "icon_coming", this.onDarkSlotBtnTouchTap, "", 20, 4, "circle");
         this.progress5.x = 600; //294+5;
         this.progress5.y = 245; //78+5;
         this.progress5.alpha = 0; //78+5;
-        this.progress5.textField2.text = "水果老虎机";
+        this.progress5.textField2.text = "老虎机";
         this.addChild(this.progress5);
-        this.progress6 = new ECircle(this, "icon_coming", null, "", 20, 4, "circle");
+        this.progress6 = new ECircle(this, "icon_coming", this.onTitanSlotBtnTouchTap, "", 20, 4, "circle");
         this.progress6.x = 600; //294+5;
         this.progress6.y = 245; //78+5;
         this.progress6.alpha = 0; //78+5;
-        this.progress6.textField2.text = "百家乐";
+        this.progress6.textField2.text = "泰坦";
         this.addChild(this.progress6);
         this.progress7 = new ECircle(this, "icon_coming", null, "", 20, 4, "circle");
         this.progress7.x = 600; //294+5;
@@ -244,6 +246,18 @@ var StartPanel = (function (_super) {
             Global.dispatchEvent(MainNotify.openFishPanelNotify, null, false);
             Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
         }
+        else if (event.groupName == "darkslot_load") {
+            Global.dispatchEvent(MainNotify.openDarkSlotPanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        }
+        else if (event.groupName == "darkslot3_load") {
+            Global.dispatchEvent(MainNotify.openDarkSlotPanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        }
+        else if (event.groupName == "titanslot_load") {
+            Global.dispatchEvent(MainNotify.openTitanSlotPanelNotify, null, false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify, null, false);
+        }
     };
     StartPanel.prototype.onLottery28BtnTouchTap = function (e) {
         //  PopUpManager.removePopUp(this.loadingView);
@@ -276,12 +290,14 @@ var StartPanel = (function (_super) {
     StartPanel.prototype.onWheelBtnTouchTap = function (e) {
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
         RES.loadGroup("wheel_load");
-        //Global.dispatchEvent(MainNotify.openWheelPanelNotify,null,false);
-        // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     };
-    StartPanel.prototype.onSlotBtnTouchTap = function (e) {
-        // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
-        // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+    StartPanel.prototype.onDarkSlotBtnTouchTap = function (e) {
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+        RES.loadGroup("darkslot3_load");
+    };
+    StartPanel.prototype.onTitanSlotBtnTouchTap = function (e) {
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onSubResourceLoadComplete, this);
+        RES.loadGroup("titanslot_load");
     };
     StartPanel.prototype.onNiuniuBtnTouchTap = function (e) {
         // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);

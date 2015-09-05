@@ -1,0 +1,153 @@
+<script type="text/x-handlebars" data-template-name="price">
+
+<div class ='container'>
+	   
+    <div class="row home-box"> 
+        <div class="col-md-9">
+            {{outlet}}
+         </div>
+        <div class="col-md-3"> 
+         {{partial "match"}}    
+        </div>
+    </div>    
+</div>
+</script>
+
+           
+<script type="text/x-handlebars" data-template-name="price/index">
+	   
+    {{render 'pricepage' model.detail}}   
+     {{render 'indice' model.index}} 
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="pricepage">
+   {{#if controller.searchEnabled}} 
+       {{partial "seach"}}
+   {{/if}}
+
+<div class='well'>
+
+
+  {{#if controller.paginatedContent}} 
+    <div class="row home-box"> 
+        <div class="col-md-12">
+
+
+                <div class="indesAnalyst">
+                    <ul class="AnalystToolbar">
+                        <li class="UserInfor">分析师</li>
+                        <li class="twoh">
+                            总收益率<br>月总收益率<br>
+                        </li>
+
+                        <li class="twoh">
+                            总收益<br>月总收益<br>
+                        </li>   
+                        <li class="twoh">
+                            开仓金额<br>实时盈亏<br>
+                        </li>    
+                        <li class="twoh">
+                           已平仓金额<br>已结算盈亏<br>
+                        </li>   
+                        <li class="twoh">
+                           胜率<br> 平均收益<br>
+                        </li>   
+
+
+   
+                        <li class="iTradeMap">
+                            跟单人数</li>
+                    </ul>
+                     {{#each item in paginatedContent}}   
+                        <ul class="AnalystPanel">
+                            <li class="UserInfor">
+                                <div>
+                                    <img src="static/img/avatar/jemeshsu-04_normal.png" class="Analystpicture">
+                                </div>
+                                <div style="float: left;">  
+                                    <p class="Analystname" style="line-height: 25px;">
+                                       
+                                           
+                                      {{#link-to 'analyst.uid' item.uid}} {{item.cid}} {{/link-to}} 
+                                      <!-- 
+                                      <button type="button" class="btn btn-default" {{action  "chooseId" item.uid }}> {{item.cid}}</button>
+                                      -->
+                                    </p>
+                                    <p style="line-height: 25px; padding-top: 0px;">
+                                       <i class="fa fa-trophy fa-fw"></i>                                       
+                                    </p>
+
+
+                                </div>
+                                <div style="clear: both;">
+                                </div>
+                            </li>
+                            <li>
+                                {{item.total_profit_percent}}%<br>
+                                {{item.monthly_profit_percent}}%
+                            </li>
+                            <li>ho
+                                {{item.total_profit}}<br>
+                                {{item.monthly_profit}}
+                            </li>     
+                            <li>
+                                {{item.hold_total_amount}}<br>
+                                {{item.hold_total_profit}}
+                            </li>  
+                            <li>
+                               0<br>
+                               0
+                            </li> 
+
+                            <li>
+                                 {{item.winning_percent}}%<br>
+                                {{item.avg_profit}} <span>点</span>
+                            </li>                                                                                    
+                            <li class="iTradeMap">
+                     
+                                   
+                                        <span class="Number">
+                                           {{item.follow_person}}</span>&nbsp;人跟单
+                    
+      
+                            </li>
+                        </ul>
+                    {{/each}}       
+
+                </div>  
+        </div>
+    </div>
+
+    {{#if controller.paginationEnabled}} 
+           {{partial "seach_pagination"}}
+    </nav>
+    {{/if}}
+{{else}}
+
+      <strong> No Data </strong>
+{{/if}}
+
+
+</div>
+
+</script>
+
+
+
+
+
+
+     
+        
+<script type="text/x-handlebars" data-template-name="price/uid">
+<div class ='container'>    
+
+    {{render 'uidpage' model.detail}}   
+
+
+    {{render 'holdpage' model.hold}}   
+</div>
+</script>
+
+

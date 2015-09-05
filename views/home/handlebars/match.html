@@ -1,0 +1,145 @@
+
+
+
+
+
+<script type="text/x-handlebars" data-template-name="match_panel">
+        <div class="col-md-12">
+            <div class="col-md-6">
+
+                 {{partial 'sell'}}
+            </div>
+
+
+            <div class="col-md-6">
+               
+                 {{partial 'sell'}}
+            </div> 
+
+        </div>
+        
+        
+    
+    
+
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="sell">
+
+<div class="panel panel-default entry-right" id="bid_entry">
+    <div class="panel-heading">交易界面</div>
+       <div class="panel-body">
+           <form accept-charset="UTF-8" action="/markets/btccny/order_bids" class="new_order_bid" data-remote="true" id="new_order_bid" method="post">
+           <div style="margin:0;padding:0;display:inline">
+           <input name="utf8" type="hidden" value="✓">
+           </div>
+           <input id="order_bid_ord_type" name="order_bid[ord_type]" type="hidden" value="limit">
+           <div class="input-group price"><label class="input-group-addon">价格</label>
+           <span class="label label-danger hint-price-disadvantage"></span>
+           <input class="form-control" id="order_bid_price" name="order_bid[price]" type="text"><span class="input-group-addon">CNY</span></div>
+           <div class="input-group amount">
+           <label class="input-group-addon">数量</label>
+           <input class="form-control" id="order_bid_origin_volume" name="order_bid[origin_volume]" type="text">
+           <span class="input-group-addon">BTC</span></div><div class="input-group total">
+           <label class="input-group-addon">金额</label><span class="label label-info hint-positions"></span>
+           <input class="form-control" id="order_bid_total" name="order_bid[total]" type="text">
+           <span class="input-group-addon">CNY</span></div><div class="row row-tips">
+           <div class="col-xs-24 text-right"><span class="label label-info status-info"></span>
+           <span class="label label-success status-success"></span><span class="label label-danger status-danger"></span>
+           <span class="current-balance number">0.00</span><span class="unit">CNY</span></div></div>
+           <button class="btn btn-danger btn-block text-up" type="submit">买入BTC</button></form>
+       </div>
+
+</div>
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="matchpage">
+   {{#if controller.searchEnabled}} 
+       {{partial "seach"}}
+   {{/if}}
+
+    {{#if controller.paginatedContent}} 
+        <div class="row home-box"> 
+            <div class="col-md-12">
+                <div class="panel panel-default entry-right">
+                    <div class="panel-heading">买入</div>
+                        <div class="panel-body">
+                            <div class="tab-content">   
+                                <table class="table  table-hover table-condensed table-bordered border table-sf"> 
+                                    <tr>
+                                        <th class="align_r" width="86">价格</th>
+                                        <th class="align_r" width="84">数量</th>
+                                        <th class="align_r">累计</th>                                      
+                                    </tr>
+                                     {{#each item in paginatedContent}}  
+                                        <tr> 
+                                            <td>{{item.match_price}}</td>                                        
+                                            <td>{{item.match_quality}}</td>                                        
+                                            <td>0</td>      
+                                        </tr>
+                                    {{/each}}      
+                                </table> 
+                            </div>
+
+                            {{#if controller.paginationEnabled}} 
+                                   {{partial "seach_pagination"}}
+                            
+                            {{/if}}
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+    {{else}}
+
+      <strong> No Data </strong>
+    {{/if}}
+
+
+
+
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="tradepage">
+        <div class="row home-box"> 
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">全部历史交易</div>
+                        <div class="panel-body">
+                            <div class="tab-content">   
+                                <table class="table  table-hover table-condensed table-bordered border table-sf"> 
+                                    <tr>
+                                        <th class="align_r">时间</th>    
+                                        <th class="align_r" width="86">价格</th>
+                                        <th class="align_r" width="84">数量</th>
+                                                                          
+                                    </tr>
+                                     {{#each item in paginatedContent}}  
+                                        <tr> 
+                                            <td>{{item.create_date}}</td>
+                                            <td>{{item.price}}</td>                                        
+                                            <td>{{item.quality}}</td>                                        
+                                           
+                                        </tr>
+                                    {{/each}}      
+                                </table> 
+                            </div>
+                            {{#if controller.paginationEnabled}} 
+                            {{partial "seach_pagination"}}
+                           
+                            {{/if}}
+
+
+
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+</script>

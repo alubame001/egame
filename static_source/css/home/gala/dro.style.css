@@ -1,0 +1,4171 @@
+html {
+    overflow: auto;
+    overflow-x:hidden;
+}
+body {
+    background: none;
+    color: #b8d6ee;
+    font: 0.70em/1.5em Tahoma,sans-serif;
+    margin:0px;
+    padding:0px;
+    background:#000;
+}
+
+/*flowplayer*/
+#page {
+    background-color:#efefef;
+    width:600px;
+    margin:50px auto;
+    padding:20px 150px 20px 50px;
+    min-height:600px;
+    border:2px solid #fff;
+    outline:1px solid #ccc;
+    text-align:left;
+}
+
+h1, h2 {
+    letter-spacing:-1px;
+    color:#2D5AC3;
+    font-weight:normal;
+    margin-bottom:-10px;
+}
+
+h1 {
+    font-size:22px;
+}
+
+h2 {
+    font-size:18px;
+    text-transform: uppercase;
+}
+
+.less {
+    color:#999;
+    font-size:12px;
+}
+
+a {
+    color:#295c72;
+}
+/*flowplayer*/
+
+.noDisplay {
+    display: none;
+}
+
+#newsletterMsg {
+    position: absolute;
+    width: 190px;
+    left: 50%;
+    top: 180px;
+    margin-left: -100px;
+    padding: 5px;
+    border: 1px solid #fff;
+    text-align: center;
+    z-index: 10000;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_klein_oben.png) repeat scroll left top transparent;
+}
+
+img
+{
+    border:0px;
+}
+#loginForm_default_label_username, #loginForm_default_label_password,#loginForm_default_link_forgot,
+.schatten
+{
+    -moz-text-shadow: 1px 1px 1px #000000;
+    text-shadow: #000000 1px 1px 1px;
+    filter: Shadow(Color=#000000,
+                Direction=135,
+                Strength=1);
+}
+
+#loginForm_default_facebookConnect_container{
+    margin-top: 2px !important;
+    margin-left: 4px;
+}
+
+#loginForm_bookmark_container #bookmark_text{
+  height: 20px;
+  width: 20px;
+  background-image: url("/images/img_buttons/bookmarkButton.jpg?__cv=fcc5bdacb3e1af1ce651d24f55af0100");
+  position: absolute;
+  top: 9px;
+  right: 0;
+  overflow: hidden;
+}
+
+#loginForm_bookmark_container #homepage_text{
+  height: 20px;
+  width: 20px;
+  background-image: url("/images/img_buttons/makeHomeButton.jpg?__cv=68ceaa6dc838da02cf775d59fa856d00");
+  position: absolute;
+  top: 9px;
+  right: -26px;
+  overflow: hidden;
+}
+
+#loginForm_bookmark_container #bookmark_text:hover, #loginForm_bookmark_container #homepage_text:hover{
+    background-position: 0px 20px;
+}
+
+div.logoutTriviaText{
+	margin-left: 260px;
+    text-align: left;
+    width: 400px;
+}
+
+#logout_bookmark_container{
+  position: absolute;
+  top: -5px;
+  left: 120px;
+  text-align: center;
+  width: 665px;
+  height: 40px;
+}
+
+#logout_bookmark_container #bookmark_text, #logout_bookmark_container #homepage_text{
+    background-color: transparent;
+    border: 1px solid #102944;
+    color: white;
+    cursor: pointer;
+    line-height: 15px;
+    width: 143px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#logout_bookmark_container #bookmark_text:hover, #logout_bookmark_container #homepage_text:hover{
+    background-color: #102944;
+}
+
+#logout_bookmark_container #bookmark_text, #logout_bookmark_container #homepage_text{
+    text-decoration: none;
+}
+
+*{
+    outline: none;
+}
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{
+        border : 0px;
+}
+
+#overall,#subpage_overall {
+    left: 0;
+    margin: auto;
+    position: relative;
+    top: 0;
+    min-width: 976px;
+}
+
+#bg_right {
+    height: 472px;
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+#bg_left {
+    height: 472px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+#bg_left div, #bg_right div {
+    height: 1355px;
+    position: absolute;
+    top: 0;
+    width: 472px;
+}
+
+#bg_left div {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_home/landingpage_bg_links.jpg?__cv=07bfe9b8f1e926ec44143a9cce2fa100) no-repeat scroll right top transparent;
+    right: 487px;
+}
+#bg_right div {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_home/landingpage_bg_rechts.jpg?__cv=28391321948c6d86db3151ead95d5a00) no-repeat scroll left top transparent;
+    left: 487px;
+}
+
+
+#wrapper,#subpage_wrapper
+{
+    margin: 0 auto;
+    position: relative;
+    width:976px;
+}
+
+#wrapper {
+	background: #000 url(http://battlestargalactica-495.level3.bpcdn.net/images/img_home/landingpage_bg_oben.jpg?__cv=d2c279d9f3310e5f804a10c2e5823d00) no-repeat top center;
+}
+
+#header,#subpage_header {
+    height: 225px;
+    position: relative;
+    width: 976px;
+    z-index: 10;
+  --  background: url(/static/img/home/header.png) no-repeat scroll center top transparent;
+}
+
+
+#head_toprighttitle
+{
+    height: 43px;
+    margin-left: 200px;
+    position: relative;
+}
+
+
+div#sharing_container
+{
+    height: 20px;
+    left: 716px;
+    padding: 8px 10px;
+    position: absolute;
+    top: 53px;
+    width: 195px;
+    z-index: 10;
+    text-align: right;
+}
+
+div#coin_container
+{
+    height: 20px;
+    left: 16px;
+    padding: 8px 10px;
+    position: absolute;
+    top: 53px;
+    width: 195px;
+    z-index: 10;
+    text-align: right;
+}
+
+
+
+
+div#facbookbox
+{
+    left: 30px;
+    position: absolute;
+    top: 65px;
+    width: 130px;
+    z-index: 10000;
+}
+
+.share_button
+{
+    display:inline-block;
+    height:24px;
+    width:24px;
+    cursor:pointer;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/socialbuttons.png?__cv=225422d29f48253921307659f4cb9800) no-repeat scroll 0 0 transparent;
+    vertical-align: middle;
+}
+div#social_twitter
+{
+    background-position: -24px 0px;
+}
+div#social_youtube
+{
+    background-position: -48px 0px;
+}
+
+ul#language_list li.languageselect {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/sprachauswahl_mitte.png?__cv=8bf2be20acf693c3b8152150a7150700) repeat-y scroll 0 0 transparent;
+    display: block;
+    height: 25px;
+    padding: 4px 5px 0 30px;
+    width: 165px;
+}
+ul#language_list
+{
+    left: -14px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 16px;
+    width: 170px;
+    z-index: 100;
+}
+
+
+
+ul#language_list li.last
+{
+    display: block;
+    height: 45px;
+    padding: 4px 5px 0 30px;
+    width: 165px;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/sprachauswahl_unten.png?__cv=76d765eb7747a3eab73a1612ad270300) no-repeat scroll left top transparent;
+}
+ul#language_list li.first {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/sprachauswahl_oben.png?__cv=e6e82f8275abe1fff95d9cab52957600) no-repeat scroll 0 0 transparent;
+    height: 18px;
+    padding: 25px 5px 0 30px;
+    width: 165px;
+}
+ul#language_list li.first + li { padding-top: 11px; }
+span#languages
+{
+    display:none;
+    /*width:224px;
+    left:20px;*/
+}
+/*
+
+span#languagebottom
+{
+    display:block;
+    width:224px;
+    height:43px;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/sprachauswahl_unten.png?__cv=76d765eb7747a3eab73a1612ad270300) no-repeat scroll left top transparent;
+}*/
+
+.lang_choose
+{
+    float:left;
+}
+#lang_container {
+	   background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/dropdown_pfeil_01.png) no-repeat scroll right 0 0 transparent; 
+    left: 45px;
+    padding: 0;
+    position: absolute;
+    top: 8px;
+    width: 135px;
+    z-index: 10000;
+    height: 25px;
+}
+
+#lang_container:hover>#languages {
+    display:block;
+}
+
+.flag
+{
+    width: 18px;
+    height: 11px;
+    display: block;
+    float: left;
+    cursor:pointer;
+    margin: 2px 10px 0;
+}
+.flag_fr {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/fr.gif?__cv=ac5c4cb1be2ddcc785a8c2a540576800) no-repeat;
+}
+.flag_en {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/en.gif?__cv=f8c986572b2a224f77855ab4cd30c700) no-repeat;
+}
+.flag_de {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/de.gif?__cv=ead1bc4cd07a8860502d7cc9b7451f00) no-repeat;
+}
+.flag_it {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/it.gif?__cv=c83977be032361593f779a9d99afd100) no-repeat;
+}
+.flag_es {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/es.gif?__cv=1cd7d23085f7d1c96cbbe884dcdaf400) no-repeat;
+}
+.flag_tr {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/tr.gif?__cv=fe1de081b491df557bc032ceb534cb00) no-repeat;
+}
+.flag_pl {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/pl.gif?__cv=e6de9de958b281ae92151421feae5c00) no-repeat;
+}
+.flag_ru {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/ru.gif?__cv=983d5d2455e2fce56817996f928c0b00) no-repeat;
+}
+.flag_br {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/br.gif?__cv=51f0940ecef0cdefab4cd2eda5beed00) no-repeat;
+}
+.flag_da {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/da.gif?__cv=83c898b659eda8a9ed679e83879b5e00) no-repeat;
+}
+.flag_el {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/el.gif?__cv=b6ebfb25bdfb2d640fae7844ee7ebe00) no-repeat;
+}
+.flag_nl {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/nl.gif?__cv=d195b46741c8f74bd2b7f13f3a794200) no-repeat;
+}
+.flag_ro {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/ro.gif?__cv=1bb1da92698538129b3168f2f700ef00) no-repeat;
+}
+.flag_sk {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/sk.gif?__cv=d1c393c3d35810212d581a365add8300) no-repeat;
+}
+.flag_us {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/us.gif?__cv=badc90c8f817d240e02cb63bd146ef00) no-repeat;
+}
+.flag_bg {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/lang/bg.png?__cv=5a0e73fdfa6cda8e071021c4915ff300) no-repeat;
+}
+.flag_hu {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/hu.gif?__cv=b45d07c3434858d2d6cb792e43a4ce00) no-repeat;
+}
+.flag_cs {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/cs.gif?__cv=4a9444930fbbe2438be2389075961800) no-repeat;
+}
+.flag_sv {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/sv.gif?__cv=f4bf0565795b4a37cfec5d55addc9b00) no-repeat;
+}
+.flag_fi {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/fi.gif?__cv=60c3b01acda92bd8d7294c1653b26100) no-repeat;
+}
+.flag_pt {
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/flaggs/pt.gif?__cv=45ce6a3e634af5aed2003b47ca04de00) no-repeat;
+}
+.flag_top
+{
+    cursor: pointer;margin-top: 2px;
+    margin-left: 9px;
+}
+.lang_choose
+{
+    cursor:pointer;
+}
+
+#languages a {
+  display: block;
+  float: left;
+  padding: 2px;
+  margin-right: 3px;
+  position: relative;
+  color: #b8d6ee;
+}
+#languages a.last {
+  margin-right: 0;
+}
+#languages a.selected {
+  background: transparent;
+}
+#languages .inactive_language {
+  /*background: url(http://battlestargalactica-495.level3.bpcdn.net/images/dot-50.png) repeat;*/
+    position: absolute;
+    width: 16px;
+    height: 11px;
+    left: 2px;
+    background-color:#000000;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+    cursor:pointer;
+
+}
+#languages a:hover .inactive_language {
+}
+.followUsText
+{
+    vertical-align: middle;
+}
+#menu
+{
+    height: 350px;
+    position: relative;
+    width: 976px;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_home/landingpage_mitte.jpg?__cv=9c6f07be0f697a6c7608ef96da884800) no-repeat scroll left top transparent;
+}
+
+
+
+#outer_container {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_home/landingpage_unten.jpg?__cv=ed9d2647a74a75da6267311082bb9600) no-repeat scroll left top transparent;
+    padding: 0px 5px 5px 5px;
+    position: relative;
+    width: 967px;
+    height:800px;
+    z-index: 0;
+    overflow:hidden;
+}
+#container {
+    padding: 0px 55px 15px;
+    width: 860px;
+    overflow: auto;
+}
+
+#featured, #featured_frame {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+#featured {
+  position: relative;
+  float: left;
+  z-index: 0;
+  margin-bottom: 10px;
+}
+#featured_frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:2;
+}
+
+#footer {
+  width: 976px;
+  margin: 80px 0 60px 0;
+  text-align: center;
+  color: #FFF;
+}
+#mainnavi
+{
+    height: 30px;
+    left: 16px;
+    position: absolute;
+    top: 245px;
+    width: 970px;
+}
+
+
+ul.mainnavi {
+    list-style: none outside none;
+    margin: 0px;
+    padding: 0;
+    position: absolute;
+    z-index: 1000;
+}
+
+.mainnavi li {
+    display: block;
+    float: left;
+    height: 30px;
+    margin: 0px 3px 0px 0px;
+    position: relative;
+    text-align:center;
+}
+.mainnavi li a {
+    display: block;
+    height: 30px;
+}
+
+.mainnavi li.selected a{background-position: 0px -30px !important;}
+
+
+.mainnavi li.home a:hover{background-position: 0px -30px !important;}
+.mainnavi li.home.selected a:hover { background-position: 0px -30px !important;}
+.mainnavi li.characters a:hover{background-position: 0px -30px !important;}
+.mainnavi li.world a:hover{background-position: 0px -30px !important;}
+.mainnavi li.items a:hover{background-position: 0px -30px !important;}
+.mainnavi li.medien a:hover{background-position: 0px -30px !important;}
+.mainnavi li.community a:hover{background-position: 0px -30px !important;}
+
+.mainnavi li.home a {width:113px;height:30px;background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/menu_bg60.jpg?__cv=caa6280a940bf32c8007aa3d25d0c700) no-repeat scroll 0px 0px ;}
+.mainnavi li.characters a {width:113px;height:30px;background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/menu_bg60.jpg?__cv=caa6280a940bf32c8007aa3d25d0c700) no-repeat scroll 0px 0px transparent;}
+.mainnavi li.world a {width:113px;height:30px;background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/menu_bg60.jpg?__cv=caa6280a940bf32c8007aa3d25d0c700) no-repeat scroll 0px 0px transparent !important;}
+.mainnavi li.items a {width:113px;height:30px;background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/menu_bg60.jpg?__cv=caa6280a940bf32c8007aa3d25d0c700) no-repeat scroll 0px 0px transparent;}
+.mainnavi li.medien a {width:113px;height:30px;background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/menu_bg60.jpg?__cv=caa6280a940bf32c8007aa3d25d0c700) no-repeat scroll 0px 0px transparent !important;}
+.mainnavi li.community a {width:113px;height:30px;background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/menu_bg60.jpg?__cv=caa6280a940bf32c8007aa3d25d0c700) no-repeat scroll 0px 0px transparent;}
+
+.mainnavi li.deactivated a {cursor: default !important;}
+
+.mainnavi li.mediaSelected a, .mainnavi li.mediaSelected a:hover
+{
+    background-position: 0px -30px !important;
+}
+.mainnavi li.worldSelected a, .mainnavi li.worldSelected a:hover
+{
+    background-position:-0px -30px !important;
+}
+
+
+.mainnavi li.home a strong{width:113px;}
+.mainnavi li.characters a strong{width:113px;}
+.mainnavi li.world a strong{width:113px;}
+.mainnavi li.empty{width:240px;padding-left: 7px; cursor:pointer;}
+.mainnavi li.items a strong{width:113px;}
+.mainnavi li.medien a strong{width:113px;}
+.mainnavi li.community a strong{width:113px;}
+
+.mainnavi li a strong
+{
+    height:30px;
+    text-indent: -999em;
+    display: block;
+    background-position: center center;
+}
+
+/*ende menu*/
+
+/*start newsletter*/
+div#signupForm {
+    display: block;
+    height: 155px;
+    left: 363px;
+    padding: 0;
+    position: absolute;
+    top: 384px;
+    width: 250px;
+    z-index: 0;
+    color:#e5dca5;
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_register_sub_a.png?__cv=ef683a8bbe73d58ee9fda45e5b0b6c00) no-repeat;
+}
+
+#signupForm img {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+        z-index: 1002;
+}
+
+#signupFade {
+    width: 250px;
+    height: 155px;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_register_sub_b.png?__cv=68808cb82abee51f4d7efbd2d8a1f400);
+    display: none;
+    position: absolute;
+}
+
+.signupText
+{
+    text-align:center;
+    color:#e9e4bc;
+}
+
+
+.signupInput
+{
+    text-align:center;
+}
+div.signupButton{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_sendbuttons.jpg) no-repeat scroll 0 0 transparent;
+    top: 479px;
+}
+div.signupText{
+top: 435px;
+}
+div.signupInput
+{
+    top: 460px;
+}
+div.signupButton,div.signupText,div.signupInput
+{
+    display: block;
+    height: 26px;
+    left: 376px;
+    padding: 0;
+    position: absolute;
+    width: 224px;
+    z-index: 1000;
+    cursor:pointer;
+}
+.signupButton:hover
+{
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_sendbuttons_fix.jpg) no-repeat 0 -27px ;
+}
+
+.subpage_body .signupButton:hover
+{
+    background-position: 0 -26px;
+}
+
+div#signupForm
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_register_sub_a.png?__cv=ef683a8bbe73d58ee9fda45e5b0b6c00);
+}
+
+div#signupForm:hover
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_register_sub_b.png?__cv=68808cb82abee51f4d7efbd2d8a1f400);
+    cursor:pointer;
+}
+
+
+input.inputBlock
+{
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #797351;
+    padding-top: 3px;
+    text-align: center;
+    width: 185px;
+    font-size: 11px;
+}
+div.newslettersubmittext
+{
+    text-align:center;
+    display: block;
+    height: 26px;
+    text-align: center;
+    width: 224px;
+}
+.ErrorText
+{
+    color:#ff0000;
+}
+.SuccessText
+{
+    color:#797351;
+}
+/*ende newsletter*/
+/*start 2 buttons*/
+#teaser_video,#gameplay_trailer
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_vidoebuttons.jpg?__cv=2f64706e8a0ba134028abd14ba956200) no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 32px;
+    position: absolute;
+    text-align: center;
+    width: 140px;
+    z-index: 0;
+    cursor:pointer;
+}
+
+#tease_video_text,
+#gameplay_trailer_text
+{
+
+    height: 32px;width: 140px;
+    display:block;
+}
+
+#teaser_video
+{
+    left: 205px;
+    top: 516px;
+    background-position: 0px 0px;
+}
+#gameplay_trailer
+{
+    left: 627px;
+    top: 516px;
+    background-position: -140px 0px;
+}
+
+#teaser_video:hover
+{
+    background-position: 0px -32px;
+}
+#gameplay_trailer:hover
+{
+    background-position: -140px -32px;
+}
+/*ende  2 buttons*/
+/*left right boxes and scroller*/
+#right_column {
+    display: block;
+    height: 293px;
+    width: 306px;
+    padding:0;
+    position: absolute;
+    top: 44px;
+    left: 561px;
+}
+.sword
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/sword.png) no-repeat scroll 0 0 transparent;
+    height: 51px;
+    left: 273px;
+    position: absolute;
+    top: 335px;
+    width: 25px;
+    z-index: 10000;
+}
+.right_deckel,.right_deckel_bottom,.left_deckel,.left_deckel_bottom
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/overflow01.png?__cv=a32f73c64cc89a72b4a2c6adce44f300) repeat-x scroll 0 0 transparent;
+    position: absolute;    height: 25px;    z-index: 10000;
+}
+.right_deckel_bottom,.left_deckel_bottom
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/overflow02.png?__cv=0c5b5e79fc8bda726e022a1c42ec2000) repeat-x scroll 0 0 transparent;
+}
+.right_deckel{top: 44px;left: 565px;width: 290px;}
+.right_deckel_bottom{left: 565px;top: 362px;width: 268px;}
+.left_deckel{left:-11px;top: 43px;width: 285px;}
+.left_deckel_bottom{left: -12px;top: 328px;width: 285px;}
+
+
+
+.lowerInformation
+{
+    position: relative;
+}
+.left_title
+{
+    position:absolute;
+    top: 9px;
+    left:-15px;
+    width:300px;
+    height:34px;
+}
+
+.right_title
+{
+    height: 34px;
+    left: 310px;
+    position: absolute;
+    top: 9px;
+    width: 550px;
+}
+
+#left_side {
+    float: left;
+    height: 350px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 44px;
+    padding: 0;
+    width: 292px;
+}
+.scroll-pane {
+    width: 292px;
+    height: 314px;
+    overflow: auto;
+}
+#pane2 {
+	width: 305px
+}
+
+
+p.PleftNews
+{
+    padding:0px 5px 5px 0px;
+}
+p.PrightNews
+{
+    padding:0px 15px 5px 5px;
+}
+.jScrollPaneDrag
+{
+    height: 80px !important;
+    width:12px !important;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/scrollbalken_button.jpg?__cv=0f37d3d926eed24bef7432bf4ad3d100) no-repeat scroll 0 0 transparent;
+}
+
+.jScrollPaneTrack {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/scrollbalken_mitte.jpg?__cv=a27a6065c527047e8a886ffecdb71200) repeat-y scroll 0 0 transparent;
+    width:12px !important;
+}
+.jScrollArrowUp
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/scrollbalken_oben.jpg?__cv=49170be95cf3082a4ae730fcba73c200) no-repeat scroll 0 0 transparent;
+    width:12px !important;
+    height:17px !important;
+}
+.jScrollArrowDown
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/scrollbalken_unten.jpg?__cv=757e9c676abd227d22102e8e0ec18500) no-repeat scroll 0 0 transparent;
+    width:12px !important;
+    height:17px !important;
+}
+
+span.NewsHeader, h1.NewsHeader
+{
+    color: #688eac;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+span.NewsSubHeader
+{
+    color: #688eac;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+ul.NewsList{margin:0px;    padding:0px;}
+ul.NewsList li{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/bulletpoint.png?__cv=dabf4ba7adb9d047e7ead46b761ee500) no-repeat scroll 0 7px transparent;
+    color: #FFFFFF;
+    font-weight: normal;
+    margin: 5px 5px 5px 0;
+    padding: 0 0 0 25px;
+    min-height: 20px;
+}
+
+span.NewsNormal,span.NewsNormalRight,h2.NewsNormal
+{
+    color:#FFFFFF;
+    display:block;
+    margin-top:13px;
+	font-size: 10px;
+	text-transform: none;
+    font-weight: normal;
+    letter-spacing: normal;
+    margin-bottom: 0px;
+}
+
+span.NewsNormalRight
+{
+    margin:0px 0px 13px 0px;
+}
+
+span.NewsNormalRight a
+{
+    color: #5f6c78;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+span.NewsNormal b
+{
+    color: #688eac;
+}
+    
+/*ENDE left right boxes and scroller*/
+
+/*screenshot carousel*/
+.scrshotleft,.scrshotright
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/overflow03.png?__cv=46cc6c0536dcdfa87b1d959c63d14f00) repeat-y scroll 0 0 transparent;
+    height: 123px;
+    left: 34px;
+    top: 0;
+    width: 10px;
+    z-index:100000;
+}
+
+.scrshotright
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/overflow04.png?__cv=5bf7302577a381389b067eeec0a40e00) repeat-y scroll 0 0 transparent;
+    height: 123px;
+    left: 779px;
+    top: 0;
+    width: 10px;
+}
+#containerWallpaper .scrshotleft, #containerWallpaper .scrshotright
+{
+    height: 190px;
+}
+.carousel_wrapper {
+    height: 137px;
+    padding-left: 8px;
+    padding-top: 43px;
+}
+
+#screenShotContainer {
+		width: 755px;
+		overflow: hidden;
+		left: 34px;
+}
+
+.carousel_wrapper .controls {
+  height: 82px;
+  width: 29px;
+  background: #1a4572 url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_scrollerbuttons.jpg?__cv=5477030a04c55b656c4f6e4170824900) no-repeat 1px -60px;
+  display: inline-block;
+  cursor: pointer;
+}
+.carousel_wrapper .left_arrow:hover,.carousel_wrapper .left_inactive:hover {
+    background-position: 0px -82px;
+}
+.carousel_wrapper .right_arrow:hover,.carousel_wrapper .right_inactive:hover {
+    background-position: -29px -82px;
+}
+.carousel_wrapper .left_arrow {
+    background-position: 0px 0px;
+
+}
+.carousel_wrapper .right_arrow{
+    background-position: -29px 0px;
+}
+.carousel_wrapper .left_inactive {
+    background-position: 0px 0px;cursor:default;
+}
+.carousel_wrapper .right_inactive {
+    background-position: -29px 0px;cursor:default;
+}
+#carousel_screenshots_counter, #carousel_artwork_counter, #carousel_wallpaper_counter, #carousel_video_counter
+{
+    color: #5C3633;
+    height: 124px;
+    width: 44px;
+	font-weight: bold;
+}
+
+.carousel_limiter {
+    display: inline-block;
+    width: 758px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    width: 9999px;
+    float: left;
+    padding-left: 0px;
+    margin:0px;
+}
+.carousel li {
+    display: inline-block;
+    margin: 0 3px;
+}
+.screenshot {
+  margin: 0 10px 15px 4px;
+  border: 3px solid #5E5E5E;
+  float: left;
+}
+a.screenshot:hover {
+  border-color: #FFF;
+}
+.last {
+  margin-right: 0;
+}
+/*end screenshot carousel*/
+/*start footer*/
+.footertext img
+{
+    margin-top:17px;
+    vertical-align:top;
+}
+#legal .links,#legal .links a
+{
+    vertical-align:top;
+    line-height:35px;
+}
+#footer a
+{
+    color:#FFFFFF;
+    text-decoration: none;
+}
+.footertext1,.footertext2
+{
+    margin-top:10px;
+    display:inline-block;
+}
+/*end footer*/
+/*start darkAlpha*/
+.darkAlpha, #blackboxContainer {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100000;
+}
+
+.darkAlpha
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/evenDarkerAlpha.png?__cv=446f17cd4ec42c7d411ff1064bbcf700) repeat scroll left top transparent;
+}
+
+.subpage_body .darkAlpha
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/darkBackgroundAlpha.png) repeat scroll left top transparent;
+}
+#blackboxContainer
+{
+    z-index: 100010;
+    background:transparent;
+}
+
+.blackbox {
+    height: 40em;
+    margin: auto;
+    position: absolute;
+    width: 35em;
+    z-index:1000000;
+}
+#blackboxContent
+{
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+#registration_intro{
+	padding: 10px 57px;
+    color: #B8D6EE;
+}
+
+.blackbox div.topleft {
+    display: block;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/blackbox.jpg?__cv=f25acc1647419c3687014f69039fba00) top left no-repeat transparent;
+    padding-left: 21px;
+    margin-left: -2.5em;
+}
+
+.blackbox div.topright {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/blackbox.jpg?__cv=f25acc1647419c3687014f69039fba00) no-repeat scroll right top transparent;
+    display: block;
+    padding-right: 21px;
+}
+
+.blackbox div.bottomleft, .blackbox div.bottomright {
+    height: 10px;
+    display: block;
+}
+
+.blackbox div.bottomleft {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/blackbox.jpg?__cv=f25acc1647419c3687014f69039fba00) no-repeat scroll left bottom transparent;
+    margin-left: -2.5em;
+}
+
+.blackbox div.bottomright {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/blackbox.jpg?__cv=f25acc1647419c3687014f69039fba00) no-repeat scroll right bottom transparent;
+    margin:0 0.0em 7em 7em;
+}
+.error_blackbox {
+    margin-top:300px !important;
+}
+.error_blackbox div.bottomleft {
+    height: 123px !important;
+}
+.error_blackbox div.bottomright {
+    height: 123px !important;
+}
+.error_blackbox #blackboxContentTop{
+    margin : 20px !important;
+    width: 355px !important;
+}
+.error_blackbox span#blackboxContentNavClose div#buttonclose{
+    left : 20% !important;
+    margin-top : 20px !important;
+}
+/*end darkAlpha*/
+/* @group FORM */
+#loginForm_default_container1
+{
+    display:none !important;
+}
+#loginForm_openId_container
+{
+    display:none !important;
+}
+#loginForm_default_container {
+  position: absolute !important;
+  width: 710px;
+  background: none !important;
+  top: 0 !important;
+  left: 0 !important;
+  padding: 5px 0 0 !important;
+}
+#loginForm_default {
+    display: inline;
+}
+#loginForm_default_label_password {
+    margin-left: 5px !important;
+}
+.loginForm_default_input {
+  width: 107px;
+  heigth: 16px;
+  float: left;
+  margin: 0px 0 0 2px;
+  padding: 3px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/eingabefeld.jpg?__cv=edf1039192a9f924fd4208ed7bb12e00) no-repeat scroll 0 0 transparent;
+  color: #b8d6ee;
+}
+
+#loginForm_default_loginButton_container, #loginForm_default_signupButton_container {
+    background:url("/images/img_buttons/btn_login_a.png?__cv=1032df85f559e8d25b55766fb954cf00") no-repeat scroll 0 5px transparent;
+    height:30px;
+    margin-top: -3px;
+    margin-left: 4px;
+    display: inline-block;
+    width:98px;
+    padding: 0 7px;
+    vertical-align: top;
+}
+
+.bgcdw_login_container{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	width: auto !important;
+	height: 43px;
+	float: left;
+}
+
+.bgcdw_login_container_form {
+	padding-top: 4px;
+    position: relative;
+}
+
+.bgc_fbConnect_container_link {
+	float: left;
+	margin-top: 6px;
+}
+
+.facebookSignupFormContainer label, .facebookSignupForm div.teaser span{
+	color: #000 !important;
+}
+
+.bgcdw_fbConnect_container_signup {
+	z-index: 10000;
+}
+
+.bgcdw_login_form fieldset, .bgcdw_login_form fieldset div, .bgcdw_login_form fieldset div label {
+	float: left;
+    clear: none !important;
+}
+
+fieldset.bgcdw_login_form_login {
+	margin-top: 4px !important;
+}
+
+.bgcdw_login_form_buttons {
+	margin-top: 5px !important;
+}
+
+.bgcdw_login_form fieldset div label {
+	padding-top: 2px;
+    padding-left: 5px;
+	width: auto !important;
+	font-size: 11px;
+}
+
+#bgcdw_login_form_username, 
+#bgcdw_login_form_password, 
+.bgcdw_signup_form_signup div input,
+.bgcdw_signup_form_signup div select,
+#bgc_fbSignup_form_username,
+#bgc_fbConnect_form_username,
+#bgc_fbConnect_form_password
+{
+display: inline;
+    font-family: Eurostyle,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    float: none;
+    width: 100px;
+    border: 0;
+    background-color: #B9B9B9;
+    height: 21px;
+    -webkit-appearance: none;
+}
+
+.bgc_fbconnect_link label, .bgc_fbconnect_signup label {
+	width: 250px !important;
+}
+
+.bgc_fbconnect_link h1, .bgc_fbconnect_signup h1 {
+	color: #ffffff !important;
+}
+
+.bgc_signup_container .bgc_signup_form_signup div input {
+    background: url("/images/img_global/eingabefeld_221x22.jpg?__cv=bea2b137ff2e2a64ce238f735bce1f00") no-repeat scroll 0 0 transparent;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    color: #B8D6EE;
+    float: left;
+    margin: 0 0 0 2px;
+    padding: 3px;
+    width: 214px;
+    -webkit-appearance: none;	
+}
+
+.bgcdw_signup_form_signup div.bgcdw_date.bgcdw_birthdatedate input {	
+    background: url("/images/img_global/eingabefeld_56x22.jpg?__cv=ca567528602cb9880b732214c66c5800") no-repeat scroll 0 0 transparent;    
+    width: 50px;
+    margin: 0;
+    padding-right: 1px;
+}
+.bgcdw_signup_form_signup .bgcdw_date_fields {
+	margin-left: 2px;
+    float: left;
+}
+.bgcdw_signup_form_signup div.bgcdw_date.bgcdw_birthdatedate select {
+    margin: 0;
+    background-color: rgba(0,0,0,0); /* opera needs it to display bg images >.> */
+    padding: 3px 0;
+}
+.bgcdw_signup_form_signup div.bgcdw_date.bgcdw_birthdatedate option:nth-child(1) {
+    background: url("/images/img_global/eingabefeld.jpg?__cv=edf1039192a9f924fd4208ed7bb12e00");
+}
+.bgcdw_signup_form_signup div.bgcdw_date.bgcdw_birthdatedate option {
+	background-color: #303030;
+}
+.bgcdw_signup_form_signup div.bgcdw_date.bgcdw_birthdatedate .bgcdw_date_separator {
+    float: left;
+    display: none;
+}
+
+.bgc_signup_container_description {
+	display: none;
+}
+
+.bgcdw_button, .bgc_button {
+    background:url("/images/img_buttons/btn_login_a.png?__cv=1032df85f559e8d25b55766fb954cf00") no-repeat scroll 0 5px transparent;
+    margin-top: -3px;
+    margin-left: 4px;
+    display: inline-block;
+    vertical-align: top;
+    height: 26px;
+    margin-left: 3px;
+	margin-right: 0px;
+    padding: 5px 0 0;
+    width: 112px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.bgcdw_button:hover, .bgc_button:hover  {
+	background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_login_b.png?__cv=ed0a13e3c347e4b945a8fd21b3040400) no-repeat scroll 0 5px transparent;
+}
+
+.bgcdw_login_container_remindpassword{
+    font-size: 9px !important;
+    left: 232px;
+    position: absolute;
+    top: 26px;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.bgcdw_login_container_remindpassword a {
+	color: #295C72 !important;
+	font-size: 9px !important;
+	text-decoration: underline !important;
+}
+
+.bgcdw_fbConnect{
+	padding-top: 4px;
+    padding-left: 3px;
+}
+
+.bgc_signup_container_description{
+	display: none;
+}
+
+.bgcdw_signup_form_signup div label {
+	display: block;
+    float: left;
+    width: 155px;
+}
+
+#bgc_signup_container {
+	width: 400px;
+    margin: auto;
+    border: none;
+}
+
+.bgc_signup_form_back{
+	display: none;
+}
+
+.bgc_signup_form_register{
+	float: none;
+    background: url("/images/img_buttons/btn_registrierung_a.png?__cv=0bdddc335bd114b2eb5f961a54d77200") no-repeat scroll center 0 transparent;
+    width: 300px;
+    height: 64px;
+    color: #fff;
+    font-size: 24px;
+    margin: auto auto 15px;
+	border: none;
+	display: block;
+}
+.bgc_signup_form_register:hover{
+	background: url("/images/img_buttons/btn_registrierung_b.png?__cv=0bdddc335bd114b2eb5f961a54d77200") no-repeat scroll center 0 transparent !important;
+}
+
+.bgc_signup_container div.bgcdw_errors {
+	right: 440px !important;
+}
+
+.bgcdw_login_form_login div.bgcdw_errors {
+	float: left;
+    left: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+	z-index: auto;
+}
+
+.bgcdw_errors_flash {
+	left: 135px;
+    position: absolute;
+    top: 100px;
+    width: 300px;
+}
+
+.bgcdw_erroroverlay_box {
+    width: 500px;
+    height: auto;
+    margin-left: -250px;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/blackbox_narrow.jpg?__cv=1036cdf34dc054cbacea12af4c3a7a00);
+}
+
+.bgc_signup_container_errors .bgcdw_erroroverlay_box {
+    margin-top: 0px;
+    top: 40px;
+}
+
+.bgcdw_erroroverlay_box_body{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/blackbox_narrow.jpg?__cv=1036cdf34dc054cbacea12af4c3a7a00);
+    background-position: bottom;
+    padding-bottom: 20px;
+}
+
+.bgcdw_erroroverlay_box_header_close {
+    background: url("/images/img_buttons/btn_exit_a.png?__cv=2ce51e1fdffbb4b15690635748d4e700") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    width: 31px;
+    z-index: 10000;
+}
+
+.bgcdw_erroroverlay_box_header_title{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div.bgcdw_login_container_errors div.bgcdw_erroroverlay_box{
+    margin-left: -355px;
+    margin-top: 0;
+    top: 95px;
+}
+
+div.bgcdw_login_container_errors div.bgcdw_erroroverlay_blackout{
+    display: none;
+}
+
+div.bgc_signup_container_errors div.bgcdw_erroroverlay_blackout{
+    display: none;
+}
+
+.bgcdw_date_fields {
+	margin-left: 5px !important;
+}
+
+div.bgcdw_day_list select, div.bgcdw_month_list select, div.bgcdw_year_list select {
+	color: #ffffff;
+	border: none !important;
+	border-bottom: 1px solid #6D6D6D !important;
+	border-right: 1px solid #6D6D6D !important;
+	background-color: #202020 !important;
+}
+
+.bgc .bgcdw_date_fields div {
+	border: none !important;
+}
+
+.ui-datepicker {
+    border-bottom: 1px solid #B6B8B5;
+    border-left: 1px solid #B6B8B5;
+    border-right: 1px solid #B6B8B5;
+    padding: 2px;
+    background-color: #0E0E0E;
+    color: #B8D6EE;
+}
+
+.ui-datepicker a {
+    color: #B8D6EE;
+    font-weight: bold;
+}
+
+.ui-datepicker thead {
+    border-bottom: 1px solid #B6B8B5;
+}
+
+#loginForm_default_signupButton_container {
+    height: 26px;
+    margin-left: 3px;
+    padding: 5px 0 0;
+    width: 112px;
+}
+
+#loginForm_default_loginButton_container:hover, #loginForm_default_signupButton_container:hover {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_login_b.png?__cv=ed0a13e3c347e4b945a8fd21b3040400) no-repeat scroll 0 5px transparent;
+}
+
+#signup_button_back {
+    background: url("/images/img_buttons/btn_login_a.png?__cv=1032df85f559e8d25b55766fb954cf00") no-repeat scroll 0 0 transparent;
+    background: grey;
+    color: #FFF;
+    border: none;
+    float: right;
+    cursor: pointer;
+    padding: 3px 24px;
+    margin: 10px 0 20px 0px;
+}
+
+.align_buttonRegister{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_registrierung_a.png?__cv=0bdddc335bd114b2eb5f961a54d77200) no-repeat scroll center 0 transparent;
+}
+
+.signup_container .align_buttonRegister{
+    height: 66px;
+    width: 501px;
+}
+
+#global.changeData .align_buttonRegister {
+    background: transparent;
+    padding: 0;
+}
+
+#global.changeData .align_buttonRegister input:hover {
+    background-position: 0 -62px;
+}
+
+#global.changeData .align_buttonRegister input {
+    background: url("/images/img_buttons/btn_backNext.png?__cv=1c7136c078f6b8dbb1a496482607ec00") no-repeat scroll 0 0 transparent;
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    width: 200px;
+    height: 62px;
+    padding: 0;
+    float: none;
+}
+
+.signup_container td {
+    padding: 0;
+    padding-top: 3px;
+}
+
+.align_buttonRegister:hover{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_registrierung_b.png?__cv=c789b56366923a5aa69645cf4b021200) no-repeat scroll center 0 transparent;
+}
+.registerForm .signup_container td.align_buttonRegister:hover {
+	background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_registrierung_b.png?__cv=c789b56366923a5aa69645cf4b021200) no-repeat scroll center 0 transparent;
+}
+.registerForm #blackboxContentTop > table {}
+
+.window_mid .align_buttonRegister{
+    left:0px;
+}
+input.signup_faked_button_layout, input.input_button_signup_submit{
+    width: 300px;
+    height: 66px;
+    margin: 3px 0px;
+    border: 0 none;
+    cursor:pointer;
+}
+#register_btn_deco_left
+{
+ background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/regbutton_deco_left.png?__cv=ca8f665cb2145345b6b7bf7757456400) no-repeat scroll right center transparent;
+    float: left;
+    height: 66px;
+    margin: 0;
+    width: 103px;
+}
+#register_btn_deco_right
+{
+ background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/regbutton_deco_right.png?__cv=179ee8c315e126ae176c130e455b9600) no-repeat scroll 0 center transparent;
+    float: right;
+    height: 66px;
+    margin-left: 0;
+    margin-right: 1px;
+    width: 100px;
+}    
+
+
+#blackboxContentTop > table:first-child > tbody > tr:first-child td
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/cuttingline01.png?__cv=8ce77beea7ae515229b8a38a45ea3d00) no-repeat scroll center bottom transparent;
+}
+/*#signup_submit {
+    color: #FFF;
+    background: grey;
+    border: none;
+    float: right;
+    cursor: pointer;
+    padding: 3px 24px;
+    margin: 10px 0 20px 0px;
+}
+*/
+/*#loginForm_default_signupButton, #signup_submit,*/
+input.buttonGameLink, input.buttonPortalLink {
+    color: transparent;
+    border: none;
+    float: none;
+    cursor: pointer;
+    width: 215px;
+    height: 31px;
+    background-color: transparent;
+    border:1px solid #102944;
+}
+
+input.buttonGameLink:hover, input.buttonPortalLink:hover {
+	background-color: #102944;	
+}
+
+input.buttonPortalLink {
+    margin-left: 84px;
+}
+
+/*start game page and logout page*/
+.logout_left, .logout_right, .support_left, .support_right{
+	height: 834px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 50%;
+}
+.logout_right, .support_right{
+	left: 50%;
+}
+.logout_left div, .support_left div{
+	height: 819px;
+	position: absolute;
+	top: 0;
+	width: 452px;
+}
+
+.logoutBoxLeft, .logoutBoxRight {
+    display: inline-block;
+    margin: 10px;
+}
+
+.game_center, .logout_center {
+	background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_game/gameFrameBG.png?__cv=40ae29f64cd45710883678a9d97c8000) center top no-repeat;
+	margin: 0 auto;
+	width: 1044px;
+	height: 844px;
+	position: relative;
+}
+
+#bookmarkButtons li, #bookmarkBox #box_bookmark_text, #bookmarkBox #box_homepage_text {
+	display: inline;
+	list-style-type:none;
+	padding: 0px;
+	margin: 0px;
+	height: 34px;
+	width: 1044px;
+	float: left;
+	background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_game/gameFrameNavButton.jpg?__cv=5c6ca5405f1276d921e2674ae565b700) no-repeat;
+}
+
+html.gameClient, body.gameClient {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.game_frame{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+
+.game {
+	padding-top: 5px;
+	background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_game/gameBG.jpg?__cv=fe56bc9cab848597d3155680ddd8fb00) center top no-repeat;
+	height: 1000px;
+}
+
+.game, .logout_overall {
+	min-width: 1044px;
+	left:0;
+}
+
+.game #footer {
+	margin-top: 35px;
+	width: 1044px;
+}
+
+.logout_center{
+	width: 920px;
+}
+
+.logout_overall {
+	min-width: 920px;
+}
+#logout {
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.logoutContainer {
+    text-align: center;
+}
+
+/*end game page and logout page*/
+/*start logout button*/
+div.logoutbutton_profil {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_login_a.png?__cv=1032df85f559e8d25b55766fb954cf00) no-repeat scroll 0 5px transparent;
+    position: absolute;
+    top: 5px;
+    right: 100px;
+    z-index: 10;
+    padding: 0 7px;
+    width: 98px;
+}
+div.logoutbutton_profil input{
+    
+    width: 98px;
+    padding: 0;
+    color: #b8d6ee;
+    cursor: pointer;
+    border: none;
+}
+div.logoutbutton_profil:hover{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_login_b.png?__cv=ed0a13e3c347e4b945a8fd21b3040400) no-repeat scroll 0 5px transparent;
+}
+/*start logout button*/
+#loginForm_default_loginButton, #loginForm_default_signupButton {
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 98px;
+}
+#loginForm_default_signupButton {
+    width: 112px;
+}
+
+#signup_button_back {
+	display: none;
+}
+
+.loginForm_default_button, .signup_back, .change_resendSubmit{
+  color: #b8d6ee;
+  border: none;
+  float: right;
+  cursor: pointer;
+  padding: 3px 15px;
+  margin: 10px 0 20px 0px;
+  background: transparent;
+}
+.signup_submit{
+  color: #b8d6ee;
+  border: none;
+  cursor: pointer;
+  width: 297px;
+  height: 66px;
+  padding: 0px;
+  background-color: transparent;
+}
+input.signup_back
+{
+    margin-right:22px;
+}
+
+.facebookDisonnect_SubmitStyle, .openid_addSubmit, .change_submit {
+    color: #FFF;
+      border: none;
+      cursor: pointer;
+      padding: 3px 15px;
+}
+
+.loginForm_default_button {
+	margin: 0px;
+}
+
+#loginForm_default_container label {
+  float: left;
+  text-align: left;
+  margin: 4px 0;
+  font-size: 11px !important;
+  color: #b8d6ee !important;
+}
+#loginForm_default_container a {
+  font-size: 8px;
+  margin: 0 1px;
+  color: #b8d6ee;
+}
+
+#loginForm_default_container a:hover {
+  color: #FFF;
+}
+
+#loginForm_default_link_forgot_password_container {
+    position: absolute;
+    bottom: -12px;
+    left: 236px;
+}
+.input_selectProblemType {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/Input_field.png) no-repeat scroll 0 0 white;
+    border: 0 none;
+    padding: 8px;
+    width: 225px;
+}
+.textarea_supportDesc{
+    border: 0 none;
+    width: 225px;
+    margin: 1px;
+    height: 30px;
+}
+#captcha{
+    border: 0 none;
+    width:225px;
+    margin: 1px;
+}
+.openidButton {
+    display: none !important;
+}
+div#instanceList {
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/background001.jpg) repeat-y;
+    padding-top: 5px;
+    color: #B8D6EE;
+}
+div#instanceList b { color: #688eac; }
+h1#instanceListTitle
+{
+    height:22px;
+    text-indent:5000px;
+}
+div#instanceList div p {
+    margin: 3px 0;
+    font-size: 11px;
+    padding:10px 10px 10px 20px;
+}
+
+div#instanceList div {
+}
+
+div#instanceList div.scrollVertical {
+    width: 7px;
+}
+
+div#instanceList ul {
+    list-style: none;
+    margin: 5px 0;
+    padding: 0px 0px 15px 20px;
+}
+
+div#instanceList li {
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+div#instanceList ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div#instanceList ol li {
+    display: block;
+    height: 27px;
+    line-height: 19px;
+    padding: 0 0 0 70px;
+    font-weight: bold;
+    margin: 0;
+    font-size: 11px;
+}
+
+div#instanceList ol li a {
+    display: block;
+    overflow: hidden;
+    height: 32px;
+    width: 450px;
+    position: relative;
+    top: -32px;
+    text-indent:500px;
+    background: transparent no-repeat 95% 11px;
+}
+
+div#instanceList ol li span.instance_eu {
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/lang/eu.png?__cv=f706b9809d8f367d5c009daa924ad900) no-repeat center left;
+    vertical-align: middle;
+    padding-left: 25px;
+}
+
+div#instanceList ol li span.instance_us, span.instance_us-west {
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/lang/us.png?__cv=13ed35f3b8ecfeba89e0614fec1bb800) no-repeat center left;
+    vertical-align: middle;
+    padding-left: 25px;
+}
+
+div#instanceList ol li {
+    background: url("/images/img_buttons/btn_server_play_normal.jpg") no-repeat scroll 96.5% 0.45em;
+    margin: 5px 1em 5px 0px;
+    padding: 4px 1em 0px;
+}
+div#instanceList ol li:hover {
+    background-image: url("/images/img_buttons/btn_server_play_over.jpg");
+}
+
+div#instanceList ol li.even { background-color: #252627; }
+div#instanceList ol li.odd { background-color: #151717; }
+div#instanceList ol li.highlight {
+    background-color: #232424;
+}
+
+div#instanceList ol li.preselected {
+    background-color: #102944;
+    color: #B8D6EE;
+}
+
+div#instanceList a.closebox {
+    display: none;
+}
+
+div#unityLayer {
+    position: absolute;
+    font-family: 'ZektonRegular',Tahoma,sans-serif;
+    font-size: 14px;
+    width: 970px;
+    height: 598px;
+    top: 140px;
+    left: 50%;
+    margin-left: -490px;
+    z-index: 905;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+    display: none;
+}
+
+div#unityLayer .unityBGOImage {
+    display: inline-block;
+}
+
+div#unityLayer #unityHeadline {
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align:center;
+}
+
+div#unityLayer #innerunity {
+    position: absolute;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/unityNeeded_02.jpg) no-repeat;
+    width: 694px;
+    height: 292px;
+    left: 50%;
+    top: 30px;
+    margin-left: -352px;
+    padding: 5px;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+div#unityLayer #innerunity p {
+    margin-top: 40px;
+    text-align: left;
+    padding: 8px;
+}
+
+div#unityLayer #bottomlink {
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+}
+
+div#unityLayer .unityLayerBottom div {
+    display: inline-block;
+}
+
+div#unityLayer #bottomtext {
+    position: absolute;
+    left: 140px;
+    top: 410px;
+    font-size: 12px;
+}
+
+div#n3rdCore {
+    position: absolute;
+    background: transparent url(/assets/img/blackAlpha.png?__cv=6a5a842a3af62729ac5cfcbd0927ed00) repeat top left;
+    color: #eee;
+    z-index: 902;
+    padding: 5px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-box-shadow: 3px 3px 5px #111;
+    -webkit-box-shadow: 3px 3px 5px #111;
+    box-shadow: 3px 3px 5px #111;
+    left: -180px;
+    top: 5px;
+}
+
+.uclosebox {
+    background: url("/images/img_buttons/btn_exit_a.png?__cv=2ce51e1fdffbb4b15690635748d4e700") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    width: 31px;
+    z-index: 10000;
+    color: transparent;
+}
+
+.social-invite {
+    position: static;
+    display: none;
+}
+
+.social-invite a {
+    float: left;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/email_blue.jpg) no-repeat;
+    display: block;
+    height: 30px;
+    margin-left: 0px;
+}
+.social-invite a span {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/bg_blue.jpg) repeat-x;
+    //background-color: #ff0000 !important;
+    color: #ffffff !important;
+    display: block;
+    width: 184px;
+    height: 19px;
+    margin-left: 6px;
+    padding-top: 6px;
+}
+div#gl_facebook_invite {
+    display:block;
+    left:50%;
+    margin-left:-377px;
+    margin-top:0;
+    position:absolute;
+    top:90px;
+}
+.fb-invite-icon {
+    float: left;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/facebook_blue.jpg);
+    display: block;
+    width: 32px;
+    height: 30px;
+    cursor:pointer;
+}
+.fb-invite {
+/*    float: left;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/bg_blue.jpg) repeat-x;
+    color: #ffffff !important;
+    display: block;
+    width: 198px;
+    height: 30px;
+    cursor:pointer;*/
+}
+.fb-invite span{
+    float: left;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/bg_blue.jpg) repeat-x;
+    color: #ffffff !important;
+    display: block;
+    width: 203px;
+    height: 30px;
+    cursor:pointer;
+    padding-top: 4px;
+}
+.miniprofile_image {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/headprofile.jpg) repeat scroll 0 0 transparent;
+    float: left;
+    height: 96px;
+    width: 80px;
+}
+.miniprofile_text {
+    margin-left: 420px;
+    height: 43px;
+}
+.miniprofile_left {
+    width: 185px;
+    display: inline-block;
+}
+.miniprofile_text > p {
+    margin: 0;
+}
+
+.miniprofile_text a {
+    color: #B8D6EE;
+}
+
+.playNow {
+    margin-top: 6px;
+    width: 220px;
+    height: 40px;
+}
+#social-invite-container {
+    float: left;
+    margin-left: 6px;
+    width: 200px;
+}
+.miniprofile {
+    margin-top: 0px;
+    float:left;
+}
+.signup_left {
+    display: none;
+}
+.instanceStatus {
+    width: 31px !important;
+    height: 27px !important;
+    float: right;
+    margin-right: -35px;
+    /*margin-top: 3px;*/
+}
+.instanceStatusGruen {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/instance_status_gruen.jpg);
+}
+.instanceStatusGelb {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/instance_status_gelb.jpg);
+}
+.instanceStatusRot {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/instance_status_rot.jpg);
+}
+#attentionLayer
+,#successLayer
+/*,#errorLayer*/
+,div.noteBox, div.noteHover
+{
+    box-shadow: 0px 0px 0px;
+    -moz-box-shadow: 0px 0px 0px;
+    -webkit-box-shadow: 0px 0px 0px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    color: #EEEEEE;
+    height: 310px;
+    left: 50% !important;
+    margin-left: -307px !important;
+    margin-right: 34px;
+    padding: 60px 70px 40px 110px;
+    position: absolute;
+    top: 0;
+    width: 435px;
+    z-index: 110;
+    border: medium solid;
+}
+#errorLayer
+{
+    background: black;
+}
+#successLayer
+,#attentionLayer
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/registerSuccess.png) repeat scroll 0 0 transparent;
+    display: none;
+}
+
+a.signup_errorClose
+,a.signup_successClose
+,a.signup_attentionClose
+{
+    cursor: pointer;
+    height: 50px;
+    position: absolute;
+    right: -25px !important;
+    top: -25px !important;
+    width: 50px;
+}
+
+
+
+a.signup_errorClose,
+a.signup_attentionClose,
+a.signup_successClose {
+    top: 5px;
+    right: 5px;
+}
+
+
+div.signup_successMessages
+,div.signup_errorMessages
+,div.signup_attentionMessages{
+    margin: 0 20px 0 20px;
+    font-size: 12px;
+    color: #B8D6EE;
+}
+
+
+div.signup_successHeader
+,div.signup_errorHeader
+,div.signup_attentionHeader{
+    margin-top: 40px;
+}
+
+
+div.noteBox a.closer{
+    height: 50px;
+    right: -15px !important;
+    top: -15px !important;
+    width: 50px;
+}
+div.noteBox h2 {border:none !important;}
+div.noteBox p {margin-top: 30px;}
+.signup_errorTitle
+{
+    border-bottom: 0 none;
+    display: block;
+    font-family: Arial;
+    font-size: 25px;
+    color: #b8d6ee;    
+    letter-spacing: 0;
+    margin: 2px 36px 7px;
+}
+.forgotPassword .signup_errorTitle, .forgotPassword .signup_successTitle { display: none; }
+.forgotPassword .signup_errorHeader,
+.forgotPassword .signup_successHeader
+{
+    height: 26px;
+    margin-top: 2ex;
+}
+.singup_errorMessages
+{
+    margin-top:30px;
+}
+.signup_errorMessage, .signup_successMessage
+{
+    padding: 0 1em;
+}
+table.signup_tableEmailChange tr td
+{
+    text-indent: 6px;
+    white-space: nowrap;
+}
+table tr td.signup_label
+{
+    white-space: normal;
+        width: 100px;
+        text-align: left;
+        color: #B8D6EE;
+}
+
+table tr td.label_checkbox
+{
+    float: left;
+    width: 240px;
+    text-align: left;
+}
+
+td.align_checkbox
+{
+    vertical-align: top;
+    width: 22px;
+}
+table.signup,table.signup tr td table,td.label_openIdDesc
+{
+    width:325px ;
+}
+#global.changeData table.signup {
+    width: auto;
+}
+table.signup_tableEmailChange
+{
+    width:410px !important;
+}
+td.label_openIdDesc,td.label_info
+{
+    white-space:normal !important;
+}
+table.signup_tableEmailChange tr td input
+{
+    margin-left: -1px;
+}
+
+#blackboxContentTop
+{
+    bottom: 0;
+    display: block;
+    /*min-height: 484px;*/
+    position: relative;
+    width: 100%;
+    max-height: 770px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#blackboxContentNav
+{
+    bottom: 0;
+    display: block;
+    float: left;
+    height: 5px;
+    width: 200px;
+    z-index: 1000;
+}
+span#darkAlphaClose
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_exit_a.png?__cv=2ce51e1fdffbb4b15690635748d4e700) no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    width: 31px;
+    z-index: 10000;
+}
+/*START arrows popup*/
+span#darkAlphaClose:hover
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_exit_b.png?__cv=8e30b76f28cce3298961ba771d629600) no-repeat scroll 0 0 transparent;
+}
+div#blackbox span.arrowback,
+div#blackbox span.arrowback_inactive,
+div#blackbox span.arrowforw,
+div#blackbox span.arrowforw_inactive
+
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_nextprev.jpg) no-repeat scroll 0 0 transparent;
+    width:72px;
+    height:36px;
+    display:inline-block;
+    z-index: 10000;
+    cursor:pointer;
+}
+div#blackbox span.arrowforw_inactive,
+div#blackbox span.arrowforw_inactive:hover{background-position:0 -71px;}
+div#blackbox span.arrowforw:hover{background-position:0 -35px;}
+
+div#blackbox span.arrowback_inactive,
+div#blackbox span.arrowback_inactive:hover{background-position:-73px -71px;}
+div#blackbox span.arrowback{background-position: -73px 0;}
+div#blackbox span.arrowback:hover{background-position:-73px -35px;}
+
+/*END arrows popup*/
+
+span#blackboxContentButton div#button
+{
+    cursor: pointer;
+    height: 36px;
+    left: 40%;
+    position: absolute;
+    width: 260px;
+    z-index: 100000;
+    margin-top: 3px;
+}
+
+span#blackboxContentNavClose div#buttonclose
+,span#blackboxContentNavSubmit div#buttonsubmit
+,span#blackboxContentNavAccept div#buttonaccept
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_close.jpg) no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 36px;
+    left: 262px;
+    position: absolute;
+    width: 260px;
+    z-index: 100000;
+    margin-top: 2px;
+}
+
+span#blackboxContentNavAccept div#buttonaccept
+{
+    left:280px;
+}
+span#blackboxContentNavOk div#buttonok
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_default.jpg) no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 36px;
+    left: 32%;
+    position: relative;
+    width: 260px;
+    z-index: 100000;
+    margin-top: 3px;
+}
+
+
+span#blackboxContentNavRegister div#buttonregister,
+.signup_button
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_registrierung_a.jpg) no-repeat scroll 0 00 transparent;
+    cursor: pointer;
+    height: 66px;
+    left: -52px;
+    width: 351px;
+    z-index: 100000;
+    margin-top: 3px;
+    position: absolute;
+    bottom: -36px;
+}
+
+span#blackboxContentNavConfirm img#buttonconfirm
+{
+    cursor: pointer;
+    height: 23px;
+    left: 245px;
+    width: 25px;
+    z-index: 100000;
+    margin-top: 3px;
+    position: absolute;
+    bottom: -36px;
+}
+
+#blackboxContentText {
+    display: none;
+    position: absolute;
+    width: 784px;
+    margin-left: -30px;
+    text-align: center;
+}
+
+span#blackboxContentNavClose div#buttonclose:hover
+{
+    background-position:0px -36px;
+}
+
+span#blackboxContentNavSubmit div#buttonsubmit:hover,
+span#blackboxContentNavAccept div#buttonaccept:hover
+{
+    background-position:0px -36px;
+}
+
+/**/
+
+/*subpages*/
+body.subpage_body
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/weltseite_keyvisual.jpg) no-repeat scroll top center black;
+}
+body.subpage_body #bg_left div
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/weltseite_keyvisual.jpg) no-repeat scroll top center black;
+	width: 960px;
+	
+}
+body.subpage_body #bg_right div
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/weltseite_keyvisual.jpg) no-repeat scroll top center black;
+	width: 960px;
+}
+body.media, body.world{
+	background:none repeat scroll 0 0 black
+}
+body.media #bg_left div
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_medien/medienseite_keyvisual.jpg?__cv=77e308098b4d726a8dccc02982e43100) no-repeat scroll 487px 0 black;
+}
+body.media #bg_right div
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_medien/medienseite_keyvisual.jpg?__cv=77e308098b4d726a8dccc02982e43100) no-repeat scroll -1448px 0 black;
+}
+body.world #bg_left div{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/weltseite_keyvisual.jpg) no-repeat scroll 0 0 black;
+}
+body.world #bg_right div
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/weltseite_keyvisual.jpg) no-repeat scroll 0 0 black;
+}
+
+/************** SUBPAGE CONTENT **********************/
+#subpage_wrapper h2, div#unityLayer h2 {	
+	color: #FFF;
+	padding: 5px 0;
+	background-color: #102944;
+	width:auto;
+	text-align: center;
+	font-weight: normal;
+	margin: 0px 0px 10px 0px;
+	font-family: 'ZektonBold',Arial;
+	text-shadow:1px 2px 1px #000000;
+}
+
+.subcontentBox img {
+	margin: 2px;
+}
+
+.subcontentBox {
+	padding: 10px;
+	border: 1px #102944 solid;
+	margin-bottom: 20px;
+	width: auto;
+}
+
+.subcontentBox_wide {
+	border: 1px #102944 solid;
+	width: 100%;
+	float: right;
+	margin-bottom:10px
+}
+
+.subcontentBox_2col {
+	border: 1px #102944 solid;
+	width: 258px;
+	float: left;
+	padding: 10px;
+	margin: 0px 20px 10px 0px;
+}
+
+.subcontentBox_2col_2 {
+	border: 1px #102944 solid;
+	width: 258px;
+	float: right;
+	padding: 10px;
+	margin-bottom:10px
+}
+
+.subcontentBox_bottom {
+	
+}
+
+.subpage_leftColumn {
+	border: 1px solid #102944;
+	width: 300px;
+	height: auto;
+	position: relative;
+	float: left;
+	left: 35px;
+	top: 20px
+}
+
+.subpage_rightColumn {
+	width: 580px;
+	position: relative;
+	float: right;
+	right: 35px;
+	top: 20px;
+}
+
+.subpage_fullWidth {
+	width: 834px;
+	position: relative;
+	float: right;
+	left: 70px;
+	top: 60px;
+}
+
+.factionButton {
+	background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_world/factions_btn.png?__cv=c091186f14eb32e8d22fe75f8b63be00) top center no-repeat;
+	width: 300px;
+	height: 60px;
+	position: relative;
+	float: left;
+	left: 35px;
+	top: 20px;
+	margin-bottom: 10px;
+}
+
+.newsSubpage_rightColumn {
+	width: 320px;
+	position: relative;
+	float: right;
+	right: 36px;
+	top: 20px
+}
+
+.newsSubpage_leftColumn {
+	width: 560px;
+	position: relative;
+	float: left;
+	left: 34px;
+	top: 20px
+}
+
+.subpage_body
+{
+    background:#000;
+}
+#subpage_menu
+{
+    background:url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_mitte.jpg?__cv=6cdf4b10a19de57d12c1d0026ee1d400) no-repeat scroll center top transparent;
+    width: 976px;
+    position: relative;
+    height: auto;
+    z-index:10;
+}
+
+#subpage_overall {
+    --background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_medien/medienseite_keyvisual.jpg?__cv=77e308098b4d726a8dccc02982e43100) no-repeat scroll top center black;
+	background: url(/static/img/home/home.jpg) no-repeat scroll top center black;
+}
+
+#subpage_overall #container {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_abschluss.jpg?__cv=3bbe30d83c5885c6cd9144dca0c7de00) no-repeat scroll center bottom transparent;
+    min-height: 500px;
+    width: 976px;
+    margin: 0px;
+	padding:120px 0 55px;
+}
+
+#subpage_menu #mainnavi
+{
+    height: 49px;
+    left: 16px;
+    position: absolute;
+    top: 10px;
+    width: 970px;
+}
+
+#subpage_header {
+	height: 250px;
+	margin:0 auto;
+	position:relative;
+    width: 976px;
+background: url(/static/img/home/header.png) no-repeat scroll center top transparent;
+
+}
+
+#subpage_overall #bg_left div div
+{
+    /*background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_kante_links.png) no-repeat scroll 371px 250px transparent;
+    right:163px;*/
+}
+#subpage_overall #bg_right div div
+{
+    /*background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_kante_rechts.png) no-repeat scroll 0 250px transparent;
+    left: 472px;*/
+}
+#subpage_outer_container{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_kachel.jpg?__cv=0c69e5ced0877ef89890f02988001e00) repeat-y scroll 0px 0px transparent;
+    margin: 60px auto 0;
+    position: relative;
+    width: 976px;
+    z-index: 0;
+}
+#subpage_overall #footer
+{
+
+}
+
+/* #big_button_m,#big_button_r,#big_button_l
+{
+    display: block;
+    height: 134px;
+    left: 395px;
+    padding: 0;
+    position: absolute;
+    top: 191px;
+    width: 247px;
+    z-index: 10300;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/big_button_m.png) no-repeat scroll 0 0 transparent;
+}
+#big_button_r
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/big_button_r.png) no-repeat scroll 0 0 transparent;
+    left: 642px;top: 191px;height: 67px;width: 74px;
+}
+#big_button_l
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/big_button_l.png) no-repeat scroll 0 0 transparent;
+    left: 323px;top: 191px;height: 67px;width: 72px;
+}
+*/
+
+#subpage_overall div#signupForm {
+   left: 666px;
+    top: 234px;
+    z-index: 100000;
+   -- background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_register_sub_a.png?__cv=ef683a8bbe73d58ee9fda45e5b0b6c00) repeat scroll 0 0 transparent
+}
+#subpage_overall div#signupForm:hover {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_register_sub_b.png?__cv=68808cb82abee51f4d7efbd2d8a1f400) repeat scroll 0 0 transparent
+}
+#subpage_overall div.signupText
+{
+    top: 228px;
+    left: 405px;
+    z-index: 100000;
+}
+#subpage_overall div.signupButton
+{
+top: 273px; left: 408px;z-index: 100000;
+}
+
+#subpage_overall div#gameplay_trailer {
+	left:627px;
+	top:56px;
+}
+#subpage_overall div#teaser_video {
+    left: 205px;
+    top: 56px;
+}
+#subpage_overall div.signupInput
+{
+    left: 408px;
+    top: 255px;
+    z-index: 100000;
+}
+
+
+#subpage_overall div#menu_kante_oben
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_kante_oben.png) no-repeat scroll 0 0 transparent;
+    height: 15px;
+    left:39px;
+    position: absolute;
+    top: 235px;
+    width: 959px;
+    z-index: 100000;
+
+}
+
+
+/*die welt*/
+div.window_big
+{
+    margin-top:15px;
+}
+
+.window_top img, .window_mid_top img, .window_small_top img
+{
+    margin-top:-5px;
+}
+div.window_top
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_gross_oben.png) no-repeat scroll 0 0 transparent;
+    height:34px;
+    text-align:center;
+    padding-top:5px;
+}
+/* .media div.window_top
+{
+    padding-top: 0px;
+} */
+div.window_mid
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_gross_mitte.png) repeat-y scroll 0 0 transparent;
+    height: 100%;
+    min-height: 140px;
+    padding: 15px 30px 0;
+}
+.register .window_mid{
+    min-height: 340px;
+}
+div.window_bot
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_gross_unten.png) no-repeat scroll 0 0 transparent;
+    height:44px;
+}
+.signup_container {
+    padding-bottom: 10px;
+}
+img.deco_glyph
+{
+    margin:0px 6px 3px 0px;
+}
+span.world_header_container
+{
+    width:400px; display: block;
+}
+.world_header
+{
+    display:block;
+    color: #688eac;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+span.world_header_text1
+{
+    color: #FFFFFF;
+    margin-top:20px;
+    display:block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+span.world_header_text2
+{
+    color:#9d794d;
+     margin-top: 10px;
+}
+img.world_map
+{
+    height: 258px;
+    left: 460px;
+    position: absolute;
+    top: -30px;
+    width: 389px;
+    z-index: 1;
+}
+div.world_window_left
+{
+    position: relative;
+    width:300px;
+    float:left;
+}
+
+div.window_small_top,
+div.window_small_mid,
+div.window_small_bot
+{
+    display:block;
+    width:300px;
+    float:left;
+}
+
+div.window_small_top
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_klein_oben.png) no-repeat scroll 0 0 transparent;
+    height:34px;
+    text-align:center;
+    padding-top:5px;
+}
+div.window_small_mid
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_klein_mitte.png) repeat-y scroll 0 0 transparent;
+    min-height: 500px;
+    padding: 0;
+    width: 300px;
+}
+div.window_small_bot
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_klein_unten.png) no-repeat scroll 0 0 transparent;
+    height:39px;
+}
+#btn_selector
+{
+    cursor:pointer;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/selector.png) no-repeat scroll 0 0 transparent;
+    width:229px;
+    height:53px;
+    display:block;
+    margin-left: 35px;
+    position: absolute;
+    z-index:100000;
+}
+#worldselect
+{
+    display:none;
+    z-index: 1000000;
+}
+
+#btn_selector:hover>span#worldselect
+{
+    display:block;
+}
+ .firstselectortext
+ {
+    display:block;
+    margin-top: 3px;
+ }
+ #secondselectortext
+ {
+     display:block;
+ }
+ #secondselectortext img
+ {
+     position: relative;
+     z-index: 1000010;
+ }
+
+
+
+ul#worldselect_list li.worldselectli {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/btn_dropdownElements.png) repeat-y scroll 0 -45px transparent;
+    display: block;
+    height: 25px;
+    padding: 5px 5px 0 30px;
+    width: 226px;
+}
+ul#worldselect_list
+{
+    left: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    width: 226px;
+    z-index: 100000;
+}
+
+ul#worldselect_list li.last
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/btn_dropdownElements.png) no-repeat scroll left -98px transparent;
+    display: block;
+    height: 55px;
+    padding: 0 5px 0 30px;
+    width: 224px;
+}
+ul#worldselect_list li.first {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/btn_dropdownElements.png) no-repeat scroll left top transparent;
+    height: 18px;
+    padding: 25px 5px 0 30px;
+    width: 200px;
+}
+ul#worldselect_list li a {
+    display: block;
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    width: 200px;
+}
+span#worldleft_trenner
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/deco_frameSeparator.png) no-repeat scroll left top transparent;
+    display: block;
+    height: 77px;
+    position: absolute;
+    top: 60px;
+    width: 302px;
+    z-index: 10;
+}
+
+#region1,#region2,#region3
+{
+    display: block;
+    height: 58px;
+    left: 20px;
+    top: 140px;
+    width: 256px;
+    z-index: 10;
+    cursor:pointer;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+#region1
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/regions_001.jpg) no-repeat scroll left top transparent;
+}
+#region2
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/regions_002.jpg) no-repeat scroll left top transparent;
+}
+#region3
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/regions_000.jpg) no-repeat scroll left top transparent;
+    cursor: auto;
+}
+.selectedregionstext
+{
+    display: block;
+    margin-left: 10px;
+    margin-top: 65px;
+    margin-bottom:10px;
+}
+#regionselector
+{
+    display: block;
+    height: 68px;
+    left: 10px;
+    position: absolute;
+    top: 138px;
+    width: 286px;
+    z-index: 10000;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/pointer.png) no-repeat scroll left top transparent;
+}
+
+div.world_window_right
+{
+    position: relative;
+    width:550px;
+    float:left;
+    margin-left: 5px;
+}
+
+div.window_mid_top,
+div.window_mid_mid,
+div.window_mid_bot
+{
+    display:block;
+    width:550px;
+    float:left;
+}
+
+div.window_mid_top
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_mittel_oben.png) no-repeat scroll 0 0 transparent;
+    height:34px;
+    text-align:center;
+    padding-top:5px;
+}
+div.window_mid_mid
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_mittel_mitte.png) repeat-y scroll 0 0 transparent;
+    min-height: 500px;
+    padding: 0;
+    width: 550px;
+}
+div.window_mid_bot
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_mittel_unten.png) no-repeat scroll 0 0 transparent;
+    height:39px;
+}
+#world_content
+{
+    padding: 10px 25px;
+    color: #FFFFFF;
+}
+.world_content_headline
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/deco_spacer.png) no-repeat scroll center top transparent;
+    height: 30px;
+    margin-top: 10px;
+    text-align: left;
+    width: 494px;
+}
+.world_content_left
+{
+    float:left;
+    width:230px;
+    display:block;
+    margin-right:22px;
+}
+.world_content_right
+{
+    float:left;
+    width:240px;
+    display:block;
+}
+.curly_top,.curly_bottom
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_welt/deco_spacer.png) no-repeat scroll center -30px transparent;
+    height: 30px;
+    margin-top: 10px;
+    text-align: left;
+    width: 240px;
+    display:block;
+}
+.world_braun
+{
+    color: #B8D6EE;
+}
+.curly_bottom
+{
+    background-position:0px -60px;
+}
+.world_extr_pic
+{
+    margin-top:13px;
+}
+#world2
+{
+    display:none;
+}
+#world1
+{
+    display:block;
+}
+
+/*ende die welt*/
+
+/*start medien*/
+
+.windows_media
+{
+    margin: 5px 0px 5px 0px !important;
+    width: 838px;
+}
+#containerVideo .carousel_wrapper {
+    height: 197px;
+    margin-left: 0;
+    width: 830px;
+    margin-top: 15px;
+}
+#containerVideo .carousel_wrapper .left_arrow,#containerVideo .carousel_wrapper .right_arrow  {
+    margin-top: 35px;
+    background-color:#040605;
+    z-index: 10000;
+}
+.arrow_container{
+    height:195px;
+    background-color:#040605;
+    display:block;
+    width:34px;
+}
+
+#containerVideo div.window_mid
+{
+    height: 44px;
+    min-height: 175px;
+    padding: 0 10px;
+    width: 838px;
+}
+#containerVideo .carousel li {
+    display: inline;
+    float: left;
+    height: 192px;
+    margin: 0 3px;
+    width: 243px;
+}
+
+
+.windows_media_mid
+{
+    padding: 0 14px !important;
+    width: 838px !important;
+}
+.arrow_container_left,.arrow_container_right
+{
+    position:absolute;
+    background-color:#040605;
+    height: 155px;
+    left: 0px;
+    top: 0;
+    width: 34px;
+    z-index: 1000;
+}
+.arrow_container_right
+{
+    left: 796px;
+}
+#containerWallpaper .arrow_container_left, #containerWallpaper .arrow_container_right
+{
+    height: 190px;
+}
+.videolight
+{
+    width:248px;
+    height:96px;
+    display:block;
+    border: 1px solid #5c512b;
+}
+.videobox
+{
+    display: inline-block;
+    float: left;
+    height: 95px;
+    width: 248px;
+}
+.videolight_left
+{
+    display: inline-block;
+    float: left;
+    height: 81px;
+    padding: 5px;
+    width: 103px;
+}
+.videolight_right
+{
+    display: inline-block;
+    float: left;
+    height: 89px;
+    padding-top: 2px;
+    width: 132px;
+}
+.comingsoon {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_medien/comingsoon_pic_02.jpg) no-repeat scroll 113px 2px transparent;
+}
+
+
+.videohead
+{
+    color:#688eac;
+    display:block;
+    font-size:13px;font-weight:bold;
+}
+.videotime
+{
+    color: #B8D6EE;display:block;
+    font-size:13px;font-weight:bold;
+}
+.videodate
+{
+    color:#B8D6EE;display:block;
+    font-size:13px;font-weight:bold;
+}
+#containerScreenshotsMedia .carousel_wrapper
+{
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+#containerScreenshots
+{
+    height:175px;
+    margin-bottom: 20px;
+    background-position: 0px 3px!important;
+}
+
+.videolight {
+    display: block;
+    height: 96px;
+    width: 248px;
+}
+.li_wallpaper .videolight
+{
+    height: 185px;
+    width: 245px;
+}
+.videolight img
+{
+    margin-top: 0;
+}
+.videolight a
+{
+    color: #5f6c78;
+}
+.li_wallpaper,
+.li_artwork
+{
+    display: inline !important;
+    float: left !important;
+    height: 192px !important;
+    text-align: center !important;
+    width: 243px !important;
+    margin: 0 3px !important;
+}
+.li_wallpaper
+{
+    width: 245px !important;
+    height: 185px !important;
+    margin: 0 5px 0 2px !important;
+}
+#containerArtworks .carousel_wrapper .left_arrow, #containerArtworks .carousel_wrapper .right_arrow,
+#containerWallpaper .carousel_wrapper .left_arrow, #containerWallpaper .carousel_wrapper .right_arrow
+{
+    background-color: #040605;
+    margin-top: 35px;
+    z-index: 10000;
+}
+
+.control_wrapper
+{
+    background-color: #040605;
+    height: 215px;
+    position: absolute;
+    width: 35px;
+    z-index: 1000;
+}    
+.control_wrapper.right
+{
+    right: 0px;
+}
+#containerArtworks .carousel_wrapper .left_arrow, #containerArtworks .carousel_wrapper .right_arrow
+{
+    margin-top: 0px;
+}
+#containerArtworks .carousel_wrapper,
+#containerWallpaper .carousel_wrapper
+{
+    margin-left: 0;
+    margin-top: 15px;
+    width: 830px;
+}
+
+#containerWallpaper .carousel_wrapper
+{
+    height: 190px;
+}
+
+#containerArtworks .carousel li img,
+#containerWallpaper .carousel li img,
+
+{
+    padding-top:10px;
+}
+/*ende medien*/
+
+/* imprint */
+div.window_imprint
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/fenster_gross_mitte.png) repeat-y scroll 0 0 transparent;
+    /*height: 44px;*/
+    /*min-height: 175px;*/
+    padding: 10px 30px;
+    width: 798px;
+}
+
+.windows_imprint
+{
+    margin: 15px 0px 15px 60px !important;
+    width: 700px;
+}
+
+#to_be_continued
+{
+    width: 908px;
+    height: 63px;
+    margin: 0 0 0 -56px;
+    padding-left: 56px;
+    float: left;
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_uebergang.png) no-repeat scroll 0 top transparent;
+}
+
+.uebergang {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/menu_uebergang.png) no-repeat scroll 0 top transparent;
+    float: left;
+    height: 65px;
+    margin-left: -56px;
+    padding-left: 56px;
+    width: 908px;
+}
+
+#signupFormContent{
+}
+
+.hidden{display:none;}
+
+.hiddenElement
+,signup_errorLayer
+,#errorLayerEx
+,#errorLayer
+,#messageLayerEx
+{
+    display: none;
+}
+
+div#messageLayerEx table
+{
+    display: none;
+}
+
+.input_text
+, .input_textLong
+, select.input_selectInstance
+, select.input_selectCountry
+, select.input_selectProvince{
+  width: 160px;
+  height: 18px;
+  float: left;
+  margin: 0px 0 0 5px;
+  border: 0;
+  background-color: #1E3A52;
+  background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/eingabefeld_160.jpg); 
+  color: #b8d6ee;
+}
+
+.input_selectInstance option,
+.input_selectCountry option,
+.input_selectDay option,
+.input_selectMonth option,
+.input_selectYear option
+{
+  background: #1E3A52;
+}
+
+.input_selectDay
+,.input_selectMonth
+,.input_selectYear{
+  height: 18px;
+  margin: 3px 5px 0 5px;
+  border: 0;
+  background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/eingabefeld_160.jpg) no-repeat scroll 0 0 #1E3A52;
+  color: #b8d6ee;
+}
+
+.input_selectDay
+,.input_selectMonth{
+  width: 3em;
+}
+
+.input_selectYear{
+  width: 3.9em;
+}
+
+.input_checkbox{
+    background-color:#1e3a50;
+}
+.signup_errorHeader {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/background001.jpg) repeat-y scroll 0px 0;
+    width: 390px;
+}
+.signup_errorMessages, .signup_successMessages {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/background001.jpg) repeat-y scroll 0px 0;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 4px;
+    width: 387px;
+}
+.signup_errorTitleBreak {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/cuttingline01.png?__cv=8ce77beea7ae515229b8a38a45ea3d00) no-repeat scroll 40px 0;
+    height: 10px;
+}
+.signup_errorIcon {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/error_ball.png) no-repeat scroll 0 30px;
+    float: left;
+    height: 220px;
+    width: 116px;
+}
+.forgotPassword .logout_left div {
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/password.jpg) no-repeat scroll 0 0 ;
+}
+.forgotPassword .logout_right
+{
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/password.jpg) no-repeat scroll -800px 0 ;
+}
+.forgotPassword div.passrecovery
+{
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/de/img_global/headline_password_typo.png) no-repeat scroll center 80% ;
+}
+
+div.passrecovery #footer { top: 448px; }
+    
+.passrecovery table tr td.signup_label
+{
+    text-align: left;
+    width: 169px;
+    padding: 0 0 0 0em;
+    float: none;
+    color: #FFFFFF;
+}
+.passrecovery table tr td.label_userData { color: #688eac; font-weight: bold; }
+.passrecovery .signup_submit
+{
+    width: 169px;
+    height: 38px;
+    background-color: transparent;
+}
+.passrecovery .align_buttonRegister
+{
+    position: static;
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_request_a.jpg) no-repeat scroll left 1ex; ;
+    width: 169px;
+    height: 38px;
+    padding-top: 1ex;
+}
+.passrecovery .align_buttonRegister:hover{
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_request_b.jpg) no-repeat scroll left 1ex ;
+}
+.passrecovery table.signup { margin: 0 auto; border-spacing: 9px 10px; }
+.passrecovery .signup_left
+{
+    display: table;
+    width: 306px;
+}
+.passrecovery table.signup_right { width: 205px; }
+.passrecovery table.signup_left tr td.label_description { text-align: right; }
+.passrecovery table.signup_left tr td.align_buttonRegister { float: right; }
+.passrecovery .signup td { vertical-align: bottom; }
+.passrecovery .align_buttonRegister .input_button
+{
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    color: transparent;
+    text-indent: 5000px;
+}
+table.signup {
+	margin: 0 auto;
+}
+.passrecovery .align_buttonRegister input.signup_back
+{
+    height: 38px;
+    width: 169px;
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/de/img_buttons/btn_back_password_recovery_typo.png?__cv=45ad8150c3877b35b70903c0f0615600) no-repeat scroll center top;
+    float: none;
+    color: transparent;
+    text-indent: 5000px;
+}
+
+.passrecovery .input_textLong 
+{
+    display: block;
+    float: left;
+    margin: 0 auto;
+}
+table.passrecovery
+{
+    margin: 16px auto 0 !important;
+}
+.passrecovery b { color: #688eac; }
+.scrolling
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+#blackboxContentTop div.passrecovery
+{
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/de/img_global/headline_request_pw_typo.png) no-repeat center top;
+    padding-top: 6px;
+}
+.support_left div{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/support.jpg) no-repeat 0 0;
+    right: 0;
+    width: 800px;
+}
+.support_right{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/support.jpg) no-repeat -800px 0;  
+}
+.support_center {
+    margin: 0 auto;
+    width: 430px;
+    min-height: 550px;
+}
+
+.support td.support_label {
+    vertical-align: top; 
+}
+.support_thTitle {
+    display: none;
+}
+.support_overall #footer {
+    margin: 255px 0px 0px -480px;
+    position: relative;
+    left: 50%;
+}
+#support_button_back {
+    display: none;
+}
+.support_overall td {
+    padding-bottom: 5px;
+}
+.support_overall .align_buttonRegister{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_request_a.jpg) no-repeat 56px 20px;
+    padding-left: 56px;
+    padding-top: 20px;
+}
+.support_overall .align_buttonRegister:hover{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_request_b.jpg) no-repeat 56px 20px;  
+}
+.support_overall .align_buttonRegister:first-child:hover {
+    background: none;
+}
+.support_overall .align_buttonRegister:first-child {
+    background: none;
+}
+.support_submit {
+    border: medium none;
+    color: transparent;
+    cursor: pointer;
+    width: 169px;
+    height: 25px;
+}
+.support .label_file, .support .input_supportAttachment, .support .input_attachmentButton {
+    display:none;
+}
+.support {
+    color: #FFFFFF;
+}
+.support_overall select {
+    background-color: #1E3A52;
+    background-image: none;
+    padding: 2px;
+    color: #b8d6ee;
+}
+.support_overall input {
+    padding: 2px;
+    width: 156px;
+    margin: 0 0 0 0;
+}
+.support_overall textarea {
+    background-color: #1E3A52;
+    padding: 2px;
+    height: 80px;
+    color: #b8d6ee;
+    width: 222px;
+}
+.support .signup_link {
+    color: #5f6c78;
+    text-decoration: none;
+    font-weight: bold;
+}
+.signup_successClose img {
+    display: none;
+} 
+.page_counter 
+{
+    text-align: center;
+    height: 16px;
+    width:100%;
+    float: left;
+}
+#containerArtworks .page_counter,
+#containerScreenshotsMedia .page_counter { top: 5px; }
+#containerVideo .page_counter { top: 6px; }
+#containerWallpaper .page_counter { top: 2px; }
+#carousel_artwork li img { width: 183px; margin-top: 3px;}
+
+.page_counter ul
+{
+    list-style: none;
+    display: inline;
+    margin: 0 auto;
+    padding: 0;
+    height: 16px;
+}
+.page_counter ul li
+{
+    display: inline;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+/*
+.page_counter ul li.active { background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/page_counter_active.png?__cv=5eee222ea96b60a7a83f24206e7af900) no-repeat; }
+.page_counter ul li.normal { background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/page_counter_normal.png?__cv=af9646255afa22ca22bfccb72c120300) no-repeat; }
+*/
+
+.instanceFlag{
+	width: 20px;
+	height: 21px;
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+        vertical-align: top;
+}
+
+.instanceFlag_311{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/311.png?__cv=e8f9312fb039bafb0b18ac3a4cd48300);
+}
+
+.instanceFlag_455{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/455.png?__cv=e39c9b5ece09af83973a397b58377c00);
+}
+
+.instanceFlag_474{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/474.png?__cv=5137e67cd46a2cd323ad15889ac2f300);
+}
+
+.instanceFlag_475{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/475.png?__cv=b5a65ec0c373edcf5cfce3e18cecbd00);
+}
+
+.instanceFlag_495{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/495.png?__cv=b5a65ec0c373edcf5cfce3e18cecbd00);
+}
+
+.instanceFlag_547{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/547.png?__cv=df4345ba2ac7e2f0b8ee9c204e6da800);
+}
+
+.instanceFlag_548{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/548.png?__cv=2eab8614a1c4d2b88e90332e2a101a00);
+}
+
+.instanceFlag_549{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/549.png?__cv=8757d3b53a5076948c63632430c53500);
+}
+
+.instanceFlag_553{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/553.png?__cv=07cacab391c053377353744840d39b00);
+}
+
+.instanceFlag_554{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/554.png?__cv=edd4ec6cc79cf56565a951ec90156c00);
+}
+
+.instanceFlag_555{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/555.png?__cv=c36cb0f4f593b9abd0392b77dd882800);
+}
+
+.instanceFlag_561{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/561.png?__cv=7e0a5f401a630179c6b7c8ba35b93c00);
+}
+
+.instanceFlag_562{
+	background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/562.png?__cv=7da8cf034576bdc4e7c42905b65b1900);
+}
+
+.instanceFlag_704{
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/704.png?__cv=2e6036346dcb5207eb54006f71e65c00);
+}
+
+.instanceFlag_756{
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/756.png?__cv=4570952ed07d71e2440d32a269f4cf00);
+}
+
+.instanceFlag_757{
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/757.png?__cv=cc24a19e4a71adf8797aa3332b4b5600);
+}
+
+.instanceFlag_819{
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/819.png?__cv=f7eba1179b8b6479865e1f1145500c00);
+}
+
+.instanceFlag_980{
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/flags/980.png?__cv=8757d3b53a5076948c63632430c53500);
+}
+
+.user_servername a {
+	font-weight: bold;
+	color: #B8D6EE;
+}
+
+div.user_serverflag{
+    width: 20px;
+    height: 21px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+}
+
+#mediaPage .carousel_wrapper {
+	padding: 0px 0px 10px 0px;
+	height: 154px;
+}
+
+#mediaPage .controls {
+	width: 25px;
+	height: 77px;
+	position: relative;
+	top: -33px;
+}
+
+#mediaPage .left_inactive, #mediaPage .left_arrow {
+	background-position: -2px -3px;
+}
+
+#mediaPage .left_inactive:hover, #mediaPage .left_arrow:hover {
+	background-position: -2px -85px;
+}
+
+#mediaPage .right_inactive, #mediaPage .right_arrow {
+	background-position: -31px -3px;
+}
+
+#mediaPage .right_inactive:hover, #mediaPage .right_arrow:hover {
+	background-position: -31px -85px;
+}
+
+#mediaPage .carousel_limiter {
+	width: 826px;
+}
+
+.subcontentBox .carousel_wrapper {
+	padding: 0px 0px 10px 0px;
+	height: 100px;
+}
+
+.subcontentBox .controls {
+	width: 25px;
+	height: 77px;
+	position: relative;
+	top: -3px;
+}
+
+.subcontentBox .left_inactive, #mediaPage .left_arrow {
+	background-position: -2px -3px;
+}
+
+.subcontentBox .left_inactive:hover, #mediaPage .left_arrow:hover {
+	background-position: -2px -85px;
+}
+
+.subcontentBox .right_inactive, #mediaPage .right_arrow {
+	background-position: -31px -3px;
+}
+
+.subcontentBox .right_inactive:hover, #mediaPage .right_arrow:hover {
+	background-position: -31px -85px;
+}
+
+.subcontentBox .carousel_limiter {
+	width: 826px;
+}
+
+.lightbox span {
+    position: absolute;
+    margin-left: 20px;
+    top: 110px;
+    color: #FFFFFF;
+    text-shadow: #000 1px 1px 0px;
+}
+
+#signup_error {
+    font-weight:bold;
+    padding:10px;
+    color: #F88;
+    text-shadow: #000 1px 1px 0px;
+    width:300px;
+    margin: 0 auto;
+}
+
+#regcount {
+    text-align: center;
+    margin: 5px auto;
+    width: 220px;
+    font-weight: bold;
+}
+
+#paymentContainer {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+}
+
+#paymentIframe {
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+a.closebox {
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_exit_a.png?__cv=2ce51e1fdffbb4b15690635748d4e700) no-repeat scroll 0 0 transparent;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    width: 31px;
+    z-index: 10000;
+    color: transparent;
+}
+/*START arrows popup*/
+a.closebox:hover
+{
+    background: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/btn_exit_b.png?__cv=8e30b76f28cce3298961ba771d629600) no-repeat scroll 0 0 transparent;
+}
+
+#facebooklike {
+    margin-bottom: 6px;
+}
+
+#invite-cancel {
+    display: none;
+}
+
+.user_currency, .user_real_currency {
+    padding-left: 23px;
+    display: inline-block;
+    height: 21px;
+    width: 60px;
+    line-height: 21px;
+}
+
+.user_currency {
+    background: url("/images/tylium.png?__cv=f34d13f9c877077d02ee37720b464700") no-repeat scroll 0 center transparent;
+}
+
+.user_real_currency {
+    background: url("/images/cubit.png?__cv=ff4fdd2d8f56675c8d95c00b3c2f1a00") no-repeat scroll 0 center transparent;
+    padding-left: 18px;
+}
+
+#currency_info a {
+    color: #6CF;
+}
+
+.loading {
+    background: url("/images/ajax-loader.gif?__cv=57ca1a2085d82f0574e3ef740b9a5e00") no-repeat scroll center center transparent !important;
+    right: -4px;    
+}
+
+.loading #loginForm_default_loginButton {
+	padding-left: 0px;
+}
+
+/* UNITY NEED */
+.unityBGOImage {
+	padding-right: 45px;
+}
+
+#unityInstall {
+	margin: 0 auto;
+    margin-left: 30px;
+    float: left;
+}
+
+#unitySecurity {
+    margin-top: 17px;
+    float: left;
+}
+
+#regtitle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+body.logout #loginForm_default_container,  body.logout div.logoutbutton_profil {
+    display: none;
+}
+
+#cobrand {
+	position: absolute;
+	top: 60px;
+	left: 150px;
+}
+
+.fakelink {
+    display: none;
+}
+
+.bookmarkBox {
+	background:transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_game/gameFrameBookmarkBar.png?__cv=4c9ba9648b74c820abc37990dcc98f00) no-repeat 0 0;
+	position: absolute;
+	z-index: 10001;
+	width: 1044px;
+	height: 60px;
+	top: -65px;
+	display: none;
+        margin-left: -37px;
+}
+
+#bookmarkTitle {
+	position: absolute;
+	left: 68px;
+}
+
+#bookmarkButtons {
+	margin: 0px;
+	position: absolute;
+	right: 54px;
+	top: 3px;
+	padding: 0px;
+}
+
+#bookmarkActions{
+	margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 405px;
+  top: 3px;
+}
+
+#bookmarkActions a{
+	margin-right: 10px !important;
+}
+
+#bookmarkButtons li {
+	margin: 0 5px;
+}
+
+
+#bookmarkButtons #bookmark, #bookmarkButtons #setHomepage, #bookmarkBox #box_bookmark_text, #bookmarkBox #box_homepage_text {
+	width: 157px;
+	background-position: 0px -34px;
+}
+
+#bookmarkButtons #bookmark:hover, #bookmarkButtons #setHomepage:hover, #bookmarkBox #box_bookmark_text:hover, #bookmarkBox #box_homepage_text:hover {
+	background-position: 0px -34px;
+}
+
+#bookmarkButtons #later, #bookmarkButtons #closeBookmark {
+	width: 117px;
+	background-position: -157px 0px;
+}
+
+#bookmarkButtons #later:hover, #bookmarkButtons #closeBookmark:hover {
+	width: 117px;
+	background-position: -157px -34px;
+}
+
+#center {
+    padding: 0 202px;
+}
+
+#changeDataButton_client {
+	font-size: 8px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#changeDataButton_client a {
+    font-family: Tahoma,sans-serif;
+	color: #B8D6EE;
+}
+
+#changeDataButton_client a:visited {
+	color: #B8D6EE;
+}
+
+#loginhint {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#voting {
+    position: absolute;
+    right: 0;
+    top: 327px;
+    z-index: 100;
+}
+
+.layout2 {
+    display: inline-block;
+    vertical-align: top;
+    width: 75px;
+}
+
+#sigPage select {
+    width: 200px;
+}
+
+#sigPage label {
+    display: inline-block;
+    width: 60px;
+}
+
+#sigPage div {
+    vertical-align: top;
+    display: inline-block;
+    width: 40%;
+}
+
+#sigPage input {
+    margin-left: 200px;
+    width: 64px;
+}
+
+#gl_footer_element_link_logo {
+    margin-top: 6px;
+    display: inline-block;
+}
+
+#unityMiniLayer {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 1px;
+    height: 1px;
+}
+
+#evoucherRedeemBox{
+	width: 360px;
+    height: 210px;
+    padding: 20px;
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/evoucher/coupon_background.jpg?__cv=d7623505bb2fc2f2dfb56e248ef6e600);
+    margin-left: -200px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    z-index: 10000;
+    text-align: center;
+}
+
+#evoucherRedeemBox div.boxClose {
+    background: url("/images/img_buttons/btn_exit_a.png?__cv=2ce51e1fdffbb4b15690635748d4e700") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    width: 31px;
+    z-index: 10000;
+}
+
+#evoucherRedeemBox div.no_user{
+	font-weight: bold;
+    font-size: 14px;
+    margin-top: 80px;
+}
+
+#evoucherRedeemBoxNoCharacter{
+	width: 360px;
+    height: 210px;
+    padding: 20px;
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/evoucher/coupon_background.jpg?__cv=d7623505bb2fc2f2dfb56e248ef6e600);
+    margin-left: -200px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    z-index: 10000;
+    text-align: center;
+}
+
+#evoucherRedeemBoxNoCharacter div.boxClose {
+    background: url("/images/img_buttons/btn_exit_a.png?__cv=2ce51e1fdffbb4b15690635748d4e700") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    width: 31px;
+    z-index: 10000;
+}
+
+#evoucherRedeemBoxNoCharacter div.no_user{
+	font-weight: bold;
+    font-size: 14px;
+    margin-top: 80px;
+}
+
+div.evoucherHeadline {
+	font-size: 15px;
+	font-weight: bold;
+    margin-bottom: 5px;	
+}
+
+div.evoucherDescription{
+	text-align: left;
+	margin-left: 18px;
+	margin-bottom: 5px;
+}
+
+#evoucherCodeField {
+	width: 320px;
+    height: 36px;
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/evoucher/coupon_textfield.jpg?__cv=cb7d260f392bfb7c77a64b1014a0f200);
+    font-size: 15px;
+    line-height: 15px;
+    color: white;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    *font-size: 20px;
+    *padding-top: 11px;
+    *height: 25px;
+}
+
+#evoucherSubmitBox {
+	width: 200px;
+    height: 40px;
+    font-size: 15px;
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/evoucher/btn_coupon.jpg?__cv=d96b0dbd4825ed350bec65bf1f38c500);
+    margin: auto;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#evoucherSubmitBox:hover {
+    background-position: 0px 40px;
+}
+
+#evoucherSubmitButton {
+	width: 200px;
+    height: 40px;
+    color: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+#getcubits, #redeemButton {
+	width: 120px;
+    height: 53px;
+    position: absolute;
+    text-transform: uppercase;
+    color: white;
+    padding-left: 120px;
+    padding-top: 27px;
+    padding-right: 20px;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    bottom: 128px;
+    text-decoration: none !important;
+    z-index: 2;
+}
+
+/*
+#getcubits:hover, #redeemButton:hover {
+	height: 98px;
+    padding-top: 42px;
+}
+*/
+
+#getcubits {
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/get_cubits.png?__cv=f85677141d7abbdd8f33db3a1a1ff300);
+    left: 10px;
+}
+
+#paymentiframe{
+	height: 540px;
+    width: 900px;
+}
+
+#redeemButton {
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/redeem_code.png?__cv=33be48a1be6b9ce7d7ad00f91b150a00);
+    right: 10px;
+    width: 120px;
+    padding-left: 125px;
+}
+
+#noScript, #nocookies {
+	display: block;
+	position: absolute;
+	top: 305px;
+	left: 50%;
+	margin-left: -172px;
+	width: 300px;
+	height: 140px;
+	padding: 30px 20px 10px;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 25px;
+    z-index: 10000;	
+	text-align: center;
+    background: transparent url(http://battlestargalactica-495.level3.bpcdn.net/images/img_buttons/jsErrorBG.png?__cv=a48b2a8ed89f70c5bfb1e500c7985200) top center no-repeat;
+}
+
+#specialoffer {
+    background-image: url(http://battlestargalactica-495.level3.bpcdn.net/images/img_global/sale_ammo.png?__cv=909cd3eedb312ab51f487906cd528400);
+    width: 164px;
+    height: 228px;
+    right: 0;
+    top: 90px;
+    z-index: 1;
+    position: absolute;
+    padding-left: 140px;
+    padding-top: 50px;
+    padding-right: 10px;
+}
+
+#syfyUsBanner
+{
+    width : 100%;
+    height : 115px;
+    position : absolute;
+    top : 245px;
+    z-index : 1;
+    text-align : center;
+}
+
+.bgc input.bgcdw_errors[type="text"], .bgc input.bgcdw_errors[type="email"], .bgc input.bgcdw_errors[type="password"], #bgc_fbconnect_wrapper input.bgcdw_errors[type="text"], #bgc_fbconnect_wrapper input.bgcdw_errors[type="password"], .bgc .bgcdw_errors_date {
+    color: #ffffff !important;
+}

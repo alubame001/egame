@@ -20,6 +20,8 @@ module PanelManager {
     var showTipsPanel:ShowTipsPanel;	
     var addFriendPanel:AddFriendPanel;	
     var setPanel:SetPanel;	
+    var darkSlotPanel:GamePanel;	
+    var titanSlotPanel:GamePanel;	
 	// 初始化所有面板
 	export function initPanel():void{ 
 
@@ -65,6 +67,13 @@ module PanelManager {
         Global.addEventListener(MainNotify.openSetPanelNotify,this.openSetPanel,this);
         Global.addEventListener(MainNotify.closeSetPanelNotify,this.closeSetPanel,this);
 
+		Global.addEventListener(MainNotify.openDarkSlotPanelNotify,this.openDarkSlotPanel,this);
+		Global.addEventListener(MainNotify.closeDarkSlotPanelNotify,this.closeDarkSlotPanel,this);    
+
+		Global.addEventListener(MainNotify.openTitanSlotPanelNotify,this.openTitanSlotPanel,this);
+		Global.addEventListener(MainNotify.closeTitanSlotPanelNotify,this.closeTitanSlotPanel,this);    
+
+
 	} 
 
 	// 打开开始界面
@@ -81,6 +90,37 @@ module PanelManager {
 			this.startPanel = null;
 		}
 	} 
+
+	// 打开DarkSlot界面
+	export function openDarkSlotPanel():void{ 
+		if(this.darkSlotPanel == null){
+			this.darkSlotPanel = new DarkSlotPanel();
+			PopUpManager.addPopUp(this.darkSlotPanel,false,0,0,0);
+		}
+	} 
+	// 关闭开始界面
+	export function closeDarkSlotPanel():void{ 
+		if(this.darkSlotPanel != null){
+			PopUpManager.removePopUp(this.darkSlotPanel,3);
+			this.darkSlotPanel = null;
+		}
+	} 
+
+
+	export function openTitanSlotPanel():void{ 
+		if(this.titanSlotPanel == null){
+			this.titanSlotPanel = new TitanSlotPanel();
+			PopUpManager.addPopUp(this.titanSlotPanel,false,0,0,0);
+		}
+	} 
+
+	export function closeTitanSlotPanel():void{ 
+		if(this.titanSlotPanel != null){
+			PopUpManager.removePopUp(this.titanSlotPanel,3);
+			this.titanSlotPanel = null;
+		}
+	} 
+
 
 
 

@@ -1,0 +1,233 @@
+
+<script type="text/x-handlebars" data-template-name="welcome/login" >
+
+    <~if .IsLogin~>
+        {{partial "welcome/personalInfo"}}   
+    <~else~>
+        {{partial "welcome/loginPanel"}}
+    <~end~>
+</script>
+
+<script type="text/x-handlebars" data-template-name="welcome/loginPanel" >
+  
+<div class="home_register">
+    <div class="hd">
+       
+           <div id="alert" style="color:red">
+            </div>      
+    </div>
+    <div class="bd">
+        <form class="login" method="post">
+
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-prepend">
+
+
+                       <i class="fa fa-envelope fa-inverse"></i>
+                    </div>
+                    <div class="ml20">            
+                        {{input name="login" value=login placeholder="Email" maxlength="32"}}
+                     </div>
+                    <p></p>
+                    <div class="input-prepend">
+
+                        <i class="fa fa-key fa-inverse"></i>
+                    </div> 
+                        <div class="ml20">                    
+                        {{input name="password" type="password" value=password placeholder="密码" }}
+                        </div>
+                                             
+                <div>
+
+
+            </div>
+
+
+
+            <div class="form-group">
+               
+                <button class='btn btn-xl btn-info' type="submit" {{bind-attr disabled=submitting}}><l> <~i18n .Lang "auth.sign_in"~></l></button>
+                
+            </div>
+        </form>
+        <div class="group">
+           <button class='btn btn-es ' {{action  'setLoginState' 2   bubbles=true target="controller"}}><l><~i18n .Lang "auth.sign_up"~></l></button>
+           
+            <button class='btn btn-es ' {{action  'setLoginState' 3   bubbles=true target="controller"}}><l><~i18n .Lang "auth.forgot_password"~></l></button>           
+        </div>
+    </div>
+</div>
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="welcome/personalInfo_backup" >
+<div class="home_register" id="register">
+    <div class="hd">
+        <div class="dzing_box">
+            <div class="dzing_box_account">
+                <p><a href="/settings/profile/"><img src="/static/img/avatar/jemeshsu-04_normal.png" alt="会员头像"></a></p>
+                <p align="right" class="a1"><a href="/logout">退出</a><a href="/settings/profile/">账户中心</a></p>
+  
+            </div>
+        </div>
+    </div>
+    <div class="bd">
+        <div class="dzing_box">
+            <div class="dzing_box_xq">
+                <p><em><l><~i18n .Lang "model.user_nickname"~></l></em> <span class="lightorange a1"><~.User.UserName~></span>     <span style="text-align:right;"><em>ID</em> <b class="lightgreen"><~.User.Id~></b></span></p>
+                <p><em><l><~i18n .Lang "auth.verify"~></l></em>
+                <~if .User.IsActiveEmail~>
+                    <i class="sel"><a href="/settings/profile/" title=<~i18n .Lang "auth.verified"~> class="lightgreen">√</a></i>
+                    <a href="/member/account/email" class="lightgreen" title=<~i18n .Lang "auth.verified"~> class="lightgreen"><l><~i18n .Lang "auth.login_email"~></l></a>
+                <~else~>
+                    <i><a href="/member/account/email"  title=<~i18n .Lang "auth.not_verified"~> class="lightred">!</a></i>
+                    <a href="/member/account/mobile" class="lightred" title=<~i18n .Lang "auth.not_verified"~>> <l><~i18n .Lang "auth.login_email"~></l></a>
+                <~end~>
+                        |
+                 <~if .User.IsActiveMobile~>
+                    <i class="sel"><a href="/settings/profile/" title=<~i18n .Lang "auth.verified"~> class="lightgreen">√</a></i>
+                    <a href="/member/account/mobile" class="lightgreen" title=<~i18n .Lang "auth.verified"~>><l><~i18n .Lang "auth.login_mobile"~></l></a>
+                <~else~>
+                    <i><a href="/member/account/mobile" title=<~i18n .Lang "auth.not_verified"~> class="lightred">!</a></i>
+                    <a href="/member/account/mobile" class="lightred" title=<~i18n .Lang "auth.not_verified"~>><l><~i18n .Lang "auth.login_mobile"~></l></a>
+                <~end~>               
+                        |
+                 <~if .User.IsActiveGa~>
+                    <i class="sel"><a href="/settings/profile/" title=<~i18n .Lang "auth.verified"~> class="lightgreen">√</a></i>
+                    <a href="/member/account/ga" class="lightgreen" title=<~i18n .Lang "auth.verified"~>><l><~i18n .Lang "auth.login_ga"~></l></a>
+                <~else~>
+                    <i><a href="/member/account/ga" title=<~i18n .Lang "auth.not_verified"~> class="lightred">!</a></i>
+                    <a href="/member/account/ga" class="lightred" title=<~i18n .Lang "auth.not_verified"~>><l><~i18n .Lang "auth.login_ga"~></l></a>
+                <~end~>  
+
+                <p><em><l><~i18n .Lang "coin.bitcoin"~></l> </em> <span id="balance" class="lightorange">loading</span></p>
+                <p><em> <l><~i18n .Lang "coin.vgold"~></l></em> <span class="lightorange">0</span></p>
+                <~if .IsLogin~>
+                    <p class="a1 gray1" style="overflow:hidden;margin: 0px;"><l><~i18n .Lang "auth.last_login"~></l>:<~.User.LastLoginAddress~></p>
+                    <p class="a1 gray1" style="overflow:hidden;margin: 0px;"><~datetimes .User.LastLoginTime~> ( <~timesince .Lang .User.LastLoginTime~>)</p>  
+                <~end~>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="welcome/personalInfo" >
+<div class="home_register" id="register">
+    <div class="hd">
+        <div class="dzing_box">
+            <div class="dzing_box_account">
+                <p><a href="/settings/profile/"><img src="/static/img/avatar/jemeshsu-04_normal.png" alt="会员头像"></a></p>
+                <p align="right" class="a1"><a href="/logout">退出</a><a href="/settings/profile/">账户中心</a></p>
+  
+            </div>
+        </div>
+    </div>
+    <div class="bd">
+        <div class="dzing_box">
+            <div class="dzing_box_xq">
+                <p><em><l><~i18n .Lang "model.user_nickname"~></l></em> <span class="lightorange a1"><~.User.UserName~></span>     <span style="text-align:right;"><em>ID</em> <b class="lightgreen"><~.User.Id~></b></span></p>
+               
+
+                <p><em><l><~i18n .Lang "coin.bitcoin"~></l> </em> <span id="balance" class="lightorange">loading</span></p>
+                
+                <~if .IsLogin~>
+                    <p class="a1 gray1" style="overflow:hidden;margin: 0px;"><l><~i18n .Lang "auth.last_login"~></l>:<~.User.LastLoginAddress~></p>
+                    <p class="a1 gray1" style="overflow:hidden;margin: 0px;"><~datetimes .User.LastLoginTime~> ( <~timesince .Lang .User.LastLoginTime~>)</p>  
+                <~end~>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="welcome/signup">
+<div class="home_register">
+
+    <div class="hd">
+        <h3 class="heading font_yahei">申请帐号</h3>
+    </div>
+    <div class="bd">
+        <form role="form" class="signup" id="sign-form-1" method="post" autocomplete="off">
+       
+
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="fa fa-envelope"></i></span>
+                    </div>
+                        {{input name="login" value=login placeholder="Email" maxlength="32"}}
+                    
+                    <p></p>
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="fa fa-key"></i></span>
+                    </div> 
+                        {{input name="password" type="password" value=password placeholder="密码" }}
+                                             
+                <div>
+
+
+            </div>
+            <p></p>
+            <div class="form-group">
+                <button class='btn btn-xl btn-info' type="submit" {{bind-attr disabled=submitting}}>申请</button>
+                
+            </div>            
+
+        </form>
+
+        <div class="group">
+        <button class='btn btn-es ' {{action  'setLoginState' 1   bubbles=true target="controller"}}>登入</button>
+
+        <button class='btn btn-es ' {{action  'setLoginState' 3   bubbles=true target="controller"}}>忘记密码？</button>           
+        </div>
+    </div>
+
+</div>
+</script>
+
+
+
+<script type="text/x-handlebars" data-template-name="welcome/forget">
+<div class="home_register">
+
+    <div class="hd">
+        <h3 class="heading font_yahei">忘记密码</h3>
+    </div>
+    <div class="bd">
+        <form role="form" class="signup" id="sign-form-1" method="post" autocomplete="off">
+             <!--<div class="failure" id="rerror" style="display: none;">
+               <ul>
+
+                    <li><i class="icon-sign icon-sign-error"></i> 邮箱未填写邮箱未填写邮箱未填写邮箱未填写</li>
+                    <li><i class="icon-sign icon-sign-error"></i> 密码未填写</li>
+                    
+                </ul>
+            </div>-->
+        
+            <div>
+                
+                {{input name="email" value=model.email placeholder="邮箱地址" pattern="[a-zA-Z]+"}}
+            </div>
+             <div class="form-group">
+                <button class='btn btn-xl btn-info' type="submit" {{bind-attr disabled=submitting}}>找回密码</button>
+                
+            </div>           
+
+        </form>
+
+        <div class="group">
+        <button class='btn btn-es ' {{action  'setLoginState' 1   bubbles=true target="controller"}}>登入</button>
+
+        <button class='btn btn-es ' {{action  'setLoginState' 2   bubbles=true target="controller"}}>申请帐号</button>           
+        </div>
+    </div>
+
+</div>
+</script>
+
+
+
+

@@ -35,6 +35,7 @@ type UploadRouter struct {
 }
 
 func (this *UploadRouter) Post() {
+	beego.Info("UploadRouter")
 	result := map[string]interface{}{
 		"success": false,
 	}
@@ -63,7 +64,8 @@ func (this *UploadRouter) Post() {
 
 	// get mime type
 	mime := handler.Header.Get("Content-Type")
-
+	beego.Info("filePath:",file)
+	beego.Info("image",image)
 	// save and resize image
 	if err := attachment.SaveImage(&image, file, mime, handler.Filename, t); err != nil {
 		beego.Error(err)
@@ -76,6 +78,7 @@ func (this *UploadRouter) Post() {
 }
 
 func ImageFilter(ctx *context.Context) {
+	beego.Info("ImageFilter:",ctx)
 	token := path.Base(ctx.Request.RequestURI)
 
 	// split token and file ext

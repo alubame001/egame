@@ -12,12 +12,40 @@ WebApp.IndexController = Ember.Controller.extend({
 WebApp.IndexView = Ember.View.extend({
 
     didInsertElement: function() {
-        $(".focusBox").slide({ titCell:".num li", mainCell:".pic",effect:"fold", autoPlay:true,trigger:"click",
-                   startFun:function(i){
-                $(".focusBox .txt li").eq(i).animate({"bottom":0}).siblings().animate({"bottom":-36});
-            }
-        });
-       
+      $(".focusBox").slide({ titCell:".num li", mainCell:".pic",effect:"fold", autoPlay:true,trigger:"click",
+                 startFun:function(i){
+              $(".focusBox .txt li").eq(i).animate({"bottom":0}).siblings().animate({"bottom":-36});
+          }
+      });
+     
+      $(".stb").slide({});
+      $("[data-toggle='popover']").popover();
+
+
+      var element = document.getElementById('clock-container');
+      var seconds = new ProgressBar.Circle(element, {
+          duration: 200,
+        //  color: "#2DAE18",
+          color: "#000000",
+          strokeWidth: 5,
+          trailColor: "#ddd"
+      });
+
+      setInterval(function() {
+          var second = new Date().getSeconds();
+          if (second > 20) {
+            seconds.path.setAttribute('stroke', "#00FC00");
+             $(".progressbar-text").css("color","#00FC00");      
+          }else   
+          {
+            seconds.path.setAttribute('stroke', "#FC0000");
+             $(".progressbar-text").css("color","#FC0000"); 
+          } 
+          seconds.animate(second / 60, function() {
+            seconds.setText(second);
+          });
+         
+      }, 1000);
 
        //console.log('IndexView');
         /*
@@ -59,7 +87,7 @@ WebApp.IndexRoute = Ember.Route.extend({
   	  //console.log(this.setPage);
   		// this.controllerFor('loginip').set('selectedPage', 2)
     return Ember.RSVP.hash({
-
+        //lol :this.store.find('indice'),   
        //indice :this.store.find('indice'),     
        //person :this.store.find('person'),     
        login :{errorTime:0},

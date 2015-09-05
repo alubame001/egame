@@ -11,7 +11,7 @@
 // WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 // License for the specific language governing permissions and limitations
 // under the License.
-
+/*投注单*/
 package models
 
 import (
@@ -48,7 +48,9 @@ type Bet struct {
 	Shash     string  `orm:"size(128)"`     /** 服务器密钥Hash值 */
 	Spwd      string  `orm:"size(60);null"` /** 密钥加密密码 */
 	Ckey      string  `orm:"size(60)"`      /** 客户端密钥 */
-
+	Sn        string  `orm:"size(20)"`        /** 投注期号 */
+	Kind      string  `orm:"size(20)"`      /** 投注种类 */
+	IsPending bool    `orm:"null`           /*是否已结算，如果非即时出结果的，此项为false*/ 
 	Created time.Time `orm:"auto_now_add"`
 	Updated time.Time `orm:"auto_now"`
 

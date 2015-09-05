@@ -45,7 +45,7 @@ WebApp.IndexView = Ember.View.extend({
 WebApp.IndexRoute = Ember.Route.extend({
 
   model: function(params) {   
-    console.log(this.store)
+    
       return Ember.RSVP.hash({ 
           detail:this.store.find('contract'),
           trade:this.store.find('trade'),

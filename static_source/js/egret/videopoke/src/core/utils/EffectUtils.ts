@@ -10,6 +10,11 @@ module EffectUtils {
 
     // 存储旋转对象
     var rotationArr:Array<any> = [];
+
+
+
+
+
     //对象旋转特效
     //obj   旋转对象
     //time  旋转一周用时，毫秒
@@ -52,6 +57,7 @@ module EffectUtils {
     //抖动对象特效
     //类似ios密码输入错误的特效
     export function shakeObj(obj):void{
+
         var shakeNum = 80;
         var oldX:number = obj.x;
         egret.Tween.get(obj).to({x:obj.x - 10},shakeNum); 
@@ -70,6 +76,85 @@ module EffectUtils {
         }, this, shakeNum*5);           
     }
 
+    export function moveToObj(obj,position):void{
+    
+        var shakeNum = 80;
+        var oldX:number = obj.x;
+        var oldY:number = obj.y;
+        egret.Tween.get(obj).to({y:oldY + 10},shakeNum); 
+
+        egret.setTimeout(function () {              
+            egret.Tween.get(obj).to({y:oldY + 30},shakeNum); 
+        }, this, shakeNum*2); 
+        egret.setTimeout(function () {              
+            egret.Tween.get(obj).to({y:oldY + 50},shakeNum); 
+        }, this, shakeNum*3); 
+        egret.setTimeout(function () {              
+            egret.Tween.get(obj).to({y:oldY + 70},shakeNum); 
+        }, this, shakeNum*4); 
+        egret.setTimeout(function () {              
+            egret.Tween.get(obj).to({y:oldY+position},shakeNum); 
+        }, this, shakeNum*5);           
+    }
+ 
+    export function slotDown(obj,period,symbol):void{
+        var py  = 0;
+        var  oldY = obj.y;
+
+        var onComplete3:Function = function(){
+                egret.Tween.get(obj)
+               .to({y:-8},0)
+               .to({y:-900},period)
+               .call(onComplete4,this); 
+        };   
+        var onComplete4:Function = function(){
+                
+            py = ((symbol-1)*-150)-0 -150
+            egret.Tween.get(obj).to({y:py},period)
+            .call(onComplete5,this); 
+        };   
+
+        var onComplete5:Function = function(){                
+            py =py+150              
+            egret.Tween.get(obj).to({y:py},1000,   egret.Ease.backOut);
+        };   
+
+
+
+      // egret.Tween.get(obj).to({y:oldY -35},500,   egret.Ease.backOut).call(onComplete3,this);              
+       egret.Tween.get(obj).to({y:oldY -35},500,   egret.Ease.backOut).call(onComplete3,this);              
+                  
+    }
+
+
+    export function moveDown(obj,period,symbol):void{
+        var py  = 0;
+        var  oldY = obj.y;
+
+        var onComplete3:Function = function(){
+                egret.Tween.get(obj)
+               .to({y:-8},0)
+               .to({y:-900},period)
+               .call(onComplete4,this); 
+        };   
+        var onComplete4:Function = function(){
+                
+            py = ((symbol-1)*-70)-8 -200
+            egret.Tween.get(obj).to({y:py},period)
+            .call(onComplete5,this); 
+        };   
+
+        var onComplete5:Function = function(){                
+            py =py+200                
+            egret.Tween.get(obj).to({y:py},1000,   egret.Ease.backOut);
+        };   
+
+
+
+      // egret.Tween.get(obj).to({y:oldY -35},500,   egret.Ease.backOut).call(onComplete3,this);              
+       egret.Tween.get(obj).to({y:oldY -35},500,   egret.Ease.backOut).call(onComplete3,this);              
+                  
+    }
 
     //抖动对象特效
     // 1：抖动  2：震动

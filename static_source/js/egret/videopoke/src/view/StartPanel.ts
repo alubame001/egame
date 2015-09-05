@@ -43,7 +43,8 @@ class StartPanel extends BasePanel{
 
 
     public initPanel(): void {
-
+         this.w = 998;
+         this.h = 480;
         this.bg = new egret.Bitmap();
         this.bg.texture = RES.getRes("");
         this.addChild(this.bg);
@@ -82,19 +83,19 @@ class StartPanel extends BasePanel{
 
 
 
-        this.progress5 = new ECircle(this,"icon_coming",null,"",20,4,"circle");
+        this.progress5 = new ECircle(this,"icon_coming",this.onDarkSlotBtnTouchTap,"",20,4,"circle");
         this.progress5.x = 600;//294+5;
         this.progress5.y = 245;//78+5;
         this.progress5.alpha = 0;//78+5;
-        this.progress5.textField2.text ="水果老虎机";
+        this.progress5.textField2.text ="老虎机";
         this.addChild(this.progress5); 
 
 
-        this.progress6 = new ECircle(this,"icon_coming",null,"",20,4,"circle");
+        this.progress6 = new ECircle(this,"icon_coming",this.onTitanSlotBtnTouchTap,"",20,4,"circle");
         this.progress6.x = 600;//294+5;
         this.progress6.y = 245;//78+5;
         this.progress6.alpha = 0;//78+5;
-         this.progress6.textField2.text ="百家乐";
+         this.progress6.textField2.text ="泰坦";
         this.addChild(this.progress6);   
 
         this.progress7  = new ECircle(this,"icon_coming",null,"",20,4,"circle");
@@ -340,7 +341,28 @@ class StartPanel extends BasePanel{
             Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
         }
       
+          else if(event.groupName=="darkslot_load"){     
 
+          
+            Global.dispatchEvent(MainNotify.openDarkSlotPanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        }
+
+          else if(event.groupName=="darkslot3_load"){     
+
+          
+            Global.dispatchEvent(MainNotify.openDarkSlotPanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        }
+
+          else if(event.groupName=="titanslot_load"){     
+
+          
+            Global.dispatchEvent(MainNotify.openTitanSlotPanelNotify,null,false);
+            Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+        }
+
+      
 
     }
     public onLottery28BtnTouchTap(e:egret.TouchEvent):void{
@@ -378,14 +400,17 @@ class StartPanel extends BasePanel{
     public onWheelBtnTouchTap(e:egret.TouchEvent):void{
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
         RES.loadGroup("wheel_load");
-
-        //Global.dispatchEvent(MainNotify.openWheelPanelNotify,null,false);
-       // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
     }
 
-    public onSlotBtnTouchTap(e:egret.TouchEvent):void{
-       // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);
-       // Global.dispatchEvent(MainNotify.closeStartPanelNotify,null,false);
+    public onDarkSlotBtnTouchTap(e:egret.TouchEvent):void{
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+        RES.loadGroup("darkslot3_load");
+    }
+
+
+    public onTitanSlotBtnTouchTap(e:egret.TouchEvent):void{
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onSubResourceLoadComplete,this);
+        RES.loadGroup("titanslot_load");
     }
     public onNiuniuBtnTouchTap(e:egret.TouchEvent):void{
        // Global.dispatchEvent(MainNotify.openFishPanelNotify,null,false);

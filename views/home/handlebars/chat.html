@@ -1,0 +1,24 @@
+
+<script type="text/x-handlebars" data-template-name="chat" >
+
+    <div class="well markdown">
+        <div class="container">
+
+            <form class="form-inline">
+                <div class="col-md-3 form-group">
+                    <input id="sendbox" type="text" class="form-control" onkeydown="if(event.keyCode==13)return false;" required>
+                </div>
+                <button id="sendbtn" type="button" class="btn btn-default"><~i18n .Lang "Send"~></button>
+            </form>
+        </div>
+
+        <div class="container">
+            <ul id="chatbox">
+                <li><~i18n .Lang "welcome"~></li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+</script>

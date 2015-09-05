@@ -22,7 +22,6 @@ import (
 	"strconv"
 )
 
-/* fro crap game * old rule was 0.8 0.15*/
 func Lottery28(user *models.User, params BetParams, luckys string) (BetParams, error) {
 	params.Lucky = luckys
 

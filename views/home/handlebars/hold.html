@@ -1,0 +1,89 @@
+   
+<script type="text/x-handlebars" data-template-name="hold">
+
+<div class ='container'>
+    <div class="row home-box"> 
+        <div class="col-md-9">
+            {{outlet}}
+         </div>
+        <div class="col-md-3">     
+        </div>
+    </div>    
+</div>
+</script>
+
+
+           
+<script type="text/x-handlebars" data-template-name="hold/index">	
+<div class ='container'>    
+      {{render 'holdpage' model.detail}}   
+</div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="hold_content">
+{{#if controller.paginatedContent}} 
+    <div class="row home-box"> 
+        <div class="col-md-12">
+            <div class="table-responsive">  
+                <table class="table table-striped table-hover table-condensed table-bordered border">
+                    <tr>
+                        <th>持有人</th>           
+                        <th>合约</th>
+                        <th>类型</th>
+                         <th>时间</th>
+                        <th>平均成本</th> 
+                        <th>持仓金额</th> 
+                        <th>盈亏</th>          
+
+                    </tr>     
+
+
+                    {{#each item in controller.paginatedContent}}
+                        <tr class='master'>
+                            <td>{{item.uid}} </td>       
+                            <td>{{item.name}} </td>  
+                            <td>{{item.type}} </td>  
+                            <td>{{item.createDate}} </td>    
+                            <td>{{item.price}} </td>  
+                            <td>{{item.holdTotalAmount}} </td>   
+                            <td>{{item.holdTotalProfit}} </td>   
+                                    
+                            
+                        </tr>  
+                        
+                        {{#if item.holditems}}
+                       
+                        {{#each detail in item.holditems}}
+                        
+                        <tr class='detail'>    
+                            <td></td>   
+                            <td></td>   
+                            <td>{{detail.type}}</td>   
+                            <td>{{detail.createDate}}</td>
+                            <td>{{detail.price}}</td>
+                            <td>{{detail.amount}}</td>                                                
+                            <td></td>    
+                        </tr>
+                        
+                        {{/each}}
+                        
+                        {{/if}}  
+
+                     {{/each}}        
+                </table>
+           </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{{else}}
+
+      <strong> No Data </strong>
+{{/if}}
+ 
+</script>

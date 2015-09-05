@@ -38,6 +38,7 @@
                     "jquery.min.js",
                     "jquery.extend.js",
                     "bootstrap.js",
+                    "progressbar.js",
                     "lib.min.js",
                     "prettify.js",                  
                     "jStorage.js"
@@ -59,8 +60,7 @@
             },
             "ember": {
                 "DistFile": "ember.min.js",
-                "SourceFiles": [   
-                    "/ember/highstock.js",
+                "SourceFiles": [                      
                     "/ember/handlebars.min.js",
                     "/ember/ember.min.js",
                     "/ember/ember-data.js",
@@ -68,6 +68,16 @@
                     "/ember/big.min.js"
                 ]
             },
+            "cont": {
+                "DistFile": "ost.min.js",
+                "SourceFiles": [                      
+                    "/home/cont.js",
+                    "/home/ping_tcss_ied.js",
+                    "/home/title.js",
+                    "/home/tgadshow.min.js",
+                    "/home/xflib2.0.js"
+                ]
+            },            
             "videopoke": {
                 "DistFile": "videopoke.min.js",
                 "SourceFiles": [   
@@ -153,6 +163,22 @@
                     "/trade/app.home.js" 
                 ]
             },
+            "video": {
+                "DistFile": "video.min.js",
+                "SourceFiles": [                    
+                    "/video/app.main.js" ,
+                    "/video/app.welcome.js",
+                     "/video/app.proto.js",                    
+                    "/video/app.data.js",                    
+                    "/video/app.application.js",
+                    "/video/app.function.js" ,                                          
+                    "/video/app.index.js",  
+                    "/video/app.lol.js",                           
+                    "/video/app.home.js", 
+                    "/video/jquery.easing.1.3.js", 
+                    "/video/slider.js"
+                ]
+            },
 
             "admin": {
                 "DistFile": "admin.min.js",
@@ -172,7 +198,7 @@
                 "DistFile": "lib.min.css",
                 "SourceFiles": [
                     "bootstrap.css",
-                    "bootstrap-theme.css",
+                    "bootstrap-theme.css",           
                     "font-awesome.min.css",
                     "prettify.css",
                     "select2.css"
@@ -193,7 +219,38 @@
                     "font-awesome.min.css",
                     "select2.css"
                 ]
-            },            
+            },  
+            "cont": {
+                "DistFile": "cont.min.css",
+                "SourceFiles": [
+                    "/home/cont.css"
+                ]
+            }, 
+            "video": {
+                "DistFile": "video.min.css",
+                "SourceFiles": [
+                    "/video/main.css"
+                ]
+            },             
+            "gala": {
+                "DistFile": "gala.min.css",
+                "SourceFiles": [
+                    "/home/gala/default.min.css",
+                    "/home/gala/bgc-0.10.10.min.css",
+                    "/home/gala/toolbox.css",
+                    "/home/gala/register.css",
+                    "/home/gala/jScrollPan.css", 
+                    "/home/gala/dro.style.css", 
+                    "/home/gala/en.css"
+                ]
+            }, 
+            "lol": {
+                "DistFile": "lol.min.css",
+                "SourceFiles": [                   
+                    "/lol/main.css"
+                ]
+            }, 
+
             "ie7": {
                 "Name": "ie7",
                 "DistFile": "ie7.min.css",

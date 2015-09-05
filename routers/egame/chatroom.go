@@ -45,7 +45,7 @@ type Subscriber struct {
 
 func newEvent(ep EventType, cmd, user, lucky, msg string) Event {
 
-	beego.Info("newEvent :", user)
+	//beego.Info("newEvent :", user)
 	//return Event{ep, user, int(time.Now().Unix()), msg, Martketprice{0, "", 0, 0, ""}}
 	//return Event{ep, int(time.Now().Unix()), Martketprice{0, "", 0, 0, ""}}
 	//var g = newGame(0, user, msg)

@@ -70,6 +70,61 @@ var EffectUtils;
         }, this, shakeNum * 5);
     }
     EffectUtils.shakeObj = shakeObj;
+    function moveToObj(obj, position) {
+        var shakeNum = 80;
+        var oldX = obj.x;
+        var oldY = obj.y;
+        egret.Tween.get(obj).to({ y: oldY + 10 }, shakeNum);
+        egret.setTimeout(function () {
+            egret.Tween.get(obj).to({ y: oldY + 30 }, shakeNum);
+        }, this, shakeNum * 2);
+        egret.setTimeout(function () {
+            egret.Tween.get(obj).to({ y: oldY + 50 }, shakeNum);
+        }, this, shakeNum * 3);
+        egret.setTimeout(function () {
+            egret.Tween.get(obj).to({ y: oldY + 70 }, shakeNum);
+        }, this, shakeNum * 4);
+        egret.setTimeout(function () {
+            egret.Tween.get(obj).to({ y: oldY + position }, shakeNum);
+        }, this, shakeNum * 5);
+    }
+    EffectUtils.moveToObj = moveToObj;
+    function slotDown(obj, period, symbol) {
+        var py = 0;
+        var oldY = obj.y;
+        var onComplete3 = function () {
+            egret.Tween.get(obj).to({ y: -8 }, 0).to({ y: -900 }, period).call(onComplete4, this);
+        };
+        var onComplete4 = function () {
+            py = ((symbol - 1) * -150) - 0 - 150;
+            egret.Tween.get(obj).to({ y: py }, period).call(onComplete5, this);
+        };
+        var onComplete5 = function () {
+            py = py + 150;
+            egret.Tween.get(obj).to({ y: py }, 1000, egret.Ease.backOut);
+        };
+        // egret.Tween.get(obj).to({y:oldY -35},500,   egret.Ease.backOut).call(onComplete3,this);              
+        egret.Tween.get(obj).to({ y: oldY - 35 }, 500, egret.Ease.backOut).call(onComplete3, this);
+    }
+    EffectUtils.slotDown = slotDown;
+    function moveDown(obj, period, symbol) {
+        var py = 0;
+        var oldY = obj.y;
+        var onComplete3 = function () {
+            egret.Tween.get(obj).to({ y: -8 }, 0).to({ y: -900 }, period).call(onComplete4, this);
+        };
+        var onComplete4 = function () {
+            py = ((symbol - 1) * -70) - 8 - 200;
+            egret.Tween.get(obj).to({ y: py }, period).call(onComplete5, this);
+        };
+        var onComplete5 = function () {
+            py = py + 200;
+            egret.Tween.get(obj).to({ y: py }, 1000, egret.Ease.backOut);
+        };
+        // egret.Tween.get(obj).to({y:oldY -35},500,   egret.Ease.backOut).call(onComplete3,this);              
+        egret.Tween.get(obj).to({ y: oldY - 35 }, 500, egret.Ease.backOut).call(onComplete3, this);
+    }
+    EffectUtils.moveDown = moveDown;
     //抖动对象特效
     // 1：抖动  2：震动
     function shakeScreen(effectType) {

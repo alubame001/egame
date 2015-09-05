@@ -1,0 +1,154 @@
+        
+<script type="text/x-handlebars" data-template-name="marketmaker/index">
+<div class="orderBox" >
+    {{#each item in model.marketmaker}}
+         <table border="1" class='w700'>
+            <tr>
+               <th> 创始日期</th>
+               <th> 基金名称</th>           
+               <th> 每份净值</th>
+               <th> 总净值</th>
+               <th> 基金发行数</th> 
+               <th> 持仓金额</th> 
+               <th> 持仓利润</th>
+               <th> 已平仓数目</th> 
+               <th> 平仓利润</th>
+            </tr> 
+            <tr>              
+                <td width='10%'>{{item.createDate}} </td>               
+                <td width='10%'> {{item.cid}}      </td>  
+                <td width='10%'>{{item.perShareValue}} </td>              
+                <td width='10%'>{{item.netValue}} </td> 
+                <td width='10%'>{{item.amount}} </td>                   
+                <td width='10%'>{{item.holdTotalAmount}} ({{item.holdTotalCount}})</td>     
+                <td width='10%'>{{item.holdTotalProfit}} </td>  
+                <td width='10%'>{{item.closedAmount}} </td>  
+                <td width='10%'>{{item.closedProfit}} </td>       
+            </tr>                                                                                                                       
+        </table>
+    {{/each}}    
+</div>    
+
+
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="marketmaker">
+<div class ='siteBackground'>
+    
+
+
+
+
+        <div class="siteWidth">        
+            <div id="topBar">
+                <div>
+                    <ul>                       
+
+                         {{#each item in model.marketmaker  }}      
+                                                    
+                            <li class="m">           
+                            {{#link-to 'mmkind' item.kind}} {{item.cid}}     {{/link-to}}                    
+                            </li>      
+
+                        {{/each}}
+            
+                    </ul>
+                
+                </div>
+
+           </div>
+            <div class ="mainContent">        
+                  {{outlet}} 
+            </div> 
+
+
+
+            <div class ="side">         
+                <div id="sideMenu" class="sideBox">
+                    <div class="hd">
+                        <h3> i18n makretmaker_fund_title</h3>      
+                    </div>
+                    
+                    <div class="bd" style="display: block;">
+                        <ul>  
+
+
+                            {{#each item in model.marketmaker}}                                 
+                            <li>           
+                            {{item.cid}}                           
+                            </li>                           
+                            {{/each}}
+                        </ul>
+
+                    </div> 
+                </div>                     
+
+
+            </div><!-- side -->               
+              
+
+                 
+        </div>
+
+</div>
+
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="mmkind/index">
+
+             {{render 'cfddetail' model}}  
+
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="mmkind">
+    
+    {{render 'marketmaker.index' model}}  
+
+
+
+
+     <div class="w120 slideTxtBox" style='margin-right:10px'>
+            <div class="hd">
+               <ul> <h2> title</h2> </ul>
+            </div>
+            <div class="bd">
+                  
+                <ul>
+                      
+
+                    {{#each item in model.indice}}                                 
+                        <li>           
+                          <h3> {{#link-to 'cfddetail' item.symbol}}  {{item.cid}}   {{/link-to}}</h3>                           
+                        </li>                           
+                    {{/each}}
+                </ul>                      
+                
+            </div>
+        </div>
+       {{outlet}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="kindlist">
+    <div class="slideTxtBox" >
+        <div class="hd">
+            <ul>
+                {{#each item in model.indice}}                                 
+                    <li>           
+                       {{#link-to 'cfddetail' item.symbol}}  {{item.cid}}   {{/link-to}}                           
+                    </li>                           
+                {{/each}}
+            </ul>
+
+        </div>
+        <div class="bd">
+                 {{outlet}}
+                  
+            
+        </div>
+    </div>
+  
+            
+</script>   

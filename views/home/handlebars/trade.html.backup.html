@@ -1,0 +1,76 @@
+
+<script type="text/x-handlebars" data-template-name="trade/index">
+<div class ='container'>
+    <div class="row home-box"> 
+        <div class="col-md-12">
+            <div class ='container'>       
+                <div class="topBar">  
+
+
+    <div class="collapse navbar-collapse border_bottom_radius" id="navbar-collapse-1">
+        <ul class="nav navbar-nav">                                
+            <!-- Dropdown -->
+            <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">  
+                <~i18n .Lang "currency"~><span class="badge">{{model.currency.length}} </span><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    {{#each item in model.currency}}
+                        <li>
+                           {{#link-to 'cfd' item.symbol}} 
+                            <~if eq .Lang "zh-CN"~>
+                               {{item.cid}}   
+                            <~end~>
+                            <~if eq .Lang "en-US"~>
+                               {{item.eid}}   
+                            <~end~>
+                           <span class='buy'>{{item.buyPrice}}</span>
+                           <span class='sell'>{{item.sellPrice}}</span>
+                           {{/link-to}}                             
+                          
+                        </li>   
+                    {{/each}}
+
+                </ul>
+            </li>
+            <!-- E-mail dropdown -->
+            <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><~i18n .Lang "indice"~> <span class="badge">{{model.index.length}} </span><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    {{#each item in model.index}}
+                        <li>
+                           {{#link-to 'cfd' item.symbol}} 
+                            <~if eq .Lang "zh-CN"~>
+                               {{item.cid}}   
+                            <~end~>
+                            <~if eq .Lang "en-US"~>
+                               {{item.eid}}   
+                            <~end~>
+                           <span class='buy'>{{item.buyPrice}}</span>
+                           <span class='sell'>{{item.sellPrice}}</span>
+                           {{/link-to}}                              
+                        </li>   
+                    {{/each}}
+                </ul>
+            </li>
+        </ul>            
+    </div>
+      
+</div>
+</div>
+</div>
+</div>
+</div>      
+                
+</script>
+<script type="text/x-handlebars" data-template-name="trade">
+<div class='main-header'>
+<div class ='container'>
+    <div class="row home-box"> 
+        <div class="col-md-12">     
+                 {{outlet}}
+        </div>
+    </div>
+
+</div>
+</div>
+</script>

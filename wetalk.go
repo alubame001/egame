@@ -30,6 +30,8 @@ import (
 	"github.com/alubame001/egame/routers/egame"
 	"github.com/alubame001/egame/routers/post"
 	"github.com/alubame001/egame/routers/trade"
+	"github.com/alubame001/egame/routers/video"
+	"github.com/alubame001/egame/routers/home"
 	"github.com/alubame001/egame/setting"
 	"github.com/alubame001/egame/task"
 	//_ "github.com/go-sql-driver/mysql"
@@ -72,22 +74,36 @@ func main() {
 	} else {
 		beego.Info("Develment mode enabled")
 	}
+	
 	beego.Info(beego.AppName, setting.APP_VER, setting.AppUrl)
 
 	if !setting.IsProMode {
 		beego.SetStaticPath("/static_source", "static_source")
 		beego.DirectoryIndex = true
 	}
+
+	home := new(home.HomeRouter)
+	//beego.Router("/", trade, "get:Get")
+	beego.Router("/home", home, "get:Get")
+	beego.Router("/", home, "get:Get")
+	beego.Router("/time", home, "get:Time")
+
 	trade := new(trade.TradeRouter)
 	//beego.Router("/", trade, "get:Get")
 	beego.Router("/trade", trade, "get:Get")
+
+	video := new(video.VideoRouter)	
+	beego.Router("/video", video, "get:Get")
+	beego.Router("/video/bet/lol", video, "post:Betlol")
+
+
 	beego.Router("/join", trade, "post:Join")
 	beego.Router("/lp", trade, "get:Join")
 	beego.Router("/lp/post", trade)
 	beego.Router("/lp/fetch", trade, "get:Fetch")
 
 	egame := new(egame.EgameRouter)
-	beego.Router("/", egame, "get:Get")
+//	beego.Router("/", egame, "get:Get")
 	beego.Router("/egame", egame, "get:Get")
 	beego.Router("/egame/videopoke", egame, "get:Videopoke")
 	beego.Router("/egame/crap", egame, "get:Crap")
@@ -108,6 +124,7 @@ func main() {
 
 	// Add Filters
 	beego.InsertFilter("/img/*", beego.BeforeRouter, attachment.ImageFilter)
+	//beego.InsertFilter("/img/*", beego.BeforeRouter, attachment.ImageFilter)
 
 	beego.InsertFilter("/captcha/*", beego.BeforeRouter, setting.Captcha.Handler)
 
@@ -209,26 +226,14 @@ func main() {
 	if beego.RunMode == "dev" {
 		beego.Router("/test/:tmpl(mail/.*)", new(base.TestRouter))
 	}
-	/* 配合erger用的*/
-	/*
-		beego.SetStaticPath("/resource", "static_source/js/egret/resource")
-		beego.SetStaticPath("/slot", "static_source/js/egret/launcher")
-		beego.SetStaticPath("/launcher", "static_source/js/egret/launcher")
-		beego.SetStaticPath("/bin-debug", "static_source/js/egret/bin-debug")
-		beego.SetStaticPath("/libs", "static_source/js/egret/libs")
-	*/
-	beego.SetStaticPath("/resource", "resource")
-	//beego.SetStaticPath("/slot", "egret/slot/launcher")
-	//beego.SetStaticPath("/launcher", "egret/slot/launcher")
-	//beego.SetStaticPath("/bin-debug", "egret/slot/bin-debug")
-	beego.SetStaticPath("/crap_libs", "static_source/js/egret/crap/libs")
-	beego.SetStaticPath("/crap_src", "static_source/js/egret/crap/bin-debug/src")
+	/* 配合egret用的*/
 
-	beego.SetStaticPath("/slot_libs", "static_source/js/egret/slot/libs")
-	beego.SetStaticPath("/slot_src", "static_source/js/egret/slot/bin-debug/src")
+	beego.SetStaticPath("/resource", "resource")
 
 	beego.SetStaticPath("/videopoke_libs", "static_source/js/egret/videopoke/libs")
 	beego.SetStaticPath("/videopoke_src", "static_source/js/egret/videopoke/bin-debug/src")
+
+	beego.SetStaticPath("/json", "json")  
 
 	beego.DirectoryIndex = true
 	beego.Run()

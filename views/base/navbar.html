@@ -1,5 +1,5 @@
-<nav id="navbar" class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
+<nav id="navbar" class="fit web_bg navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container game_title">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -25,12 +25,39 @@
 
                 <li <~if .IsCommunity~>class="active"<~end~>><a target="_self" href="/community"><~i18n .Lang "navbar.community"~></a></li>
                 <li <~if .IsEgame~>class="active"<~end~>><a target="_self" href="/egame"><~i18n .Lang "navbar.egame"~></a></li>
+
+                <li <~if .IsVideo~>class="active"<~end~>><a target="_self" href="/video"><~i18n .Lang "navbar.video"~></a></li>                
                     
 
             </ul>
-    
+ 
             <ul class="nav navbar-nav navbar-right navbar-menu">
                 <~if .IsLogin~>
+                   
+                   
+
+
+                    <li class="dropdown avatar">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="middle" src="<~.AvatarURL~><~.User.GrEmail~>?size=48"></a>
+                        <ul class="dropdown-menu">
+                           <li>
+
+                           <~template "base/form/person_info.html" .~>
+
+
+
+                           </li>
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+
+
                     <li>
                    <a href="<~.AppUrl~>settings/profile"><i class="fa fa-user"></i> <~.User.UserName~></a>
                    </li> 

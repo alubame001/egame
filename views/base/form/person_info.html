@@ -1,0 +1,51 @@
+<div class="person_info">
+    <div class="hd">
+        <div class="dzing_box">
+            <div class="dzing_box_account">
+                <p><a href="/settings/profile/"><img src="/static/img/avatar/jemeshsu-04_normal.png" alt="会员头像"></a></p>
+                <p align="right" class="a1"><a href="/logout">退出</a><a href="/settings/profile/">账户中心</a></p>
+  
+            </div>
+        </div>
+    </div>
+    <div class="bd">
+        <div class="dzing_box">
+            <div class="dzing_box_xq">
+                <p><em><l><~i18n .Lang "model.user_nickname"~></l></em> <span class="lightorange a1"><~.User.UserName~></span>     <span style="text-align:right;"><em>ID</em> <b class="lightgreen"><~.User.Id~></b></span></p>
+                <p><em><l><~i18n .Lang "auth.verify"~></l></em>
+                <~if .User.IsActiveEmail~>
+                    <i class="sel"><a href="/settings/profile/" title=<~i18n .Lang "auth.verified"~> class="lightgreen">√</a></i>
+                    <a href="/member/account/email" class="lightgreen" title=<~i18n .Lang "auth.verified"~> class="lightgreen"><l><~i18n .Lang "auth.login_email"~></l></a>
+                <~else~>
+                    <i><a href="/member/account/email"  title=<~i18n .Lang "auth.not_verified"~> class="lightred">!</a></i>
+                    <a href="/member/account/mobile" class="lightred" title=<~i18n .Lang "auth.not_verified"~>> <l><~i18n .Lang "auth.login_email"~></l></a>
+                <~end~>
+                        |
+                 <~if .User.IsActiveMobile~>
+                    <i class="sel"><a href="/settings/profile/" title=<~i18n .Lang "auth.verified"~> class="lightgreen">√</a></i>
+                    <a href="/member/account/mobile" class="lightgreen" title=<~i18n .Lang "auth.verified"~>><l><~i18n .Lang "auth.login_mobile"~></l></a>
+                <~else~>
+                    <i><a href="/member/account/mobile" title=<~i18n .Lang "auth.not_verified"~> class="lightred">!</a></i>
+                    <a href="/member/account/mobile" class="lightred" title=<~i18n .Lang "auth.not_verified"~>><l><~i18n .Lang "auth.login_mobile"~></l></a>
+                <~end~>               
+                        |
+                 <~if .User.IsActiveGa~>
+                    <i class="sel"><a href="/settings/profile/" title=<~i18n .Lang "auth.verified"~> class="lightgreen">√</a></i>
+                    <a href="/member/account/ga" class="lightgreen" title=<~i18n .Lang "auth.verified"~>><l><~i18n .Lang "auth.login_ga"~></l></a>
+                <~else~>
+                    <i><a href="/member/account/ga" title=<~i18n .Lang "auth.not_verified"~> class="lightred">!</a></i>
+                    <a href="/member/account/ga" class="lightred" title=<~i18n .Lang "auth.not_verified"~>><l><~i18n .Lang "auth.login_ga"~></l></a>
+                <~end~>  
+                <!--
+                <p><em><l><~i18n .Lang "coin.bitcoin"~></l> </em> <span class="lightorange">0.00000080</span></p>
+                <p><em> <l><~i18n .Lang "coin.vgold"~></l></em> <span class="lightorange">0</span></p>
+                -->
+
+                <~if .IsLogin~>
+                    <p class="a1 gray1" style="overflow:hidden;margin: 0px;"><l><~i18n .Lang "auth.last_login"~></l>:<~.User.LastLoginAddress~></p>
+                    <p class="a1 gray1" style="overflow:hidden;margin: 0px;"><~datetimes .User.LastLoginTime~> ( <~timesince .Lang .User.LastLoginTime~>)</p>  
+                <~end~>
+            </div>
+        </div>
+    </div>
+</div>

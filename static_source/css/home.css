@@ -1,0 +1,2679 @@
+html {
+	background: #FFF;
+}
+
+blockquote,body,button,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,td,textarea,th,ul {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,img {
+	border: 0;
+}
+
+address,caption,cite,code,dfn,em,optgroup,strong,th,var {
+	font-weight: inherit;
+	font-style: inherit;
+}
+
+del,ins {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+caption,th {
+	text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 400;
+	font-size: 100%;
+}
+
+q:after,q:before {
+	content: '';
+}
+
+abbr,acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+sub,sup {
+	vertical-align: baseline;
+}
+
+legend {
+	color: #000;
+}
+
+button,input,optgroup,option,select,textarea {
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+#debug {
+	position: fixed;
+	top: 40px;
+	left: 40px;
+	z-index: 999;
+	overflow: hidden;
+	width: 20px;
+	height: 20px;
+	border: 1px solid gray;
+	background-color: #dcdcdc;
+	box-shadow: 0 0 8px 0 #372816;
+	color: #2f4f4f;
+	text-shadow: none;
+	font-family: Arial,sans-serif;
+}
+
+#debug p {
+	text-shadow: none;
+	font-family: 'Courier New',Courier,monospace;
+}
+
+#debug>div.navi {
+	padding: 0 2px;
+	height: 20px;
+	border: none;
+	text-align: center;
+	font-weight: 700;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+#debug>div.tab {
+	overflow: auto;
+	margin: 0;
+	width: auto;
+}
+
+#debug>div.tab>div:first-child {
+	border-top: none;
+}
+
+#debug>div.tab>div {
+	padding: 5px;
+	border-top: 1px dashed gray;
+}
+
+#debug>div.tab>div>p {
+	font-size: 12px;
+}
+
+#debug>div.tab>div>p.small {
+	text-align: right;
+	font-size: 11px;
+}
+
+#debug>div.menu {
+	display: block;
+	border-bottom: 2px solid #000;
+	font-size: 11px;
+}
+
+#debug>div.menu>ul {
+	float: left;
+	margin: 0;
+	padding: 5px;
+}
+
+#debug>div.menu>ul li:first-child {
+	padding-left: 0;
+	border: none;
+}
+
+#debug>div.menu>ul li {
+	float: left;
+	display: block;
+	margin-right: 5px;
+	padding-left: 5px;
+	border-left: 1px solid gray;
+	text-decoration: none;
+	text-transform: lowercase;
+	cursor: pointer;
+}
+
+#debug>div.menu>ul li.active,#debug>div.menu>ul li.critical {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+#debug .php_error {
+	color: red;
+}
+
+#debug .tab.helpers div,#debug .tab.locale_switch div {
+	font-weight: 700;
+	cursor: pointer;
+}
+
+#debug .tab.helpers div:hover,#debug .tab.locale_switch div:hover {
+	text-decoration: underline;
+}
+
+#debug .tab.helpers div p.small,#debug .tab.locale_switch div p.small {
+	display: none;
+}
+
+html.communitypage #logo,html.landingpage.home #logo,html.landingpage.home2 #logo,html.landingpage.home3 #logo,html.landingpage.home4 #logo {
+	z-index: 15;
+	margin: 9px auto 0;
+	height: 134px;
+	text-align: center;
+}
+
+html.landingpage #logo {
+	z-index: 15;
+	margin: 0 auto 10px;
+	width: 300px;
+	height: 90px;
+	text-align: center;
+}
+
+.validator fieldset {
+	position: relative;
+}
+
+.validator fieldset>img.ssl {
+	cursor: help;
+}
+
+form.pageForm.wide label {
+	width: 100px;
+}
+
+form.pageForm.wide input,form.pageForm.wide textarea {
+	width: 293px;
+	max-width: 293px;
+	min-width: 293px;
+	background: url("../../../siedler/images/common/form/input_bg_wide.jpg?v=156f3");
+}
+
+form.pageForm.wide textarea {
+	background: url("../../../siedler/images/common/form/textarea_wide.jpg?v=e1f9c");
+}
+
+.panelForm,.panelForm a {
+	color: #e3cb8f;
+}
+
+.panelForm fieldset {
+	padding-top: 2px;
+	height: auto;
+	background: url("../../../siedler/images/common/form/panel.png?v=8c740") no-repeat;
+}
+
+.panelForm fieldset .overlay,.panelForm fieldset input {
+	overflow: hidden;
+	margin: 10px 0 9px 7px;
+	padding: 0 5px;
+	width: 172px;
+	height: 24px;
+	text-align: center;
+	line-height: 24px;
+}
+
+.panelForm fieldset .overlay {
+	position: absolute;
+	left: 0;
+}
+
+.panelForm fieldset input {
+	border: none;
+	background: url("../../../siedler/images/common/register/input.png?v=d9ba8");
+	color: #e3cb8f;
+}
+
+.panelForm fieldset.smallBorder {
+	padding-top: 0;
+	background-position: 0 -2px;
+}
+
+.panelForm .showWhileBusy {
+	height: 100%;
+	text-align: center;
+	font-weight: 700;
+}
+
+.panelForm fieldset input[type=checkbox] {
+	position: absolute;
+	left: -10000px;
+}
+
+.panelForm fieldset.label {
+	padding-top: 11px;
+	padding-bottom: 9px;
+}
+
+.panelForm fieldset label {
+	display: block;
+	margin: 0 0 0 10px;
+	padding: 0 15px 0 25px;
+	min-height: 18px;
+	background: url("../../../siedler/images/common/register/checkbox.png?v=4cf65") no-repeat left center;
+	font-size: 11px;
+	line-height: 11px;
+}
+
+.panelForm fieldset label.checked {
+	background-image: url("../../../siedler/images/common/register/checkboxChecked.png?v=5cbf2");
+}
+
+#register fieldset.spacer {
+	padding: 5px 0;
+	min-height: 87px;
+	background-image: url("../../../siedler/images/common/register/panel-ssl-ornament.png?v=e9f38");
+}
+
+#register fieldset.spacer p {
+	padding: 0 5px;
+}
+
+.panelForm fieldset.ssl {
+	padding-top: 4px;
+	padding-bottom: 2px;
+	height: 24px;
+	font-size: 11px;
+	line-height: 24px;
+	cursor: help;
+}
+
+.panelForm fieldset.ssl>img {
+	float: left;
+	margin: 0 8px;
+}
+
+#rememberUserLabel {
+	line-height: 18px;
+}
+
+.panelForm a.facebook {
+	background: url("../../../siedler/images/common/login/facebook.png?v=f7a1b") no-repeat top center;
+}
+
+#login a.gamesload,.panelForm a.gamesload {
+	background: url("../../../siedler/images/common/register/gamesload.png?v=009cb") no-repeat top center;
+}
+
+#login a.partnerButton,.panelForm a.partnerButton {
+	display: block;
+	overflow: hidden;
+	margin-bottom: 1px;
+	padding: 0 12px 0 8px;
+	height: 26px;
+	color: #a4fb0b;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 26px;
+}
+
+.panelForm a.gamesloadSmall {
+	padding-left: 45px;
+	background: url("../../../siedler/images/common/register/gamesload-small.png?v=157e6") no-repeat top center;
+}
+
+#login a.partnerButton:hover,.panelForm a.partnerButton:hover {
+	background-position: bottom center;
+}
+
+.panelForm a.facebook,.panelForm p.facebook {
+	color: #fff;
+}
+
+.panelForm p.partnerButton {
+	text-align: center;
+}
+
+.panelForm a.facebook {
+	padding-left: 25px;
+}
+
+.expander,.rightButton {
+	float: right;
+}
+
+.pageForm .formInfo {
+	padding-top: 10px;
+}
+
+.pageForm>.footer {
+	padding-top: 10px;
+	font-size: 9px;
+}
+
+.pageForm .hideWhileBusy,.pageForm .showWhileBusy {
+	float: right;
+	margin: 11px 5px 0 0;
+}
+
+.pageForm .hideWhileBusy {
+	margin-top: 17px;
+}
+
+.pageForm input[type=password],.pageForm input[type=text],.pageForm label {
+	margin-top: 4px;
+	height: 26px;
+	line-height: 26px;
+}
+
+.pageForm label {
+	float: left;
+	display: block;
+	padding-right: 15px;
+	width: 200px;
+	text-align: right;
+}
+
+.pageForm input[type=password],.pageForm input[type=text] {
+	float: left;
+	padding: 0 10px;
+	width: 193px;
+	border: 0 none;
+	background: url("../../../siedler/images/community/profile/input_bg.jpg?v=58f2b") no-repeat;
+	color: #fff;
+}
+
+#ubioptinForm label.checkbox {
+	line-height: 18px;
+}
+
+.pageForm label.checkbox {
+	margin-top: 5px;
+	padding-left: 25px;
+	width: auto;
+	background: url("../../../siedler/images/common/register/checkbox.png?v=4cf65") no-repeat;
+	background-position: 2px 2px;
+	text-align: left;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.pageForm label.checkbox.checked {
+	background-image: url("../../../siedler/images/common/register/checkboxChecked.png?v=5cbf2");
+}
+
+.pageForm input[type=checkbox] {
+	position: relative;
+	left: -10000px;
+}
+
+.pageForm a.submit {
+	margin-top: 8px;
+}
+
+.pageForm textarea {
+	padding: 10px;
+	width: 193px;
+	height: 80px;
+	max-width: 193px;
+	max-height: 80px;
+	min-width: 193px;
+	min-height: 80px;
+	border: none;
+	background: url("../../../siedler/images/common/form/textarea.png?v=daf57") no-repeat;
+	color: #fff;
+}
+
+.panelForm fieldset>a.help {
+	position: absolute;
+	top: 15px;
+	right: 14px;
+	width: 15px;
+	height: 15px;
+	background: url("../../../siedler/images/common/register/help.png?v=c586f") no-repeat;
+	cursor: help;
+}
+
+.panelForm fieldset.label>a.help {
+	top: 5px;
+	right: 5px;
+}
+
+.panelForm fieldset>a.help>span,.panelForm fieldset>p.hint {
+	display: none;
+}
+
+.panelForm fieldset.partners {
+	padding-top: 1px;
+	background: 0 0;
+}
+
+fieldset.partners>span {
+	float: left;
+	margin: 0 0 0 7px;
+	height: 24px;
+	font-size: 11px;
+	line-height: 24px;
+}
+
+fieldset.partners a {
+	float: right;
+	display: block;
+	width: 50px;
+	height: 24px;
+	background: no-repeat top center;
+}
+
+#registerForm fieldset.partners a:hover,fieldset.partners a:hover {
+	background-position: bottom center;
+}
+
+fieldset.partners a.facebook {
+	background-image: url("../../../siedler/images/common/register/facebook-big.png?v=c9fe1");
+	text-align: center;
+	text-decoration: none;
+	line-height: 26px;
+}
+
+#registerForm #registerFieldsetContainer fieldset.partners a.nk {
+	display: block;
+	margin-left: 2px;
+	width: 95px;
+	height: 21px;
+	background: url("../../../siedler/images/common/register/nksprite.png?v=f8a5f") no-repeat 0 -21px;
+}
+
+#loginForm fieldset.partners a.nk {
+	display: block;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	width: 77px;
+	height: 18px;
+	background: url("../../../siedler/images/common/register/nksprite.png?v=f8a5f") no-repeat 0 -42px;
+}
+
+.requestOverlay {
+	background-image: url("../../../siedler/images/common/form/shade.png?v=c7e64");
+}
+
+#login>.contentBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	padding: 16px 26px 0;
+	width: 196px;
+	height: auto;
+	min-height: 0;
+	background: url("../../../siedler/images/common/login/background.png?v=a0e91") no-repeat 10px 5px;
+}
+
+#login>.contentBox>.border {
+	position: absolute;
+	width: 248px;
+	background: url("../../../siedler/images/common/login/border.png?v=057fc") no-repeat;
+}
+
+#login>.contentBox>.border.top {
+	top: 0;
+	left: 0;
+	height: 18px;
+}
+
+#login>.contentBox>.border.right {
+	top: 18px;
+	bottom: 0;
+	left: 220px;
+	width: 29px;
+	background-position: -220px -18px;
+}
+
+#login>.contentBox>.border.bottom {
+	bottom: -24px;
+	left: 10px;
+	width: 233px;
+	height: 24px;
+	background-image: url("../../../siedler/images/common/login/background.png?v=a0e91");
+	background-position: bottom left;
+}
+
+#login>.contentBox>.border.left {
+	top: 18px;
+	bottom: 0;
+	left: 0;
+	width: 27px;
+	background-position: 0 -18px;
+}
+
+#login>.contentBox #loginFormButton {
+	width: 196px;
+	background-image: url("../../../siedler/images/common/login/button.jpg?v=26a80");
+}
+
+#login>.contentBox ul {
+	float: left;
+	padding: 10px 0 8px;
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+}
+
+#login>.contentBox ul>li {
+	float: right;
+	padding: 0 10px;
+}
+
+#login>.contentBox ul>li:first-child {
+	float: left;
+}
+
+#login .showWhileBusy {
+	color: #E3CB8F;
+	line-height: 43px;
+}
+
+#login .showWhileBusy>img {
+	margin-right: 8px;
+	vertical-align: middle;
+}
+
+#login .nopartners fieldset.partners {
+	display: none;
+}
+
+body.register .left .uplaySpecialLogin {
+	display: inline;
+}
+
+body.register .left .uplaySpecialLogin+span {
+	display: none;
+}
+
+#avatarPictureSmall1 {
+	background-image: url("../../../siedler/images/landing/avatar/1.png?v=8cf0a");
+}
+
+#avatarPictureSmall2 {
+	background-image: url("../../../siedler/images/landing/avatar/2.png?v=b0d37");
+}
+
+#avatarPictureSmall3 {
+	background-image: url("../../../siedler/images/landing/avatar/3.png?v=8da59");
+}
+
+#avatarPictureSmall4 {
+	background-image: url("../../../siedler/images/landing/avatar/4.png?v=611a3");
+}
+
+#avatarPictureSmall5 {
+	background-image: url("../../../siedler/images/landing/avatar/5.png?v=3e0ee");
+}
+
+#avatarPictureSmall6 {
+	background-image: url("../../../siedler/images/landing/avatar/6.png?v=ac174");
+}
+
+#avatarPictureSmall7 {
+	background-image: url("../../../siedler/images/landing/avatar/7.png?v=e0d47");
+}
+
+#avatarPictureSmall8 {
+	background-image: url("../../../siedler/images/landing/avatar/8.png?v=2dfa8");
+}
+
+#avatarPictureSmall9 {
+	background-image: url("../../../siedler/images/landing/avatar/9.png?v=7a252");
+}
+
+#avatarPictureSmall10 {
+	background-image: url("../../../siedler/images/landing/avatar/10.png?v=9b3c8");
+}
+
+#avatarPictureSmall11 {
+	background-image: url("../../../siedler/images/landing/avatar/11.png?v=4b510");
+}
+
+#avatarPictureSmall12 {
+	background-image: url("../../../siedler/images/landing/avatar/12.png?v=ffa98");
+}
+
+#avatarPictureSmall13 {
+	background-image: url("../../../siedler/images/landing/avatar/13.png?v=b48b3");
+}
+
+#avatarPictureSmall14 {
+	background-image: url("../../../siedler/images/landing/avatar/14.png?v=474fb");
+}
+
+#avatarPictureSmall15 {
+	background-image: url("../../../siedler/images/landing/avatar/15.png?v=74b86");
+}
+
+#avatarPictureSmall16 {
+	background-image: url("../../../siedler/images/landing/avatar/16.png?v=f5f6e");
+}
+
+#avatarPictureSmall17 {
+	background-image: url("../../../siedler/images/landing/avatar/17.png?v=50f9c");
+}
+
+#avatarPictureSmall18 {
+	background-image: url("../../../siedler/images/landing/avatar/18.png?v=f199e");
+}
+
+#avatarPictureSmall19 {
+	background-image: url("../../../siedler/images/landing/avatar/19.png?v=4f569");
+}
+
+#avatarPictureSmall20 {
+	background-image: url("../../../siedler/images/landing/avatar/20.png?v=d1c35");
+}
+
+#avatarPictureSmall21 {
+	background-image: url("../../../siedler/images/landing/avatar/21.png?v=ed169");
+}
+
+#avatarPictureSmall22 {
+	background-image: url("../../../siedler/images/landing/avatar/22.png?v=5720a");
+}
+
+#avatarPictureSmall23 {
+	background-image: url("../../../siedler/images/landing/avatar/23.png?v=aaf49");
+}
+
+#avatarPictureSmall24 {
+	background-image: url("../../../siedler/images/landing/avatar/24.png?v=5475e");
+}
+
+#avatarPictureSmall25 {
+	background-image: url("../../../siedler/images/landing/avatar/25.png?v=3354a");
+}
+
+#avatarPictureSmall26 {
+	background-image: url("../../../siedler/images/landing/avatar/26.png?v=036ec");
+}
+
+#avatarPictureSmall27 {
+	background-image: url("../../../siedler/images/landing/avatar/27.png?v=c3393");
+}
+
+#avatarPictureSmall28 {
+	background-image: url("../../../siedler/images/landing/avatar/28.png?v=d0ab8");
+}
+
+#avatarPictureSmall29 {
+	background-image: url("../../../siedler/images/landing/avatar/29.png?v=5191a");
+}
+
+#avatarPictureSmall30 {
+	background-image: url("../../../siedler/images/landing/avatar/30.png?v=f0205");
+}
+
+#avatarPictureSmall31 {
+	background-image: url("../../../siedler/images/landing/avatar/31.png?v=95bc5");
+}
+
+#avatarPictureSmall32 {
+	background-image: url("../../../siedler/images/landing/avatar/32.png?v=56c4a");
+}
+
+#avatarPictureSmall33 {
+	background-image: url("../../../siedler/images/landing/avatar/33.png?v=bf2b4");
+}
+
+#avatarPictureSmall34 {
+	background-image: url("../../../siedler/images/landing/avatar/34.png?v=29106");
+}
+
+#avatarPictureSmall35 {
+	background-image: url("../../../siedler/images/landing/avatar/35.png?v=04036");
+}
+
+#avatarPictureSmall36 {
+	background-image: url("../../../siedler/images/landing/avatar/36.png?v=5ae41");
+}
+
+#avatarPictureSmall37 {
+	background-image: url("../../../siedler/images/landing/avatar/37.png?v=1f8a7");
+}
+
+#avatarPictureSmall38 {
+	background-image: url("../../../siedler/images/landing/avatar/38.png?v=ab0b9");
+}
+
+#avatarPictureSmall39 {
+	background-image: url("../../../siedler/images/landing/avatar/39.png?v=5043b");
+}
+
+#avatarPictureSmall40 {
+	background-image: url("../../../siedler/images/landing/avatar/40.png?v=2ed9b");
+}
+
+#avatarPictureSmall41 {
+	background-image: url("../../../siedler/images/landing/avatar/41.png?v=7fef4");
+}
+
+#avatarPictureSmall42 {
+	background-image: url("../../../siedler/images/landing/avatar/42.png?v=7a40d");
+}
+
+#avatarPictureSmall43 {
+	background-image: url("../../../siedler/images/landing/avatar/43.png?v=a9be8");
+}
+
+#avatarPictureSmall44 {
+	background-image: url("../../../siedler/images/landing/avatar/44.png?v=3cede");
+}
+
+#avatarPictureSmall45 {
+	background-image: url("../../../siedler/images/landing/avatar/45.png?v=5ef36");
+}
+
+#avatarPictureSmall46 {
+	background-image: url("../../../siedler/images/landing/avatar/46.png?v=3f3f8");
+}
+
+#avatarPictureSmall47 {
+	background-image: url("../../../siedler/images/landing/avatar/47.png?v=0f8d6");
+}
+
+#avatarPictureSmall48 {
+	background-image: url("../../../siedler/images/landing/avatar/48.png?v=816b5");
+}
+
+#avatarPictureSmall49 {
+	background-image: url("../../../siedler/images/landing/avatar/49.png?v=33a13");
+}
+
+#avatarPictureSmall50 {
+	background-image: url("../../../siedler/images/landing/avatar/50.png?v=7f456");
+}
+
+#avatarPictureSmall51 {
+	background-image: url("../../../siedler/images/landing/avatar/51.png?v=871ca");
+}
+
+#avatarPictureSmall52 {
+	background-image: url("../../../siedler/images/landing/avatar/52.png?v=c98aa");
+}
+
+#avatarPictureSmall53 {
+	background-image: url("../../../siedler/images/landing/avatar/53.png?v=afdd2");
+}
+
+#avatarPictureSmall54 {
+	background-image: url("../../../siedler/images/landing/avatar/54.png?v=39793");
+}
+
+#avatarPictureSmall55 {
+	background-image: url("../../../siedler/images/landing/avatar/55.png?v=ea331");
+}
+
+#avatarPictureSmall56 {
+	background-image: url("../../../siedler/images/landing/avatar/56.png?v=b9224");
+}
+
+#avatarPictureSmall57 {
+	background-image: url("../../../siedler/images/landing/avatar/57.png?v=384e4");
+}
+
+#avatarPictureSmall58 {
+	background-image: url("../../../siedler/images/landing/avatar/58.png?v=d9bb5");
+}
+
+#avatarPictureSmall59 {
+	background-image: url("../../../siedler/images/landing/avatar/59.png?v=7b701");
+}
+
+#avatarPictureSmall60 {
+	background-image: url("../../../siedler/images/landing/avatar/60.png?v=d3baf");
+}
+
+.validator fieldset div.message {
+	position: absolute;
+	top: 2px;
+	right: -157px;
+	padding: 11px 18px 3px 12px;
+	width: 159px;
+	height: 7px;
+	background: url("../../../siedler/images/common/form/message.png?v=69df6") no-repeat;
+	background-position: right top;
+	font-size: 11px;
+}
+
+.validator fieldset div.message p {
+	display: none;
+}
+
+.validator fieldset div.message h6:first-child {
+	display: block;
+}
+
+.validator fieldset div.message h6 {
+	position: relative;
+	z-index: 1;
+	display: none;
+	overflow: hidden;
+	margin-top: -8px;
+	height: 22px;
+	white-space: nowrap;
+	font-weight: 700;
+	line-height: 22px;
+}
+
+.validator fieldset div.message .arrow {
+	position: absolute;
+	top: 0;
+	left: -13px;
+	width: 23px;
+	height: 29px;
+	background: url("../../../siedler/images/common/form/message-arrow.png?v=8160e") no-repeat;
+}
+
+.validator fieldset div.message .icon {
+	display: none;
+}
+
+.validator fieldset div.message .footer {
+	position: absolute;
+	bottom: -16px;
+	left: 0;
+	width: 189px;
+	height: 16px;
+	background: url("../../../siedler/images/common/form/message.png?v=69df6") no-repeat;
+	background-position: right bottom;
+}
+
+.validator fieldset div.message.error h6 {
+	color: #f9541c;
+}
+
+.validator fieldset div.message.error .arrow {
+	background-position: center center;
+}
+
+.validator fieldset div.message.warning h6 {
+	color: #eed86d;
+}
+
+.validator fieldset div.message.warning .arrow {
+	background-position: center right;
+}
+
+.validator fieldset.focus div.message,.validator fieldset:hover div.message {
+	right: -172px;
+	z-index: 2;
+	width: 174px;
+	height: auto;
+	min-height: 22px;
+	background-position: left top;
+}
+
+.validator fieldset.focus div.message .icon,.validator fieldset:hover div.message .icon {
+	position: absolute;
+	top: -6px;
+	right: -7px;
+	display: block;
+	background: url("../../../siedler/images/common/form/message-icon.png?v=69b54") no-repeat;
+}
+
+.validator fieldset.focus div.message .arrow,.validator fieldset:hover div.message .arrow {
+	background-position: left center;
+}
+
+.validator fieldset.focus div.message p,.validator fieldset:hover div.message p {
+	display: block;
+	margin-top: 5px;
+	color: #473921;
+}
+
+.validator fieldset.focus div.message h6:first-child,.validator fieldset:hover div.message h6:first-child {
+	margin-top: 0;
+}
+
+.validator fieldset.focus div.message h6,.validator fieldset:hover div.message h6 {
+	display: block;
+	overflow: auto;
+	margin-top: 12px;
+	width: 160px;
+	height: auto;
+	color: #473921;
+	white-space: normal;
+	line-height: normal;
+}
+
+.validator fieldset.focus div.message .footer,.validator fieldset:hover div.message .footer {
+	width: 204px;
+	background-position: left bottom;
+}
+
+.validator fieldset.focus div.error .icon,.validator fieldset:hover div.error .icon {
+	background-position: left;
+}
+
+.validator fieldset.focus div.warning .icon,.validator fieldset:hover div.warning .icon {
+	background-position: right;
+}
+
+.validator fieldset:hover div.message {
+	z-index: 3;
+}
+
+.validator fieldset.wide div.message {
+	right: -200px;
+}
+
+.validator fieldset.wide.focus div.message,.validator fieldset.wide:hover div.message {
+	right: -215px;
+}
+
+.validator.right fieldset div.message .arrow {
+	right: -7px;
+	left: auto;
+	background-image: url("../../../siedler/images/common/form/message-arrow-right.png?v=10c3f");
+}
+
+.validator.right fieldset.focus div.message .icon,.validator.right fieldset:hover div.message .icon {
+	left: -7px;
+}
+
+.validator.right fieldset.focus div.message h6,.validator.right fieldset:hover div.message h6 {
+	padding-left: 14px;
+}
+
+.panelForm fieldset div.message {
+	top: 0;
+	right: -189px;
+	height: 22px;
+}
+
+.panelForm fieldset div.message h6 {
+	margin-top: 0;
+	height: 22px;
+	line-height: 22px;
+}
+
+.panelForm fieldset div.message .arrow {
+	height: 44px;
+}
+
+.panelForm fieldset:hover fieldset.focus div.message {
+	right: -204px;
+	height: auto;
+}
+
+.panelForm fieldset:hover fieldset.focus div.message h6 {
+	height: auto;
+	line-height: normal;
+}
+
+.panelForm.right fieldset div.message,.panelForm.right fieldset:hover fieldset.focus div.message {
+	right: 190px;
+}
+
+#registerForm {
+	margin: 30px 0 0;
+}
+
+#registerForm .settlers fieldset.logout {
+	position: relative;
+	right: 0;
+	margin: 10px 0 0;
+	height: 20px!important;
+	text-align: center;
+	font-size: 12px;
+}
+
+#registerForm #shieldButton {
+	margin-top: 13px;
+	padding: 15px;
+	cursor: pointer;
+}
+
+#registerForm #register #registerWait .requestOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	cursor: default;
+}
+
+#registerForm #register #registerWait .requestOverlay img {
+	display: block;
+	margin: 20% auto 0;
+	cursor: default;
+	horizontal-anchor: center;
+}
+
+#registerForm #register #registerWait .requestOverlay div {
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 3px 5px;
+	width: 108px;
+	height: 31px;
+	background: url("../../../siedler/images/template/register/waitingbox/bottom-without-button.png?v=c537f") no-repeat;
+	text-align: center;
+	white-space: nowrap;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 32px;
+}
+
+#registerForm #register input {
+	margin-top: 25px;
+	padding: 0 9px;
+	width: 279px;
+	height: 35px;
+	border: 0 none;
+	background: url("../../../siedler/images/template/register/fields/input.png?v=9d742") no-repeat scroll transparent;
+	color: #ffeec7;
+	text-align: center;
+	font-size: 14px;
+}
+
+#registerForm #register input:hover {
+	background-position: 0 -35px;
+}
+
+#registerForm #register .validation-passed {
+	background-position: 0 -70px;
+}
+
+#registerForm #register .validation-failed {
+	background-position: 0 -105px;
+}
+
+#registerForm #register .overlay.hide {
+	display: block;
+}
+
+#registerForm #register #registerFields {
+	position: relative;
+	margin: 0;
+	margin-top: -65px;
+	padding-bottom: 12px;
+}
+
+#registerForm #register #registerFields fieldset {
+	position: relative;
+	padding: 0;
+	height: 60px;
+}
+
+#registerForm #register #registerFields fieldset .overlay,#registerForm #register #registerFields fieldset input {
+	height: 34px;
+	line-height: 30px;
+}
+
+#registerForm #register #registerFields fieldset #birthdayLabel {
+	display: none;
+}
+
+#registerForm #register #registerFields fieldset .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+#registerForm #register #registerFields fieldset label {
+	display: inline-block;
+	padding: 3px 0 0 30px;
+	width: auto;
+	height: 24px;
+	background: url("../../../siedler/images/template/register/fields/checkbox.png?v=47d91") no-repeat scroll left top transparent;
+	font-size: 10pt;
+	cursor: pointer;
+}
+
+#registerForm #register #registerFields fieldset .checked {
+	background-position: 0 bottom;
+}
+
+#registerForm #register #registerFields fieldset input[type=checkbox] {
+	display: none;
+}
+
+#registerForm #register #registerFields fieldset a.help {
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	left: 3px;
+	margin: 0;
+	width: 15px;
+	height: 15px;
+	background: url("../../../siedler/images/template/register/help.png?v=c586f") no-repeat scroll 0 0 transparent;
+	cursor: help;
+}
+
+#registerForm #register #registerFields fieldset .hint,#registerForm #register #registerFields fieldset a.help>span {
+	display: none;
+}
+
+#registerForm #register #registerFields fieldset .message {
+	top: 0;
+	right: -200px;
+}
+
+#registerForm #register #registerFields fieldset #advice-validate-ajax-email-email,#registerForm #register #registerFields fieldset #advice-validate-ajax-name-name,#registerForm #register #registerFields fieldset #advice-validate-ajax-password-password,#registerForm #register #registerFields fieldset #advice-validate-ajax-ubiemail-email,#registerForm #register #registerFields fieldset #advice-validate-ajax-ubiname-name,#registerForm #register #registerFields fieldset #advice-validate-ajax-ubipassword-password,#registerForm #register #registerFields fieldset #advice-validate-repeat-password2 {
+	top: 26px;
+}
+
+#registerForm #register #registerFields fieldset.label {
+	height: auto;
+}
+
+#registerForm #register #registerFields #ubiBirthdayContainer {
+	margin-top: 8px;
+	padding: 0;
+	height: 35px;
+}
+
+#registerForm #register #registerFields #realmSelection {
+	margin-top: 8px;
+	height: 38px;
+}
+
+#registerForm #register #registerFields .ssl {
+	display: inline-block;
+	margin: 7px 0 0;
+	padding: 0;
+	width: 100%;
+	height: 24px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 28px;
+	cursor: help;
+}
+
+#registerForm #register #registerFields .ssl img {
+	margin-right: 5px;
+	vertical-align: top;
+}
+
+#registerForm #register #registerFields .label {
+	margin-top: 10px!important;
+	padding-right: 0;
+	padding-left: 0;
+	height: 100%;
+}
+
+#registerForm #register #registerFields .label.alone {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#contentBox,#contentBox>* {
+	background: 0 0;
+}
+
+#register #registerFields .avatar {
+	margin: 8px 0 0 45px!important;
+	padding-right: 0;
+	height: 50px;
+}
+
+#register #registerFields .avatar div {
+	float: left;
+}
+
+#register #registerFields .avatar #avatarText {
+	display: none;
+}
+
+#register #registerFields .avatar .arrow.left,#register #registerFields .avatar .arrow.right {
+	margin: 4px 0 0;
+	width: 22px;
+	height: 38px;
+	background: url("../../../siedler/images/template/register/avatar/arrow.png?v=3cc88");
+	cursor: pointer;
+}
+
+#register #registerFields .avatar .arrow.left:hover {
+	background-position: 0 -38px;
+}
+
+#register #registerFields .avatar .arrow.left.inactive:hover {
+	background-position: 0 0;
+}
+
+#register #registerFields .avatar .arrow.right,#register #registerFields .avatar .arrow.right.inactive:hover {
+	background-position: -22px 0;
+}
+
+#register #registerFields .avatar .arrow.right:hover {
+	background-position: -22px -38px;
+}
+
+#register #registerFields .avatar .arrow.inactive {
+	cursor: not-allowed;
+}
+
+#register #registerFields .avatar .container #slider {
+	float: none;
+	overflow: hidden;
+	margin: 0;
+	width: 153px;
+	height: 49px;
+}
+
+#register #registerFields .avatar .container #slider>div {
+	float: left;
+}
+
+#register #registerFields .avatar .container #slider td,#register #registerFields .avatar .container #slider td .avatarBox {
+	overflow: hidden;
+	width: 51px;
+	height: 49px;
+	max-width: 51px;
+	max-height: 49px;
+}
+
+#register #registerFields .avatar .container #slider .avatarBox {
+	background: url("../../../siedler/images/template/register/avatar/avatarBorder.png?v=d67b6");
+	cursor: pointer;
+}
+
+#register #registerFields .avatar .container #slider .avatarBox:hover {
+	background-position: 0 98px;
+}
+
+#register #registerFields .avatar .container #slider .checked .avatarBox {
+	background-position: 0 49px;
+}
+
+#register #registerFields .avatar .container #slider .avatarBox img {
+	margin: -5px;
+}
+
+#register #registerFields .avatar .container #slider #advice-validate-ajax-avatar-avatar {
+	top: 8px;
+}
+
+#register #registerFields .avatar .container #slider .smallAvatar {
+	display: block;
+	margin: -5px 0 0 -5px;
+	width: 60px;
+	height: 60px;
+}
+
+#register #registerFields .dropdown {
+	position: relative;
+	width: 298px;
+	height: 33px;
+	color: #524226;
+}
+
+#register #registerFields .dropdown>div:first-child {
+	position: relative;
+	padding: 0 36px 0 9px;
+	width: 253px;
+	height: 35px;
+	background: url("../../../siedler/images/template/register/dropdown/top.png?v=a0568") repeat scroll center top transparent;
+	color: #FFEEC7;
+	text-align: center;
+	line-height: 33px;
+	cursor: pointer;
+}
+
+#register #registerFields .dropdown>div:first-child span {
+	top: 6px;
+	right: 34px;
+}
+
+#register #registerFields .dropdown .scrollContainer {
+	position: relative;
+	overflow: hidden;
+	width: 298px;
+	height: 0;
+	background: url("../../../siedler/images/template/register/dropdown/list.png?v=87bf8");
+}
+
+#register #registerFields .dropdown .scrollContainer>div:first-child {
+	background-position: bottom;
+}
+
+#register #registerFields .dropdown .scrollContainer ul {
+	width: 100%;
+}
+
+#register #registerFields .dropdown .scrollContainer ul li {
+	position: relative;
+	z-index: 1;
+	margin: 0 4px;
+	padding: 0;
+	width: 258px;
+	height: 24px;
+	border-bottom: 1px solid #d4bf97;
+	background-image: none;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+#register #registerFields .dropdown .scrollContainer ul li>span {
+	top: 3px;
+	right: 2px;
+}
+
+#register #registerFields .dropdown .scrollContainer ul li.active,#register #registerFields .dropdown .scrollContainer ul li.legend,#register #registerFields .dropdown .scrollContainer ul li:hover {
+	background: #d7b774!important;
+	cursor: default;
+}
+
+#register #registerFields .dropdown .scrollContainer ul li.inactive {
+	background-position: 0 -44px;
+	color: #5f5f5f;
+	cursor: not-allowed;
+}
+
+#register #registerFields .dropdown .scrollContainer .slider.scrollSlider {
+	position: absolute;
+	top: 0;
+	right: 3px;
+	left: inherit;
+	z-index: 1;
+	width: 27px;
+	height: 100%;
+	background: 0 0;
+}
+
+#register #registerFields .dropdown .scrollContainer .slider.scrollSlider .bar {
+	width: 23px;
+	height: 50px;
+	background: #f1bf69 url("../../../siedler/images/template/register/dropdown/listScroll.png?v=1b0d0") 0 0 no-repeat;
+	cursor: pointer;
+}
+
+#register #registerFields .dropdown #realmDropdown div span {
+	top: 6px;
+	right: 2px;
+}
+
+#register #registerFields .dropdown.open>div:first-child {
+	background-position: bottom;
+}
+
+#register #registerFields .dropdown.open .scrollContainerTop {
+	display: block;
+	width: 298px;
+	height: 4px;
+	background-image: url("../../../siedler/images/template/register/dropdown/listBorder.png?v=fea29");
+	background-position: 0 top;
+}
+
+#register #registerFields .dropdown.open .scrollContainerBottom {
+	display: block;
+	width: 298px;
+	height: 3px;
+	background-image: url("../../../siedler/images/template/register/dropdown/listBorder.png?v=fea29");
+	background-position: 0 bottom;
+}
+
+#register #registerFields .scrollContainerTop {
+	display: none;
+	height: 2px;
+}
+
+#register #registerFields .scrollContainerBottom {
+	display: none;
+	height: 3px;
+}
+
+#dialogContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 362px;
+	min-height: 29px;
+}
+
+#dialogContainer .hide {
+	display: none;
+}
+
+#dialogContainer .top {
+	height: 11px;
+	background: url("../../../siedler/images/common/dialog/borderHorizontal.png?v=46967") no-repeat 0 0;
+}
+
+#dialogContainer .center {
+	padding: 0 21px 0 17px;
+	width: 324px;
+	min-height: 100px;
+	background: url("../../../siedler/images/common/dialog/borderVertical.png?v=c48fa") repeat-y;
+}
+
+#dialogContainer .bottom {
+	height: 20px;
+	background: url("../../../siedler/images/common/dialog/borderHorizontal.png?v=46967") no-repeat 0 -11px;
+}
+
+#dialogContainer .center div {
+	border-right: #846848 1px solid;
+	border-left: #846848 1px solid;
+}
+
+#dialogContainer .center .innerTop {
+	position: relative;
+	width: 322px;
+	border-top: #846848 1px solid;
+	background-color: #dfc488;
+}
+
+#dialogContainer .center .spacer {
+	height: 0;
+	border: none;
+	border-top: #b19b69 1px solid;
+	border-bottom: #e5d6b2 1px solid;
+}
+
+#dialogContainer .center .innerCenter {
+	position: relative;
+	min-height: 50px;
+	background-color: #e9d5a4;
+}
+
+#dialogContainer.icon .center .innerCenter {
+	min-height: 65px;
+}
+
+#dialogContainer .center .innerBottom {
+	height: 51px;
+	border-bottom: #846848 1px solid;
+	background-color: #e9d5a4;
+	text-align: center;
+}
+
+#dialogContainer .center .innerBottom.one-button>a.submit {
+	float: none;
+	margin: 0 auto;
+}
+
+#dialogContainer .center .innerBottom.one-button>a.dualButtons {
+	float: left;
+	margin-left: 25px;
+}
+
+#dialogContainer .center .innerCenter .icon {
+	position: absolute;
+	top: 9px;
+	left: 0;
+	display: none;
+	width: 60px;
+	height: 60px;
+	border: none;
+	background: top center no-repeat;
+}
+
+#dialogContainer.icon .center .innerCenter .icon {
+	display: block;
+}
+
+#dialogContainer .center .innerBottom>a.submit {
+	float: left;
+	margin-left: 25px;
+}
+
+#dialogContainer .center {
+	color: #372816;
+}
+
+#dialogContainer .center p a {
+	display: block;
+	width: auto;
+	height: auto;
+	background: 0 0;
+	color: #b03b23;
+	text-align: left;
+	line-height: normal;
+}
+
+#dialogContainer .center p a.inline {
+	display: inline;
+}
+
+#dialogContainer .center h1 {
+	padding: 15px 10px;
+	text-align: center;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+#dialogContainer .center .closeable h1 {
+	padding-right: 35px;
+}
+
+#dialogContainer .center .innerTop.closeable a.closeButton {
+	display: block;
+}
+
+#dialogContainer .center .innerTop a.closeButton {
+	position: absolute;
+	top: 11px;
+	right: 6px;
+	display: none;
+	width: 29px;
+	height: 29px;
+	background: url("../../../siedler/images/common/dialog/close.png?v=3ae8e");
+}
+
+#dialogContainer .center .innerTop a.closeButton:hover {
+	background-position: left bottom;
+}
+
+#dialogContainer .center p {
+	padding: 7px 18px 10px;
+	font-size: 12px;
+}
+
+#dialogContainer.icon .center p {
+	padding-left: 60px;
+}
+
+#dialogContainer .center .innerBottom .spacer {
+	margin-bottom: 2px;
+}
+
+.hideWhileWaiting {
+	z-index: 97!important;
+}
+
+#dialogOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 98;
+	background: url("../../../siedler/images/common/shade.png?v=19b0a");
+}
+
+#waitingOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 118px;
+	height: 130px;
+}
+
+#waitingOverlay .top {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#waitingOverlay .bottom {
+	position: absolute;
+	top: 93px;
+	left: 0;
+}
+
+#waitingOverlay div.bottom {
+	padding: 9px 0 0;
+	width: 118px;
+	height: 37px;
+	color: #534226;
+	text-align: center;
+	font-weight: 700;
+}
+
+#captchaBox>div {
+	position: absolute;
+	top: -4px;
+	right: -341px;
+	z-index: 20;
+	padding: 7px 12px 13px 0;
+	width: 320px;
+	height: 101px;
+	background: url("../../../siedler/images/common/login/captcha/background.png?v=52f6a") no-repeat;
+	text-align: center;
+}
+
+#captchaBox>div>#recaptcha_image {
+	overflow: hidden;
+	margin: 8px 8px 5px;
+	width: 302px!important;
+	height: 59px!important;
+	background: url("../../../siedler/images/common/login/captcha/box.png?v=49feb") no-repeat;
+}
+
+#recaptcha_image>img {
+	padding: 1px;
+}
+
+#recaptcha_image_shadow {
+	position: absolute;
+	top: 16px;
+	left: 9px;
+	z-index: 100;
+	width: 300px;
+	height: 57px;
+	-webkit-box-shadow: 2px 2px 6px #000;
+	-moz-box-shadow: 2px 2px 6px #000;
+	box-shadow: inset 2px 2px 6px #000;
+}
+
+#recaptcha_image a {
+	text-decoration: none;
+}
+
+#captchaBox>div .item {
+	margin: 2px;
+}
+
+#captchaBox>p {
+	overflow: hidden;
+	margin: 10px 0 9px 4px;
+	padding: 0 5px;
+	width: 172px;
+	min-height: 40px;
+	font-size: 11px;
+}
+
+#betterTerritory {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 362px;
+	min-height: 29px;
+}
+
+#betterTerritory .top {
+	height: 11px;
+	background: url("../../../siedler/images/common/dialog/borderHorizontal.png?v=46967") no-repeat 0 0;
+}
+
+#betterTerritory .center {
+	padding: 0 21px 0 17px;
+	width: 324px;
+	min-height: 100px;
+	background: url("../../../siedler/images/common/dialog/borderVertical.png?v=c48fa") repeat-y;
+}
+
+#betterTerritory .bottom {
+	height: 20px;
+	background: url("../../../siedler/images/common/dialog/borderHorizontal.png?v=46967") no-repeat 0 -11px;
+}
+
+#betterTerritory .center div {
+	border-right: #846848 1px solid;
+	border-left: #846848 1px solid;
+}
+
+#betterTerritory .center .innerTop {
+	position: relative;
+	width: 322px;
+	border-top: #846848 1px solid;
+	background-color: #dfc488;
+}
+
+#betterTerritory .center .spacer {
+	height: 0;
+	border: none;
+	border-top: #b19b69 1px solid;
+	border-bottom: #e5d6b2 1px solid;
+}
+
+#betterTerritory .center .innerCenter {
+	position: relative;
+	min-height: 50px;
+	background-color: #e9d5a4;
+}
+
+#betterTerritory.icon .center .innerCenter {
+	min-height: 65px;
+}
+
+#betterTerritory .center .innerBottom {
+	height: 51px;
+	border-bottom: #846848 1px solid;
+	background-color: #e9d5a4;
+	text-align: center;
+}
+
+#betterTerritory .center .innerBottom>a.submit {
+	float: none;
+	margin: 0 auto;
+}
+
+#betterTerritory .center {
+	color: #372816;
+}
+
+#betterTerritory .center p a {
+	width: auto;
+	height: auto;
+	background: 0 0;
+	color: #b03b23;
+	text-align: left;
+	line-height: normal;
+}
+
+#betterTerritory .center p a.inline {
+	display: inline;
+}
+
+#betterTerritory .center h1 {
+	padding: 15px 10px;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+#betterTerritory .center p {
+	padding: 7px 18px 10px;
+	font-size: 12px;
+}
+
+#betterTerritory .center p.ae {
+	direction: rtl;
+}
+
+#betterTerritory .center .innerBottom .spacer {
+	margin-bottom: 2px;
+}
+
+#betterTerritory .center p a {
+	display: inline;
+}
+
+#betterTerritory .center .flags {
+	padding: 7px 3px 8px 18px;
+	min-height: 20px;
+	border: none;
+}
+
+#betterTerritory .center .flags span {
+	padding-top: 1px;
+	color: #644d31;
+}
+
+#betterTerritory .center .flags a {
+	float: left;
+	display: block;
+	margin-right: 8px;
+}
+
+#betterTerritory .center h1 {
+	padding-left: 18px;
+	text-align: left;
+}
+
+#betterTerritory .center h1.ae {
+	padding-right: 18px;
+	text-align: right;
+	direction: rtl;
+}
+
+body.us #simpleDialog.betterTerritoryLite .center .innerCenter {
+	height: 225px;
+	background-image: url("../../../siedler/images/common/dialog/betterTerritory/text/us-en/background.png?v=785c6");
+}
+
+body.gb #simpleDialog.betterTerritoryLite .center .innerCenter {
+	background-image: url("../../../siedler/images/common/dialog/betterTerritory/text/gb-en/background.png?v=e28c8");
+}
+
+#simpleDialog.betterTerritoryLite .center .innerCenter a {
+	position: absolute;
+	bottom: 57px;
+	left: 114px;
+	width: 256px;
+	height: 57px;
+}
+
+#simpleDialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 446px;
+	min-height: 29px;
+}
+
+#simpleDialog .center>div {
+	width: 402px;
+	border-right: #846848 1px solid;
+	border-left: #846848 1px solid;
+}
+
+#simpleDialog .top {
+	height: 16px;
+	background: url("../../../siedler/images/common/dialog/simple/borderH.png?v=aab8f") no-repeat 0 0;
+}
+
+#simpleDialog .center {
+	padding: 0 21px;
+	min-height: 100px;
+	background: url("../../../siedler/images/common/dialog/simple/borderV.png?v=79dc2") repeat-y;
+}
+
+#simpleDialog .center .innerTop {
+	position: relative;
+	width: 402px;
+	border-top: #846848 1px solid;
+	background-color: #dfc488;
+}
+
+#simpleDialog .center .innerTop a.closeButton {
+	position: absolute;
+	top: 11px;
+	right: 6px;
+	width: 29px;
+	height: 29px;
+	background: url("../../../siedler/images/common/dialog/close.png?v=3ae8e");
+}
+
+#simpleDialog .center .innerTop a.closeButton:hover {
+	background-position: left bottom;
+}
+
+#simpleDialog .center .innerCenter {
+	position: relative;
+	min-height: 50px;
+	background-color: #e9d5a4;
+}
+
+#simpleDialog .center .innerCenter img {
+	padding: 3px 0 0 1px;
+}
+
+#simpleDialog .center .innerBottom {
+	height: 51px;
+	border-bottom: #846848 1px solid;
+	background-color: #dfc488;
+	text-align: center;
+}
+
+#simpleDialog .spacer {
+	height: 0;
+	border: none;
+	border-top: #b19b69 1px solid;
+	border-bottom: #e5d6b2 1px solid;
+}
+
+#simpleDialog .bottom {
+	height: 22px;
+	background: url("../../../siedler/images/common/dialog/simple/borderH.png?v=aab8f") no-repeat 0 -16px;
+}
+
+#simpleDialog .center h1 {
+	padding: 15px 41px 15px 10px;
+	color: #372816;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+#simpleDialog .form {
+	padding: 10px 20px 0;
+}
+
+#simpleDialog .form fieldset input[type=checkbox] {
+	position: absolute;
+	left: -10000px;
+}
+
+#simpleDialog .form fieldset.label {
+	padding-top: 11px;
+	padding-bottom: 9px;
+}
+
+#simpleDialog .form fieldset label {
+	display: block;
+	margin: 0 0 0 10px;
+	padding: 0 15px 0 25px;
+	min-height: 18px;
+	background: url("../../../siedler/images/common/register/checkbox.png?v=4cf65") no-repeat left center;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+#simpleDialog .form fieldset label.checked {
+	background-image: url("../../../siedler/images/common/register/checkboxChecked.png?v=5cbf2");
+}
+
+#simpleDialog .one-button a {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#simpleDialog .center .innerBottom.two-button>a {
+	float: left;
+	margin-left: 54px;
+}
+
+#simpleDialog .center label {
+	cursor: pointer;
+}
+
+#simpleDialog .form,#simpleDialog .form a,#simpleDialog .form a:visited {
+	color: #372816;
+}
+
+#simpleDialog .center .innerTop {
+	text-align: center;
+}
+
+#simpleDialog .form p {
+	padding: 0 0 10px 12px;
+}
+
+#simpleDialog .form {
+	padding-bottom: 15px;
+}
+
+#simpleDialog fieldset {
+	margin-bottom: 10px;
+}
+
+#simpleDialog.terms .center .innerCenter,body.gb #simpleDialog.terms .center .innerCenter {
+	background: #e9d5a4;
+}
+
+#simpleDialog.terms .center .innerCenter label {
+	position: relative;
+}
+
+#simpleDialog.terms .center .innerCenter a {
+	position: relative;
+	bottom: 0;
+	left: 0;
+}
+
+#mbOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9998;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+
+#mbOverlay.mbOverlayFF {
+	background: transparent url("../../../siedler/images/common/mediabox/80.png?v=78a49") repeat;
+}
+
+#mbOverlay.mbOverlayIE {
+	position: absolute;
+}
+
+#mbCenter {
+	position: absolute;
+	left: 50%;
+	z-index: 9999;
+	overflow: hidden;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #000;
+	-webkit-box-shadow: 0 5px 20px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 5px 20px rgba(0,0,0,.5);
+	box-shadow: 0 5px 20px rgba(0,0,0,.5);
+	-khtml-box-shadow: 0 5px 20px rgba(0,0,0,.5);
+}
+
+#mbCenter.mbLoading {
+	background: #000 url("../../../siedler/images/common/mediabox/loading.gif?v=7346f") no-repeat center;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-khtml-box-shadow: none;
+}
+
+#mbImage {
+	position: relative;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: #fff;
+	text-align: left;
+	font-size: 12px;
+	font-family: Myriad,Verdana,Arial,Helvetica,sans-serif;
+	line-height: 20px;
+}
+
+#mbBottom {
+	padding: 0 10px 10px;
+	min-height: 20px;
+	color: #999;
+	text-align: left;
+	font-size: 12px;
+	font-family: Myriad,Verdana,Arial,Helvetica,sans-serif;
+	line-height: 20px;
+}
+
+#mbCloseLink,#mbNextLink,#mbPrevLink,#mbTitle {
+	display: inline;
+	color: #fff;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+#mbNumber {
+	display: inline;
+	margin: auto 10px;
+	color: #999;
+	font-size: 10px;
+	line-height: 14px;
+}
+
+#mbCaption {
+	display: block;
+	color: #999;
+	font-size: 10px;
+	line-height: 14px;
+}
+
+#mbCloseLink,#mbNextLink,#mbPrevLink {
+	float: right;
+	margin: 0 0 0 10px;
+	outline: 0;
+	font-weight: 400;
+}
+
+#mbCloseLink b,#mbNextLink b,#mbPrevLink b {
+	color: #eee;
+	text-decoration: underline;
+	font-weight: 700;
+}
+
+#mbCloseLink big,#mbNextLink big,#mbPrevLink big {
+	color: #eee;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 14px;
+}
+
+#mbBottom a,#mbBottom a:link,#mbBottom a:visited {
+	color: #ddd;
+	text-decoration: none;
+}
+
+#mbBottom a:active,#mbBottom a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#mbError {
+	position: relative;
+	margin: 20px;
+	padding: 10px;
+	border: 10px solid #700;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+	font-family: Myriad,Verdana,Arial,Helvetica,sans-serif;
+	line-height: 20px;
+}
+
+#mbError a,#mbError a:active,#mbError a:hover,#mbError a:link,#mbError a:visited {
+	color: #d00;
+	text-decoration: underline;
+	font-weight: 700;
+}
+
+#mbBottom {
+	position: relative;
+}
+
+#mbNextLink,#mbPrevLink {
+	position: absolute;
+}
+
+#mbPrevLink {
+	right: 50%;
+	margin-right: 12px;
+}
+
+#mbNextLink {
+	left: 50%;
+	margin-left: 12px;
+}
+
+html {
+	color: #bd9d69;
+	font: 12px arial;
+}
+
+.hide {
+	display: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.fullOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+}
+
+.showWhileBusy,form.busy .hideWhileBusy {
+	display: none;
+}
+
+form.busy .showWhileBusy {
+	display: block;
+}
+
+form.busy .visHiddenWhileBusy {
+	visibility: hidden;
+}
+
+a {
+	color: #a58f56;
+}
+
+a.submit {
+	display: block;
+	width: 121px;
+	height: 43px;
+	background-image: url("../../../siedler/images/common/button.png?v=9dbe7");
+	background-position: no-repeat top center;
+	text-align: center;
+	line-height: 43px;
+}
+
+a.submit:hover {
+	background-position: bottom center;
+}
+
+a.submit>img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.submit>img.hide {
+	display: none;
+}
+
+html.landingpage.home11 #screenshotBox {
+	position: relative;
+	margin: 0 auto;
+	padding: 11px 22px;
+	width: 538px;
+	height: 110px;
+	background: url("../../../siedler/images/landing/home11/screenshotsBg.png?v=2135c") no-repeat;
+}
+
+html.landingpage.home11 #screenshotBox .container {
+	position: relative;
+	float: left;
+	margin-right: 5px;
+	width: 172px;
+	height: 108px;
+	border: 1px solid #dfac31;
+}
+
+html.landingpage.home11 #screenshotBox .container a {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 172px;
+	height: 108px;
+}
+
+html.landingpage.home11 #screenshotBox .container a img {
+	width: 172px;
+	height: 108px;
+}
+
+html.landingpage.home11 #screenshotBox .container a img.play {
+	position: absolute;
+	top: 29px;
+	left: 61px;
+	width: 50px;
+	height: 51px;
+}
+
+html.landingpage.home11 #screenshotBox .container>img {
+	width: 172px;
+	height: 108px;
+	border: 1px solid #532c08;
+}
+
+html.landingpage.home11 #screenshotBox .container:last-child {
+	margin-right: 0;
+}
+
+html.landingpage.home11 .infoBox {
+	position: relative;
+	margin: 50px auto 0;
+	width: 581px;
+}
+
+html.landingpage.home11 .infoBox .content:before {
+	position: absolute;
+	top: -12px;
+	left: 0;
+	z-index: 1;
+	width: 581px;
+	height: 58px;
+	background: url("../../../siedler/images/landing/home10/infobox_top.png?v=64a0b") no-repeat;
+	content: "";
+}
+
+html.landingpage.home11 .infoBox .content {
+	padding: 10px 24px 0;
+	width: 534px;
+	height: auto;
+	background: url("../../../siedler/images/landing/home10/infobox_middle.png?v=db252") repeat-y;
+	color: #ffeec7;
+	text-align: center;
+	font-size: 15px;
+}
+
+html.landingpage.home11 .infoBox .content h2 {
+	margin-bottom: 10px;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+html.landingpage.home11 .infoBox .content a,html.landingpage.home11 .infoBox .content a:hover {
+	color: #ffeec7;
+}
+
+html.landingpage.home11 .infoBox .content:after {
+	position: absolute;
+	bottom: -31px;
+	left: 0;
+	width: 581px;
+	height: 31px;
+	background: url("../../../siedler/images/landing/home10/infobox_bottom.png?v=6f64a") no-repeat;
+	content: "";
+}
+
+html.landingpage.home11 #footer {
+	float: none;
+	margin: 25px auto 0;
+	padding: 10px;
+	width: 730px;
+	border: 1px solid #14161d;
+	border-radius: 14px;
+	background-color: rgba(0,0,0,.6);
+	box-shadow: 0 1px 1px rgba(255,255,255,.2)inset,0 3px 3px rgba(0,0,0,.5);
+	color: #E1D0B0;
+	text-align: center;
+}
+
+html.landingpage.home11 #footer div.leftDiv,html.landingpage.home11 #footer div.rightDiv {
+	float: left;
+	width: 150px;
+}
+
+html.landingpage.home11 #footer div.leftDiv a,html.landingpage.home11 #footer div.rightDiv a {
+	text-align: center;
+}
+
+html.landingpage.home11 #footer div.text {
+	float: left;
+	width: 410px;
+}
+
+html.landingpage.home11 #footer .clearFix {
+	clear: both;
+}
+
+html.landingpage.home11 #footer div a,html.landingpage.home11 #footer div.leftDiv a,html.landingpage.home11 #footer div.rightDiv a {
+	color: #E1D0B0;
+}
+
+html.landingpage.home11 #footer div a#bb,html.landingpage.home11 #footer div a#pegi,html.landingpage.home11 #footer div a#ubi,html.landingpage.home11 #footer div.leftDiv a#bb,html.landingpage.home11 #footer div.leftDiv a#pegi,html.landingpage.home11 #footer div.leftDiv a#ubi,html.landingpage.home11 #footer div.rightDiv a#bb,html.landingpage.home11 #footer div.rightDiv a#pegi,html.landingpage.home11 #footer div.rightDiv a#ubi {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+html.landingpage.home11 #footer div a#pegi,html.landingpage.home11 #footer div.leftDiv a#pegi,html.landingpage.home11 #footer div.rightDiv a#pegi {
+	padding-top: 24px;
+}
+
+html.landingpage.home11 #footer div ul,html.landingpage.home11 #footer div.leftDiv ul,html.landingpage.home11 #footer div.rightDiv ul {
+	margin: 10px 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+html.landingpage.home11 #footer div ul li,html.landingpage.home11 #footer div.leftDiv ul li,html.landingpage.home11 #footer div.rightDiv ul li {
+	display: inline-block;
+	padding: 0 3px 0 7px;
+}
+
+html.landingpage.home11 #footer div ul>li:first-child,html.landingpage.home11 #footer div.leftDiv ul>li:first-child,html.landingpage.home11 #footer div.rightDiv ul>li:first-child {
+	padding-left: 0;
+}
+
+html.landingpage.home11 #footer div.leftDiv>div,html.landingpage.home11 #footer div.rightDiv>div,html.landingpage.home11 #footer div>div {
+	float: left;
+	display: block;
+	height: 50px;
+}
+
+html.landingpage.home11 #footer div.leftDiv>div>a.underline,html.landingpage.home11 #footer div.rightDiv>div>a.underline,html.landingpage.home11 #footer div>div>a.underline {
+	right: 0;
+}
+
+html.landingpage.home11 #footer .text {
+	padding: 0 10px;
+}
+
+html.landingpage.home11 body.ru #footer {
+	width: 890px;
+}
+
+html.landingpage.home11 body.ru #footer div.leftDiv,html.landingpage.home11 body.ru #footer div.rightDiv {
+	width: 230px;
+}
+
+html.landingpage.home11 body.ru #footer div.leftDiv a,html.landingpage.home11 body.ru #footer div.rightDiv a {
+	float: left;
+}
+
+html.landingpage.home11 body.ru #footer div.leftDiv a#fabrika,html.landingpage.home11 body.ru #footer div.rightDiv a#fabrika {
+	padding: 34px 10px 0;
+}
+
+html.landingpage.home11 body.ru #footer div.leftDiv a#bb,html.landingpage.home11 body.ru #footer div.rightDiv a#bb {
+	padding: 0 30px;
+}
+
+html.landingpage.home11 body.ru #footer div.leftDiv a#ubi,html.landingpage.home11 body.ru #footer div.rightDiv a#ubi {
+	padding: 0 10px;
+}
+
+html.landingpage.home11 body.ru #footer div.leftDiv img#age12,html.landingpage.home11 body.ru #footer div.rightDiv img#age12 {
+	padding: 24px 30px 0;
+}
+
+#partnerLogo {
+	position: absolute;
+	top: 10px;
+	max-width: 175px;
+}
+
+#partnerLogo #partnerFeaturedBy {
+	padding: 10px 0;
+	color: #fff;
+	text-align: center;
+}
+
+#partnerLogo img {
+	max-width: 175px;
+}
+
+#partnerBanner {
+	position: absolute;
+	top: 195px;
+	left: -9px;
+	z-index: 1;
+	padding: 7px 0 0 26px;
+	width: 174px;
+	height: auto;
+	background: url("../../../siedler/images/template/partner/partner_middle.png?v=2232c") repeat scroll 0 0 transparent;
+}
+
+#partnerBanner img {
+	position: relative;
+	z-index: 1;
+	width: 174px;
+}
+
+#partnerBanner:before {
+	position: absolute;
+	top: -12px;
+	left: 0;
+	width: 200px;
+	height: 58px;
+	background: url("../../../siedler/images/template/partner/partner_top.png?v=921bd") no-repeat;
+	content: "";
+}
+
+#partnerBanner:after {
+	position: absolute;
+	bottom: -19px;
+	left: 0;
+	z-index: 0;
+	width: 200px;
+	height: 31px;
+	background: url("../../../siedler/images/template/partner/partner_bottom.png?v=90240") no-repeat;
+	content: "";
+}
+
+.linkContainer a {
+	position: relative;
+	float: none!important;
+	display: block;
+	margin: 5px 0 0;
+	width: 164px!important;
+	height: 35px!important;
+	text-align: center;
+	text-decoration: none;
+	line-height: 0;
+}
+
+.linkContainer a.communityLink {
+	margin: 0;
+	background-image: url("../../../siedler/images/common/login/btn_partner.png?v=b0be3");
+	background-position: 0 0;
+	color: #fff;
+	text-shadow: 1px 1px #000;
+	line-height: 35px;
+}
+
+.linkContainer a.communityLink:hover {
+	background-position: 0 -35px;
+}
+
+.linkContainer fieldset.partners a.facebook {
+	background-image: url("../../../siedler/images/common/login/btn_partner.png?v=b0be3");
+	background-position: 0 -70px;
+}
+
+.linkContainer fieldset.partners a.facebook span {
+	display: none;
+}
+
+.linkContainer fieldset.partners a.facebook:hover {
+	background-position: 0 -105px;
+}
+
+.linkContainer fieldset.partners a.uplay {
+	background-image: url("../../../siedler/images/common/login/btn_partner.png?v=b0be3");
+	background-position: 0 -140px;
+}
+
+.linkContainer fieldset.partners a.uplay:hover {
+	background-position: 0 -175px;
+}
+
+.linkContainer fieldset.partners a.btnNk {
+	background-image: url("../../../siedler/images/common/login/btn_partner.png?v=b0be3");
+	background-position: 0 -210px;
+}
+
+.linkContainer fieldset.partners a.btnNk:hover {
+	background-position: 0 -245px;
+}
+
+html.landingpage.home11 .linkContainer {
+	position: absolute;
+	top: 195px;
+	right: 30px;
+	width: 169px;
+	height: auto;
+}
+
+html.landingpage.home11 .linkContainer .middle {
+	padding: 7px 0 0 7px;
+	width: 191px;
+	height: auto;
+	background: url("../../../siedler/images/landing/home11/linkContainer_middle.png?v=41a12") repeat scroll 0 0 transparent;
+}
+
+html.landingpage.home11 .linkContainer .middle .containerBox {
+	margin-top: -35px;
+	width: 170px;
+	height: auto;
+}
+
+html.landingpage.home11 .linkContainer .top {
+	width: 200px;
+	height: 58px;
+	background: url("../../../siedler/images/landing/home11/linkContainer_top.png?v=fb728") no-repeat;
+}
+
+html.landingpage.home11 .linkContainer .bottom {
+	width: 200px;
+	height: 31px;
+	background: url("../../../siedler/images/landing/home11/linkContainer_bottom.png?v=56e73") no-repeat;
+}
+
+html.landingpage.home11 {
+	background: 0 0;
+}
+
+html.landingpage.home11 body {
+	width: 100%;
+	background-color: transparent;
+	background-image: url("/static/img/home/background.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-clip: border-box;
+	background-origin: padding-box;
+}
+
+html.landingpage.home11 body .fullOverlay {
+	z-index: 97;
+	min-height: 800px;
+	background: rgba(0,0,0,.8);
+}
+
+html.landingpage.home11 body #contentBox {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 25px;
+	width: 750px;
+	min-height: 700px;
+	font-family: Arial,serif;
+}
+
+html.landingpage.home11 body #contentBox #registerForm .button {
+	margin: -50px 0 0 115px;
+	padding: 0 0 30px;
+	width: 502px;
+	height: 74px;
+	background: url("../../../siedler/images/landing/home11/button.png?v=d2749");
+	text-align: center;
+}
+
+html.landingpage.home11 body #contentBox #registerForm #registerTop {
+	margin: 0 auto;
+	padding: 30px 42px 0;
+	width: 300px;
+	height: 39px;
+	background: url("../../../siedler/images/landing/home11/content_top.png?v=782e6") repeat-y;
+	color: #573d21;
+	font-size: 15px;
+}
+
+html.landingpage.home11 body #contentBox #registerForm #registerBottom {
+	margin: 0 auto;
+	padding: 0 42px 30px;
+	width: 300px;
+	height: 19px;
+	background: url("../../../siedler/images/landing/home11/content_bottom.png?v=bb63e") repeat-y;
+	color: #573d21;
+	font-size: 15px;
+}
+
+html.landingpage.home11 body #contentBox #registerForm #register {
+	margin: 0 auto;
+	padding: 30px 42px 0;
+	width: 300px;
+	height: auto;
+	background: url("../../../siedler/images/landing/home11/content.png?v=ad9cc") repeat-y;
+	color: #573d21;
+	font-size: 15px;
+}
+
+html.landingpage.home11 body #contentBox #registerForm #register #registerFields {
+	position: relative;
+	margin: 0;
+	margin-top: -65px;
+	padding-bottom: 12px;
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields fieldset {
+	direction: rtl;
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields fieldset label {
+	padding: 3px 30px 0 0;
+	background: url("../../../siedler/images/template/register/fields/checkbox.png?v=47d91") no-repeat scroll right top transparent;
+	direction: rtl;
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields fieldset label.checked {
+	padding: 3px 30px 0 0;
+	background: url("../../../siedler/images/template/register/fields/checkbox.png?v=47d91") no-repeat scroll right bottom transparent;
+	direction: rtl;
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields #gameLanguageSelection {
+	height: 38px;
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields fieldset #gameLanguageText {
+	display: none;
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields fieldset .message {
+	right: 340px;
+	-webkit-transform: scaleX(-1);
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields fieldset .message h6,html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields fieldset .message p {
+	-webkit-transform: scaleX(-1);
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	transform: scaleX(-1);
+	direction: rtl;
+	-ms-transform: scaleX(-1);
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields .dropdown .scrollContainer ul>li {
+	margin: 0 35px 0 0;
+}
+
+html.landingpage.home11 body.ae #contentBox #registerForm #register #registerFields .dropdown .scrollContainer .slider.scrollSlider {
+	padding: 0 4px;
+}

@@ -20,6 +20,8 @@ var PanelManager;
     var showTipsPanel;
     var addFriendPanel;
     var setPanel;
+    var darkSlotPanel;
+    var titanSlotPanel;
     // 初始化所有面板
     function initPanel() {
         Global.addEventListener(MainNotify.openStartPanelNotify, this.openStartPanel, this);
@@ -48,6 +50,10 @@ var PanelManager;
         Global.addEventListener(MainNotify.closeAddFriendPanelNotify, this.closeAddFriendPanel, this);
         Global.addEventListener(MainNotify.openSetPanelNotify, this.openSetPanel, this);
         Global.addEventListener(MainNotify.closeSetPanelNotify, this.closeSetPanel, this);
+        Global.addEventListener(MainNotify.openDarkSlotPanelNotify, this.openDarkSlotPanel, this);
+        Global.addEventListener(MainNotify.closeDarkSlotPanelNotify, this.closeDarkSlotPanel, this);
+        Global.addEventListener(MainNotify.openTitanSlotPanelNotify, this.openTitanSlotPanel, this);
+        Global.addEventListener(MainNotify.closeTitanSlotPanelNotify, this.closeTitanSlotPanel, this);
     }
     PanelManager.initPanel = initPanel;
     // 打开开始界面
@@ -66,6 +72,36 @@ var PanelManager;
         }
     }
     PanelManager.closeStartPanel = closeStartPanel;
+    // 打开DarkSlot界面
+    function openDarkSlotPanel() {
+        if (this.darkSlotPanel == null) {
+            this.darkSlotPanel = new DarkSlotPanel();
+            PopUpManager.addPopUp(this.darkSlotPanel, false, 0, 0, 0);
+        }
+    }
+    PanelManager.openDarkSlotPanel = openDarkSlotPanel;
+    // 关闭开始界面
+    function closeDarkSlotPanel() {
+        if (this.darkSlotPanel != null) {
+            PopUpManager.removePopUp(this.darkSlotPanel, 3);
+            this.darkSlotPanel = null;
+        }
+    }
+    PanelManager.closeDarkSlotPanel = closeDarkSlotPanel;
+    function openTitanSlotPanel() {
+        if (this.titanSlotPanel == null) {
+            this.titanSlotPanel = new TitanSlotPanel();
+            PopUpManager.addPopUp(this.titanSlotPanel, false, 0, 0, 0);
+        }
+    }
+    PanelManager.openTitanSlotPanel = openTitanSlotPanel;
+    function closeTitanSlotPanel() {
+        if (this.titanSlotPanel != null) {
+            PopUpManager.removePopUp(this.titanSlotPanel, 3);
+            this.titanSlotPanel = null;
+        }
+    }
+    PanelManager.closeTitanSlotPanel = closeTitanSlotPanel;
     // 打开CRAP界面  
     function openCrapPanel() {
         if (this.crapPanel == null) {

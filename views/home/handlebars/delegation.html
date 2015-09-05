@@ -1,0 +1,64 @@
+
+
+<script type="text/x-handlebars" data-template-name="delegation">
+
+  
+<div class="btn-toolbar" role="toolbar">
+    <div class="btn-group play-mode" data-toggle="buttons-radio">
+
+      <button  {{action  'setFilter' }}    class="btn btn-default active" type="button">All</button>
+      <button {{action 'setFilter' 'sell'}}  class="btn btn-default" type="button">Sell</button>
+      <button {{action 'setFilter'  'buy'}}  class="btn btn-default" type="button">Buy</button>
+               
+    </div>
+</div>
+
+
+    {{#if controller.paginatedContent}} 
+     <table border="1">
+        <tr>
+            <th>时间</th>
+            <th>合约</th>
+            <th>类型</th>
+            <th>委托价格</th> 
+            <th>委托金额</th>
+            <th>剩余金额</th>
+
+            <th>操作</th>
+
+
+        </tr>
+        
+
+        {{#each item in controller.paginatedContent}}
+        <tr>
+            <td>{{item.createDate}} </td>   
+            <td>{{item.name}} </td>  
+            <td>{{item.type}} </td>   
+            <td>{{item.price}} </td>  
+            <td>{{item.amount}} </td>   
+            <td>{{item.leftAmount}} </td>    
+            <td> <button {{action 'cancelDelegation' item._id }} class="btn btn-xs btn-link" type="button">撤单</button> </td>
+        </tr>                                                                                                                                   
+         {{/each}}        
+    </table>
+
+  <ul class="pagination">
+    <li><button  {{action  "moveBackward"  prevPage target="controller" bubbles=false}}>&laquo;</button></li>
+      {{#each pages}}
+      {{view WebApp.PaginationView contentBinding="this"}}
+      {{/each}}
+
+    <li><button  {{action  "moveForward"  nextPage target="controller" bubbles=false}}>&raquo;</button></li>
+        <li>{{controller.currentPage}}  / {{controller.availablePages}} 页，总共 {{content.length}}笔资料</li>  
+  </ul>
+
+  <h2>     {{content.page_id}}</h2>
+
+
+
+{{else}}
+
+   <strong> No Data </strong>
+{{/if}}
+</script>

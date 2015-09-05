@@ -3,7 +3,7 @@ WebApp.IfEqualComponent = Ember.Component.extend({
     return this.get('param1') === this.get('param2');
   }.property('param1', 'param2')
 });
-
+/*
 Handlebars.registerHelper('compare', function(var1, var2) {
   console.log(var1)
   console.log(var2)
@@ -11,6 +11,22 @@ Handlebars.registerHelper('compare', function(var1, var2) {
     return var1 
   }
 });
+*/
+/*
+{{#compare age 20}}
+{{else}}
+{{/compare}}
+*/
+Handlebars.registerHelper("compare",function(v1,v2,options){
+   if(v1>v2){
+   //满足添加继续执行
+     return options.fn(this);
+   }else{
+     //不满足条件执行{{else}}部分
+     return options.inverse(this);
+   }
+});
+
 
 Handlebars.registerHelper("formatPhoneNumber", function(phoneNumber) {
   phoneNumber = phoneNumber.toString();
@@ -62,6 +78,7 @@ var AjaxNotice = {
 //    return '<div id="ajax_notice" class="ajax_spinner"> Working...</div>'
   }
 }
+
 
 function fixLang() {    
   console.log("fixLang");

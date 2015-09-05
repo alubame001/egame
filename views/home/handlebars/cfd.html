@@ -1,0 +1,141 @@
+
+
+<script type="text/x-handlebars" data-template-name="cfd">
+    
+<div class ="marketing-section-signup">
+    <div class="">     
+
+
+        <div class="" id="bigbox" style="">
+
+            <div class="market_wrap" id="trade_wrap">
+
+                <ul class="main_tabs">
+                    <li class="cur">
+                    <div style='background-color: #273442;color: #FFF;'>周<span id="delivery_tag_week"> 1206</span></div></li>
+                    
+
+                    <li class="headInf"><a target="_blank" href="http://k.btc123.com/markets/btc123index/btccny"><b><span class="ptitle" id="mark_price_tip">比特幣價格指數</span>：<span class="pcontent">¥</span><span class="pcontent" id="mark_price">2365.02</span></b></a></li>
+                    <li id="CountMsg" class="HotDate r">
+                        <span id="hot_date_tip" style="color: black;">距交割時間:</span>
+                            <span class="">
+                                <span id="t_d" style="color:red;">4天</span>
+                                <span id="t_h" style="color:red;"></span>
+                                <span id="t_m" style="color:red;"></span>
+                                <span id="t_s" style="color:red;"></span>
+                            </span>
+                    </li>
+                </ul>
+                <!-- 交易面板 -->
+                <div class="tradeBox">
+                    <div class="head" id="tradeInfos">
+                        <dl>
+                            <dt id="metric"><b>交易單位</b><span idx="2" class="">金額</span><span idx="1" class="on">BTC</span></dt>
+                            <dd><span><i class="dottodBorder2 help_tip_txt" data-tip-info="近24小時成交額">成交額</i> ฿<b id="deal_sum_info" style="color:white">175162.1335</b></span><span><i class="dottodBorder2 help_tip_txt" data-tip-info="當前持倉量">持倉</i> ฿<b id="hold_sum_info" style="color:white">70766.4162</b></span></dd>
+                        </dl>
+                    </div>
+                    <div class="body">
+                        <div class="trade" id="trade">
+                                                            <div class="title" id="scaleBox"><span>杠桿倍數</span><i data-val="5" click="changeScale" class="">5倍</i><i data-val="10" click="changeScale" class="">10倍</i><i data-val="20" click="changeScale" class="on">20倍</i></div>
+                                                            <div class="tradeform">
+                                <form action="">
+                                <dl class="inputbox">
+                                    <dt><span>可用：฿<i id="enable_coin">19.0290</i></span></dt>
+                                    <dd class="inputdd"><input type="text" autocomplete="off" id="priceinput" restrict="2" maxlength="10"><label for="priceinput" click="hideLabel" savedft="1">價格</label></dd>
+                                    <dd class="btndd"><b class="buy" click="open" data-val="1" stop="1">買多</b></dd>
+                            
+                                    <dd style="display: none;">多單爆倉價：￥<span id="buyBlastingPrice">931.22</span></dd>
+                                </dl>
+                                <dl class="inputbox">
+                                    <dt>占用：฿<i id="used">0.0000</i></dt>
+                                    <dd class="inputdd"><input type="text" autocomplete="off" id="amtinput" restrict="4" maxlength="10" class="btc"><label for="amtinput" click="hideLabel" savedft="1" id="amtlabel">BTC數量(฿)</label><input type="hidden" id="realamt" style="float:left" value="0"></dd>
+                                    <dd class="btndd"><b class="sell" click="open" data-val="2" stop="1">賣空</b></dd>
+              
+                                    <dd style="display: none;">空單爆倉價：￥<span id="sellBlastingPrice">878.36</span></dd>
+                                </dl>
+                                </form>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="market">
+                           <div id="container" style="height: 400px; min-width: 310px"></div>
+                                <div>                                                                               </div>
+                                <div class="current">                                         <b>最新價：</b><i class="decline">2388.67</i><b>漲跌</b><i>-1.34</i><b>漲幅</b><i style="color:#d13939">-0.05%</i>                                     </div>
+                                
+                                
+                        
+
+                        </div>
+                    </div>
+                </div>
+
+
+            
+
+                <!--风险条以及个人资产条-->
+                <dl class="tradeRule">
+                    <dt style="display:none;"><b>風險參考價</b><div><span>1000</span><span>1100</span><span>1110</span><span>1111</span><span>1112</span></div></dt>
+                    <dd class="riskLine" id="dangerLine"><span class="dottodBorder help_tip_txt" data-tip-info="風險率：(1-動態權益/已用保證金)*100%，隨著動態權益變小，風險率會加速變大，當風險率>=95%時，將會觸發強平。">風險率</span><div class="stepby help_tip_txt" data-tip-info="風險率：0%" data-offset-left="12"><div style="width: 0%;"></div></div><i id="estimate_blasting_price_tip" class="dottodBorder help_tip_txt" style="" data-tip-info="預估爆倉價：即您現在整個期貨賬戶的持倉在該價位的風險已達到極限，如果最新價達到該價妳將爆倉。當您持有2個合約的時候預估爆倉價只是壹個參考價位，和實際爆倉價可能會有差異，請註意風險。">預估爆倉價 ￥</i><b style="" id="estimate_blasting_price">911.80</b></dd>
+                </dl>
+
+
+
+                
+          
+
+
+
+
+
+
+                
+
+
+
+            </div>            
+        </div>
+
+ <div class="row">   
+        <div class ="span9">
+
+               <div class ='orderBox'><!--持仓委托列表-->
+                            <div class="hd">
+                                <ul>
+                                    <li class="on"><a>持有仓位</a></li>
+                                    <li class=""><a>未成交({{model.delegation.length}})</a></li>
+                                    <li class=""><a>历史订单({{model.orderhistory.length}})</a></li>
+                                </ul>
+                            </div>
+                            <div class="bd">
+                                <ul style="display: block;">
+                                    
+                                </ul>
+                                <ul style="display: none;">                                                   
+                                     {{render 'delegation' delegation}}
+                                </ul>
+                                <ul style="display: none;">
+                                     {{render 'orderhistory' orderhistory}}
+
+                                </ul>
+                            </div>
+                </div>
+
+        
+
+ 
+
+
+
+
+        </div>
+        <div class ="span3">
+                              
+
+        </div>   
+    </div>     
+
+
+    </div><!- siteWidth -->
+</div><!-- container -->
+</script>

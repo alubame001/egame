@@ -125,8 +125,8 @@ margin-top: 10px;s
 }
 
 .container {
-   padding-right: 1px; 
-   padding-left: 1px; 
+   padding-right: 0px; 
+   padding-left: 0px; 
    margin-right: auto; 
    margin-left: auto; 
 }
@@ -135,17 +135,19 @@ margin-top: 10px;s
   position: relative;
   z-index: 1000;
   min-height: 50px;
-  margin-bottom: 1px; /*was 18 px*/
-  border: 1px solid transparent;
+  margin-bottom: 0px; /*was 18 px*/
+ -- border: 1px solid transparent;
 }
 
 #main {
-   margin-top: 1px;  /*was 30 px*/
+   margin-top: 0px;  /*was 30 px*/
 }
 /*---- login panel */
 
 
-
+.mb0 {
+    margin-bottom: 10px;
+}
 
 .banner_bg .banner .dzing_box {
   width: 230px;
@@ -163,7 +165,8 @@ margin-top: 10px;s
 }
 
 .dzing_box_account {
-  height: 53px;
+  --height: 53px;
+  height: 23px;
   border-bottom: 1px solid #fff;
   padding: 1px 0;
   color: #fff;
@@ -210,7 +213,7 @@ em {
 }
 
 .dzing_box_account p.a1 {
-  margin-top: 27px;
+  --margin-top: 27px;
   margin-left: 40px;
 }
 .dzing_box_account p {
@@ -320,6 +323,41 @@ color: #f04c5c;
   max-width: 1000px;
 }
 
+.game_title {
+    /* background-image: url('/static/img/home/header.png'); */
+    background: url(/static/img/home/header.png) no-repeat scroll center top transparent;
+}
+.game_logo {
+    /* background-image: url('/static/img/home/header.png'); */
+    background: url(/static/img/home/logo.png) no-repeat scroll center top transparent;
+}
+.bg_top {
+    /* background-image: url('/static/img/home/header.png'); */
+    background: url(/static/img/home/bg_top.png) no-repeat scroll center top transparent;
+}
+.bg_bottom {
+    /* background-image: url('/static/img/home/header.png'); */
+    background: url(/static/img/home/bg_bottom.jpg) no-repeat scroll center top transparent;
+}
+.home1600_top{
+   background: url(/static/img/home/home1600_top.jpg) no-repeat scroll center top transparent;
+}
+.home1600_bottom{
+   background: url(/static/img/home/home1600_bottom.jpg) no-repeat scroll center top transparent;
+}
+.game_cell {
+  --  background-image: url('/static/img/game/title.jpg');
+ --padding: 10px 10px;
+ --   border-top: 2px solid #fff;
+    border-bottom: 1px solid #e2e2e2;   
+}
+
+
+.game_bg{
+background: url(/static/img/home/home.jpg) no-repeat scroll top center black;
+
+}
+
 /*
 @media only screen and (min-width: 321px) and (max-width: 1024px) {
   .game{  
@@ -335,3 +373,242 @@ color: #f04c5c;
   }
 }
 */
+@media only screen and (min-width: 1280px) and (max-width: 1920px) {
+  .home11 {
+      width: 100%;
+      background-attachment: fixed;
+      background-clip: border-box;
+      background-color: transparent;
+      background-origin: padding-box;
+      background-position: center center;
+      background-repeat: repeat;
+      background-size: cover;
+      background-image: url("/static/img/home/background.jpg");
+  }
+  .game_body {
+    background-image: url('/static/img/home/b4.png');
+      
+  }
+
+}
+
+.web_bg {
+    border-top: 0px;
+    border-bottom: 0px;
+    background: url(/static/img/home/bg.jpg) no-repeat scroll center top transparent;
+}
+
+.web_logo {
+    border-top: 0px;
+    border-bottom: 0px;
+    background: url(/static/img/home/web_logo.png) no-repeat scroll center top transparent;
+}
+
+.web_frame {
+    border-top: 0px;
+    border-bottom: 0px;
+    background: url(/static/img/home/web_frame.png) no-repeat scroll center top transparent;
+}
+
+
+.fit {
+    border-top: 0px;
+    border-bottom: 0px;
+
+}
+
+.sub_box {
+    --background-color: #fafafa;
+    --border-bottom: 1px solid #e2e2e2;
+   -- border-radius: 3px;
+    -webkit-box-shadow: 1px 0 4px rgba(0, 0, 0, 0.20);
+   -- box-shadow: 1px 0 4px rgba(0, 0, 0, 0.20);
+   margin-bottom: 2px;
+}
+
+.mt20{
+margin-top: 20px;
+
+}
+
+
+.h600{
+height: 600px;
+
+}
+.h580{
+height: 580px;
+
+}
+.h550{
+height: 550px;
+
+}
+.h500{
+height: 500px;
+
+}
+.h480{
+height: 480px;
+
+}
+
+.h450{
+height: 450px;
+
+}
+.h500{
+height: 500px;
+
+}
+.h280{
+height: 280px;
+
+}
+
+.videoBox {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+   -- height: 600px;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.mt30{
+  margin-top: 30px;
+}
+
+.ml50{
+  margin-left: 50px;
+}
+
+
+.mt20{
+  margin-top: 20px;
+}
+
+.home_register {
+    position: relative;
+    z-index: 4;
+    width: 300px;
+    height: 235px;
+    margin-top: 30px;
+    margin-right: 40px;
+    float: right;
+    background: rgba(10,10,10,.55);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F000000', endColorstr='#7F000000');
+}
+
+
+.bet_box {
+    position: relative;
+    z-index: 4;
+    width: 300px;
+  --  height: 185px;
+  --  margin-top: 30px;
+    margin-right: 40px;
+    float: right;
+    background: rgba(10,10,10,.55);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F000000', endColorstr='#7F000000');
+}
+
+.bet_box_header {
+    height: 23px;
+    border-bottom: 1px solid #fff;
+    padding: 1px 0;
+    color: #fff;
+}
+
+
+    /* css 重置 */
+    *{list-style:none; }
+   
+
+    /* 本例子css */
+    .stb{ width:300px; border:1px solid #ddd; text-align:left;  }
+    .stb .hd{ height:30px; line-height:30px; background:#f4f4f4; padding:5px;   border-bottom:1px solid #ddd;  position:relative; }
+    .stb .hd ul{ float:left; position:absolute; left:20px; top:-1px; height:32px;   }
+    .stb .hd ul li{ float:left; padding:0 5px; cursor:pointer;  }
+    .stb .hd ul li.on{ height:30px;  background:#fff; border:1px solid #ddd; border-bottom:2px solid #fff; }
+    .stb .bd ul{ padding:15px;  zoom:1;  }
+    .stb .bd li{ --height:24px; line-height:24px;   }
+    .stb .bd li .date{ float:right; color:#999;  }
+
+    /* 下面是前/后按钮代码，如果不需要删除即可 */
+    .stb .arrow{  position:absolute; right:10px; top:0; }
+    .stb .arrow a{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+       cursor:pointer; background:url("../image/arrow.png") 0 0 no-repeat; }
+    .stb .arrow .next{ background-position:0 -50px;  }
+    .stb .arrow .prevStop{ background-position:-60px 0; }
+    .stb .arrow .nextStop{ background-position:-60px -50px; }
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+.person_info{
+
+  margin: auto;
+    position: relative;
+    z-index: 4;
+    --width: 300px;
+    --height: 235px;
+    --margin-top: 30px;
+  --  margin-right: 40px;
+    float: right;
+--    background: rgba(10,10,10,.55);
+background: url("/static/img/lol/bg.bmp") repeat; 
+}
+
+
+.person_info .hd {
+  padding: 0 20px;
+  color: #FFF;
+  height: 32px;
+}
+
+.person_info .bd {
+    padding: 20px;
+}
+
+#clock-container {
+    width: 20px;
+    height: 20px;
+}
+#clock-container > svg {
+    width: 100%;
+    display: block;
+}
+.h50 {
+  height: 50px;
+}
+
+
+.bg_green {
+
+  background-color: green;
+}
+
+.align_r{
+  text-align: right;
+}
+.align_c{
+  text-align: center;
+}
+.align_l{
+  text-align: left;
+}
+
+.tr_top_red{
+  border-top:2px 
+  solid #cc0000; 
+  height:34px;"
+}
+
+.home_register .bd {
+    padding: 10px;
+}

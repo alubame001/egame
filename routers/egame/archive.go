@@ -29,6 +29,7 @@ const (
 	EVENT_ALREADY_ONLINE
 	EVENT_SYSTEM
 	EVENT_PRIVATE
+	EVENT_VIDEO
 )
 
 type Event struct {

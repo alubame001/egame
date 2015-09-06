@@ -73,10 +73,10 @@ import (
 	//"bytes"
    // "encoding/binary"  	
     //"math/big"
-    "image/png"	
+    //"image/png"	
     "image/jpeg"	
     "image"	
-"image/draw"
+	"image/draw"
     "os"
 
    // "path/filepath"
@@ -145,26 +145,7 @@ func (c *Captcha) genRandChars() []byte {
 	//return utils.RandomCreateBytes(challengeNums, originChars...)
 	return utils.RandomCreateBytes(r, originChars...)
 }
-/*
-func (c *Captcha) CreateNumbers()  {
-	for i := 100; i < 101; i++ {
-		var chars = CreateBytes(i)
 
-		img := NewImage(chars, c.StdWidth, c.StdHeight)	
-
-	    beego.Info(chars)
-	    m2 := img.Paletted
-	 
-	    //生成新图片new.jpg，并设置图片质量..
-	     var filename = "./static_source/image/captcha/new.jpg" 
-	    imgw, _ := os.Create(filename)
-	    jpeg.Encode(imgw, m2, &jpeg.Options{100})
-	}
-	
-}
-*/
-
-// beego filter handler for serve captcha image
 func (c *Captcha) Handler(ctx *context.Context) {
 	var chars []byte
 
@@ -194,87 +175,10 @@ func (c *Captcha) Handler(ctx *context.Context) {
 		}
 	}	
 
-	/*
-
-	//chars = byte[10]
-	var answerA []byte
-	var answerB []byte
-	//var answerC []byte
-	answerA = c.genRandChars()
-	answerB = c.genRandChars()
- 
-	yyy := big.NewInt(int64(len(answerA)))
-    fmt.Println("yyy:", yyy)  
-	a0 := big.NewInt(int64(answerA[0])) 
-	b0 := big.NewInt(int64(answerB[0])) 
-	a1 := big.NewInt(int64(answerA[1])) 
-	b1 := big.NewInt(int64(answerB[1])) 
-	a2 := big.NewInt(int64(answerA[2])) 
-	b2 := big.NewInt(int64(answerB[2])) 
-
-	y1 :=  big.NewInt(int64(100)) 
-	y2 :=  big.NewInt(int64(10)) 
-
-	z := new(big.Int)	
-	a0.Mul(a0, y1)
-
-	b0.Mul(b0, y1)
-	a1.Mul(a1, y2)
-	b1.Mul(b1, y2)
-	z.Add(z,a0).Add(z,a1).Add(z,a2).Add(z,b0).Add(z,b1).Add(z,b2)
-	//z.Add(z,a0).Add(z,a1)
-	beego.Info("z:",z)
-	beego.Info("a0:",a0)
-	beego.Info("a1:",a1)
-	beego.Info("a2:",a2)
-	beego.Info("b0:",b0)
-	beego.Info("b1:",b1)
-	beego.Info("b2:",b2)
-
-		
-
-
-		fmt.Println("z:", z)  
-		   
-	answerC := []byte{0, 0, 0, 0, 0, 0}
-	//answerC := [6]byte{}
 	
-
-	answerC[0] = answerA[0]
-	answerC[1] = answerA[1]
-	answerC[2] = answerA[2]
-	answerC[3] = answerB[0]
-	answerC[4] = answerB[1]
-	answerC[5] = answerB[2]
-	
-   // test()
-   */
-	/*
-	 //chars = chars+ []byte{10}
-	//for i := 100; i < 101; i++ {
-		var numbers = CreateBytes(100)
-
-		img2 := NewImage(numbers, c.StdWidth, c.StdHeight)	
-
-	    beego.Info(numbers)
-	    m2 := img2.Paletted
 	 
-	    //生成新图片new.jpg，并设置图片质量..
-	     var filename = "./static_source/image/captcha/new.jpg" 
-	    imgw, _ := os.Create(filename)
-	    jpeg.Encode(imgw, m2, &jpeg.Options{100})
-	//}
-	*/
-	    var r = randInt(999,10000)
      
 	img := NewImage(chars, c.StdWidth, c.StdHeight)	
-
-
-
-
-		var filename = "./static_source/image/captcha/"+ToString(r)+".png" 
-	    imgw, _ := os.Create(filename)
-	    png.Encode(imgw, img)
 
 	var newRBGAImage = new(RGBAImage)
 	 newRBGAImage = Watermark(img)
@@ -433,20 +337,10 @@ func Watermark(m *Image) *RGBAImage{
 	img, _ := jpeg.Decode(imgb)
 	defer imgb.Close()
 
-	/*
-	filename = "./static_source/image/captcha/"+"text" + ".png" 
-	wmb, err := os.Open(filename)
-	if err != nil {
-	fmt.Println(os.IsNotExist(err)) //true  证明文件已经存在
-	fmt.Println(err)               //open widuu.go: no such file or directory
-	}
-*/
-    //var wmb = m
-  //  watermark, _ := png.Decode(wmb)
     watermark:= m
-    //defer wmb.Close()
+
  
-    //把水印写到右下角，并向0坐标各偏移10个像素
+    //把水印写上，并偏移随机座标
     var rx =randInt(20,30)
     var ry =randInt(10,200)
     offset := image.Pt(img.Bounds().Dx()-watermark.Bounds().Dx()+rx, img.Bounds().Dy()-watermark.Bounds().Dy()-ry)
@@ -459,12 +353,13 @@ func Watermark(m *Image) *RGBAImage{
     draw.Draw(m2, watermark.Bounds().Add(offset), watermark, image.ZP, draw.Over)
  
     //生成新图片new.jpg，并设置图片质量..
+    /*
      filename = "./static_source/image/captcha/new.jpg" 
     imgw, _ := os.Create(filename)
     jpeg.Encode(imgw, m2, &jpeg.Options{100})
  
     defer imgw.Close()
-   
+ 	*/	  
     //fmt.Println("水印添加结束,请查看new.jpg图片...")
     var image = new(RGBAImage)
     image.RGBA=m2.RGBA 

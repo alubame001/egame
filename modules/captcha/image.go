@@ -726,6 +726,14 @@ type Image struct {
 	dotSize   int
 }
 
+type RGBAImage struct {
+	*image.RGBA
+	numWidth  int
+	numHeight int
+	dotSize   int
+}
+
+
 var prng = &siprng{}
 
 // randIntn returns a pseudorandom non-negative int in range [0, n).
@@ -817,6 +825,13 @@ func (m *Image) encodedPNG() []byte {
 	}
 	return buf.Bytes()
 }
+func (m *RGBAImage) RGBAencodedPNG() []byte {
+	var buf bytes.Buffer
+	if err := png.Encode(&buf, m.RGBA); err != nil {
+		panic(err.Error())
+	}
+	return buf.Bytes()
+}
 
 // WriteTo writes captcha image in PNG format into the given writer.
 func (m *Image) WriteTo(w io.Writer) (int64, error) {
@@ -824,7 +839,11 @@ func (m *Image) WriteTo(w io.Writer) (int64, error) {
 	n, err := w.Write(m.encodedPNG())
 	return int64(n), err
 }
+func (m *RGBAImage) RGBAWriteTo(w io.Writer) (int64, error) {
 
+	n, err := w.Write(m.RGBAencodedPNG())
+	return int64(n), err
+}
 func (m *Image) calculateSizes(width, height, ncount int) {
 	// Goal: fit all digits inside the image.
 	var border int
@@ -999,3 +1018,5 @@ func max3(x, y, z uint8) (m uint8) {
 	}
 	return
 }
+
+

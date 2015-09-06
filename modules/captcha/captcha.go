@@ -63,6 +63,7 @@ import (
 	"net/http"
 	"path"
 	"strings"
+	"strconv"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/cache"
@@ -72,6 +73,14 @@ import (
 	//"bytes"
    // "encoding/binary"  	
     //"math/big"
+    "image/png"	
+    "image/jpeg"	
+    "image"	
+"image/draw"
+    "os"
+
+   // "path/filepath"
+
       "time"
    // "math/rand"
 )
@@ -132,10 +141,28 @@ func (c *Captcha) genRandChars() []byte {
 	beego.Info("result:",result) 
 */ 
 	 r := randInt(3, 6)
+	
 	//return utils.RandomCreateBytes(challengeNums, originChars...)
 	return utils.RandomCreateBytes(r, originChars...)
 }
+/*
+func (c *Captcha) CreateNumbers()  {
+	for i := 100; i < 101; i++ {
+		var chars = CreateBytes(i)
 
+		img := NewImage(chars, c.StdWidth, c.StdHeight)	
+
+	    beego.Info(chars)
+	    m2 := img.Paletted
+	 
+	    //生成新图片new.jpg，并设置图片质量..
+	     var filename = "./static_source/image/captcha/new.jpg" 
+	    imgw, _ := os.Create(filename)
+	    jpeg.Encode(imgw, m2, &jpeg.Options{100})
+	}
+	
+}
+*/
 
 // beego filter handler for serve captcha image
 func (c *Captcha) Handler(ctx *context.Context) {
@@ -222,12 +249,46 @@ func (c *Captcha) Handler(ctx *context.Context) {
 	
    // test()
    */
+	/*
 	 //chars = chars+ []byte{10}
+	//for i := 100; i < 101; i++ {
+		var numbers = CreateBytes(100)
+
+		img2 := NewImage(numbers, c.StdWidth, c.StdHeight)	
+
+	    beego.Info(numbers)
+	    m2 := img2.Paletted
+	 
+	    //生成新图片new.jpg，并设置图片质量..
+	     var filename = "./static_source/image/captcha/new.jpg" 
+	    imgw, _ := os.Create(filename)
+	    jpeg.Encode(imgw, m2, &jpeg.Options{100})
+	//}
+	*/
+	    var r = randInt(999,10000)
+     
 	img := NewImage(chars, c.StdWidth, c.StdHeight)	
+
+
+
+
+		var filename = "./static_source/image/captcha/"+ToString(r)+".png" 
+	    imgw, _ := os.Create(filename)
+	    png.Encode(imgw, img)
+
+	var newRBGAImage = new(RGBAImage)
+	 newRBGAImage = Watermark(img)
+
+
 	beego.Info("NewImage",chars,img)
+		if _, err := newRBGAImage.RGBAWriteTo(ctx.ResponseWriter); err != nil {
+		beego.Error("Write Captcha Image Error:", err)
+	}
+	/*
 	if _, err := img.WriteTo(ctx.ResponseWriter); err != nil {
 		beego.Error("Write Captcha Image Error:", err)
 	}
+	*/
 }
 
 // tempalte func for output html
@@ -340,3 +401,72 @@ func NewWithFilter(urlPrefix string, store cache.Cache) *Captcha {
 	return cpt
 }
 
+
+
+func ToString(args ...interface{}) string {
+	 result :=""
+	 for _, arg := range args {
+	 switch val := arg.(type) {
+	 case int:
+	 result += strconv.Itoa(val)
+	 case string:
+	 result += val
+	}
+	}
+ return result
+}
+
+
+func Watermark(m *Image) *RGBAImage{
+	//var path =GetCurrPath()
+	
+	//fmt.Println(path)   
+	//fmt.Println(path+"sam.jpg")  
+	x := randInt(0, 9)
+	var filename = "./static_source/image/captcha/b"+ToString(x) + ".jpg" 
+	imgb, err := os.Open(filename)
+    if err != nil && os.IsNotExist(err) {
+
+         fmt.Println(imgb, "文件不存在") //为什么打印nil 是这样的如果file不存在 返回f文件的指针是nil的 所以我们不能使用defer f.Close()会报错的
+
+     }
+	img, _ := jpeg.Decode(imgb)
+	defer imgb.Close()
+
+	/*
+	filename = "./static_source/image/captcha/"+"text" + ".png" 
+	wmb, err := os.Open(filename)
+	if err != nil {
+	fmt.Println(os.IsNotExist(err)) //true  证明文件已经存在
+	fmt.Println(err)               //open widuu.go: no such file or directory
+	}
+*/
+    //var wmb = m
+  //  watermark, _ := png.Decode(wmb)
+    watermark:= m
+    //defer wmb.Close()
+ 
+    //把水印写到右下角，并向0坐标各偏移10个像素
+    var rx =randInt(20,30)
+    var ry =randInt(10,200)
+    offset := image.Pt(img.Bounds().Dx()-watermark.Bounds().Dx()+rx, img.Bounds().Dy()-watermark.Bounds().Dy()-ry)
+    b := img.Bounds()
+    //m2 := image.NewNRGBA(b)
+    m2 := new(RGBAImage)
+    m2.RGBA = image.NewRGBA(b)
+ 
+    draw.Draw(m2, b, img, image.ZP, draw.Src)
+    draw.Draw(m2, watermark.Bounds().Add(offset), watermark, image.ZP, draw.Over)
+ 
+    //生成新图片new.jpg，并设置图片质量..
+     filename = "./static_source/image/captcha/new.jpg" 
+    imgw, _ := os.Create(filename)
+    jpeg.Encode(imgw, m2, &jpeg.Options{100})
+ 
+    defer imgw.Close()
+   
+    //fmt.Println("水印添加结束,请查看new.jpg图片...")
+    var image = new(RGBAImage)
+    image.RGBA=m2.RGBA 
+     return image
+}

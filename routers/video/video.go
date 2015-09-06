@@ -34,7 +34,11 @@ func (this *VideoRouter) Get() {
 	this.TplNames = "video/video.html"
 
 }
+func (this *VideoRouter) Virtual() {
+//	this.Data["isVideo"] = true
+	this.TplNames = "video/virtual.html"
 
+}
 func (this *VideoRouter) Betlol() {
 	this.EnableRender = false
 	uname := this.GetString("uname")

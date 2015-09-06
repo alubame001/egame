@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VirtualSports</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://mkt.9599008.com/template/bbin/public/css/table_w.css?v=201506040908" rel="stylesheet" type="text/css" />
+<link href="http://mkt.9599008.com/template/bbin/public/css/button.css?v=201411190301" rel="stylesheet" type="text/css" />
+<link href="http://mkt.9599008.com/template/bbin/public/css/oddsFamily.css?v=201506040908" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/getDataClass.js?v=201305170428"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/ajaxData.js?v=201401080313"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/odds/MultiSport_Def.js?v=201508051017"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/OddsKeeper.js?v=201509040645"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/odds/VirtualSports.js?v=201405140731"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/common.js?v=201508051022"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/OddsUtils.js?v=201507200925"></script>
+<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/VSswfobject.js?v=201409150807"></script>
+<script language="JavaScript" type="text/javascript">
+var sSport="180";
+var RES_REFRESH = "<div class='iconRefresh' title='刷新'></div>";
+var RES_PLEASE_WAIT = "<div class='iconRefresh wait' title='请稍候'></div>";
+function SetPlayer(streamName, token, targetName) {
+	var swfVersion = "10.1.0";
+	var installSwf = "http://mkt.9599008.com/template/public/TV/playerProductInstall.swf";
+
+	var flashvars = {};
+	flashvars.uid = "";
+	flashvars.location = "CN";
+	flashvars.stream = streamName;
+	flashvars.token = token;
+	flashvars.button = "1,1,1,1,1,1";
+
+	var params = {};
+	params.quality = "high";
+	params.bgcolor = "#FFFFFF";
+	params.allowscriptaccess = "always";
+	params.allowfullscreen = "true";
+	params.wmode = "transparent";
+
+	var attributes = {};
+	attributes.id = targetName;
+	attributes.name = targetName;
+	attributes.align = "middle";
+
+	swfobject.embedSWF("http://mkt.9599008.com/template/public/TV/ONEBOOKPlayer.swf", targetName, "489", "384", swfVersion, installSwf, flashvars, params, attributes);
+}
+SetPlayer("Virtual12@s30309", "daEbbctb3c8a0b1d1d_dNanbJbwctcIdZd8-bv7dL_-jy-SMU", "player");
+
+</script>
+<script type='text/javascript'>
+var footer_hight = "0";
+if (footer_hight > 0) {
+  $(window).load(function () {
+    window.frames["FooterFrame"].location = "";
+	$("#FooterFrame").load(function () {
+        $("#FooterFrame").height(footer_hight);
+    });
+  });
+}
+
+//
+</script>
+</head>
+<body onload="LoadTmpl();">
+<div class="title_border">
+	<div class="titleSection">
+		<div class="left">
+        	<div class="Soccer">虚拟足球</div>
+        </div>
+		<div class="control right">
+        	<a href="javascript:LoadOddsData(true);" id="btnRefresh_D" name="btnRefresh_D" class="buttons" style="display:none"><span><div class='iconRefresh wait' title='请稍候'></div></span></a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div id="OddsTr" class="tabbox virtualBox"> 
+  <!-- Streaming Area --> 
+  <span class="tabbox_F" style="display: inline-block; float: left;">
+  <div class="tmpl_border EarlyMarket_top_bg streamVirtual">
+    <div id="CurrEventTitle" class="virtualTitle"></div>
+    <div class="tmpl_border Streamingtext" style="display:none; width: 446px !important;" id="NotSupportFlash">
+      <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"  >
+        <tr>
+          <td width="84"><img src="http://mkt.9599008.com/template/bbin/public/images/TV/MsgIcon.png" /></td>
+          <td>您的浏览器不支持Flash</td>
+        </tr>
+      </table>
+    </div>
+    <div class="streamVideo">
+	  <object width="489" height="384" id ="player"></object>
+    </div>
+  </div>
+  </span> 
+  <!-- Match Area --> 
+  <span class="tabbox_F" style="display: inline-block">  
+  <div id="Load_List" class="matchVirtual bgcpe" align="center"><img src="http://mkt.9599008.com/template/bbin/public/images/layout/spacer.gif" vspace="2" class="icon_loading" /></div>
+  <div id="MatchList" class="matchVirtual bgcpe" style="display: none;"></div>
+  </span>
+  <div id="oTableContainer"> </div>
+</div>
+<div id="NoInfo" align="left" style="display:none">
+  <div class="tabbox">
+    <div class="tabbox_F">
+      <table width="100%" class="tabstyle02">
+        <tr>
+          <td class="bgcpe none_rline" align="center">目前没有适合赛事</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+  <div style="text-align: right; margin-top:4px; width: 792px; {{lbl_ThirdPartyAuthorizationDisplayDisplay}}" class="FavTeamClass">
+  
+</div>
+<iframe id="FooterFrame" name="FooterFrame" width="0" height="0" style="display:none" frameborder="0" allowtransparency="true" scrolling="no"></iframe>  
+</body>
+

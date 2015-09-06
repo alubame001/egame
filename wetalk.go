@@ -95,6 +95,7 @@ func main() {
 	video := new(video.VideoRouter)	
 	beego.Router("/video", video, "get:Get")
 	beego.Router("/video/bet/lol", video, "post:Betlol")
+	beego.Router("/video/virtual", video, "get:Virtual")
 
 
 	beego.Router("/join", trade, "post:Join")

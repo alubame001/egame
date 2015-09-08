@@ -92,7 +92,7 @@ var (
 
 const (
 	// default captcha attributes
-	challengeNums    = 3
+	challengeNums    = 6
 	expiration       = 600
 	fieldIdName      = "captcha_id"
 	fieldCaptchaName = "captcha"
@@ -140,10 +140,10 @@ func (c *Captcha) genRandChars() []byte {
 	result = r.Intn(2)
 	beego.Info("result:",result) 
 */ 
-	 r := randInt(3, 6)
+	// r := randInt(3, 6)
 	
-	//return utils.RandomCreateBytes(challengeNums, originChars...)
-	return utils.RandomCreateBytes(r, originChars...)
+	return utils.RandomCreateBytes(challengeNums, originChars...)
+	//return utils.RandomCreateBytes(r, originChars...)
 }
 
 func (c *Captcha) Handler(ctx *context.Context) {
@@ -181,7 +181,9 @@ func (c *Captcha) Handler(ctx *context.Context) {
 	img := NewImage(chars, c.StdWidth, c.StdHeight)	
 
 	var newRBGAImage = new(RGBAImage)
-	 newRBGAImage = Watermark(img)
+	 newRBGAImage = Watermark(c,img)
+
+	 //CutImage(c)
 
 
 	beego.Info("NewImage",chars,img)
@@ -321,7 +323,35 @@ func ToString(args ...interface{}) string {
 }
 
 
-func Watermark(m *Image) *RGBAImage{
+func Watermark(c *Captcha,m *Image) *RGBAImage{
+		
+	watermark:= m
+
+	var rx =randInt(100,400)
+	var ry =randInt(100,300)
+
+	b := watermark.Bounds()
+	fmt.Println(b)
+
+	m2 := CutImage(c,rx,ry)
+	offset := image.Pt(rx,ry)
+	fmt.Println("offset",offset)
+	fmt.Println("b",b)
+	b.Add(offset)
+	fmt.Println("b",b)
+	// draw.Draw(m2, b, img, image.ZP, draw.Src)//画 底图
+	draw.Draw(m2, b.Add(offset), watermark, image.ZP, draw.Over) //画 验证码
+
+
+	var image = new(RGBAImage)
+	image.RGBA=m2.RGBA 
+	return image
+}
+
+
+
+
+func CutImage(c *Captcha ,rx int ,ry int) *RGBAImage{
 	//var path =GetCurrPath()
 	
 	//fmt.Println(path)   
@@ -336,32 +366,22 @@ func Watermark(m *Image) *RGBAImage{
      }
 	img, _ := jpeg.Decode(imgb)
 	defer imgb.Close()
-
-    watermark:= m
-
- 
-    //把水印写上，并偏移随机座标
-    var rx =randInt(20,30)
-    var ry =randInt(10,200)
-    offset := image.Pt(img.Bounds().Dx()-watermark.Bounds().Dx()+rx, img.Bounds().Dy()-watermark.Bounds().Dy()-ry)
-    b := img.Bounds()
-    //m2 := image.NewNRGBA(b)
-    m2 := new(RGBAImage)
-    m2.RGBA = image.NewRGBA(b)
- 
-    draw.Draw(m2, b, img, image.ZP, draw.Src)
-    draw.Draw(m2, watermark.Bounds().Add(offset), watermark, image.ZP, draw.Over)
- 
-    //生成新图片new.jpg，并设置图片质量..
+    //var rx =randInt(20,50)
+    //var ry =randInt(20,50)    
+    //var rx = x
+    //var ry =y
+	b := img.Bounds()
+    m3 := image.NewRGBA(image.Rect(rx, ry, c.StdWidth+rx, c.StdHeight+ry))
+    draw.Draw(m3, b, img, image.ZP, draw.Src) 
     /*
      filename = "./static_source/image/captcha/new.jpg" 
     imgw, _ := os.Create(filename)
-    jpeg.Encode(imgw, m2, &jpeg.Options{100})
- 
+    jpeg.Encode(imgw, m3, &jpeg.Options{100})     
     defer imgw.Close()
- 	*/	  
-    //fmt.Println("水印添加结束,请查看new.jpg图片...")
-    var image = new(RGBAImage)
-    image.RGBA=m2.RGBA 
-     return image
+*/
+ 	var image = new(RGBAImage)
+    image.RGBA=m3 
+    return image
+
+
 }

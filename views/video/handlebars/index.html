@@ -1,19 +1,9 @@
-<script type="text/x-handlebars" data-template-name="index">
-    
-{{partial "videoBox2"}}
-    <!--
- <button class='btn btn-es ' {{action  'reload' 'lol'   bubbles=true target="controller"}}>reload</button>
- <button class='btn btn-es ' {{action  'setFilter' 'lol'   bubbles=true target="controller"}}>LOL</button>
- -->
-      <div class="web_frame container">
+<script type="text/x-handlebars" data-template-name="index">    
+    {{partial "videoBox2"}}
+    <div class="web_frame container">
       {{partial 'analypage' }}     
       {{render 'lol' model.video}}   
     </div>      
-<!--
-    {{partial "intro"}}
-    {{partial "feature"}}
-    {{partial "friendlink"}}    
-    -->
 </script>
 
 <script type="text/x-handlebars" data-template-name="index2">
@@ -59,11 +49,7 @@
       {{partial 'analypage' }}     
       {{render 'lol' model.video}}   
 
-<!--
-    {{partial "intro"}}
-    {{partial "feature"}}
-    {{partial "friendlink"}}    
-    -->
+
 </script>
 
 
@@ -702,129 +688,5 @@
         </div>
     </div>
 </script>
-<script type="text/x-handlebars" data-template-name="friendlink">
-  {{partial "container_head"}}
-            <h2><l><~i18n .Lang "home.friendlink"~></l></h2>
-            <div class="whouse">
-                <img class="img-thumbnail" src="/static/img/friendlink/btc123.png">
-                <img class="img-thumbnail" src="/static/img/friendlink/btcchina.png">
-                <img class="img-thumbnail" src="/static/img/friendlink/huobi.png">
-
-            </div>
-  {{partial "container_footer"}}
-</script>
-
-<script type="text/x-handlebars" data-template-name="feature">
-  {{partial "container_head"}}
-            <h2><l><~i18n .Lang "home.features"~></l></h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="feature">
-                        <h3 class="title">
-                            <~if eq .Lang "zh-CN"~>
-                                简单化
-                            <~else~>
-                                EASY TO USE
-                            <~end~>
-                        </h3>
-                        <p class="content">
-                            <div class='well markdown'>
-                            <div class="chart-container">
-              
-                            </div>
-                            </div>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature">
-                        <h3 class="title">
-                            <~if eq .Lang "zh-CN"~>
-                                智能化
-                            <~else~>
-                                INTELLIGENT
-                            <~end~>
-                        </h3>
-                        <p class="content">
-                        <div class='well markdown'>
-                            <div class="chart-container">
-          
-                            </div>
-                        </div>
-                            
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-  {{partial "container_footer"}}
-</script>
-<script type="text/x-handlebars" data-template-name="intro">
-  {{partial "container_head"}}
-        <div class="col-md-8">
-            <h2><l><~i18n .Lang "home.quick_start"~></l></h2>
-            <div class="row">
-                <div class="col-md-6">
 
 
-
-                    <div class="markdown">
-                        <~if eq .Lang "zh-CN"~>
-                            <p>下载安装</p><i class="fa fa-spinner fa-spin"></i>spin
-                            <pre lang="bash"><code>go get github.com/astaxie/beego</code></pre>
-                            <p>创建文件 <code>hello.go</code></p>
-                            <pre lang="go"><code>package main<br><br>import "github.com/astaxie/beego"<br><br>func main() {<br>    beego.Run()<br>}</code></pre>
-                        <~else~>
-                            <p>Download and install</p>
-                            <pre lang="bash"><code>go get github.com/astaxie/beego</code></pre>
-                            <p>Create file <code>hello.go</code></p>
-                            <pre lang="go"><code>package main<br><br>import "github.com/astaxie/beego"<br><br>func main() {<br>    beego.Run()<br>}</code></pre>
-                        <~end~>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="markdown">
-                        <~if eq .Lang "zh-CN"~>
-                            <p>编译运行</p>
-                            <pre lang="bash"><code>go build -o hello hello.go<br>./hello</code></pre>
-                            <p>浏览效果</p>
-                            <p>打开浏览器并访问 <code>http://localhost:9999</code></p>
-                            <p>恭喜！您已经成功构建了第一个 beego 项目。</p>
-                            <p>请查阅 <a href="/docs">开发文档</a> 以进行深入学习。</p>
-                        <~else~>
-                            <p>Build and run</p>
-                            <pre lang="bash"><code>go build hello.go<br>./hello</code></pre>
-                            <p>View effects</p>
-                            <p>Open your browser and visit <code>http://localhost:9999</code></p>
-                            <p>Congratulations! You just built your first beego app.</p>
-                            <p>Please see <a href="/docs">Documentation</a> for going further.</p>
-                        <~end~>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="home-box">
-                <h2><l><~i18n .Lang "home.further_reading"~></l></h2>
-                <div class="well markdown">
-                    <div class="container">
-
-                        <form class="form-inline">
-                            <div class="col-md-3 form-group">
-                                <input id="sendbox" type="text" class="form-control" onkeydown="if(event.keyCode==13)return false;" required>
-                            </div>
-                            <button id="sendbtn" type="button" class="btn btn-default"><~i18n .Lang "Send"~></button>
-                        </form>
-                    </div>
-
-                    <div class="container">
-                        <h3><l><~i18n .Lang "chat_history"~></l>:</h3>
-                        <ul id="chatbox">
-                            <li><~i18n .Lang "welcome"~></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-  {{partial "container_footer"}}
-</script>

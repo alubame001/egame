@@ -441,7 +441,7 @@ func initExtraField() {
 			return template.HTML(fmt.Sprintf(`<label>
             <input type="hidden" name="%s" value="%v">
             <button type="button" data-toggle="button" data-name="%s" class="btn btn-default btn-xs btn-checked%s">
-            	<i class="icon icon-ok"></i>
+            	<i class="fa fa-check-square"></i>
         	</button>%s
         </label>`, fSet.Name, value, fSet.Name, active, fSet.LabelText))
 		}

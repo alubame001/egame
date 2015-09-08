@@ -85,6 +85,7 @@ func main() {
 	home := new(home.HomeRouter)
 	//beego.Router("/", trade, "get:Get")
 	beego.Router("/home", home, "get:Get")
+	beego.Router("/test", home, "get:Test")
 	beego.Router("/", home, "get:Get")
 	beego.Router("/time", home, "get:Time")
 

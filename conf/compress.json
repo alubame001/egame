@@ -39,8 +39,9 @@
                     "jquery.extend.js",
                     "bootstrap.js",
                     "progressbar.js",
-                    "lib.min.js",
+                    "jcookie.js",                 
                     "prettify.js",                  
+                    "jquery.modal.js",                  
                     "jStorage.js"
          
                    
@@ -68,6 +69,12 @@
                     "/ember/big.min.js"
                 ]
             },
+            "home": {
+                "DistFile": "home.min.js",
+                "SourceFiles": [                      
+                    "/home/cont.js"
+                ]
+            },               
             "cont": {
                 "DistFile": "ost.min.js",
                 "SourceFiles": [                      
@@ -200,6 +207,7 @@
                     "bootstrap.css",
                     "bootstrap-theme.css",           
                     "font-awesome.min.css",
+                    "jquery.modal.css",
                     "prettify.css",
                     "select2.css"
                    
@@ -220,10 +228,11 @@
                     "select2.css"
                 ]
             },  
-            "cont": {
+            "home": {
                 "DistFile": "cont.min.css",
                 "SourceFiles": [
-                    "/home/cont.css"
+                    "/home/cont.css",
+                    "/home/main.css"
                 ]
             }, 
             "video": {

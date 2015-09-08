@@ -18,7 +18,7 @@ a * {cursor:pointer}
 .topBg {width:100%;min-width:1000px;height:788px;position:absolute;left:0;top:0;background:no-repeat center top}
 /*Nav*/
 .navSub dt,.navSub,li.nav3,a.nav4:hover,.navSub a:hover {  background-image:url(http://ossweb-img.qq.com/images/age/web201301/navSub.png); background-repeat:no-repeat}/*delay?*/
-.navIL,.navIM,.logoPNG,.ggLoading,.ggLoading2 { background-image:url(http://ossweb-img.qq.com/images/age/web201301/nav.png)}
+.navIL,.navIM,.logoPNG,.ggLoading,.ggLoading2 { background-image:url(/static/img/home/nav.png)}
 
 .topNav { height:75px; width:100%; position:absolute; left:0; top:0; margin:0 auto; overflow:hidden; z-index:4;transition:height 0.5s;-webkit-transition:height 0.5s}
 .topNav2 { width:200%; position:absolute; left:-50%; top:0}
@@ -75,13 +75,17 @@ h1.logoPNG { width:112px; height:124px; background-position:0 -150px; display:bl
 .main {width:740px;float:left;padding-bottom:80px}
 
 .cont {width:719px;border:1px #dedddd solid;background:#fcfcfc;padding-bottom:40px}
-.con-tit {height:109px;background:#efefef url('http://ossweb-img.qq.com/images/age/web201408/con_tit.jpg') no-repeat 317px 0}
+.con-tit {--height:109px;background:#efefef url('http://ossweb-img.qq.com/images/age/web201408/con_tit.jpg') no-repeat 317px 0}
 .titnews {background-position:317px -109px}
 .titevents {background-position:317px -218px}
 .titdown {background-position:317px -327px}
 .titmedia {background-position:317px -436px}
 
-.con-tit h3 {padding:25px 0 0 45px;height:47px;font-size:26px}
+.con-tit h3 {
+    padding: 3px 0 0 15px;
+    height: 40px;
+    font-size: 26px;
+}
 .con-tit h3 span {font-size:12px;font-weight:normal;margin-left:10px;color:#767575}
 .path {margin-left:45px;color:#767575}
 .path a {color:#767575}

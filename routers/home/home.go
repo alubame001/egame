@@ -31,10 +31,17 @@ type HomeRouter struct {
 
 func (this *HomeRouter) Get() {
 	this.Data["IsHome"] = true
+	this.TplNames = "home/index.html"
+
+
+}
+func (this *HomeRouter) Test() {
+	this.Data["IsHome"] = true
 	this.TplNames = "home/home.html"
 
 
 }
+
 func (this *HomeRouter) Time() {
 	var data Data
 

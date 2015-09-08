@@ -62,7 +62,7 @@ p{
 	box-shadow:0px 0px 7px #000;
 }
 .pxs_bg{
-	background:transparent url(/static/img/video/bg.png) repeat top left;
+	background:transparent url(../images/bg.png) repeat top left;
 }
 .pxs_bg div{
 	position:absolute;

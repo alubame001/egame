@@ -13,7 +13,7 @@
                     <~if .Success~>
                         <div class="col-md-6 auth-page">
                             <h3 class="title">
-                                <i class="icon icon-user"></i> <~i18n .Lang "auth.reset_password"~>
+                                <i class="fa fa-user"></i> <~i18n .Lang "auth.reset_password"~>
                             </h3>
                             <form action="<~.AppUrl~>reset/<~.Code~>" method="POST">
                                 <~.xsrf_html~><~.once_html~>

@@ -7,9 +7,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <!--
             <a class="logo" href="<~.AppUrl~>">
                 <img src="<~.AppLogo~>">
             </a>
+            -->
         </div>
         <~if .SearchEnabled~>
         <form id="navbar-search" class="navbar-form navbar-left <~if or .NativeSearch .SphinxEnabled~><~else~>google<~end~>" role="search" action="<~.AppUrl~>search">
@@ -20,13 +22,15 @@
         <~end~>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                   
+                    <li <~if .IsHome~>class="active"<~end~>><a target="_self" href="/"><i class="fa fa-home"></i><~i18n .Lang "navbar.home"~></a></li>
+                  <!-- 
                 <li <~if .IsTrade~>class="active"<~end~>><a target="_self" href="/trade"><~i18n .Lang "navbar.trade"~></a></li>
 
                 <li <~if .IsCommunity~>class="active"<~end~>><a target="_self" href="/community"><~i18n .Lang "navbar.community"~></a></li>
-                <li <~if .IsEgame~>class="active"<~end~>><a target="_self" href="/egame"><~i18n .Lang "navbar.egame"~></a></li>
+                -->
+                <li <~if .IsEgame~>class="active"<~end~>><a target="_self" href="/egame"><i class="fa fa-gamepad"></i><~i18n .Lang "navbar.egame"~></a></li>
 
-                <li <~if .IsVideo~>class="active"<~end~>><a target="_self" href="/video"><~i18n .Lang "navbar.video"~></a></li>                
+                <li <~if .IsVideo~>class="active"<~end~>><a target="_self" href="/video"><i class="fa fa-play-circle"></i><~i18n .Lang "navbar.video"~></a></li>                
                     
 
             </ul>
@@ -90,7 +94,7 @@
                         <p>
                             <label>
                                 <input type="hidden" name="Remember" value="0">
-                                <button type="button" data-toggle="button" data-name="Remember" value="0" class="btn btn-default btn-xs btn-checked"><i class="icon icon-ok"></i></button><~i18n .Lang "auth.login_remember_me"~>
+                                <button type="button" data-toggle="button" data-name="Remember" value="0" class="btn btn-default btn-xs btn-checked"><i class="fa fa-check-square"></i></button><~i18n .Lang "auth.login_remember_me"~>
                             </label>
                             <span class="pull-right"><a href="<~$.AppUrl~>forgot"><i class="icon-question-sign"></i> <~i18n .Lang "auth.forgot_password"~></a></span>
                         </p>

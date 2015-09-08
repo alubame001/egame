@@ -4,7 +4,7 @@ pgvMain();
 
 
 //back
-document.getElementById('main-bottom').style.backgroundImage="url('http://ossweb-img.qq.com/images/age/web201408/con_bot.jpg')";
+//document.getElementById('main-bottom').style.backgroundImage="url('http://ossweb-img.qq.com/images/age/web201408/con_bot.jpg')";
 
 //nav
 function nav(){
@@ -28,13 +28,15 @@ function nav(){
 			navSub[_no].className='';navIndex[_no+1].className=''
 		}
 	}
-}nav();
+}
+nav();
 
 //lay
 var _lay = document.createElement('div');
 _lay.style.cssText = "width:117px;height:371px;position:absolute";
-_lay.innerHTML = '<a href="#" target="_blank" data-TGAD="1267,12585" class="retad"></a><a href="#" target="_blank" data-TGAD="1267,8166" class="retad"></a><div class="retdiv"><a href="#" title="返回顶部">返回顶部</a></div>';
+_lay.innerHTML = '<a href="#" target="_blank" data-TGAD="1267,12585" class="retad"></a><a href="#" target="_blank" data-TGAD="1267,8166" class="retad"></a><div class="retdiv"><a href="#" title=""></a></div>';
 document.body.appendChild(_lay);
+
 var _scroll = function() {
     var _t = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop,
     _w = document.documentElement.clientWidth || document.body.clientWidth,
@@ -48,6 +50,8 @@ var _scroll = function() {
     _lay.style.top = px + 'px'
 };
 _scroll();
+
+
 function addEvent(obj, type, fn) {
     if (window.attachEvent) {
         obj.attachEvent('on' + type, fn)

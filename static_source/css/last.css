@@ -561,7 +561,7 @@ a {
   --  margin-right: 40px;
     float: right;
 --    background: rgba(10,10,10,.55);
-background: url("/static/img/lol/bg.bmp") repeat; 
+background: url("/static/img/lol/frame_bg.jpg") repeat; 
 }
 
 

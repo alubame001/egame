@@ -37,7 +37,7 @@ const (
 	// Maximum absolute skew factor of a single digit.
 	maxSkew = 0.7
 	// Number of background circles.
-	circleCount = 50
+	circleCount = 100
 )
 
 var font = [][]byte{
@@ -814,7 +814,7 @@ func NewImage(digits []byte, width, height int) *Image {
 	fmt.Println(digits)
 	for _, n := range digits {
 
-   	
+
    		result = randIntn(100)
    		
    		if result <50{
@@ -907,6 +907,7 @@ func (m *Image) drawHorizLine(fromX, toX, y int, colorIdx uint8) {
 }
 
 func (m *Image) drawCircle(x, y, radius int, colorIdx uint8) {
+
 	f := 1 - radius
 	dfx := 1
 	dfy := -2 * radius
@@ -967,6 +968,7 @@ func (m *Image) strikeThrough() {
 	for x := 0; x < maxx; x++ {
 		xo := amplitude * math.Cos(float64(y)*yx)
 		yo := amplitude * math.Sin(float64(x)*yx)
+
 		for yn := 0; yn < m.dotSize; yn++ {
 			r := randInt(0, m.dotSize)
 			m.drawCircle(x+int(xo), y+int(yo)+(yn*m.dotSize), r/4, 1)
@@ -979,16 +981,38 @@ func (m *Image) drawDigit(digit []byte, x, y int) {
 	xs := float64(x)
 	r := m.dotSize / 2
 	y += randInt(-r, r)
+
+//	w := m.Bounds().Max.X
+
+//	h := m.Bounds().Max.Y
+	oldm := m.Paletted
+	//newm := image.NewPaletted(image.Rect(0, 0, w, h), oldm.Palette)
+	
+	period :=  randFloat(50, 100)
+	amplude :=  randFloat(15, 10)
+	dx := 2.0 * math.Pi / period
+	colorIdx := uint8(randInt(1, circleCount-1))
 	for yo := 0; yo < fontHeight; yo++ {
 		for xo := 0; xo < fontWidth; xo++ {
 			if digit[yo*fontWidth+xo] != blackChar {
 				continue
 			}
-			m.drawCircle(x+xo*m.dotSize, y+yo*m.dotSize, r, 1)
+			//m.Paletted = image.NewPaletted(image.Rect(0, 0, w, h), randomPalette())
+			xn := amplude * math.Sin(float64(y)*dx)
+			yn := amplude * math.Cos(float64(x)*dx)
+			m.Paletted.SetColorIndex(xo, yo, oldm.ColorIndexAt(xo+int(xn), yo+int(yn)))
+			
+//			r := randInt(1, m.dotSize)
+
+			m.drawCircle(x+xo*m.dotSize, y+yo*m.dotSize, r,colorIdx)
+			//m.drawCircle(x+xo*m.dotSize, y+yo*m.dotSize, r,1)
+
+			
 		}
 		xs += skf
 		x = int(xs)
 	}
+	m.Paletted = oldm
 }
 
 func (m *Image) distort(amplude float64, period float64) {
@@ -998,7 +1022,7 @@ func (m *Image) distort(amplude float64, period float64) {
 	oldm := m.Paletted
 	newm := image.NewPaletted(image.Rect(0, 0, w, h), oldm.Palette)
 
-	dx := 2.0 * math.Pi / period
+	dx := 1.0 * math.Pi / period
 	for x := 0; x < w; x++ {
 		for y := 0; y < h; y++ {
 			xo := amplude * math.Sin(float64(y)*dx)

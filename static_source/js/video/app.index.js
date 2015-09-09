@@ -478,6 +478,7 @@ WebApp.IndexView = Ember.View.extend({
        }    
        socket.onclose = function (event) {
           alert('closed')
+           //socket = new WebSocket(s);
        }
       socket.onmessage = function (event) {
           var data = JSON.parse(event.data);

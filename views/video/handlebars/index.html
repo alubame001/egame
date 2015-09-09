@@ -322,7 +322,10 @@
                               <button  type="button" class='btn btn-default btn-es ' {{action  'setCoin' 'ltc'   bubbles=true target="controller"}}>LTC</button>
                               <button  type="button" class='btn btn-default btn-es ' {{action  'setCoin' 'doge'   bubbles=true target="controller"}}>DOGE</button>  
                             </div>
-
+                            <div class="btn-group">
+                                <button {{action "sendBet"}}>投注</button>
+                                <button {{action "actionResetBet"}}>取消</button>
+                            </div>
 
                         <div class="panel-body">
                             <div class="tab-content">   

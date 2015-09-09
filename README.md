@@ -55,6 +55,11 @@ go get -u github.com/Unknwon/goconfig
 go get -u github.com/howeyc/fsnotify
 go get -u github.com/nfnt/resize
 go get -u github.com/slene/blackfriday
+go get -u github.com/bitly/go-simplejson
+go get -u github.com/gorilla/websocket
+go get -u github.com/lib/pq
+
+
 ```
 
 ### Static Files

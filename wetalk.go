@@ -97,6 +97,7 @@ func main() {
 	beego.Router("/video", video, "get:Get")
 	beego.Router("/video/bet/lol", video, "post:Betlol")
 	beego.Router("/video/virtual", video, "get:Virtual")
+	beego.Router("/video/dy", video, "get:Dy")
 
 
 	beego.Router("/join", trade, "post:Join")

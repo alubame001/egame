@@ -302,10 +302,11 @@ function setChannel(newParam) {
    
               break;          	
           case 1:
+          // http://x.15w.com/summoner/ao2x1e4ru2cxdnk1ha
             $(".show").fadeOut(1000).remove()
             $(".images").hide()
             $(".image1").fadeIn(1000)
-            $(".channel1").append('<embed class="show" src="http://yy.com/s/90066/mini.swf" quality="high" width="1000" height="500" align="middle" allowScriptAccess="never" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>')
+            $(".channel1").append('<embed src="http://yy.com/s/36163746/1728229749/mini.swf" quality="high" width="1000" height="500" align="middle" allowScriptAccess="never" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>')
             $(".images").hide(1000) 
    
               break;

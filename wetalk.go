@@ -34,8 +34,11 @@ import (
 	"github.com/alubame001/egame/routers/home"
 	"github.com/alubame001/egame/setting"
 	"github.com/alubame001/egame/task"
+	"github.com/alubame001/egame/routers/engine"
 	//_ "github.com/go-sql-driver/mysql"
-
+	"net/http"
+	//"os"
+	//. "tools/engine"
 	_ "github.com/lib/pq"
 )
 
@@ -239,5 +242,36 @@ func main() {
 	beego.SetStaticPath("/json", "json")  
 
 	beego.DirectoryIndex = true
+
+	
+	var engineIO engine.EngineIO
+	engineIO.Init(engine.Config{
+		PingTimeout:   60000,
+		PingInterval:  5000,
+		AllowUpgrades: true,
+		Transports:    []string{"polling", "websocket"},
+	}, onConnection)
+	defer engineIO.Close()	
+	http.Handle("/engine.io/", &engineIO)
+	var handler = http.StripPrefix("/public/", http.FileServer(http.Dir("/routers/engine/public")))
+	http.Handle("/public/", handler)
+	server := &http.Server{Addr: ":12345"}
+	if err := server.ListenAndServe(); err != nil {
+		beego.Info("ListenAndServe: ", err)
+	}
+	
+
+	/* beego Router*/
+	e := new(engine.EngineRouter)	
+	beego.Router("/engine.io", e, "get:Join")
+	/* beego Router*/
+
 	beego.Run()
+}
+
+func onConnection(client *engine.Client) {
+	client.MessageCallback = func(c *engine.Client, message []byte) {
+		beego.Info("pong")
+		c.WriteString("pong")
+	}
 }

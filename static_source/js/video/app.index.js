@@ -467,7 +467,7 @@ WebApp.IndexView = Ember.View.extend({
       console.log(getTime(time))
 */
 
-
+/*
       var xsrftoken = $('meta[name=_xsrf]').attr('content'); 
       var s ='ws://' + window.location.host + '/egame/ws/join?uname='+xsrftoken;
       socket = new WebSocket(s);
@@ -510,6 +510,39 @@ WebApp.IndexView = Ember.View.extend({
          }
       };
 
+*/
+
+// socket
+/*
+var socket = new eio.Socket();
+var last;
+function send(){
+  last = new Date;
+  socket.send('ping');
+  $('transport').innerHTML = socket.transport.name;
+}
+socket.on('open', function(){
+  //alert("open")
+  if ($('chart').getContext) {
+    render();
+    window.onresize = render;
+  }
+  send();
+});
+socket.on('close', function(){
+    alert("close")
+
+  //if (smoothie) smoothie.stop();
+  $('transport').innerHTML = '(disconnected)';
+});
+socket.on('message', function(){
+    alert("message")
+  var latency = new Date - last;
+  $('latency').innerHTML = latency + 'ms';
+  if (time) time.append(+new Date, latency);
+  setTimeout(send, 100);
+});
+*/
 
 
 

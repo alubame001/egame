@@ -2,6 +2,7 @@
 *.o
 *.a
 *.so
+*.json
 
 # Folders
 _obj
@@ -31,4 +32,4 @@ upload
 static/css
 static/js
 app.ini
-*.json
+

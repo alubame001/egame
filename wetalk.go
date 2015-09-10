@@ -261,7 +261,7 @@ func main() {
 	}
 	
 
-	/* beego Router*/
+	/* beego Router 就是這裡面有問題*/
 	e := new(engine.EngineRouter)	
 	beego.Router("/engine.io", e, "get:Join")
 	/* beego Router*/

@@ -258,8 +258,7 @@ func main() {
 	server := &http.Server{Addr: ":12345"}
 	if err := server.ListenAndServe(); err != nil {
 		beego.Info("ListenAndServe: ", err)
-	}
-	
+	}	
 
 	/* beego Router 就是這裡面有問題 */
 	e := new(engine.EngineRouter)	

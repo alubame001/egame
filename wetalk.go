@@ -36,7 +36,7 @@ import (
 	"github.com/alubame001/egame/task"
 	"github.com/alubame001/egame/routers/engine"
 	//_ "github.com/go-sql-driver/mysql"
-	"net/http"
+	//"net/http"
 	//"os"
 	//. "tools/engine"
 	_ "github.com/lib/pq"
@@ -243,7 +243,7 @@ func main() {
 
 	beego.DirectoryIndex = true
 
-	
+	/*
 	var engineIO engine.EngineIO
 	engineIO.Init(engine.Config{
 		PingTimeout:   60000,
@@ -260,10 +260,10 @@ func main() {
 		beego.Info("ListenAndServe: ", err)
 	}	
 
-	/* beego Router 就是這裡面有問題 */
+*/	
 	e := new(engine.EngineRouter)	
 	beego.Router("/engine.io", e, "get:Join")
-	/* beego Router*/
+	
 
 	beego.Run()
 }

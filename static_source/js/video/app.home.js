@@ -5,21 +5,25 @@ WebApp.Router.map(function() {
 });
 
 WebApp.HomeController = Ember.Controller.extend({
-  isLogin:true,
-  isSignup:false,
-  isForegetPassword:false, 
-
        needs: 'application',
 
 
 
 });
-/*
+WebApp.HomeView = Ember.View.extend({
+    didInsertElement: function() {
+    	nav();
+    	huobi_btc();
+        huobi_ltc();   
+    /*
+    	nav();
+    	 ostb_int();
+    	 TGAdsShow.init();
 
-WebApp.AnalystuidView = WebApp.SinglePageView.extend({ templateName:'analystpage' }); 
-WebApp.AnalystuidController = WebApp.SinglePageController.extend({
-    searchEnabled:false,
-  paginationEnabled:false,
-});
+        huobi_btc();
+        huobi_ltc();   
+    */
+    }
+ })	
 
-*/
+

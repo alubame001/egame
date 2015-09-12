@@ -1,117 +1,1821 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>VirtualSports</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="http://mkt.9599008.com/template/bbin/public/css/table_w.css?v=201506040908" rel="stylesheet" type="text/css" />
-<link href="http://mkt.9599008.com/template/bbin/public/css/button.css?v=201411190301" rel="stylesheet" type="text/css" />
-<link href="http://mkt.9599008.com/template/bbin/public/css/oddsFamily.css?v=201506040908" rel="stylesheet" type="text/css" />
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/jquery.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/getDataClass.js?v=201305170428"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/ajaxData.js?v=201401080313"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/odds/MultiSport_Def.js?v=201508051017"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/OddsKeeper.js?v=201509040645"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/odds/VirtualSports.js?v=201405140731"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/common.js?v=201508051022"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/OddsUtils.js?v=201507200925"></script>
-<script language="JavaScript" type="text/javascript" src="http://mkt.9599008.com/commJS/VSswfobject.js?v=201409150807"></script>
-<script language="JavaScript" type="text/javascript">
-var sSport="180";
-var RES_REFRESH = "<div class='iconRefresh' title='刷新'></div>";
-var RES_PLEASE_WAIT = "<div class='iconRefresh wait' title='请稍候'></div>";
-function SetPlayer(streamName, token, targetName) {
-	var swfVersion = "10.1.0";
-	var installSwf = "http://mkt.9599008.com/template/public/TV/playerProductInstall.swf";
 
-	var flashvars = {};
-	flashvars.uid = "";
-	flashvars.location = "CN";
-	flashvars.stream = streamName;
-	flashvars.token = token;
-	flashvars.button = "1,1,1,1,1,1";
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>孤独剑客的英雄联盟直播间_孤独剑客视频_战旗TV游戏直播 - zhanqi.tv</title>
+    <meta name="Keywords" content="战旗直播，热门游戏直播，游戏直播，热门直播，赛事直播，lol直播，dota2直播，三国杀直播，美女直播，炉石传说直播，风暴英雄直播，单机游戏直播_战旗直播，热门游戏直播，热门直播，赛事直播，lol直播，dota2直播，三国杀直播，美女直播，炉石传说直播，风暴英雄直播，单机游戏直播">
+    <meta name="baidu-site-verification" content="516ff41f0edfc60cd441b2f7daa9d528"/>
+    <meta name="Description" content="战旗TV游戏直播平台提供高清、流畅的视频直播和电子竞技游戏直播。包括三国杀直播、LOL英雄联盟直播、炉石传说直播、dota2直播等各类热门游戏赛事。战旗直播为您提供全新的游戏视觉与听觉体验。_战旗TV游戏直播平台提供高清、流畅的视频直播和电子竞技游戏直播。包括三国杀直播、LOL英雄联盟直播、炉石传说直播、dota2直播等各类热门游戏赛事。战旗直播为您提供全新的游戏视觉与听觉体验。">
+        <link rel="stylesheet" type="text/css" href="http://dlstatic.cdn.zhanqi.tv/assets/web/static/c/??reset.css,base.css,common.css,yanhua-show.css,skin.css?v=20150910.0201">
+        
+<link rel="stylesheet" type="text/css" href="http://dlstatic.cdn.zhanqi.tv/assets/web/static/c/live-room-new.css?v=20150910.0205">
 
-	var params = {};
-	params.quality = "high";
-	params.bgcolor = "#FFFFFF";
-	params.allowscriptaccess = "always";
-	params.allowfullscreen = "true";
-	params.wmode = "transparent";
+    <link rel="stylesheet" type="text/css" href="http://dlstatic.cdn.zhanqi.tv/assets/web/static/c/font-icons.css?v=20150910.02">
+    <link rel="stylesheet" type="text/css" href="http://dlstatic.cdn.zhanqi.tv/assets/web/static/c/media.css?v=20150910.0202">
+    <style type="text/css">
+      .footArea .right-area li .icon{
+        margin-right:5px;
+        width:16px;height:16px;
+        background-image:url(http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/new-zq-foot-icon2.png?v=20150910.02);
+      }
+    </style>
+    <script type="text/javascript">
+      +function(){
+        var aMobileType = ['iphone', 'ipad', 'android', 'mobile', 'playstation'];
+        function checkMobileUA(){
+          try{
+            var nav = navigator.userAgent.toLocaleLowerCase()
+              , ua = '';
 
-	var attributes = {};
-	attributes.id = targetName;
-	attributes.name = targetName;
-	attributes.align = "middle";
+            for( var i = 0, len = aMobileType.length; i < len; i++ ){
+              if( !ua && -1 < nav.indexOf( aMobileType[i] ) ){
+                ua = aMobileType[i];
+              }
+            }
+            if( !ua && -1 < nav.indexOf('mac') ){
+              ua = 'mac';
+            }
+          } catch(e){}
 
-	swfobject.embedSWF("http://staticlive.douyutv.com/common/share/play.swf?room_id=65251", targetName, "489", "384", swfVersion, installSwf, flashvars, params, attributes);
-}
-SetPlayer("Virtual12@s30309", "daEbbctb3c8a0b1d1d_dNanbJbwctcIdZd8-bv7dL_-jy-SMU", "player");
+          return ua;
+        }
 
+        var ua = checkMobileUA()
+          , host = window.location.host.toLocaleLowerCase();
+
+        if( 'm.zhanqi.tv' != host && ua && -1 < aMobileType.indexOf(ua) ){
+          window.location.href = 'http://m.zhanqi.tv' + window.location.pathname + window.location.search + window.location.hash;
+        }
+      }();
+    </script>
+    <script>
+      window.ie678 = !-[1,];
+      var isWin8 = navigator.userAgent.indexOf("Windows NT 6.2") > -1 || navigator.userAgent.indexOf("Windows 8") > -1;
+      // 页面配置
+      window.oPageConfig = {
+        // url地址
+        oUrl: {
+          // 根目录
+          sUrlHost: 'http://www.zhanqi.tv/'
+          // 静态文件目录
+        , sUrlBase: 'http://dlstatic.cdn.zhanqi.tv/assets/web/static/'
+        , sUrlFlash: 'http://dlstatic.cdn.zhanqi.tv/assets/swf/'
+          // 观看历史列表
+        , sUrlHistory: '/api/user/record.watch_list'
+          // 删除观看记录
+        , sUrlHistoryClear: '/api/user/record.watch_clean'
+          // 我的订阅列表
+        , sUrlFollowList: '/api/user/follow.list'
+          // 切换订阅状态
+        , sUrlFollow: '/api/user/follow${type}'///toggle
+          // 登出账户
+        , sUrlLogout: '/api/auth/user.logout'
+          // 校验用户信息合法
+        , sUrlValidate: '/api/public/validate.${type}'
+          // 登录跳转
+        , sUrlLoginJump: '/common/login.html?redirect='
+          // 获取历史记录
+        , sGetLeftMenuInfoUrl: '/u/follow_watch/get'
+          // 意见反馈
+        , sSuggestUrl: '/user/suggest'
+          // 获取oLoginInfo信息
+        , sGetLoginInfoUrl: '/api/user/user.info'
+        , sWatchRecord: '/api/user/record.watch?type=${type}&id=${id}'
+        , sAnchorApplyUrl: '/anchor/apply/step1'
+        , sLiveStatusUrl: '/api/public/room.liveparam?room_id=${roomId}'
+        , sGetRichUrl: '/api/user/rich.get'
+        , sUserInfoUrl: '/user/info'
+        , sTaskReceiveUrl: '/api/actives/task/info.receive'  // 领取任务奖励
+        , sShareReturnUrl: '/api/actives/chance/send.share'
+        , sSgamerActiveUrl: '/api/actives/crazydec/sgamer.send'
+        , sGetCaptchaUrl: '/api/auth/user.captcha'
+        , sGetWebGameUrl: 'http://www.2133.com/index.php?r=zqAjaxdata/getGameData'
+        , sAdminPanelListUrl: '/api/user/block.list/${roomId}/${nums}-${page}.json'
+        , sGetTokenUrl: 'http://www.zhanqi.tv/api/open/cas.token?appid=${appid}'
+        , sGetWebGameTaskCntUrl: 'http://www.2133.com/index.php?r=zqAjaxTask/getToEndNum'
+        , sAppDownUrl: '/common/apps.html'
+        , sRegistPhoneCode: '/api/auth/user.send_code'
+        , sGlobalGetPhoneCodeUrl: '/api/user/user.mobile_voice'
+        , sPhoneCheckSubmitUrl: '/api/user/user.mobile_voice'
+        , sKeepCardBuyUrl: '/api/actives/ticket/index.keepCard'
+        }
+      , oLoginInfo: null
+      , oFlash: {
+          url: 'http://dlstatic.cdn.zhanqi.tv/assets/swf/shell.swf'
+        , installUrl: 'http://dlstatic.cdn.zhanqi.tv/assets/swf/chunk/v2/expressInstall.swf'
+        , placeholder: 'yp-flash-placeholder'
+        , vars: {}
+        , params: {
+            menu: 'false'
+          , scale: 'noScale'
+          , allowFullscreen: 'true'
+          , allowScriptAccess: 'always'
+          , allowFullScreenInteractive: 'true'
+          // , wmode: isWin8 ? 'window' : 'transparent'
+          // , wmode: 'direct'
+          , wmode: 'transparent'
+          }
+        , attr: {
+            id: 'BFPlayerID'
+          }
+        , websocket: {
+            ws: 'url'
+          }
+        }
+      , oOtherLogin: {"weibo":"https:\/\/api.weibo.com\/oauth2\/authorize?client_id=273802257&redirect_uri=http%3A%2F%2Fwww.feihuozhibo.com%2Fapi%2Fconnect%2Fweibo&response_type=code&redirect=","qq":"https:\/\/graph.qq.com\/oauth2.0\/authorize?response_type=code&client_id=101049628&redirect_uri=http%3A%2F%2Fwww.zhanqi.tv%2Fapi%2Fconnect%2Fqq&state=&scope=&redirect=","douban":"#","renren":"#"}
+      };
+      // yp框架配置
+      window.oYpConfig = {
+        // 根目录
+        baseUrl: 'http://dlstatic.cdn.zhanqi.tv/assets/web/static/'
+      , ver: '20150910.02'
+      , flashVer: '20150901.04'
+      };
+    </script>
+    <!--[if lt IE 8]>
+      <script src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/lib/json3.min.js?v=20150910.02"></script>
+    <![endif]-->
+    <script src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/yp/lib/require-jquery-min.js?v=20150910.02"></script>
+        <script src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/yp/yp-mods-config-min.js?v=20150910.02001"></script>
+    <script data-main-yp="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/zhanqi-min" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/yp/yp-base-min.js?v=20150910.02"></script>
+      </head>
+  <body class="open-left september-skin">
+    <script type="text/javascript">
+      var mediaWinWidth = $(window).width();
+    </script>
+    
+
+    <div class="min-height-set">
+    
+<h1 class="p0">游戏直播</h1>
+<script>
+  // 房间信息
+  window.oPageConfig.oRoom = {"id":"24092","uid":"104286639","nickname":"孤独剑客","gender":"2","avatar":"http:\/\/pic.cdn.zhanqi.tv\/avatar\/ad\/7bd\/104286639_1422969079.jpg","code":"1129568","domain":"jianke","url":"\/jianke","title":"剑客打野，学不到东西你砍我","gameId":"6","spic":"http:\/\/dlpic.cdn.zhanqi.tv\/live\/20150911\/24092_BMvl7_2015-09-11-00-48-56.jpg","bpic":"http:\/\/dlpic.cdn.zhanqi.tv\/live\/20150911\/24092_BMvl7_2015-09-11-00-48-56_big.jpg","template":"","online":"48749","weight":"48749","status":"4","level":"2","hotsLevel":"14","type":"1","liveTime":"1441888258","userGroup":"1","allowRecord":"0","allowVideo":"0","publishUrl":"wsrtmp","videoId":"24092_BMvl7","chatStatus":"1","roomNotice":"王者剑客，野区的由我掌控\r\n","anchorNotice":"","roomDesc":"<span><\/span><span style=\"font-size:32px;\"><span style=\"color:#E53333;\">加群<span>63412607<span><\/span><\/span><\/span><\/span>&nbsp;可以一起交流QAQ主播18岁，擅长很多打野，一把大宝剑永久收徒，固定直播时间:早上8点-12点。收徒加Q504879131<img alt=\"\" src=\"http:\/\/pic.cdn.zhanqi.tv\/room_desc\/24092\/20150517085911_36854.jpg\" \/><span><\/span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style=\"color:#E53333;\"><span style=\"color:#E53333;\"><span style=\"font-size:32px;\">大宝<span><\/span>剑榜<\/span><\/span><\/span><img alt=\"\" src=\"http:\/\/pic.cdn.zhanqi.tv\/room_desc\/24092\/20150421235643_27781.png\" \/><span><\/span> \r\n<div>\r\n\t<p>\r\n\t\t搜索\r\n\t<\/p>\r\n\t<p>\r\n\t\t复制\r\n\t<\/p>\r\n<\/div>\r\n<div>\r\n\t<p>\r\n\t\t搜索\r\n\t<\/p>\r\n\t<p>\r\n\t\t复制\r\n\t<\/p>\r\n<\/div>","roomCover":null,"roomCoverType":null,"editTime":"2015-09-11 00:48:58","addTime":"2015-01-24 13:37:12","gameName":"英雄联盟","gameUrl":"\/games\/lol","gameIcon":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/04\/gameicon-2015040111221589633.png","gameBpic":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/02\/gamebpic-2015020823295307663.jpeg","videoIdKey":"24092_BMvl7","permission":{"fans":true,"guess":true,"replay":false,"multi":false,"shift":false},"fansTitle":"剑客","flashvars":{"Servers":"eyJsb2ciOnsiaXAiOiIxMTMuMzEuODcuODYiLCJwb3J0IjoxNTAwMX0sImxpc3QiOlt7ImlwIjoiNDIuOTYuMTY4Ljk3IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo2NSwiaWQiOjY1fSx7ImlwIjoiMTIwLjI2LjE2LjM4IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo4NywiaWQiOjg3fSx7ImlwIjoiMTIxLjQzLjE5Ni43NyIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NDEsImlkIjo0MX0seyJpcCI6IjEyMC41NS4xMTcuMTEzIiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo5NywiaWQiOjk3fSx7ImlwIjoiMTIwLjI2LjYzLjE3NiIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6MjEsImlkIjoyMX0seyJpcCI6IjEyMy41Ni40Ny4xNTUiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjgxLCJpZCI6ODF9LHsiaXAiOiI0Mi45Ni4xNDMuOSIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6OTUsImlkIjo5NX0seyJpcCI6IjExMi4xMjYuODQuNjQiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjkxLCJpZCI6OTF9LHsiaXAiOiIxMTIuMTI0LjIwLjM0IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo0NSwiaWQiOjQ1fSx7ImlwIjoiMTIwLjI2LjEzLjIxNCIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NTgsImlkIjo1OH0seyJpcCI6IjIxOC4yNDQuMTI4LjQ4IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo3NiwiaWQiOjc2fSx7ImlwIjoiMTE1LjI4LjEzMS4xOTciLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjg0LCJpZCI6ODR9LHsiaXAiOiIxMTUuMjguMjI2LjEzMyIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6MjksImlkIjoyOX0seyJpcCI6IjExMi4xMjYuODQuOTIiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjgwLCJpZCI6ODB9LHsiaXAiOiIxMjMuNTcuMjEyLjQ2IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjozMywiaWQiOjMzfSx7ImlwIjoiMTEyLjEyNC4zOC4yMjkiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjY0LCJpZCI6NjR9LHsiaXAiOiIxMjEuNDIuMTk1LjE2NiIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NjYsImlkIjo2Nn0seyJpcCI6IjExNS4yOS4yNDUuMTQ0IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo3OSwiaWQiOjc5fSx7ImlwIjoiMTgyLjkyLjIzMi4xOTAiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjkyLCJpZCI6OTJ9LHsiaXAiOiIxMTQuMjE1LjE0NC4xODIiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjI4LCJpZCI6Mjh9LHsiaXAiOiIxMTQuMjE1LjExNy42MCIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6MjcsImlkIjoyN30seyJpcCI6IjEyMS40My4yMzAuODIiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjI0LCJpZCI6MjR9LHsiaXAiOiIxMjMuNTYuMTUyLjE4MyIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6MzEsImlkIjozMX0seyJpcCI6IjEyMy41Ni4xNTIuMTkyIiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjozMiwiaWQiOjMyfSx7ImlwIjoiMTEyLjEyNC40NC4yMDUiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjIzLCJpZCI6MjN9LHsiaXAiOiIxMTIuMTI0LjYxLjEwNiIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NDgsImlkIjo0OH0seyJpcCI6IjEyMC41NS43Mi4xNjQiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjQzLCJpZCI6NDN9LHsiaXAiOiIxMTUuMjguMTczLjM2IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo5NCwiaWQiOjk0fSx7ImlwIjoiMTIwLjU1LjExNi4yMTkiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjk4LCJpZCI6OTh9LHsiaXAiOiIxMTIuMTI0LjEwMC4zNiIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NzgsImlkIjo3OH0seyJpcCI6IjEyMy41Ni4xNTIuMjUzIiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo0MCwiaWQiOjQwfSx7ImlwIjoiMTgyLjkyLjEyOC4yNDkiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjYzLCJpZCI6NjN9LHsiaXAiOiIxODIuOTIuMjE3LjE0MyIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NjIsImlkIjo2Mn0seyJpcCI6IjExMi4xMjYuODUuMTI0IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo2MSwiaWQiOjYxfSx7ImlwIjoiMjE4LjI0NC4xMzAuMjUiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjg4LCJpZCI6ODh9LHsiaXAiOiIxMjEuNDMuMTk3LjE1MiIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NDIsImlkIjo0Mn0seyJpcCI6IjEyMC4yNi4wLjEzOCIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NTksImlkIjo1OX0seyJpcCI6IjEyMy41Ny40Ni4yMjMiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjgyLCJpZCI6ODJ9LHsiaXAiOiIxMTIuMTI0LjI1LjI0OSIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NTcsImlkIjo1N30seyJpcCI6IjExNS4yOS4yMDEuMjUzIiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo4NiwiaWQiOjg2fSx7ImlwIjoiMTIwLjI2LjE2LjE3NiIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6ODksImlkIjo4OX0seyJpcCI6IjQyLjk2LjE1NC4xMjkiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjg1LCJpZCI6ODV9LHsiaXAiOiIxMjMuNTcuMTAuMTk3IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo2MCwiaWQiOjYwfSx7ImlwIjoiMTIzLjU2LjE0NS45MCIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6MzQsImlkIjozNH0seyJpcCI6IjExMi4xMjQuNjEuMTA0IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo0NywiaWQiOjQ3fSx7ImlwIjoiMTEyLjEyNi44NC42NiIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6OTMsImlkIjo5M30seyJpcCI6IjExMi4xMjYuODQuNjUiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjgzLCJpZCI6ODN9LHsiaXAiOiIxMTIuMTI0LjE5LjIwMyIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6NDYsImlkIjo0Nn0seyJpcCI6IjExMi4xMjQuOS4zOSIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6MjIsImlkIjoyMn0seyJpcCI6IjEyMC41NS43Mi4yNTQiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjQ0LCJpZCI6NDR9LHsiaXAiOiIxMTUuMjkuMTk0LjE3OSIsInBvcnQiOjE1MDEwLCJjaGF0cm9vbV9pZCI6OTYsImlkIjo5Nn0seyJpcCI6IjExMi4xMjYuODQuMjE0IiwicG9ydCI6MTUwMTAsImNoYXRyb29tX2lkIjo5MCwiaWQiOjkwfSx7ImlwIjoiMTIxLjQyLjE0Mi4xNjAiLCJwb3J0IjoxNTAxMCwiY2hhdHJvb21faWQiOjI2LCJpZCI6MjZ9XX0=","ServerIp":[],"ServerPort":[],"ChatRoomId":[],"VideoLevels":"eyJtdWxyYXRlIjpbWyJ3c19saXZlIiwiaGRsIiwiMjQwOTJfQk12bDcuZmx2IiwiTElWRSIsIjQiLDEsIiJdXSwicmV2aWV3IjpbWyJ6cV9yZXZpZXciLCJobHMiLCIyNDA5Ml9CTXZsN1wvcGxheWxpc3QubTN1OCIsIkxJVkUiLCI0IiwxLCIiXV0sIm11bHJhdGVIbHMiOltbIndzX2xpdmUiLCJobHMiLCIyNDA5Ml9CTXZsN1wvcGxheWxpc3QubTN1OCIsIkxJVkUiLCI0IiwxLCIiXV19","cdns":"eyJ2aWQiOiIyNDA5Ml9CTXZsNyIsImJyb2Nhc3QiOiI0IiwiY2RucyI6IjIxfDMyfDYxIiwicmF0ZSI6IiIsInJldmlldyI6IjEzIiwiYWlkY2RucyI6IiIsInVhaWQiOjAsImFrIjoiMS1mQTlMQ0V4Sk9DaDlKeHR0UmxrV0xRPT18Mi1mQTlMQ0V4Sk9DaDlKeHR0UmxrV0xRPT18My1kd2dSUzFsdVBTaG9OVlI4QzFnb0ZBPT18NC1kd2dSUzFsdVBTaG9OVlI4QzFnb0ZBPT18NS1lRzV0YUgxbUJBeElhMDVwU3gwbkxnPT18Ni1lRzV0YUgxbUJBeElhMDVwU3gwbkxnPT18Ny1hUnhyU3d4RUtTUlhQWEpSRG1jeE13PT18OC1SQm9UV1hoalBTOXVPWGRRZkcwYlBnPT18OS1SQWxVY0FZU0p4cHRHWFpyU200b0t3PT18MTAtfDExLWFTcGFDbGRwS1R0MEtGcDFEa2dYT3c9PXwxMi1kR3BHQXc1K0VDUjNISFJqY1U4VkVnPT18MTMtWFd4Q2VVZFBEU1p4R2tKcVhWTTlOdz09fDE0LVNRbHZYRWthREI1SloxdDVVV0VOSHc9PXwxNS1TV3BHRGtkWkRBeHZLM1pvQ1I4cUdnPT0iLCJhazIiOiIxLVlTcE9IVnhkUjN4Z0FoNTRWazFwZVE9PXwyLVlTcE9IVnhkUjN4Z0FoNTRWazFwZVE9PXwzLWFpMFVYa2w2UW54MUVGRnBHMHhYUUE9PXw0LWFpMFVYa2w2UW54MUVGRnBHMHhYUUE9PXw1LVpVdG9mVzF5ZTFoVlRrdDhXd2xZZWc9PXw2LVpVdG9mVzF5ZTFoVlRrdDhXd2xZZWc9PXw3LWREbHVYaHhRVm5CS0dIZEVIbk5PWnc9PXw4LVdUOFdUR2gzUW50ekhISkZiSGxrYWc9PXw5LVdTeFJaUllHV0U1d1BITitXbnBYZnc9PXwxMC18MTEtZEE5ZkgwZDlWbTlwRFY5Z0hseG9idz09fDEyLWFVOURGaDVxYjNCcU9YRjJZVnRxUmc9PXwxMy1RRWxIYkZkYmNuSnNQMGRcL1RVZENZdz09fDE0LVZDeHFTVmtPYzBwVVFsNXNRWFZ5U3c9PXwxNS1WRTlERzFkTmMxaHlEbk45R1F0VlRnPT0iLCJhY2MiOnsiY2RuIjo3MiwiYWRkIjoiIiwicGxhdGZvcm0iOjEsImFzdCI6MSwiYWR0IjoiMTo5MCIsImNzdCI6MCwiY2R0IjoiIn19","Status":4,"RoomId":24092,"ComLayer":true,"VideoTitle":"剑客打野，学不到东西你砍我","WebHost":"http:\/\/www.zhanqi.tv","VideoType":"LIVE","GameId":6,"Online":48749,"StarRoom":0,"pv":"20150910.02"},"anchorAttr":{"hots":{"name":"老虎2","level":"14","fight":"228338","nowLevelStart":"218000","nextLevelFight":"290000"}},"follows":5451,"fans":366};
+    window.bCloseLeft = true;
+  window.taskShareRoom = true;
+  var noneGoTop = true;
+  oPageConfig.oUrl.sGetViewInfoUrl = '/api/public/room.viewer';
+  oPageConfig.oUrl.sSetLiveStartUrl = '/api/anchor/live_user.startlive';
+  oPageConfig.oUrl.sSetLiveStopUrl = '/api/anchor/live_user.stoplive';
+  oPageConfig.oUrl.sLotteryUrl = '/api/anchor/lottery.simple';  // 抽奖地址
+  oPageConfig.oUrl.sGetLiveStatusUrl = '/api/anchor/live_user.getlivestatus';
+  oPageConfig.oUrl.sGetVideoForRecordUrl = '/api/anchor/replay.getvideolist';  // 视频列表
+  oPageConfig.oUrl.sRecordStopUrl = '/api/anchor/replay.stop';  // 结束重播
+  oPageConfig.oUrl.sGetRecordStatusUrl = '/api/anchor/replay.isreplay'; // 是否设置重播
+  oPageConfig.oUrl.sFansBeSignUrl = '/api/actives/signin/fans.status';  // 粉丝签到判断
+  oPageConfig.oUrl.sFansSignUrl = '/api/actives/signin/fans.sign';  // 粉丝签到判断
+  oPageConfig.oUrl.sFansweekrankUrl = '/api/static/room.fansweekrank/${roomId}-${count}.json?_t=${t}';
+  oPageConfig.oUrl.sCheckSlotmachineChange = '/api/actives/lottery/info.6';
+  oPageConfig.oUrl.sSlotmachineSubmit = '/api/actives/lottery/lottery.6';
+  oPageConfig.oUrl.sChargeUrl = '/user/charge';
+  window.flashReadyDtd = $.Deferred();
 </script>
-<script type='text/javascript'>
-var footer_hight = "0";
-if (footer_hight > 0) {
-  $(window).load(function () {
-    window.frames["FooterFrame"].location = "";
-	$("#FooterFrame").load(function () {
-        $("#FooterFrame").height(footer_hight);
+<script>
+  var flagLiveRoom = true;
+  var abTest = 0;
+</script>
+
+<div class="live-room-page custom-room" id="live-room-content">
+  <div class="content">
+    <div class="live-side-content">
+  <!-- 侧边栏 -->
+  <div class="live-room-side" id="js-left-panel">
+    <a href="javascript:;" class="unfold js-left-panel-collapse-btn" id="left-click-close" onclick="_hmt.push(['_trackEvent', 'room', 'left_click_close'])"></a>
+    <div class="sub-login-area js-left-panel-small-login">
+      <ul class="sub-no-login">
+        <li>
+          <a href="javascript:;" class="js-login-btn" title="">
+            <i class="icons dv sub-login"></i>
+            <p>登录</p>
+          </a>
+        </li>
+      </ul>
+      <div class="sub-login-done js-small-login-area">
+        <a href="/user/follow" class="sub-img-box">
+          <img class="js-avatar" src="" alt="">
+          <i class="round-tit-area js-msg-count" style="display:none;">0</i>
+        </a>
+        <div class="sub-account clearfix js-small-userinfo-panel" style="display:none;">
+          <i class="i_arw"></i>
+          <div class="left-area">
+            <a href="/user/follow" target="_blank" class="img-box">
+              <img class="js-avatar" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/images/portrait/portrait6060.jpg" alt="">
+            </a>
+          </div>
+          <div class="right-area">
+            <div class="top-area">
+              <a href="javascript:;" class="exit js-logout">退出</a>
+              <a href="/user/medal" target="_blank" class="all-level dv js-left-level-icon"></a>
+              <a href="/user/follow" target="_blank" class="name dv js-nickname"></a>
+            </div>
+            <div class="bar-area">
+              <i class="bar js-left-level-rate" style="width:0;"></i>
+            </div>
+            <div class="bottom-area clearfix">
+              <a href="javascript:;" class="js-anchor js-anchor-hide">我的直播间</a>
+              <small class="js-anchor-hide"></small>
+              <a href="/user/inbox" target="_blank" class="last">我的私信(<span class="msg_count">0</span>)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="menu">
+      <li>
+        <a href="http://www.zhanqi.tv/" title="回到首页" rel="nofollow" id="left-side-index-close" onclick="_hmt.push(['_trackEvent', 'room', 'index_close'])">
+          <i class="icons dv index"></i>
+          <p>首页</p>
+        </a>
+      </li>
+      <li class="">
+        <a href="/lives" title="" id="left-side-live-close" onclick="_hmt.push(['_trackEvent', 'room', 'live_close'])">
+          <i class="icons dv live"></i>
+          <p>直播</p>
+        </a>
+      </li>
+      <li class="">
+        <a href="/games" title="" id="left-side-game-close" onclick="_hmt.push(['_trackEvent', 'room', 'game_close'])">
+          <i class="icons dv game"></i>
+          <p>游戏</p>
+        </a>
+      </li>
+      <li class="">
+        <a href="/videos" id="left-side-video-close" onclick="_hmt.push(['_trackEvent', 'room', 'video_close'])" title="">
+          <i class="icons dv video"></i>
+          <p>视频</p>
+        </a>
+      </li>
+      <li class="js-user-show js-follow-hover" style="display: none;">
+        <a href="/user/follow" target="_blank" title="" id="left-side-follow-close" onclick="_hmt.push(['_trackEvent', 'room', 'follow_close'])">
+          <i class="icons dv subscription"></i>
+          <p>订阅</p>
+        </a>
+      </li>
+      <li class="">
+        <a href="/openpage/2133" title="" rel="nofollow" id="left-side-webgames-close" onclick="_hmt.push(['_trackEvent', 'room', 'webgames_close'])">
+          <i class="icons dv pageGame"></i>
+          <p>页游</p>
+        </a>
+      </li>
+    </ul>
+    <i class="game-icon js-left-size-game-icon" style="display:none;"></i>
+    <!-- 订阅弹窗 -->
+    <div class="subscription-ibox js-left-follow-list" style="display: none;">
+      <i class="arrow"></i>
+      <p class="att_loading loading" style="display: none;">加载中...</p>
+      <div class="attention_con js-panel-body js-scroll" data-height="317" style="display:none;">
+        <ul class="attention-list js-panel-list js-list-hover">
+          <script type="text/x-tmpl" class="t_listFollow">
+            <li class="${statusClass} ${last}">
+              <a href="${roomUrl}">
+                <div class="avatar">
+                    <img src="${avatar}-medium" alt="${nickname}">
+                </div>
+                <div class="nameAnchor">
+                  <i class="dv"></i><span class="dv">${nickname}</span>
+                </div>
+                <div class="meta">
+                  <span class="info">
+                    <i class="icon-users2 dv"></i><span class="dv">${online}</span>                  </span>
+                  <span class="status status-on">${text}<span class="gameName">《${gameName}》</span></span>
+                </div>
+              </a>
+            </li>
+          </script>
+        </ul>
+      </div>
+    </div>
+    <!-- 订阅弹窗End -->
+  </div>
+  <!-- 侧边栏End -->
+  <!-- 侧边栏完整 -->
+  <div class="live-room-side-more" id="js-left-panel-more">
+    <a href="javascript:;" class="unfold js-left-panel-collapse-btn" id="left-click-open" onclick="_hmt.push(['_trackEvent', 'room', 'left_click_open'])"></a>
+    <div class="head">
+      <a href="http://www.zhanqi.tv/" title="游戏直播" class="index-logo" id="left-side-logo-open" onclick="_hmt.push(['_trackEvent', 'room', 'logo_open'])"></a>
+    </div>
+    <div id="js-left-panel-content">
+      <div class="js-scroll" style="padding: 0 20px;">
+        <div class="side-login-area login-ok1">
+          <!-- 未登录 -->
+          <div class="login-off js-no-login-area">
+            <p>登录有礼，快来登录吧~</p>
+            <div class="pr textC">
+              <a href="javascript:;" class="side-login-btn js-left-login" id="left-side-login-open" onclick="_hmt.push(['_trackEvent', 'room', 'login_open'])" title="">登录</a>
+              <a href="javascript:;" class="side-registration-btn js-left-regist" id="left-side-regist-open" onclick="_hmt.push(['_trackEvent', 'room', 'regist_open'])" title="">注册</a>
+            </div>
+          </div>
+          <!-- 未登录End -->
+          <!-- 已登录 -->
+          <div class="login-on js-login-area clearfix" style="display: none;">
+            <div class="img-box">
+              <a href="/user/follow" target="_blank" class="img-box" id="left-side-avatar-open" onclick="_hmt.push(['_trackEvent', 'room', 'avatar_open'])">
+                <img class="js-user-avatar" src="" alt="">
+              </a>
+            </div>
+            <div class="info-clearfix">
+              <div class="clearfix">
+                <a href="/user/follow" target="_blank" class="side-name js-user-nickname" title="点击进入用户中心" id="left-side-nickname-open" onclick="_hmt.push(['_trackEvent', 'room', 'nickname_open'])"></a>
+                <a href="javascript:;" class="drop-out js-left-logout" title="" id="left-side-logout-open" onclick="_hmt.push(['_trackEvent', 'room', 'logout_open'])">退出</a>
+              </div>
+              <a href="/user/medal" target="_blank" class="all-level js-left-level-icon"></a>
+            </div>
+          </div>
+          <!-- 已登录End -->
+          <!-- 个人功能区域 -->
+          <div class="personalFn-area js-user-show" style="display: none;">
+            <ul class="clearfix">
+              <li>
+                <a href="/user/follow" target="_blank" title="" id="left-side-follow-open" onclick="_hmt.push(['_trackEvent', 'room', 'follow_open'])">我的订阅</a>
+              </li>
+              <li class="last">
+                <a href="/user/inbox" target="_blank" title="" id="left-side-inbox-open" onclick="_hmt.push(['_trackEvent', 'room', 'inbox_open'])">私信</a>
+                <i class="round-tit-area js-left-inbox-count" style="display: none;">0</i>
+              </li>
+            </ul>
+          </div>
+          <!-- 个人功能区域End -->
+        </div>
+        <!-- 搜索区域 -->
+        <div class="side-search-area">
+          <div class="search-area">
+            <form action="/search?t=anchor" method="get">
+              <a href="javascript:;" class="searchBtn" id="left-panel-search-btn" onclick="_hmt.push(['_trackEvent', 'room', 'left_search_btn'])" title="搜索"></a>
+              <label id="left-panel-search-key-input-label">搜主播/游戏</label>
+              <input id="left-panel-search-key-input" type="text" name="q" />
+            </form>
+          </div>
+        </div>
+        <!-- 搜索区域 -->
+        <!-- 频道区域 -->
+        <div class="channel-area">
+          <div class="hd"><h2>频道</h2></div>
+          <div class="bd">
+            <ul>
+              <li class="">
+                <a href="/lives" title="" id="left-side-live-open" onclick="_hmt.push(['_trackEvent', 'room', 'live_open'])">
+                  <i class="dv live channel-icon"></i>
+                  <span class="dv">全部直播</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="/games" title="" id="left-side-game-open" onclick="_hmt.push(['_trackEvent', 'room', 'game_open'])">
+                  <i class="dv game channel-icon"></i>
+                  <span class="dv">全部游戏</span>
+                </a>
+              </li>
+              <li class="">
+                <a href="/videos" id="left-side-video-open" onclick="_hmt.push(['_trackEvent', 'room', 'video_open'])" title="">
+                  <i class="dv video channel-icon"></i>
+                  <span class="dv">全部视频</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 频道区域End -->
+        <!-- 热门游戏区域 -->
+        <div class="side-hot-game">
+          <div class="hd"><h2>热门游戏</h2></div>
+          <div class="bd">
+            <ul>
+              
+<!--UT(2):Service\Games::lists@1@2015-09-11 00:52:53/2e3354327938777e25028987dc806d3f-->
+                            <li>
+                <a href="/games/xindong#spm=slider.left" title="百变Gamer" id="left-side-game65-open" onclick="_hmt.push(['_trackEvent', 'room', 'game65_open'])">百变Gamer</a>
+              </li>
+                            <li>
+                <a href="/games/lol#spm=slider.left" title="英雄联盟" id="left-side-game6-open" onclick="_hmt.push(['_trackEvent', 'room', 'game6_open'])">英雄联盟</a>
+              </li>
+                            <li>
+                <a href="/games/dota2#spm=slider.left" title="DOTA2" id="left-side-game10-open" onclick="_hmt.push(['_trackEvent', 'room', 'game10_open'])">DOTA2</a>
+              </li>
+                            <li>
+                <a href="/games/how#spm=slider.left" title="炉石传说" id="left-side-game9-open" onclick="_hmt.push(['_trackEvent', 'room', 'game9_open'])">炉石传说</a>
+              </li>
+                            <li>
+                <a href="/games/danji#spm=slider.left" title="单机游戏" id="left-side-game49-open" onclick="_hmt.push(['_trackEvent', 'room', 'game49_open'])">单机游戏</a>
+              </li>
+                            <li>
+                <a href="/games/hots#spm=slider.left" title="风暴英雄" id="left-side-game21-open" onclick="_hmt.push(['_trackEvent', 'room', 'game21_open'])">风暴英雄</a>
+              </li>
+                            <li>
+                <a href="/games/sanguosha#spm=slider.left" title="三国杀" id="left-side-game13-open" onclick="_hmt.push(['_trackEvent', 'room', 'game13_open'])">三国杀</a>
+              </li>
+                            <li>
+                <a href="/games/huiyi#spm=slider.left" title="怀旧回忆" id="left-side-game73-open" onclick="_hmt.push(['_trackEvent', 'room', 'game73_open'])">怀旧回忆</a>
+              </li>
+                            <li>
+                <a href="/games/gdyx#spm=slider.left" title="格斗游戏" id="left-side-game70-open" onclick="_hmt.push(['_trackEvent', 'room', 'game70_open'])">格斗游戏</a>
+              </li>
+                            <li>
+                <a href="/games/fps#spm=slider.left" title="射击游戏" id="left-side-game67-open" onclick="_hmt.push(['_trackEvent', 'room', 'game67_open'])">射击游戏</a>
+              </li>
+                            <li>
+                <a href="/games/dnf#spm=slider.left" title="地下城与勇士" id="left-side-game22-open" onclick="_hmt.push(['_trackEvent', 'room', 'game22_open'])">地下城与勇士</a>
+              </li>
+                            <li>
+                <a href="/games/MOBA#spm=slider.left" title="三国杀英雄传" id="left-side-game60-open" onclick="_hmt.push(['_trackEvent', 'room', 'game60_open'])">三国杀英雄传</a>
+              </li>
+                            <li>
+                <a href="/games/qp#spm=slider.left" title="棋牌竞技" id="left-side-game76-open" onclick="_hmt.push(['_trackEvent', 'room', 'game76_open'])">棋牌竞技</a>
+              </li>
+                            <li>
+                <a href="/games/tianyamingyuedao#spm=slider.left" title="天涯明月刀" id="left-side-game74-open" onclick="_hmt.push(['_trackEvent', 'room', 'game74_open'])">天涯明月刀</a>
+              </li>
+                            <li>
+                <a href="/games/MobileGames#spm=slider.left" title="手机游戏" id="left-side-game28-open" onclick="_hmt.push(['_trackEvent', 'room', 'game28_open'])">手机游戏</a>
+              </li>
+                            <li>
+                <a href="/games/ArcheAge#spm=slider.left" title="上古世纪" id="left-side-game57-open" onclick="_hmt.push(['_trackEvent', 'room', 'game57_open'])">上古世纪</a>
+              </li>
+                            <li>
+                <a href="/games/diablo3#spm=slider.left" title="暗黑破坏神Ⅲ" id="left-side-game68-open" onclick="_hmt.push(['_trackEvent', 'room', 'game68_open'])">暗黑破坏神Ⅲ</a>
+              </li>
+                            <li>
+                <a href="/games" onclick="_hmt.push(['_trackEvent', 'room', 'game_all_open'])">全部&gt;</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 热门游戏区域End -->
+        <!-- 新闻公告区域 -->
+        
+<!--UT(3):Service\News::lists@5-->
+        <div class="side-news-area">
+          <div class="hd">
+            <a href="/news/all/index.html" target="_blank" class="more">更多&gt;</a>
+            新闻公告
+          </div>
+          <div class="bd">
+            <div class="ul">
+              <ul class="js-news-list">
+                                <li class="js-news-list-item">
+                  <a href="/news/2015/09/11/489.html" target="_blank" title="【DOTA2明星开播】9月12日，上将豪归来" class="gg">【DOTA2明星开播】9月12日，上将豪归来</a>
+                </li>
+                                <li class="js-news-list-item">
+                  <a href="/news/2015/09/08/481.html" target="_blank" title="【论剑S5】全民Solo挑战赛128强诞生" class="gg">【论剑S5】全民Solo挑战赛128强诞生</a>
+                </li>
+                                <li class="js-news-list-item">
+                  <a href="/news/2015/09/10/488.html" target="_blank" title="炉石传说HTS战队巡礼：WE、iG" class="gg">炉石传说HTS战队巡礼：WE、iG</a>
+                </li>
+                              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- 新闻公告区域End -->
+        <!-- 广告区域 -->
+        
+<!--UT(3):Service\Ads::getByPosition@1-->
+                <div class="side-gg-area">
+          <ul>
+                        <li>
+              <a href="http://www.zhanqi.tv/openpage/2133" target="_blank" title="玩游戏" onclick="hmtTongJi(['_trackEvent', 'siteBanner', 'left_side_banner', 1, '29'])">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100141619085.jpeg" alt="玩游戏">
+              </a>
+            </li>
+                        <li>
+              <a href="http://www.zhanqi.tv/active/august/prize" target="_blank" title="幸福树&黄道十二宫" onclick="hmtTongJi(['_trackEvent', 'siteBanner', 'left_side_banner', 2, '30'])">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/08/ads-2015082800212874911.jpeg" alt="幸福树&黄道十二宫">
+              </a>
+            </li>
+                      </ul>
+        </div>
+                <!-- 广告区域End -->
+      </div>
+    </div>
+    <!-- 底部信息 -->
+    <div class="side-ft-area">
+      <a href="/anchor/apply/step1?spm=slider.left" class="side-ft-btn js-want-anchor" id="left-side-wantlive-open" onclick="_hmt.push(['_trackEvent', 'room', 'wantlive_open'])">我要当主播</a>
+      <a href="javascript:;" class="side-ft-btn js-my-room" style="display: none;" id="left-side-myroom-open" onclick="_hmt.push(['_trackEvent', 'room', 'myroom_open'])">我的直播间</a>
+      <p>客服QQ：<a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=800063392&aty=2&a=3&curl=&ty=1" target="_blank" class="left-kfqq" id="left-side-qqkefu-open" onclick="_hmt.push(['_trackEvent', 'room', 'qqkefu_open'])">800063392</a></p>
+    </div>
+    <!-- 底部信息End -->
+  </div>
+  <!-- 侧边栏完整End -->
+</div>
+<script type="text/javascript" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/public/leftSideAndData.js?v=20150910.02"></script>
+    <!-- 视频区域 -->
+    <a href="javascript:;" id="show-chat-list" class="open-chat-btn hidden"></a>
+    <div class="live-room-video">
+      <!-- 下拉广告区域 -->
+
+<!--UT(3):Service\Ads::getByPosition@1-->
+<div class="pullpic-down" id="js-room-ads-panel">
+  <div class="pullpic-top"></div>
+  <div class="pullpic-content-pr js-slide-layer">
+    <div class="pullpic-content js-slide-content">
+      <div class="pullpic-content-top"></div>
+      <div class="pullpic-content-mid">
+        <ul>
+                    <li>
+            <a href="http://www.zhanqi.tv/openpage/2133" target="_blank" rel="nofollow" class="img-box js-room-ads-item" data-id="24" onclick="hmtTongJi('siteBanner', 'room_pull_banner', 6, 24092, 1, 24)">
+              <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100132850538.jpeg" alt="火爆新游">
+            </a>
+          </li>
+                    <li>
+            <a href="http://www.2133.com/index.php?r=zqAjaxdata/index&pos_id=9530655" target="_blank" rel="nofollow" class="img-box js-room-ads-item" data-id="25" onclick="hmtTongJi('siteBanner', 'room_pull_banner', 6, 24092, 2, 25)">
+              <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100133245468.jpeg" alt="萌将2">
+            </a>
+          </li>
+                    <li>
+            <a href="http://www.2133.com/index.php?r=zqAjaxdata/index&pos_id=9530656" target="_blank" rel="nofollow" class="img-box js-room-ads-item" data-id="26" onclick="hmtTongJi('siteBanner', 'room_pull_banner', 6, 24092, 3, 26)">
+              <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100133694464.jpeg" alt="萌将3">
+            </a>
+          </li>
+                    <li>
+            <a href="http://www.2133.com/index.php?r=zqAjaxdata/index&pos_id=9530657" target="_blank" rel="nofollow" class="img-box js-room-ads-item" data-id="27" onclick="hmtTongJi('siteBanner', 'room_pull_banner', 6, 24092, 4, 27)">
+              <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100134165143.jpeg" alt="萌将4">
+            </a>
+          </li>
+                    <li>
+            <a href="http://www.2133.com/index.php?r=zqAjaxdata/index&pos_id=9530658" target="_blank" rel="nofollow" class="img-box js-room-ads-item" data-id="28" onclick="hmtTongJi('siteBanner', 'room_pull_banner', 6, 24092, 5, 28)">
+              <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100134513559.jpeg" alt="萌将5">
+            </a>
+          </li>
+                  </ul>
+      </div>
+      <div class="pullpic-content-bottom"></div>
+    </div>
+  </div>
+  <div class="round js-slide-btn" style="cursor: pointer;"><i class="light"></i></div>
+</div>
+<!-- 下拉广告区域End -->
+<script type="text/javascript">
+  yp.use('roomAds', function(yp, oRoomAds){
+    yp.ready(function(){
+      oRoomAds.init();
     });
   });
-}
-
-//
 </script>
-</head>
-<body onload="LoadTmpl();">
-<div class="title_border">
-	<div class="titleSection">
-		<div class="left">
-        	<div class="Soccer">虚拟足球</div>
+      <div class="mid-live-area" id="js-flash-layer">
+        <div class="live-anchor-info clearfix">
+  <div class="img-box js-report-room-hover">
+    <img src="http://pic.cdn.zhanqi.tv/avatar/ad/7bd/104286639_1422969079.jpg-medium" alt="孤独剑客">
+        <a href="/user/report/room/24092" target="_blank" class="report-room-bg">房间举报</a>
+      </div>
+  <div class="sub-anchor-info">
+    <p class="title-name" title="剑客打野，学不到东西你砍我">剑客打野，学不到东西你砍我</p>
+    <div class="clearfix">
+      <div class="meat">
+        <a href="http://www.zhanqi.tv/news/2015/01/16/63.html" target="_blank" class="anchor-grade anchor-grade-14 dv png levelTitleTips" title="当前14级，还差61662战斗力升级。" data-level="14" data-fight="228338"></a>
+        <span class="dv">孤独剑客</span>
+      </div>
+      <div class="meat-info">
+        <span class="dv">正在直播: <a href="/games/lol" class="game-name">英雄联盟</a></span>
+                <span class="num dv js-onlines-panel" style="margin-left:5px;"><i class="icon-users2 dv"></i><img class="js-onlines-loading" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/viewers-loading.gif" alt="" /><span class="dv js-onlines-txt" style="display: none;"><span>0</span>个观众</span></span>
+              </div>
+    </div>
+  </div>
+  <div class="anchor-fun-area">
+    <div class="anchor-tool clearfix js-for-anchor hidden">
+      <!-- 停播加类stop-btn,开播加类play-btn -->
+      <a href="javascript:;" class="stop-btn w70 js-guess-end" style="display:none;">结束竞猜</a>
+      <a href="javascript:;" class="room-lottery-btn w70 js-guess-start">开启竞猜</a>
+      <a href="javascript:;" class="play-btn js-anchor-live-btn" id="yp-btn-live-start">开播</a>
+      <a href="javascript:;" title="" class="room-lottery-btn" id="yp-btn-lottery">抽奖</a>
+    </div>
+    <div class="bottom-fun clearfix">
+      <div class="new-room-subscription">
+        <div class="left">
+          <a href="javascript:;" id="yp-btn-followToggle"><span class="dv text">订阅</span></a>
         </div>
-		<div class="control right">
-        	<a href="javascript:LoadOddsData(true);" id="btnRefresh_D" name="btnRefresh_D" class="buttons" style="display:none"><span><div class='iconRefresh wait' title='请稍候'></div></span></a>
-		</div>
-		<div class="clear"></div>
-	</div>
-</div>
-<div id="OddsTr" class="tabbox virtualBox"> 
-  <!-- Streaming Area --> 
-  <span class="tabbox_F" style="display: inline-block; float: left;">
-  <div class="tmpl_border EarlyMarket_top_bg streamVirtual">
-    <div id="CurrEventTitle" class="virtualTitle"></div>
-    <div class="tmpl_border Streamingtext" style="display:none; width: 446px !important;" id="NotSupportFlash">
-      <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"  >
-        <tr>
-          <td width="84"><img src="http://mkt.9599008.com/template/bbin/public/images/TV/MsgIcon.png" /></td>
-          <td>您的浏览器不支持Flash</td>
-        </tr>
-      </table>
-    </div>
-    <div class="streamVideo">
-	  <object width="489" height="384" id ="player"></object>
+        <div class="right js-follows-panel">0</div>
+      </div>
+      <ul class="dv ul-1">
+        <li>
+          <a href="javascript:;" id="js-app-down-btn" title="">
+            <i class="icon-mobile dv"></i>
+            <span class="dv">下载APP</span>
+            <i class="icon-arrow-down5 dv"></i>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" id="js-share-btn" title="">
+            <i class="icon-share dv"></i>
+            <span class="dv">分享</span>
+            <i class="icon-arrow-down5 dv"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
-  </span> 
-  <!-- Match Area --> 
-  <span class="tabbox_F" style="display: inline-block">  
-  <div id="Load_List" class="matchVirtual bgcpe" align="center"><img src="http://mkt.9599008.com/template/bbin/public/images/layout/spacer.gif" vspace="2" class="icon_loading" /></div>
-  <div id="MatchList" class="matchVirtual bgcpe" style="display: none;"></div>
-  </span>
-  <div id="oTableContainer"> </div>
+</div>        <div class="video-flash-cont" id="js-flash-panel">
+  <div id="yp-flash-placeholder"></div>
 </div>
-<div id="NoInfo" align="left" style="display:none">
-  <div class="tabbox">
-    <div class="tabbox_F">
-      <table width="100%" class="tabstyle02">
-        <tr>
-          <td class="bgcpe none_rline" align="center">目前没有适合赛事</td>
-        </tr>
-      </table>
-    </div>
+        <div class="liveMessage clearfix js-area-layer">
+  <!-- 钱包区域 -->
+  <div class="top-area js-wallet-area">
+    <i class="gold-ico dv png js-rich-gold-icon"></i>
+    <span class="dv"><a class="jump-link" href="http://www.zhanqi.tv/user/wallet/log.gold" target="_blank">金币</a>：<span class="num js-rich-gold-txt">0</span><i class="game-lock dv js-rich-gold-lock" style="display:none;"></i></span>
+    <i class="silver-ico dv png js-rich-coin-icon"></i>
+    <span class="dv"><a class="jump-link" href="http://www.zhanqi.tv/user/wallet/log.coin" target="_blank">战旗币</a>：<span class="num js-rich-coin-txt">0</span></span>
+    <a href="/user/charge?pay_from=room_24092" target="_blank" class="recharge-btn dv">充值</a>
   </div>
-</div>
-  <div style="text-align: right; margin-top:4px; width: 792px; {{lbl_ThirdPartyAuthorizationDisplayDisplay}}" class="FavTeamClass">
-  
-</div>
-<iframe id="FooterFrame" name="FooterFrame" width="0" height="0" style="display:none" frameborder="0" allowtransparency="true" scrolling="no"></iframe>  
-</body>
+  <!-- 钱包区域 end -->
+  <!-- 礼物区域 -->
+  <div class="bottom-area clearfix js-gift-area">
+    <ul class="js-fans">
+      <li class="fans-sign">
+        <a href="javascript:;" class="js-fans-sign-btn"></a>
+      </li>
+    </ul>
+    <!-- 悬停弹窗 -->
+    <div class="fans-hover-ibox js-fans-info-pop" style="display: none;left: auto; right: -94px;">
+      <i class="arrow"></i>
+      <div class="">一次性送主播价值1000战旗币（100金币）礼物可以成为粉丝哦。</div>
+    </div>
+    <!-- 悬停弹窗End -->
+    <ul class="js-gift-list"></ul>
+    <!-- 悬停弹窗 -->
+    <div class="girts-hover-ibox js-gift-info-pop" style="display: none;">
+      <i class="arrow"></i>
+      <div class="js-gift-info-content"></div>
+    </div>
+    <!-- 悬停弹窗End -->
+    <!-- 点击弹窗 -->
+    <div class="girts-active-ibox js-gift-buy-pop" style="display: none;">
+      <i class="arrow"></i>
+      <div class="hd">
+        送给主播
+        <a href="javascript:;" class="close png js-close" title="关闭"></a>
+      </div>
+      <div class="bd">
+        <div class="input js-gift-buy-content"></div>
+        <ul>
+          <li><a class="js-num" data-num="10" href="javascript:;">10</a></li>
+          <li><a class="js-num" data-num="25" href="javascript:;">25</a></li>
+          <li><a class="js-num" data-num="66" href="javascript:;">66</a></li>
+          <li><a class="js-num" data-num="233" href="javascript:;">233</a></li>
+          <li><a class="js-num" data-num="520" href="javascript:;">520</a></li>
+          <li><a class="js-num" data-num="1314" href="javascript:;">1314</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 点击弹窗End -->
+  </div>
+  <!-- 礼物区域 end -->
+  <div class="activities-entrance-area clearfix">
+    <!-- 任务弹窗入口 -->
+    <a href="javascript:;" id="js-room-task-btn" class="rwtc-go-btn" title="任务">
+      <div class="tit-area js-room-task-complete-cnt" style="display: none;">13</div>
+    </a>
+    <!-- 任务弹窗入口End -->
 
+    <!-- 竞猜 -->
+    <div class="guess-area js-guess-area" style="display:none;">
+      <a href="/user/guess/log.bet" target="_blank" class="go-myWallet" title="竞猜记录"></a>
+      <a href="http://www.zhanqi.tv/news/2015/05/23/245.html" target="_blank" class="question-ico"></a>
+      <div class="guess-area-layer"></div>
+    </div>
+    <!-- 坐庄弹窗 -->
+    <div class="republicans-ibox js-guess-banker-panel" style="display:none;" id="js-guess-banker-panel">
+      <i class="arrow"></i>
+      <div class="hd">
+        我要坐庄
+        <a href="javascript:;" class="close js-close" title="关闭"></a>
+      </div>
+      <div class="bd">
+        <div class="guess-banker-layer"></div>
+      </div>
+    </div>
+    <!-- 坐庄弹窗End -->
+    <!-- 投注弹窗 -->
+    <div class="bets-ibox js-guess-cathectic-panel" style="display:none;" id="js-guess-cathectic-panel">
+      <input type="hidden" class="cathectic-qid" />
+      <input type="hidden" class="cathectic-aid" />
+      <input type="hidden" class="cathectic-banker" />
+      <input type="hidden" class="cathectic-odds" />
+      <i class="arrow"></i>
+      <div class="bets-ibox-hd">
+        我的账户：<span class="num coin-now"></span>战旗币
+        <a href="http://www.zhanqi.tv/news/2015/05/23/245.html" target="_blank" class="question-icon"></a>
+        <a href="javascript:;" class="close js-close"></a>
+      </div>
+      <div class="bets-ibox-bd">
+        <div class="cathectic-step1">
+          <form>
+            <div class="top-sub-area clearfix">
+              <span class="tit">赢则赚<span class="cathectic-winget">0</span></span>
+              <input type="text" class="js-cathectic-coin-input" />
+              <a href="javascript:;" class="js-cathectic-all">全押</a>
+            </div>
+            <div class="bottom-sub-area clearfix">
+              <a href="javascript:;" class="bets-sub-btn js-cathectic-send">投注</a>
+              庄家剩余：<span class="cathectic-rest" data-rest="0">0</span>
+            </div>
+          </form>
+        </div>
+        <div class="cathectic-step2">
+          <form>
+            <input type="hidden" class="js-cathectic-coin-input" />
+            <p>投注<span class="cathectic-step2-done"></span>战旗币成功，剩余<span class="cathectic-step2-leftcoin"></span>战旗币是否要按1：<span class="cathectic-step2-odds"></span>赔率购买?</p>
+            <div class="textC">
+              <a href="javascript:;" class="bets-sub-btn di js-cathectic-send">购买</a>
+              <a href="javascript:;" class="bets-sub-btn ml4 di js-cancel">取消</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- 投注弹窗End -->
+    <!-- 竞猜End -->
+  </div>
+</div>
+      </div>
+      
+<!--UT(3):Service\Ads::getByPosition@1-->
+<div class="new-advertising-area">
+      <a href="http://www.2133.com/index.php?r=zqAjaxdata/index&pos_id=9530577" target="_blank" rel="nofollow" title="花千骨" onclick="hmtTongJi('siteBanner', 'room_banner', 6, 24092, 11)">
+    <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100122718383.jpeg" alt="花千骨">
+  </a>
+    </div>
+      
+<!--UT(3):Service\Ads::getByPosition@1-->
+      <div class="anchorMessage tabs">
+        <ul class="cutover-nav clearfix">
+                    <li class="tab active" data-type="banner">
+            <i class="line"></i>
+            <a href="javascript:;">热门推广</a>
+          </li>
+                    <li class="tab">
+            <i class="line"></i>
+            <a href="javascript:;">主播简介</a>
+          </li>
+          <li class="tab" data-type="video">
+            <i class="line"></i>
+            <a href="javascript:;" id="room-video-recommend" onclick="_hmt.push(['_trackEvent', 'room', 'video_recommend'])">最新视频</a>
+          </li>
+        </ul>
+        <!-- 热门推广 -->
+                        <div class="hot-spread tabc active">
+          <ul class="clearfix" data-width="450" id="js-room-banners-list">
+                                    <li>
+                <a href="http://www.2133.com/index.php?r=zqAjaxdata/index&pos_id=9530581" target="_blank" rel="nofollow" title="传奇霸业" onclick="hmtTongJi('siteBanner', 'room_recommend_banner', 6, 24092, 1, 2)">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100112507757.jpeg" alt="传奇霸业">
+              </a>
+            </li>
+                                    <li>
+                <a href="http://www.2133.com/index.php?r=zqAjaxdata/index&pos_id=9530582" target="_blank" rel="nofollow" title="送金币" onclick="hmtTongJi('siteBanner', 'room_recommend_banner', 6, 24092, 2, 3)">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015091100113856549.jpeg" alt="送金币">
+              </a>
+            </li>
+                                    <li>
+                <a href="http://www.zhanqi.tv/active/september" target="_blank" rel="nofollow" title="全民SOLO挑战赛" onclick="hmtTongJi('siteBanner', 'room_recommend_banner', 6, 24092, 3, 7)">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/09/ads-2015090112292447207.jpeg" alt="全民SOLO挑战赛">
+              </a>
+            </li>
+                                    <li>
+                <a href="http://www.zhanqi.tv/news/2015/04/21/176.html" target="_blank" rel="nofollow" title="主播招募令" onclick="hmtTongJi('siteBanner', 'room_recommend_banner', 6, 24092, 4, 5)">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/07/ads-2015072518050270415.jpeg" alt="主播招募令">
+              </a>
+            </li>
+                                    <li>
+                <a href="http://www.zhanqi.tv/common/toolfaq.html" target="_blank" rel="nofollow" title="战旗主播FAQ" onclick="hmtTongJi('siteBanner', 'room_recommend_banner', 6, 24092, 5, 4)">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/08/ads-2015081013153800536.jpeg" alt="战旗主播FAQ">
+              </a>
+            </li>
+                                    <li>
+                <a href="http://www.zhanqi.tv/news/2015/03/06/105.html" target="_blank" rel="nofollow" title="主播守则" onclick="hmtTongJi('siteBanner', 'room_recommend_banner', 6, 24092, 6, 6)">
+                <img src="http://dlpic.cdn.zhanqi.tv/uploads/2015/08/ads-2015081014011829907.jpeg" alt="主播守则">
+              </a>
+            </li>
+                      </ul>
+        </div>
+                        <!-- 热门推广End -->
+
+        <div class="aboutAnchor clearfix tabc">
+          <span></span><span style="font-size:32px;"><span style="color:#E53333;">加群<span>63412607<span></span></span></span></span>&nbsp;可以一起交流QAQ主播18岁，擅长很多打野，一把大宝剑永久收徒，固定直播时间:早上8点-12点。收徒加Q504879131<img alt="" src="http://pic.cdn.zhanqi.tv/room_desc/24092/20150517085911_36854.jpg" /><span></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="color:#E53333;"><span style="color:#E53333;"><span style="font-size:32px;">大宝<span></span>剑榜</span></span></span><img alt="" src="http://pic.cdn.zhanqi.tv/room_desc/24092/20150421235643_27781.png" /><span></span> 
+<div>
+  <p>
+    搜索
+  </p>
+  <p>
+    复制
+  </p>
+</div>
+<div>
+  <p>
+    搜索
+  </p>
+  <p>
+    复制
+  </p>
+</div>        </div>
+        <!-- 主播简介 end-->
+
+        <!-- 精彩推荐 -->
+        <div class="live-wonderful-recommend tabc">
+          <div class="video-list-tabc">
+            <ul data-width="295">
+              
+<!--UT(3):Service\Videos::listsByUid@4-->
+                          </ul>
+          </div>
+        </div>
+        <!-- 精彩推荐 end-->
+      </div>
+    </div>
+    <!-- 视频区域End -->
+
+    <!-- 聊天区域 -->
+    <div class="live-room-chat" id="js-chat-panel">
+  <div class="liveDialog-box">
+    <a href="javascript:;" title="收起" class="closeBtn png" id="hide-chat-list"></a>
+    <!-- 粉丝榜 -->
+    <div class="fans-list" id="js-fans-list-panel">
+      <div class="bd">
+        <!-- 没有开通粉丝权限，显示 -->
+        <div class="no-fans no-role">
+          <i class="icon dv"></i>
+          <span class="dv">主播还没开通粉丝榜哦</span>
+        </div>
+        <!-- 没有开通粉丝权限，显示 end -->
+        <!-- 排行榜，显示 -->
+        <div class="content tabs" style="display: none;">
+          <div class="content-nav">
+            <ul>
+              <li class="active tab">
+                <a href="javascript:;">周榜</a>
+              </li>
+              <li class="tab">
+                <a href="javascript:;">总榜</a>
+              </li>
+            </ul>
+          </div>
+          <div class="tabc active">
+            <ul class="content-ul week-rank-layer" style="display: none;"></ul>
+            <!-- 排行榜没有数据，显示 -->
+            <div class="no-fans no-rank-week" style="display: none;">
+              <i class="icon dv"></i>
+              <span class="dv">当前没有粉丝进入排行榜</span>
+            </div>
+            <!-- 排行榜没有数据，显示 end -->
+          </div>
+          <div class="tabc">
+            <ul class="content-ul all-rank-layer" style="display: none;"></ul>
+            <!-- 排行榜没有数据，显示 -->
+            <div class="no-fans no-rank-all" style="display: none;">
+              <i class="icon dv"></i>
+              <span class="dv">当前没有粉丝进入排行榜</span>
+            </div>
+            <!-- 排行榜没有数据，显示 end -->
+          </div>
+        </div>
+        <!-- 排行榜，显示 end -->
+      </div>
+    </div>
+    <!-- 粉丝榜End -->
+
+    <div class="activity-show" style="display:none;height:0;"></div>
+
+    <!-- 聊天 -->
+    <div class="liveDialog" id="js-get-height">
+      <div class="liveDialog-in js-scroll" data-get-height="js-get-height">
+        <ul id="yp-list-chat"></ul>
+      </div>
+    </div>
+    <!-- 聊天 end-->
+  
+    <div class="userOperate" id="js-chat-control-panel">
+      <div class="room-chat-notice-layer">
+        <!-- 聊天列表，相关提示 -->
+        <div class="yp-list-new-msg">
+          <div class="yp-list-new-msg-layer"></div>
+          <div class="yp-list-new-msg-txt">查看更多消息</div>
+        </div>
+        <div class="yp-list-chat-delay" style="display: none;">
+          <div class="yp-list-chat-delay-layer"></div>
+          <div class="yp-list-chat-delay-txt">您的发言太快了，休息2秒再发吧~</div>
+        </div>
+        <div class="yp-list-chat-connect" style="display: none; height: 19px;">
+          <div class="yp-list-chat-connect-layer"></div>
+          <div class="yp-list-chat-connect-txt"><span>正在连接中噢，请稍后~</span>
+            <div class="link" style="display: none;"><a href="javascript:;" class="js-socket-relogin">点击重连</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- 公告 -->
+      <div class="room-chat-notice" data-show="1" style="display: none;">
+        <div class="room-chat-notice-content" style="text-align:left;padding:0 10px;">
+          <img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/room-chat-notice-icon.png" style="margin-top: -2px;" alt="" />
+          <a href="http://www.2133.com/mhj/game/?serverid=2166" target="_blank" id="room-chat-notice" onclick="hmtTongJi('siteBanner', 'room_chat_notice', 6, 24092, 3)">
+            <span class="">莽荒领域，畅玩，获得金币！</span>
+          </a>
+        </div>
+      </div>
+      <!-- 公告 end -->
+
+      <!-- 输入聊天内容 -->
+      <form action="" class="clearfix">
+        <div class="chat-bottom-area">
+          <div class="userTalk">
+            <textarea id="yp-txt-chat" name="content" placeholder="发送弹幕就有机会赠送主播礼物哦（需绑定手机）！"></textarea>
+            <a href="javascript:;" class="send-btn js-chat-submit-btn">发送</a>
+          </div>
+        </div>
+      </form>
+      <!-- 输入聊天内容 end-->
+
+      <div class="clearfix">
+        <a class="expressionBtn" id="yp-btn-face" href="#yp-panel-face" data-target="">
+          <i class="icon-happy" title="表情"></i>
+        </a>
+        <!-- 表情列表 -->
+        <div class="expressionBox" id="yp-panel-face">
+          <script type="text/x-tmpl" id="t_face">
+          <ul class="faceList face-list">
+            <li data-face="[害羞]" title="[害羞]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/1.gif" alt="表情"></a>
+            </li>
+            <li data-face="[鄙视]" title="[鄙视]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/2.gif" alt="表情"></a>
+            </li>
+            <li data-face="[发怒]" title="[发怒]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/3.gif" alt="表情"></a>
+            </li>
+            <li data-face="[微笑]" title="[微笑]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/5.gif" alt="表情"></a>
+            </li>
+            <li data-face="[阴险]" title="[阴险]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/6.gif" alt="表情"></a>
+            </li>
+            <li data-face="[流泪]" title="[流泪]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/7.gif" alt="表情"></a>
+            </li>
+            <li data-face="[大兵]" title="[大兵]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/9.gif" alt="表情"></a>
+            </li>
+            <li data-face="[困]" title="[困]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/10.gif" alt="表情"></a>
+            </li>
+            <li data-face="[猪头]" title="[猪头]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/12.gif" alt="表情"></a>
+            </li>
+            <li data-face="[奋斗]" title="[奋斗]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/13.gif" alt="表情"></a>
+            </li>
+            <li data-face="[坏笑]" title="[坏笑]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/14.gif" alt="表情"></a>
+            </li>
+            <li data-face="[晕]" title="[晕]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/15.gif" alt="表情"></a>
+            </li>
+            <li data-face="[鼓掌]" title="[鼓掌]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/16.gif" alt="表情"></a>
+            </li>
+            <li data-face="[酷]" title="[酷]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/17.gif" alt="表情"></a>
+            </li>
+            <li data-face="[色]" title="[色]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/18.gif" alt="表情"></a>
+            </li>
+            <li data-face="[发呆]" title="[发呆]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/19.gif" alt="表情"></a>
+            </li>
+            <li data-face="[惊讶]" title="[惊讶]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/20.gif" alt="表情"></a>
+            </li>
+            <li data-face="[白眼]" title="[白眼]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/21.gif" alt="表情"></a>
+            </li>
+          </ul>
+          <ul class="faceList face-list" style="display:none">
+            <li data-face="[抓狂]" title="[抓狂]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/22.gif" alt="表情"></a>
+            </li>
+            <li data-face="[憨笑]" title="[憨笑]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/23.gif" alt="表情"></a>
+            </li>
+            <li data-face="[傲慢]" title="[傲慢]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/24.gif" alt="表情"></a>
+            </li>
+            <li data-face="[敲打]" title="[敲打]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/25.gif" alt="表情"></a>
+            </li>
+            <li data-face="[衰]" title="[衰]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/26.gif" alt="表情"></a>
+            </li>
+            <li data-face="[呲牙]" title="[呲牙]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/28.gif" alt="表情"></a>
+            </li>
+            <li data-face="[惊恐]" title="[惊恐]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/29.gif" alt="表情"></a>
+            </li>
+            <li data-face="[可怜]" title="[可怜]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/30.gif" alt="表情"></a>
+            </li>
+            <li data-face="[流汗]" title="[流汗]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/31.gif" alt="表情"></a>
+            </li>
+            <li data-face="[疑问]" title="[疑问]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/32.gif" alt="表情"></a>
+            </li>
+            <li data-face="[偷笑]" title="[偷笑]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/33.gif" alt="表情"></a>
+            </li>
+            <li data-face="[撇嘴]" title="[撇嘴]">
+              <a href="javascript:;"><img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/i/qq-face/35.gif" alt="表情"></a>
+            </li>
+          </ul>
+          <div class="facePage">
+            <a href="javascript:;" data-page="1" title="上一页"><i class="icon-previous"></i></a>
+            <p class="pageNum">
+            <span class="currentpage">1</span>/<span class="sumpage">2</span>
+            </p>
+            <a href="javascript:;" data-page="2" title="下一页"><i class="icon-next"></i></a>
+          </div>
+          </script>
+        </div>
+        <!-- 表情列表 end-->
+        <a class="gagBtn" id="yp-btn-adminpanel" href="javascript:;" style="display: none;">
+          <i class="icon-user3" title="禁言"></i>
+        </a>
+        <a class="colorBtn png" id="useHyunWord" href="javascript:;" title="彩弹"></a>
+        <a class="shield-gifts-btn" href="javascript:;" id="js-gift-shield">
+          <i class="icon-blocked1" title="屏蔽小礼物"></i>
+          <i class="icon-gift1" title="显示小礼物"></i>
+        </a>
+        <a class="clearBtn yp-btnClear" href="javascript:;" data-type="public">
+          <i class="icon-remove2" title="清屏"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- 聊天区域End -->
+  </div>
+</div>
+
+<!-- 分享弹窗 -->
+<div class="share-ibox hidden" id="share-ibox-panel">
+  <p class="txt">分享直播，拿金币奖励。</p>
+  <div class="share-icons clearfix bdsharebuttonbox bdshare-button-style0-32" data-tag="room_share">
+    <a href="javascript:;" class="bds_tsina icons sina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="javascript:;" class="bds_qzone icons qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="javascript:;" class="bds_sqq icons qq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="javascript:;" class="bds_tqq icons txwb" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="javascript:;" class="bds_douban icons dou" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="javascript:;" class="bds_renren icons ren" data-cmd="renren" title="分享到人人网"></a>
+    <a href="javascript:;" class="bds_tieba icons tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+  </div>
+  <div class="share-cont">
+    <p class="info">分享视频给好友：</p>
+    <div class="area_share">
+      <span class="subtitle">视频地址：</span>
+      <input type="text" class="ipt-url" readonly="readonly" id="copy-live-url" value="http://www.zhanqi.tv/jianke">
+      <a href="javascript:;" class="copy" data-clipboard-target="copy-live-url">复制</a>
+    </div>
+  </div>
+</div>
+<!-- 分享弹窗End -->
+
+<!-- app下载弹窗 -->
+<div class="new-room-app-ibox" id="js-app-down-pop" style="display: none;">
+  <i class="arrow"></i>
+  <img src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/images/app-two-code.jpg" alt="">
+  <p>扫一扫下载APP</p>
+</div>
+<!-- app下载弹窗End -->
+
+<div class="dropdownBox" id="yp-menu-user" style="position:absolute; display: none;">
+  <ul role="menu" class="dropdown-ul">
+    <li data-permission-req="0" data-permission="1"><a href="javascript:;" data-type="nochat" data-mode="0" data-action="1">不看此人发言</a></li>
+    <li data-permission-req="0" data-permission="1"><a href="javascript:;" data-type="nochat" data-mode="0" data-action="0">恢复此人发言</a></li>
+    <li data-permission-req="0" data-permission="1"><a href="javascript:;" data-type="report">举报此用户</a></li>
+    <li data-permission-req="20" data-permission="1"><a href="javascript:;" data-type="setAdmin" data-action="1" data-type-permission="10">设置房管</a></li>
+    <li data-permission-req="20" data-permission="10"><a href="javascript:;" data-type="setAdmin" data-action="0" data-type-permission="1">取消房管</a></li>
+    <li data-permission-req="10" data-permission="20"><a href="javascript:;" data-type="nochat" data-mode="1" data-action="1">今日禁言</a></li>
+    <li data-permission-req="20" data-permission="20"><a href="javascript:;" data-type="nochat" data-mode="2" data-action="1">永久禁言</a></li>
+    <li data-permission-req="20" data-permission="20"><a href="javascript:;" data-type="nochat" data-mode="3" data-action="1">IP禁言</a></li>
+    <li data-permission-req="40" data-permission="20"><a href="javascript:;" data-type="nochat" data-mode="4" data-action="1">IP平台禁言</a></li>
+    <li data-permission-req="10" data-permission="40"><a href="javascript:;" data-type="showip" data-mode="3">查看IP</a></li>
+    <li data-permission-req="10" data-permission="10"><a href="javascript:;" data-type="sendnotice">发送通知</a></li>
+  </ul>
+</div>
+
+<!-- 直播信息弹窗 -->
+<div id="yp-live-start-modal" class="hidden">
+  <div class="mask"></div>
+  <div class="loginIbox-2 live-info-ibox" style="z-index: 70; height:340px">
+    <div class="ibox-login-bgOpacity"></div>
+    <div class="ibox-login-bg" style="z-index: 70; height:325px">
+      <div class="iboxHd">
+        直播信息
+        <a href="javascript:;" class="close js-close icon-cancel-circle" title="关闭"></a>
+      </div>
+      <div class="iboxBd">
+        <div class="infoRow">
+          <div class="infoRow-left"><strong style="color:red">推流地址已做变更请重新配置，谢谢</strong></div>
+        </div>
+        <div class="infoRow">
+          <div class="infoRow-left"><strong>rtmp地址：</strong><input class="input-forcopy" type="text" readonly="readonly" id="stream_url" /></div>
+          <a id="stream_url_copy" data-clipboard-target="stream_url" href="javascript:;" class="copy">复制</a>
+        </div>
+        <div class="infoRow">
+          <div class="infoRow-left"><strong>直播码：</strong><input class="input-forcopy" type="text" readonly="readonly" id="yp_identify_area" /></div>
+          <a id="identify_copy" data-clipboard-target="yp_identify_area" href="javascript:;" class="copy">复制</a>
+        </div>
+        <div class="infoRow">
+          <div class="infoRow-left textL" style="padding-left: 35px;"><strong>最大比特率：</strong><span class="js-live-info-box-bits"></span></div>
+        </div>
+        <div class="infoRow">
+          <div class="infoRow-left textL" style="padding-left: 35px;"><strong>分辨率：</strong><span class="js-live-info-box-res"></span></div>
+        </div>
+        <div class="infoRow">
+          <div class="infoRow-left textL" style="padding-left: 35px;"><strong>FPS：</strong><span class="js-live-info-box-fps"></span></div>
+        </div>
+        <div class="ibox-ft">
+          <a href="http://www.zhanqi.tv/common/obs.html" target="_blank">详细设置</a>
+          <button class="btn btn-gray js-close">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 直播信息弹窗End -->
+
+<!-- 任务总弹窗 -->
+<div class="new-rwtc-ibox" id="js-room-task-panel" style="display: none;">
+  <div class="content js-task-panel-item" data-panel="list" data-close=".js-tabs-close">
+    <div class="hd">
+      <a href="javascript:;" class="close js-close" title="关闭"></a>
+      <span class="make-task-hd">做任务领钱咯</span>
+    </div>
+    <div class="rw-content">
+      <div class="rw-content-nav">
+        <ul class="clearfix">
+          <li class="active">
+            <a href="javascript:;">日常任务</a>
+            <i class="tit-area" style="display: none;">0</i>
+          </li>
+        </ul>
+      </div>
+      <div class="tabs" data-active="0" data-tabc=".daily-task-tabc" data-tab=".daily-task-tab">
+        <div class="tabc daily-task-tabc js-daily-task-list-panel active pr">
+          <a href="javascript:;" class="refresh-link js-refresh" title="刷新">刷新</a>
+          <!-- 总弹窗内容 -->
+          <div class="bd">
+            <div class="textC js-loading" style="color: #fff;padding:40px 0 20px;display: none;">加载中。。。</div>
+            <ul class="clearfix js-daily-task-list" style="height: 130px;width: 492px;overflow: hidden;">
+              <li class="task-item" data-type="regist">
+                <div class="rw-bd task-desc task-click">
+                  <div class="name"><p>注册</p></div>
+                  <div class="sub-bd task-get">
+                    <i class="silver-icon png"></i><span class="js-task-get-coin">500</span>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click task-btn">立即注册</a>
+              </li>
+              <li class="task-item" data-type="avatar" style="display:none;">
+                <div class="rw-bd task-desc task-click two-line">
+                  <div class="name">
+                    <p>有头</p>
+                    <p>有脸</p>
+                  </div>
+                  <div class="sub-bd task-get">
+                    <i class="silver-icon png"></i><span class="js-task-get-coin">100</span>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click task-btn">上传头像</a>
+              </li>
+              <li class="task-item" data-type="phone" style="display:none;">
+                <div class="rw-bd task-desc task-click two-line">
+                  <div class="name">
+                    <p>绑定</p>
+                    <p>手机号</p>
+                  </div>
+                  <div class="sub-bd task-get">
+                    <i class="silver-icon png"></i><span class="js-task-get-coin">2000</span>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click task-btn">立即绑定</a>
+              </li>
+              <li class="task-item" data-type="share">
+                <div class="rw-bd task-desc task-click two-line">
+                  <div class="name">
+                    <p>分享</p>
+                    <p>直播间</p>
+                  </div>
+                  <div class="sub-bd task-get">
+                    <i class="gold-icon png"></i><span class="js-task-get-coin">10</span>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click task-btn">去分享</a>
+              </li>
+              <li class="task-item" data-type="app">
+                <div class="rw-bd task-desc task-click two-line">
+                  <div class="name">
+                    <p>APP</p>
+                    <p>下载</p>
+                  </div>
+                  <div class="sub-bd task-get1">
+                    <i class="gold-icon png"></i><span class="js-task-get-coin">600</span>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click task-btn">下载APP</a>
+              </li>
+              <li class="task-item" data-type="appview" style="display:none;">
+                <div class="rw-bd task-desc task-click two-line">
+                  <div class="name">
+                    <p>APP</p>
+                    <p>看直播</p>
+                  </div>
+                  <div class="sub-bd task-get1">
+                    <i class="gold-icon png"></i><span class="js-task-get-coin">30</span>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click task-btn">去看直播</a>
+              </li>
+              <li class="task-item1" data-type="ask" style="display: none;">
+                <div class="rw-bd task-desc1 task-click1 two-line">
+                  <div class="name">
+                    <p>每日</p>
+                    <p>一问</p>
+                  </div>
+                  <div class="sub-bd task-get1">
+                    <i class="silver-icon png"></i><span class="js-task-get-coin1">100</span>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click1 task-btn1">回答问题</a>
+              </li>
+              <li class="task-item" data-type="slotmachine">
+                <div class="rw-bd task-desc task-click lhj lhj-1" id="js-small-slot-panel" data-last="lhj-1">
+                  <div class="name">
+                    <p>老虎机</p>
+                  </div>
+                </div>
+                <a href="javascript:;" class="receive-btn task-click task-btn">抽金币</a>
+              </li>
+            </ul>
+          </div>
+          <!-- 总弹窗内容End -->
+        </div>
+        <div class="new-slider" style="display: none;">
+          <ul class="di clearfix">
+            <li class="tab daily-task-tab active"><a href="javascript:;"></a></li>
+            <li class="tab daily-task-tab"><a href="javascript:;"></a></li>
+            <li class="tab daily-task-tab"><a href="javascript:;"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rw-content-nav">
+        <ul class="clearfix">
+          <li class="active">
+            <a href="javascript:;">页游任务</a>
+            <i class="tit-area js-webgame-count" data-count="0" style="display: none;">0</i>
+          </li>
+        </ul>
+      </div>
+      <div class="js-webgame-task-list-panel">
+        <div class="page-game-rw">
+          <div class="bd">
+            <div class="textC js-loading" style="color: #fff;padding:20px 0;display: none;">加载中。。。</div>
+            <ul class="clearfix js-webgame-mission-list">
+            </ul>
+            <div class="textR">
+              <div class="textR">
+                <i class="dv game-record-icon"></i>
+                <a href="/user/missionLog" target="_blank" class="dv" title="我的游戏记录" onclick="_hmt.push(['_trackEvent', '2133webgame', 'room_task_panel_missioin_log'])">我的游戏任务</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- title弹窗 -->
+    <div class="new-title-ibox" id="js-task-info-tips" style="display: none;">
+      <i class="arrow"></i>
+      <div class="title-hd js-task-info-tips-title"></div>
+      <div class="title-bd js-task-info-tips-desc"></div>
+    </div>
+    <!-- title弹窗End -->
+  </div>
+  <div class="slotMachine-content js-task-panel-item" data-panel="slotmachine" id="js-slotmachine-pop-panel" style="display: none;">
+    <div class="hd">
+      <a href="javascript:;" class="back-btn js-back" title="">
+        <i class="icon-undo2"></i>
+        <span>返回</span>
+      </a>
+      <a href="javascript:;" class="close js-close" title="关闭"></a>
+      <span>老虎机</span>
+    </div>
+    <div class="slotMachine-bd">
+      <a href="javascript:;" class="rocker js-slotmachine-pop-btn" title=""></a>
+      <div class="sub-hd js-slotmachine-pop-chance"></div>
+      <div class="sub-hd js-slotmachine-pop-result" style="display: none;"></div>
+      <div class="sub-bd js-slotmachine-pop-num-area">
+        <div class="num-thousand js-item"></div>
+        <div class="num-hundred js-item"></div>
+        <div class="num-ten js-item"></div>
+        <div class="num-months js-item"></div>
+      </div>
+      <div class="sub-ft">
+        <a href="http://www.zhanqi.tv/news/2014/12/29/51.html" target="_blank" class="more" title="">查看详情>></a>
+        <div class="bottom bdsharebuttonbox bdshare-button-style0-32 no-title" data-tag="slotmachine_share">
+          <span class="dv">分享给好友：</span>
+          <a href="javascript:;" class="xlwb bds_tsina dv" data-cmd="tsina" title="分享到新浪微博"></a>
+          <a href="javascript:;" class="txwb bds_tqq dv" data-cmd="tqq" title="分享到腾讯微博"></a>
+          <a href="javascript:;" class="qq bds_sqq dv" data-cmd="sqq" title="分享到QQ好友"></a>
+          <span class="tit dv">（分享老虎机也有机会获得金币哦）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 任务总弹窗End -->
+<script type="text/javascript">
+  oPageConfig.oUrl.sTaskCompleteStatusUrl = '/api/actives/task/info.status';  // 获取任务状态
+  oPageConfig.oUrl.sShareEnterUrl = '/api/public/promote.visit'; // 分享进入
+  oPageConfig.oUrl.sGetTaskListByTokenJsonp = 'http://www.2133.com/index.php?r=zqAjaxTask/getLiveTaskByToken';
+  oPageConfig.oUrl.sGetTaskListJsonp = 'http://www.2133.com/index.php?r=zqAjaxTask/getTaskData';
+  oPageConfig.oUrl.sGameMissionReceiveUrl = 'http://www.2133.com/index.php?r=zqAjaxTask/getRewardOne';
+  oPageConfig.oUrl.sMyWalletGoldUrl = '/user/wallet/log.gold';
+  oPageConfig.oUrl.sMissionLogUrl = '/user/missionLog';
+  oPageConfig.oTask = {
+    regist: { type: 'regist', default_txt: '注册后，战旗将给您账户送上500战旗币，快来注册吧~', btn_default_txt: '立即注册', complete_txt: '注册后，战旗将给您账户送上500战旗币，快来注册吧~', btn_complete_txt: '点击领取', jump_url: '', taskTitle: '注册', hide: 1, next: 'avatar' }
+  , phone: { type: 'phone', default_txt: '为了保障您的账户安全，您可以进入个人中心，在“安全绑定”中绑定手机后即可送您2000战旗币哦~', btn_default_txt: '立即绑定', complete_txt: '为了保障您的账户安全，您可以进入个人中心，在“安全绑定”中绑定手机后即可送您2000战旗币哦~', btn_complete_txt: '点击领取', jump_url: '/user/info', taskTitle: '绑定手机号', hide: 1, prev: 'avatar' }
+  , avatar: { type: 'avatar', default_txt: '进入个人中心上传头像将获得1000战旗币哦~做一个有头有脸的大人物吧~', btn_default_txt: '上传头像', complete_txt: '进入个人中心上传头像将获得1000战旗币哦~做一个有头有脸的大人物吧~', btn_complete_txt: '点击领取', jump_url: '/user/info', taskTitle: '有头有脸', hide: 1, next: 'phone', prev: 'regist' }
+  , ask: { type: 'ask', default_txt: '回答问题后可轻松获得若干货币奖励哦，快来回答问题吧！', btn_default_txt: '回答问题', complete_txt: '回答问题后可轻松获得若干货币奖励哦，快来回答问题吧！', btn_complete_txt: '点击领取', jump_url: '', taskTitle: '每日一问', hide: 1 }
+  , share: { type: 'share', default_txt: '分享直播间给好友，每邀请一位新用户并观看直播5分钟即可获得10金币奖励(每天最多邀请50位)。前三位用户每位奖励100金币哦。', btn_default_txt: '去分享', complete_txt: '分享直播间给好友，每邀请一位新用户并观看直播5分钟即可获得10金币奖励(每天最多邀请50位)。前三位用户每位奖励100金币哦。', btn_complete_txt: '点击领取', jump_url: '', taskTitle: '分享直播间', hide: 0 }
+  , app: { type: 'app', default_txt: '下载战旗新版APP登录账号后观看5分钟可获得600金币奖励。可在网站或者APP任务中心领取。每日观看可领取更多金币哦！', btn_default_txt: '下载APP', complete_txt: '下载战旗新版APP登录账号后观看5分钟可获得600金币奖励。可在网站或者APP任务中心领取。每日观看可领取更多金币哦！', btn_complete_txt: '', jump_url: '', taskTitle: 'APP看直播', hide: 1, next: 'appview' }
+  , slotmachine: { type: 'slotmachine', default_txt: '每天观看5，30，60分钟可分别获得一次抽奖机会。最高金额2200金币。', btn_default_txt: '抽金币', complete_txt: '每天观看5，30，60分钟可分别获得一次抽奖机会。最高金额2200金币。', btn_complete_txt: '', jump_url: '', taskTitle: '老虎机', hide: 1 }
+  , appview: { type: 'appview', default_txt: '每天使用战旗新版APP登录账号后观看5分钟可获得30金币奖励。可在网站或者APP任务中心领取。', btn_default_txt: '去下载', complete_txt: '每天使用战旗新版APP登录账号后观看5分钟可获得30金币奖励。可在网站或者APP任务中心领取。', btn_complete_txt: '', jump_url: '', taskTitle: '老虎机', hide: 0, prev: 'app' }
+  };
+</script>
+
+<!-- 任务入口弹窗End -->
+
+<div class="mask js-guide-mask" style="display: none;"></div>
+<!-- 引导1 -->
+<div class="new-guide-3 js-guide-item" data-type="pullImg" style="display: none;">
+  <a href="javascript:;" class="close js-ok" title="好的"></a>
+</div>
+<!-- 引导1End -->
+<!-- 引导2 -->
+<div class="new-guide-2 js-guide-item" data-type="leftScroll" style="display: none;" data-next="pullImg">
+  <a href="javascript:;" class="close js-ok" title="好的"></a>
+</div>
+<!-- 引导2End -->
+<!-- 引导3 -->
+<div class="new-guide-1 js-guide-item" data-type="task" style="display: none;" data-next="leftScroll">
+  <a href="javascript:;" class="close js-ok" title="好的"></a>
+</div>
+<!-- 引导3End -->
+
+<!-- 开启竞猜 -->
+<div class="open-guess-ibox" id="js-guess-build-panel" style="display: none;">
+  <div class="content">
+    <div class="hd">
+      开启竞猜
+      <a href="javascript:;" title="关闭" class="close js-close"></a>
+    </div>
+    <div class="bd">
+      <form>
+        <div class="guess-build-layer"></div>
+        <div><span class="dv" style="margin-left:63px;color:red;padding:10px 0;">每次可以只开启一个竞猜</span></div>
+        <div class="textC">
+          <button class="big-bule-btn di">确定</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- 开启竞猜End -->
+
+<!-- 结束竞猜 -->
+<div class="close-guess-ibox" id="js-guess-close-panel" style="display: none;">
+  <div class="content">
+    <div class="hd">
+      结束竞猜
+      <a href="javascript:;" title="关闭" class="close js-close"></a>
+    </div>
+    <div class="bd">
+      <form>
+        <div class="guess-close-layer"></div>
+        <div class="textC">
+          <button class="big-bule-btn di">确定</button>
+          <p>请谨慎选择，若发现作弊将永久关闭竞猜功能</p>
+        </div>
+      </form>      
+    </div>
+  </div>
+</div>
+<!-- 结束竞猜End -->
+
+
+    </div>
+    
+<script type="text/javascript" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/yp/yp-socket.js?v=20150910.02"></script>
+<script type="text/javascript" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/web3.0/socketInit.js?v=20150910.02"></script>
+<script type="text/javascript">
+  oPageConfig.oSuprise = { spic: '', key: '' };
+  // 百度分享
+  window._bd_share_config = {
+    "share":[
+      {
+        "tag": 'room_share',
+        "bdSnsKey":{},
+        "bdText": "我正在#战旗TV#观看大神孤独剑客的现场直播：【剑客打野，学不到东西你砍我】，精彩炫酷，大家速速来围观！（分享自${from}）",
+        "bdMini":"2",
+        "bdMiniList":false,
+        "bdPic":"http://dlpic.cdn.zhanqi.tv/live/20150911/24092_BMvl7_2015-09-11-00-48-56_big.jpg",
+        "bdStyle":"0",
+        "bdSize":"32",
+        "bdUrl":'${room_url}',
+        "bdDesc":"我正在#战旗TV#观看大神孤独剑客的现场直播：【剑客打野，学不到东西你砍我】，精彩炫酷，大家速速来围观！（分享自${from}）",
+        onBeforeClick: function(cmd,config){
+          var sFrom = '';
+          switch( cmd ){
+            case 'tsina':
+              sFrom = '@战旗TV直播平台';
+              break;
+            case 'tqq':
+              sFrom = '@战旗TV';
+              break;
+            default:
+              sFrom = '战旗TV直播平台';
+              break;
+          }
+          config.bdText = yp.format(config.bdText, { from: sFrom });
+          config.bdUrl = yp.format(config.bdUrl, { room_url: $('#copy-live-url').val() });
+          config.bdDesc = yp.format(config.bdDesc, { from: sFrom });
+          yp.ajax(oPageConfig.oUrl.sShareReturnUrl);
+          return config;
+        }
+      },
+      {
+        "tag": 'slotmachine_share',
+        "bdSnsKey":{},
+        "bdText": "#战旗惊喜官#战旗惊喜官给孤独剑客送大礼啦，赶紧来围观！战旗百万惊喜回馈主播！活动期间开播就能触发惊喜官来送礼。（分享自${from}）",
+        "bdMini":"2",
+        "bdMiniList":false,
+        "bdPic":"http://dlpic.cdn.zhanqi.tv/live/20150911/24092_BMvl7_2015-09-11-00-48-56_big.jpg",
+        "bdStyle":"0",
+        "bdSize":"32",
+        "bdUrl":'${room_url}',
+        "bdDesc":"#战旗惊喜官#战旗惊喜官给孤独剑客送大礼啦，赶紧来围观！战旗百万惊喜回馈主播！活动期间开播就能触发惊喜官来送礼。（分享自${from}）",
+        onBeforeClick: function(cmd,config){
+          var sFrom = '';
+          switch( cmd ){
+            case 'tsina':
+              sFrom = '@战旗TV直播平台';
+              break;
+            case 'tqq':
+              sFrom = '@战旗TV';
+              break;
+            default:
+              sFrom = '战旗TV直播平台';
+              break;
+          }
+          config = $.extend(config, bdConfigSlotmachine);
+          config.bdText = yp.format(config.bdText, { from: sFrom });
+          config.bdUrl = yp.format(config.bdUrl, { room_url: $('#copy-live-url').val() });
+          config.bdDesc = yp.format(config.bdDesc, { from: sFrom });
+          return config;
+        }
+      }
+    ]
+  };
+  var bdConfigSlotmachine = {};
+  with(document)0[
+    (getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)
+  ];
+</script>
+
+<!--UT(3):Service\Gift::lists@4-->
+<script type="text/javascript">
+  window.oPageConfig.aGiftList = [{"id":"6","name":"大宝剑","price":"66600","percent":"50","fight":"6660","exp":"6660","coinType":"2","broadcast":"1","status":"1","tid":"6","view":"","desc":"赐予我力量吧！我是希瑞！","image":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftspic-2015052518170938305.gif","mobileimg":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftmimg2015052518170980232.png","icon":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/gifticon-2015052518170944080.png","action":"装备","classifier":"把","note":"{\"end\":\"\"}"},{"id":"5","name":"女朋友","price":"6600","percent":"50","fight":"660","exp":"660","coinType":"2","broadcast":"2","status":"1","tid":"5","view":"","desc":"居家必备，质量优，不漏气！","image":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftspic-2015052518162172532.gif","mobileimg":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftmimg2015052518162103085.png","icon":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/gifticon-2015052518162108412.png","action":"邮寄","classifier":"个","note":"{\"end\":\"\"}"},{"id":"2","name":"猴子","price":"600","percent":"50","fight":"60","exp":"60","coinType":"2","broadcast":"2","status":"1","tid":"4","view":"","desc":"主播我要给你生猴子！","image":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftspic-2015052518153214712.gif","mobileimg":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftmimg2015052518153224586.png","icon":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/gifticon-2015052518153238644.png","action":"生了","classifier":"只","note":"{\"end\":\"\"}"},{"id":"53","name":"炸","price":"200","percent":"50","fight":"20","exp":"20","coinType":"2","broadcast":"2","status":"1","tid":"8","view":"","desc":"炸啦炸啦炸啦Boom Shakalaka","image":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftspic-2015052519315499467.gif","mobileimg":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftmimg2015052519315449069.png","icon":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/gifticon-2015052518130158887.png","action":"","classifier":"","note":"{\"end\":\"\"}"},{"id":"1","name":"666","price":"10","percent":"50","fight":"1","exp":"1","coinType":"2","broadcast":"2","status":"1","tid":"3","view":"","desc":"与众不同最时尚直播肯定溜","image":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftspic-2015052519325062331.gif","mobileimg":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/giftmimg2015052519332725796.png","icon":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/05\/gifticon-2015052518141819311.png","action":"","classifier":"","note":"{\"end\":\"\"}"},{"id":"3","name":"来SOLO","price":"100","percent":"0","fight":"1","exp":"1","coinType":"1","broadcast":"2","status":"1","tid":"1","view":"","desc":"不服？来SALA啊！","image":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/09\/giftspic-2015090218055968571.gif","mobileimg":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/09\/giftmimg2015090218055958866.png","icon":"http:\/\/dlpic.cdn.zhanqi.tv\/uploads\/2015\/09\/gifticon-2015090218055970848.png","action":"送","classifier":"个","note":"{\"end\":\"\"}"}];
+  window.oPageConfig.aGiftBeShield = ['1', '2', '3']; // 允许被屏蔽的礼物的模板id
+</script>
+<script type="text/javascript" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/public/getviewer.js?v=20150910.02"></script>
+<link rel="stylesheet" type="text/css" href="http://dlstatic.cdn.zhanqi.tv/assets/web/static/c/live-play-game.css?v=20150910.02">
+
+<!--UT(2):Service\Games::lists@1@2015-09-11 00:52:53/af1f1f419c91a8a3040075fb05bfeaf0-->
+<script type="text/x-tmpl" id="t_game_list_select">
+  <select>
+        <option value="65">百变Gamer</option>
+        <option value="6">英雄联盟</option>
+        <option value="10">DOTA2</option>
+        <option value="9">炉石传说</option>
+        <option value="49">单机游戏</option>
+        <option value="21">风暴英雄</option>
+        <option value="13">三国杀</option>
+        <option value="73">怀旧回忆</option>
+        <option value="70">格斗游戏</option>
+        <option value="67">射击游戏</option>
+        <option value="22">地下城与勇士</option>
+        <option value="60">三国杀英雄传</option>
+        <option value="76">棋牌竞技</option>
+        <option value="74">天涯明月刀</option>
+        <option value="28">手机游戏</option>
+        <option value="57">上古世纪</option>
+        <option value="68">暗黑破坏神Ⅲ</option>
+        <option value="35">热血传奇</option>
+        <option value="63">网游综合</option>
+        <option value="18">魔兽争霸3</option>
+        <option value="79">坦克世界</option>
+        <option value="75">彩旗娱乐</option>
+        <option value="5">星际争霸2</option>
+        <option value="14">DOTA</option>
+        <option value="64">天谕</option>
+        <option value="20">冠军对决</option>
+        <option value="8">魔兽世界</option>
+        <option value="48">梦塔防</option>
+        <option value="72">我的世界</option>
+        <option value="47">第三把剑</option>
+        <option value="11">NBA2K ONLINE</option>
+        <option value="23">剑灵</option>
+        <option value="24">激战2</option>
+        <option value="25">神之浩劫</option>
+        <option value="26">超神英雄</option>
+        <option value="29">体育竞技</option>
+        <option value="32">剑侠情缘3</option>
+        <option value="33">300英雄</option>
+        <option value="36">FIFA Online</option>
+        <option value="37">忍者村大战</option>
+        <option value="45">游戏放映室</option>
+        <option value="53">热血江湖2</option>
+        <option value="58">三国争霸2</option>
+        <option value="61">街头篮球</option>
+        <option value="71">刀塔传奇</option>
+        <option value="77">龙翼编年史</option>
+        <option value="80">梦三国2</option>
+        <option value="81">战舰世界</option>
+      </select>
+</script>
+<script type="text/javascript">
+  oPageConfig.oUrl.sPlaneTicketMsgSubmitUrl = '/api/actives/ticket/index.ticket';
+  yp.use('planeTicket', function(yp, oPlaneTicket){
+    yp.ready(function(){
+      oPlaneTicket.init();
+    });
+  });
+</script><link rel="stylesheet" type="text/css" href="http://dlstatic.cdn.zhanqi.tv/assets/web/static/c/ai-recharge.css?v=20150910.02">
+<script type="text/javascript">
+  oPageConfig.oUrl.sCheckAlipayDutStatusUrl = '/api/user/charge.sign.check';
+  oPageConfig.oUrl.sCheckAlipayDutSubmitUrl = '/api/user/charge.dut.order';
+  oPageConfig.oUrl.sAlipayDutPayCompleteUrl = '/api/user/charge.order.check';
+  oPageConfig.oUrl.sGetAlipayQrcodeUrl = '/api/user/charge.qrcode';
+  oPageConfig.oUrl.sGetWeixinQrcodeUrl = '/api/user/charge.weichat.qrcode';
+  
+  yp.use('rechargeData, roomRecharge', function(yp, oRechargeData, oRoomRecharge){
+    yp.ready(function(){
+      oRoomRecharge.oRechargeData = oRechargeData;
+      oRoomRecharge.init();
+    });
+  });
+</script>
+<script type="text/javascript">
+  yp.ready(function(){
+    yp.sub('page/room/login/done', function(){
+      var sHtml = '<a href="http://www.zhanqi.tv/active/september" target="_blank" class="september-solo-banner2"></a>';
+      $('.activity-show').show().css({ height: 103 }).html(sHtml);
+      yp.pub('page/room/chatsize/reset');
+    });
+  });
+</script>
+<script type="text/javascript" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/web3.0/room.js?v=20150910.02"></script>
+
+        <div id="userLoginBox" class="ibox loginIbox" style="display: none;">
+  <div class="login-hd">
+    <a href="javascript:;" class="ibox-close js-close" title="关闭"></a>
+  </div>
+  <div class="login-bd clearfix">
+    <!-- 登录左边区域 -->
+    <div class="login-bd-left">
+      <form action="/api/auth/user.login" autocomplete="off" id="yp-box-form">
+        <div class="row js-input">
+          <input type="text" class="input inputs" name="account" data-valid="uname" maxlength="100" />
+          <label class="label input-labels">账号/手机号码</label>
+        </div>
+        <div class="row js-input">
+          <input type="password" class="input inputs" name="password" data-valid="password" maxlength="40" />
+          <label class="label input-labels">登录密码</label>
+        </div>
+        <!-- 极验验证 -->
+        <div class="jyyz js-geetest-script" style="height: 42px;"></div>
+        <!-- 极验验证End -->
+        <div class="label-row clearfix">
+          <a target="_blank" href="/user/findpwd" class="fr">找回密码</a>
+          <i class="checkbox checkboxed dv js-checkbox"></i>
+          <input type="checkbox" checked="checked" class="js-checkbox-hidden" style="display:none;" />
+          <span class="dv">一个月内免登录</span>
+        </div>
+        <button type="submit" class="login-btn orange-btn js-pop-login-btn">登 录</button>
+      </form>
+    </div>
+    <!-- 登录左边区域End -->
+    <!-- 登录右边区域 -->
+    <div class="login-bd-right">
+      <div class="sub-hd">您可以使用其它登录方式</div>
+      <div class="sub-bd">
+        <ul class="clearfix" style="padding-left:48px;">
+          <li style="display:none;">
+            <a href="/api/auth/user.other_login?type=bf" class="third-login-link bf" title="边锋通行证登录"></a>
+          </li>
+          <li>
+            <a href="/api/auth/user.other_login?type=qq" class="third-login-link qq" title="QQ登录"></a>
+          </li>
+          <li>
+            <a href="/api/auth/user.other_login?type=bd" class="third-login-link bd" title="百度账号登录"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="textC">
+        <a href="javascript:;" class="a regist-link">没有账号，快速注册>></a>
+      </div>
+    </div>
+    <!-- 登录右边区域End -->
+  </div>
+
+</div>
+    <div class="ibox loginIbox registerIbox" id="registerIbox" style="display: none;">
+  <div class="login-hd">
+    <a href="javascript:;" class="ibox-close js-close" title="关闭"></a>
+  </div>
+  <div class="login-bd clearfix">
+    <!-- 登录左边区域 -->
+    <div class="login-bd-left register-bd-left tabs">
+      <div class="register-nav">
+        <ul class="clearfix">
+          <li class="tab active">
+            <a href="javascript:;">手机号码注册</a>
+            <i class="new-icon"></i>
+          </li>
+          <li class="tab">
+            <a href="javascript:;">普通注册</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 手机号码注册 -->
+      <div class="tabc active">
+        <form action="/api/auth/user.mobile_register" class="sub-iboxBd js-phone-form">
+          <div class="row z10">
+            <div class="select js-select-panel">
+              <i class="arrow"></i>
+              <span class="js-regist-country-select js-select-txt">中国大陆</span>
+              <!-- 下拉菜单 -->
+              <input type="hidden" class="js-select-input" name="countryCode" value="+86" />
+              <div class="option js-select-list">
+                <ul>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+86">中国大陆</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+852">香港</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+853">澳门</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+886">台湾</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+61">澳大利亚(Australia)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+1">加拿大(Canada)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+33">法国(France)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+49">德国(Germany)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+39">意大利(Italy)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+81">日本(Japan)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+82">韩国(Korea)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+60">马来西亚(Malaysia)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+64">新西兰(New Zealand)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+31">荷兰(Netherlands)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+7">俄罗斯(Russia)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+65">新加坡(Singapore)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+66">泰国(Thailand)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+44">英国(UK)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+1">美国(USA)</a></li>
+                  <li><a href="javascript:;" class="js-select-item" data-value="+84">越南(Vietnam)</a></li>
+                </ul>
+              </div>
+              <!-- 下拉菜单End -->
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="small-input js-regist-country-code-show">+86</div>
+            <div class="input-area js-input">
+              <input type="text" class="input inputs js-regist-phone" name="mobile" data-type='phone' />
+              <label class="label input-labels">填写常用手机号</label>
+            </div>
+          </div>
+          <div class="row js-input">
+            <input type="text" class="input inputs required" name="nickname" data-type='nickname' />
+            <label class="label input-labels">昵称（6-24位中英文、数字和下划线）</label>
+          </div>
+          <div class="row js-input">
+            <input type="password" class="input inputs required" name="password" data-type="password" />
+            <label class="label input-labels">登录密码（6-30位）</label>
+          </div>
+          <div class="row js-input clearfix">
+            <div class="mid-input">
+              <input type="text" class="input inputs" name="code" data-type="phonecode">
+              <label class="label input-labels">手机接收到的验证码</label>
+            </div>
+            <a href="javascript:;" class="yzm js-regist-phone-code-btn">获取验证码</a>
+          </div>
+          <div class="label-row">
+            <i class="checkbox dv js-checkbox"></i>
+            <input type="checkbox" class="dv terms-service-input js-checkbox-hidden" style="display:none;" />
+            <span class="dv">阅读并接受<a href="/common/agreement.html" target="_blank">《战旗TV用户协议》</a></span>
+          </div>
+          <button type="submit" class="login-btn orange-btn">注 册</button>
+        </form>
+      </div>
+      <!-- 手机号码注册End -->
+
+      <!-- 普通注册 -->
+      <div class="tabc">
+        <form action="/api/auth/user.register" class="sub-iboxBd js-normal-form">
+          <div class="row js-input">
+            <input type="text" class="input inputs required" name="account" data-type='account' />
+            <label class="label input-labels">账号（5-16位字母开头，支持数字、字母）</label>
+          </div>
+          <div class="row js-input">
+            <input type="text" class="input inputs required" name="nickname" data-type='nickname' />
+            <label class="label input-labels">昵称（6-24位中英文、数字和下划线）</label>
+          </div>
+          <div class="row js-input">
+            <input type="password" class="input inputs required" id="password-input" name="password" data-type="password" />
+            <label class="label input-labels">登录密码（6-30位）</label>
+          </div>
+          <div class="row js-input">
+            <input type="password" class="input inputs required" id="password-input-confirm" data-type="password" data-confirm="1" />
+            <label class="label input-labels">再次输入登录密码</label>
+          </div>
+          <!-- 极验验证 -->
+          <div class="jyyz js-geetest-script" style="height: 42px;"></div>
+          <!-- 极验验证End -->
+          <div class="label-row">
+            <i class="checkbox dv js-checkbox"></i>
+            <input type="checkbox" class="dv terms-service-input js-checkbox-hidden" style="display:none;" />
+            <span class="dv">阅读并接受<a href="/common/agreement.html" target="_blank">《战旗TV用户协议》</a></span>
+          </div>
+          <button type="submit" class="login-btn orange-btn">注 册</button>
+        </form>
+      </div>
+      <!-- 普通注册End -->
+    </div>
+    <!-- 登录左边区域End -->
+    <!-- 登录右边区域 -->
+    <div class="login-bd-right">
+      <div class="sub-hd">您可以使用其它登录方式</div>
+      <div class="sub-bd">
+        <ul class="clearfix" style="padding-left:48px;">
+          <li style="display:none;">
+            <a href="/api/auth/user.other_login?type=bf" class="third-login-link bf" title="边锋通行证登录"></a>
+          </li>
+          <li>
+            <a href="/api/auth/user.other_login?type=qq" class="third-login-link qq" title="QQ登录"></a>
+          </li>
+          <li>
+            <a href="/api/auth/user.other_login?type=bd" class="third-login-link bd" title="百度账号登录"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="textC">
+        <a href="javascript:;" class="a login-link">登录>></a>
+      </div>
+    </div>
+    <!-- 登录右边区域End -->
+  </div>
+
+</div>
+        <!--[if lt IE 8]>
+      <script>
+        var bIe7 = true;
+      </script>
+    <![endif]-->
+    <!--[if IE 6]>
+      <script src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/lib/DD_belatedPNG.js?v=20150910.02"></script>
+      <script>
+        DD_belatedPNG.fix('.png');
+        var bIe6 = true;
+      </script>
+    <![endif]-->
+    <script type="text/javascript" src="http://dlstatic.cdn.zhanqi.tv/assets/web/static/j/common.js?v=20150910.0201"></script>
+    <!--PageTime:0.041088104248047-->
+      <script>
+    var topHost = document.referrer;
+    if (topHost != null && topHost.indexOf('hanyutai.com') >= 0) {
+      top.location = 'http://www.zhanqi.tv';
+    }
+    if( topHost != null && topHost.indexOf('5913.net') >= 0 ){
+      $('body').html('<h1 style="padding-top: 200px;text-align: center;font-size:18px;">您可能是盗版软件的受害者<br />更多精彩，更多正版，欢迎进入战旗TV&nbsp;<a style="color:#0372cf;text-decoration: underline;" href="http://www.zhanqi.tv" target="_blank">http://www.zhanqi.tv</a></h1>');
+      $.ajax = function(){};
+    }
+  
+  var _hmt = _hmt || [];
+  (function() {
+    var src = window != window.parent ? "//hm.baidu.com/hm.js?606469546101f47ff88f66c83792f4d3" : "//hm.baidu.com/hm.js?299cfc89fdba155674e083d478408f29";
+    var hm = document.createElement("script");
+    hm.src = src;
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+
+     var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+      hm.setAttribute('id', 'bf_script_analytics_id');
+      hm.src = "//analytics.bfun.cn/analytics.js?_k=5&_v=1.2";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  </body>
+</html>

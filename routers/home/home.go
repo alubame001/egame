@@ -25,6 +25,7 @@ type Data struct {
 	Sn        string  `json:"sn"`		
 	Time      int  `json:"time"`		 
 }
+
 type HomeRouter struct {
 	base.BaseRouter
 }
@@ -37,7 +38,7 @@ func (this *HomeRouter) Get() {
 }
 func (this *HomeRouter) Test() {
 	this.Data["IsHome"] = true
-	this.TplNames = "home/home.html"
+	this.TplNames = "home/index.html"
 
 
 }

@@ -1,4 +1,6 @@
+
 function ostb_int() {
+	
 	var Cookie = {};
 	Cookie.get = function(sName, sDefaultValue) {
 		var sRE = "(?:; |^)" + sName + "=([^;]*);?";
@@ -36,7 +38,7 @@ function ostb_int() {
 		document.cookie = str
 	};
 	Cookie.clear = function(sName) {
-		Cookie.set(sName, "", new Date(0), "qq.com", "/")
+		Cookie.set(sName, "", new Date(0), "jsbdw.com", "/")
 	};
 	var d = document,
 		$ = function(o) {
@@ -61,7 +63,9 @@ function ostb_int() {
 		len = null,
 		chk = true,
 		chh = true,
-		a = '?ADTAG=IED.InnerCop.gameWeb.topNav" target="_blank"',
+		
+		//a = '" target="_blank"',
+		a = '" target=""',
 		ig = '?ADTAG=IED.InnerCop.gameWeb.iGame',
 		ir = "http://igame.qq.com/",
 		iu = "http://ossweb-img.qq.com/",
@@ -137,7 +141,7 @@ function ostb_int() {
 			ost.className = "ost_box ost_bg";
 			ost.id = "ost_box";
 			ost.style.cssText = "position:absolute;top:-500px;";
-			ost.innerHTML = '<ul class="ost_inner ost_lsn"><li class="ost_logo ost_h40 ost_fl ost_bg"><a href="http://game.qq.com/' + a + ' class="ost_blnk ost_hdn" title="腾讯游戏十周年">腾讯游戏十周年</a></li><li id="ost_g" class="ost_ad ost_h40 ost_fl"></li><li class="ost_total ost_ml10 ost_fr"><h3 class="ost_title ost_h40" id="ost_t">腾讯游戏排行榜<i class="ost_icon_arrow ost_bg"></i><sup class="ost_icon_reddot" id="ost_rank_v"></sup></h3><div class="ost_pop" id="ost_p"></div></li><li class="ost_fr ost_log ost_bg" id="ost_log"></li></ul><div id="ost_d" class="ost_big"></div>';
+			ost.innerHTML = '<ul class="ost_inner ost_lsn"><li class="ost_logo ost_h40 ost_fl ost_bg"><a href="/' + a + ' class="ost_blnk ost_hdn" title="棣栭〉">New Game</a></li><li id="ost_g" class="ost_ad ost_h40 ost_fl"></li><li class="ost_total ost_ml10 ost_fr"><h3 class="ost_title ost_h40" id="ost_t">New Game!<i class="ost_icon_arrow ost_bg"></i><sup class="ost_icon_reddot" id="ost_rank_v"></sup></h3><div class="ost_pop" id="ost_p"></div></li><li class="ost_fr ost_log ost_bg" id="ost_log"></li></ul><div id="ost_d" class="ost_big"></div>';
 			d.body.appendChild(ost);
 			cl(function() {
 				var aes = function(index) {
@@ -157,11 +161,11 @@ function ostb_int() {
 										};
 										msgstr += "</ul>"
 									} else {
-										msgstr = '<p class="ost_nmsg">目前还没有任何消息!</p>'
+										msgstr = '<p class="ost_nmsg">New Game</p>'
 									}
 									txtbox.innerHTML = msgstr
 								} else if (index == -2) {
-									txtbox.innerHTML = '<p class="ost_pm_tips">您还未开通游戏人生，开通可以畅聊游戏话题，查看最新礼包、活动、视频和攻略消息</p><span class="ost_reg"><a class="ost_reglnk" target="_blank" href="' + official_website_info["active_url"] + '">开通游戏人生<span class="ost_arrow">&nbsp;&gt;&gt;</span></a></span>'
+									txtbox.innerHTML = '<p class="ost_pm_tips">New Game2</p><span class="ost_reg"><a class="ost_reglnk" target="_blank" href="' + official_website_info["active_url"] + '">New Game<span class="ost_arrow">&nbsp;&gt;&gt;</span></a></span>'
 								}
 								chh = false
 							}
@@ -184,13 +188,13 @@ function ostb_int() {
 					},
 					lg = function() {
 						LoginManager.login(function() {
-							cl(msg, "http://user1.game.qq.com/cgi-bin/v1.0/extern/cgi_official_website.cgi?type=0&rd=" + (rd + 1))
+							//cl(msg, "http://user1.game.qq.com/cgi-bin/v1.0/extern/cgi_official_website.cgi?type=0&rd=" + (rd + 1))
 						})
 					};
 
 				function msg() {
-					var giftstr = official_website_info['gid'] != 0 ? '<li class="ost_fl ost_bg ost_gift"><a class="ost_gifturl ost_loglnk" href="' + official_website_info['gifturl'] + '"  target="_blank">礼包</a></li>' : '',
-						logstr = '<li id="log" class="ost_fl ost_login"><a href="' + official_website_info['homeurl'] + '" target="_blank" class="ost_loglnk">官方社区</a></li>',
+					var giftstr = official_website_info['gid'] != 0 ? '<li class="ost_fl ost_bg ost_gift"><a class="ost_gifturl ost_loglnk" href="' + official_website_info['gifturl'] + '"  target="_blank">脌帽掳眉</a></li>' : '',
+						logstr = '<li id="log" class="ost_fl ost_login"><a href="' + official_website_info['homeurl'] + '" target="_blank" class="ost_loglnk">鹿脵路陆脡莽脟酶</a></li>',
 						wstr = '<ul class="ost_fl ost_lsn ost_info ost_bg ost_h40">';
 					if (official_website_info["r"] != -1) {
 						var cls = numstr = '';
@@ -217,7 +221,7 @@ function ostb_int() {
 						break
 					}
 				}
-				msg()
+				//msg()
 			}, "http://user1.game.qq.com/cgi-bin/v1.0/extern/cgi_official_website.cgi?type=0&rd=" + rd);
 			cl(function() {
 				if (js[n] && window.location.host.indexOf("qt.qq.com") == -1) {
@@ -252,7 +256,7 @@ function ostb_int() {
 					d.body.style.backgroundPosition = "center 67px";
 					bn.className = "ost_bn";
 					bn.style.cssText = "position:absolute;top:-500px;";
-					bn.innerHTML = '<div class="ost_inner ost_bni"><em class="ost_jn ost_bg">公告：</em><ul id="ost_jade" class="ost_news"><li><a href="' + oD3[1] + '?ADTAG=IED.InnerCop.gameWeb.js' + n.toUpperCase() + '" target="_blank" class="ost_BFB ost_bg">' + oD3[0] + '</a></li> <li><a href="' + oD3[1] + '?ADTAG=IED.InnerCop.gameWeb.js' + n.toUpperCase() + '" target="_blank" class="ost_BFB ost_bg">' + oD3[0] + '</a></li></ul></div>';
+					bn.innerHTML = '<div class="ost_inner ost_bni"><em class="ost_jn ost_bg">鹿芦赂忙拢潞</em><ul id="ost_jade" class="ost_news"><li><a href="/"></a></li> <li><a href="/" target="_blank" class="ost_BFB ost_bg">' + oD3[0] + '</a></li></ul></div>';
 					if (n == "nz" && $("flash_top")) {
 						$("flash_top").style.top = "67px"
 					}
@@ -269,7 +273,7 @@ function ostb_int() {
 						site = document.title,
 						st = false,
 						show = true;
-					if (ex.length && ex[0] != "无") {
+					if (ex.length && ex[0] != "脦脼") {
 						for (var i = ex.length; i--;) {
 							if (site.indexOf(ex[i]) != -1) {
 								show = false;
@@ -294,8 +298,8 @@ function ostb_int() {
 						if (_1.indexOf("?") != -1) {
 							_2 = "&"
 						}
-						var bpc1 = '<div class="ost_bpb"><h3 class="ost_t ost_bg"><a href="javascript:bps(false);" class="ost_bpc ost_fr ost_bg ost_hdn">关闭</a>腾讯游戏精品推荐</h3><p style="background-image:url(' + oD4[0] + ')" class="ost_p ost_bg"><a href="' + _1 + _2 + 'ADTAG=media.free.gamewebhot.ad" class="ost_lnk ost_hdn" target="_blank">点击进入</a></p></div>',
-							bpc2 = '<a href="javascript:bps(true);" class="ost_cnr ost_bg ost_hdn">点击进入</a>',
+						var bpc1 = '<div class="ost_bpb"><h3 class="ost_t ost_bg"><a href="javascript:bps(false);" class="ost_bpc ost_fr ost_bg ost_hdn">鹿脴卤脮</a>脤脷脩露脫脦脧路戮芦脝路脥脝录枚</h3><p style="background-image:url(' + oD4[0] + ')" class="ost_p ost_bg"><a href="' + _1 + _2 + 'ADTAG=media.free.gamewebhot.ad" class="ost_lnk ost_hdn" target="_blank">碌茫禄梅陆酶脠毛</a></p></div>',
+							bpc2 = '<a href="javascript:bps(true);" class="ost_cnr ost_bg ost_hdn">碌茫禄梅陆酶脠毛</a>',
 							bps = function(o) {
 								if (o) {
 									bp.innerHTML = bpc1;
@@ -365,9 +369,10 @@ function ostb_int() {
 						charset: 'utf-8'
 					})
 				}, "http://game.qq.com/act/media/20120601457/data.js?ran=" + rd)
+				//}, "/activity/" + rd)
 			};
-			footMedia();
-			loadO2Media();
+			//footMedia();
+			//loadO2Media();
 			var eventUtil = {
 				addListener: function(element, type, hander) {
 					if (element.addEventListener) {

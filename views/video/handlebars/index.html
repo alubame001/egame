@@ -1,11 +1,16 @@
-<script type="text/x-handlebars" data-template-name="index">    
+<script type="text/x-handlebars" data-template-name="index">   
+
+    {{partial "videoIndex"}}
+</script>
+<script type="text/x-handlebars" data-template-name="videoIndex">   
+
     {{partial "videoBox2"}}
     <div class="web_frame container">
       {{partial 'analypage' }}     
       {{render 'lol' model.video}}   
     </div>      
-</script>
 
+</script>
 <script type="text/x-handlebars" data-template-name="index2">
     
     <div class="main-header">

@@ -1,5 +1,13 @@
+WebApp.Router.map(function() {
+     this.resource('video', function() {   
+       // this.route('uid', {path: 'uid/:uid'},function() {              
+       //  }); 
 
-WebApp.IndexController = Ember.Controller.extend({
+                   
+    });
+});
+
+WebApp.VideoController = Ember.Controller.extend({
   sn:"0",
   balance:10000,
   betBalance:0,
@@ -419,8 +427,8 @@ function getSeconds() {
     return  ss;
 }
 WebApp.IndexView = Ember.View.extend({
-    didInsertElement: function() {      
-      //nav();
+    didInsertElement: function() {
+      /* for slider */
      var $pxs_container = $('#pxs_container');
        if ( $pxs_container!= undefined) {
         $pxs_container.parallaxSlider();
@@ -722,7 +730,7 @@ function sortVideoData(vData,kind) {
       }     
 }
 
-WebApp.IndexRoute = Ember.Route.extend({
+WebApp.VideoRoute = Ember.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
         video :this.store.find('video',{'symbol':'lol'}),    

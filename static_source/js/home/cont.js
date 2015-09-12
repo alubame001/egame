@@ -2,7 +2,6 @@
 if(typeof(pgvMain) == 'function')
 pgvMain();
 
-
 //back
 //document.getElementById('main-bottom').style.backgroundImage="url('http://ossweb-img.qq.com/images/age/web201408/con_bot.jpg')";
 
@@ -29,9 +28,10 @@ function nav(){
 		}
 	}
 }
-nav();
+
 
 //lay
+/*
 var _lay = document.createElement('div');
 _lay.style.cssText = "width:117px;height:371px;position:absolute";
 _lay.innerHTML = '<a href="#" target="_blank" data-TGAD="1267,12585" class="retad"></a><a href="#" target="_blank" data-TGAD="1267,8166" class="retad"></a><div class="retdiv"><a href="#" title=""></a></div>';
@@ -61,10 +61,12 @@ function addEvent(obj, type, fn) {
 }
 addEvent(window, 'scroll', _scroll);
 addEvent(window, 'resize', _scroll);
-
+*/
 
 //flash
-function flash(cid,w,h,url){var swfid=document.getElementById(cid),size='width="'+w+'" height="'+h+'"',doc=url;var swf='<object id="FlashID" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" '+size+'><param name="movie" value="'+doc+'" /><param name="wmode" value="transparent" /> <param name="allowScriptAcces" value="always"/><param name="quality" value="high" /><embed type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="'+doc+'" '+size+' wmode="transparent" /></object>';swfid.innerHTML=swf;};
+function flash(cid,w,h,url){
+/*	
+var swfid=document.getElementById(cid),size='width="'+w+'" height="'+h+'"',doc=url;var swf='<object id="FlashID" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" '+size+'><param name="movie" value="'+doc+'" /><param name="wmode" value="transparent" /> <param name="allowScriptAcces" value="always"/><param name="quality" value="high" /><embed type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="'+doc+'" '+size+' wmode="transparent" /></object>';swfid.innerHTML=swf;};
 flash('enter1','221','242','/web201408/swf/enter1.swf');
 //FLASH°´Å¥
 function gotoPage(num){
@@ -74,5 +76,8 @@ function gotoPage(num){
 		case "3":window.open("/cp/a20150707activate/index.htm","_blank");break;//
 
 
-}}
+}
+*/
+}
+
 /*  |xGv00|082797220b2fe7f3e631e6579c5b3a31 */

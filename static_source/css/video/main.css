@@ -206,3 +206,15 @@ ul.pxs_slider li embed {
     -webkit-border-radius: 4px;
     border-radius: 4px;
 }
+
+ul.pxs_slider li object {
+    display: block;
+    margin: 5px auto 0px auto;
+    -moz-box-shadow: 0px 0px 7px #222;
+    -webkit-box-shadow: 0px 0px 7px #222;
+    box-shadow: 0px 0px 7px #222;
+    border: 8px solid transparent;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}

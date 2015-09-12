@@ -42,7 +42,7 @@
                     "jcookie.js",                 
                     "prettify.js",                  
                     "jquery.modal.js",                  
-                    "/engine/engine.io.js",                  
+                    "jquery.price_format.min.js",                  
                     "jStorage.js"
          
                    
@@ -73,7 +73,13 @@
             "home": {
                 "DistFile": "home.min.js",
                 "SourceFiles": [                      
-                    "/home/cont.js"
+                    "jquery.min.js",
+                    "jquery.price_format.min.js",
+                    "/home/tgadshow.min.js",
+                    "/home/cont.js",
+                    "/home/title.js",
+                    "/home/hoobi.js"
+                   
                 ]
             },               
             "cont": {
@@ -184,6 +190,7 @@
                     "/video/app.lol.js",                           
                     "/video/app.home.js", 
                     "/video/jquery.easing.1.3.js", 
+                    "/video/VSswfobject.js", 
                     "/video/slider.js"
                 ]
             },
